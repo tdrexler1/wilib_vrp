@@ -4,7 +4,8 @@ import pandas as pd
 import json
 import urllib.request
 import math
-
+import os
+import yaml
 import pickle
 
 
@@ -19,7 +20,14 @@ def format_api_request_data(input_file):
     """
 
     # Google Maps API key
-    api_key = 'AIzaSyCg-TP3o4X0-rotbpHkKawcV8ytOZmCznI'
+
+    try:
+        with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as conf:
+            conf_data = yaml.full_load(conf)
+            api_key = conf_data['google_maps']['api_key']
+        print('ok')
+    except OSError as e:
+        print(e)
 
     # read in data
     stop_data = pd.read_excel(
