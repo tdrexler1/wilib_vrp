@@ -68,7 +68,7 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
     total_distance = 0
     total_time = 0
 
-    #time_dimension = routing_mdl.GetDimensionOrDie('Time')
+    time_dimension = routing_mdl.GetDimensionOrDie('Duration')
 
     for vehicle_id in range(model_data_dict['num_vehicles']):
 
@@ -78,21 +78,24 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
         route_distance_02 = 0
         route_time_02 = 0
         num_stops = 0
+        route_stop_service_time = 0
 
         index = routing_mdl.Start(vehicle_id)
         plan_output = f'Route for vehicle {vehicle_id + 1}:\n\t'
 
         # iterate over all stops on the route
         while not routing_mdl.IsEnd(index):
+            #time_var = time_dimension.CumulVar(index)
 
             # substitute library names for index numbers
             plan_output += f'{model_data_dict["library_names"][idx_manager.IndexToNode(index)]} -> '
 
+            route_stop_service_time += model_data_dict['service_time'][idx_manager.IndexToNode(index)] * 60
             previous_index = index
             index = solution.Value(routing_mdl.NextVar(index))
 
 
-            if input_args_dict['constraint'] == 'distance':
+            '''if input_args_dict['constraint'] == 'distance':
                 route_distance += routing_mdl.GetArcCostForVehicle(previous_index, index, vehicle_id)
                 route_time += model_data_dict['duration_matrix'][idx_manager.IndexToNode(previous_index)][idx_manager.IndexToNode(index)]
 
@@ -103,15 +106,23 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
             route_distance_02 += model_data_dict['distance_matrix'][idx_manager.IndexToNode(previous_index)][
                 idx_manager.IndexToNode(index)]
             route_time_02 += model_data_dict['duration_matrix'][idx_manager.IndexToNode(previous_index)][
-                idx_manager.IndexToNode(index)]
+                idx_manager.IndexToNode(index)]'''
 
             num_stops += 1
+
+
+        time_var = time_dimension.CumulVar(index)
+        time_var_value = solution.Value(time_var)
 
         plan_output += f' {model_data_dict["library_names"][idx_manager.IndexToNode(index)]}\n'
         plan_output += f'Route distance: {route_distance/METERS_PER_MILE:.2f} miles\n'
         plan_output += f'Route distance 02: {route_distance_02 / METERS_PER_MILE:.2f} miles\n'
 
-        route_time += int(input_args_dict['break_time_minutes'] * 60)
+        mins, secs = divmod(time_var_value + route_stop_service_time, 60)
+        hours, mins = divmod(mins, 60)
+        plan_output += f'Route time: {hours} {"hours" if hours > 1 else "hour"}, ' \
+                       f'{mins} {"minutes" if mins > 1 else "minute"}\n'
+        """route_time += int(input_args_dict['break_time_minutes'] * 60)
 
         mins, secs = divmod(route_time, 60)
         hours, mins = divmod(mins, 60)
@@ -120,14 +131,16 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
         mins2, secs2 = divmod(route_time_02, 60)
         hours2, mins2 = divmod(mins2, 60)
         plan_output += f'Route time 02: {hours2} {"hours" if hours2 > 1 else "hour"}, ' \
-                       f'{mins2} {"minutes" if mins2 > 1 else "minute"}\n'
+                       f'{mins2} {"minutes" if mins2 > 1 else "minute"}\n'"""
 
-        plan_output += f'Number of stops: {num_stops}\n'
+        plan_output += f'Number of stops: {num_stops - 1}\n'
 
         print(plan_output)
+        print(route_stop_service_time)
 
         total_distance += route_distance
-        total_time += route_time
+        #total_time += route_time
+        total_time += time_var_value
 
     print(f'Total distance, all routes: {total_distance/METERS_PER_MILE:.2f} miles')
 
@@ -238,7 +251,7 @@ def main():
     search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
     search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
     search_parameters.time_limit.seconds = 30
-    search_parameters.log_search = True
+    search_parameters.log_search = False
 
     # solve the problem
     vrp_solution = routing_model.SolveWithParameters(search_parameters)
