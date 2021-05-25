@@ -37,21 +37,6 @@ def format_problem_data(input_data_dict, n_vehicles):
 
     return problem_data_dict
 
-# TODO: is this function used/necessary?
-def get_routes(solution, routing, manager):
-    """ Gets routes from solver solution object & stores routes as an array. """
-
-    # entry i, j is the jth location visited by vehicle i along its route
-    routes = []
-    for route_nbr in range(routing.vehicles()):
-        index = routing.Start(route_nbr)
-        route = [manager.IndexToNode(index)]
-        while not routing.IsEnd(index):
-            index = solution.Value(routing.NextVar(index))
-            route.append(manager.IndexToNode(index))
-        routes.append(route)
-    return routes
-
 
 def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_args_dict):
     """ Prints VRP solution to console in readable format.
