@@ -5,7 +5,7 @@ from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
 # TODO: add capacity constraint
-# TODO: add in exchange times at each stop
+# DONE: add in exchange times at each stop
 # TODO: add in break time per route
 # TODO: add function to output solutions in array, possibly CSV
 # DONE: add command-line inputs (# vehicles, maximum miles, maximum route time)
@@ -68,15 +68,12 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
     total_distance = 0
     total_time = 0
 
+    distance_dimension = routing_mdl.GetDimensionOrDie('Distance')
     time_dimension = routing_mdl.GetDimensionOrDie('Duration')
 
     for vehicle_id in range(model_data_dict['num_vehicles']):
 
         # tracking variables for each route
-        route_distance = 0
-        route_time = 0
-        route_distance_02 = 0
-        route_time_02 = 0
         num_stops = 0
         route_stop_service_time = 0
 
@@ -85,62 +82,34 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
 
         # iterate over all stops on the route
         while not routing_mdl.IsEnd(index):
-            #time_var = time_dimension.CumulVar(index)
 
             # substitute library names for index numbers
             plan_output += f'{model_data_dict["library_names"][idx_manager.IndexToNode(index)]} -> '
 
             route_stop_service_time += model_data_dict['service_time'][idx_manager.IndexToNode(index)] * 60
-            previous_index = index
-            index = solution.Value(routing_mdl.NextVar(index))
-
-
-            '''if input_args_dict['constraint'] == 'distance':
-                route_distance += routing_mdl.GetArcCostForVehicle(previous_index, index, vehicle_id)
-                route_time += model_data_dict['duration_matrix'][idx_manager.IndexToNode(previous_index)][idx_manager.IndexToNode(index)]
-
-            else:
-                route_distance += model_data_dict['distance_matrix'][idx_manager.IndexToNode(previous_index)][idx_manager.IndexToNode(index)]
-                route_time += routing_mdl.GetArcCostForVehicle(previous_index, index, vehicle_id)
-
-            route_distance_02 += model_data_dict['distance_matrix'][idx_manager.IndexToNode(previous_index)][
-                idx_manager.IndexToNode(index)]
-            route_time_02 += model_data_dict['duration_matrix'][idx_manager.IndexToNode(previous_index)][
-                idx_manager.IndexToNode(index)]'''
 
             num_stops += 1
 
+            index = solution.Value(routing_mdl.NextVar(index))
 
-        time_var = time_dimension.CumulVar(index)
-        time_var_value = solution.Value(time_var)
+        route_distance = solution.Value(distance_dimension.CumulVar(index))
+
+        route_time = solution.Value(time_dimension.CumulVar(index)) + route_stop_service_time
 
         plan_output += f' {model_data_dict["library_names"][idx_manager.IndexToNode(index)]}\n'
         plan_output += f'Route distance: {route_distance/METERS_PER_MILE:.2f} miles\n'
-        plan_output += f'Route distance 02: {route_distance_02 / METERS_PER_MILE:.2f} miles\n'
-
-        mins, secs = divmod(time_var_value + route_stop_service_time, 60)
-        hours, mins = divmod(mins, 60)
-        plan_output += f'Route time: {hours} {"hours" if hours > 1 else "hour"}, ' \
-                       f'{mins} {"minutes" if mins > 1 else "minute"}\n'
-        """route_time += int(input_args_dict['break_time_minutes'] * 60)
 
         mins, secs = divmod(route_time, 60)
         hours, mins = divmod(mins, 60)
         plan_output += f'Route time: {hours} {"hours" if hours > 1 else "hour"}, ' \
                        f'{mins} {"minutes" if mins > 1 else "minute"}\n'
-        mins2, secs2 = divmod(route_time_02, 60)
-        hours2, mins2 = divmod(mins2, 60)
-        plan_output += f'Route time 02: {hours2} {"hours" if hours2 > 1 else "hour"}, ' \
-                       f'{mins2} {"minutes" if mins2 > 1 else "minute"}\n'"""
 
         plan_output += f'Number of stops: {num_stops - 1}\n'
 
         print(plan_output)
-        print(route_stop_service_time)
 
         total_distance += route_distance
-        #total_time += route_time
-        total_time += time_var_value
+        total_time += route_time
 
     print(f'Total distance, all routes: {total_distance/METERS_PER_MILE:.2f} miles')
 
