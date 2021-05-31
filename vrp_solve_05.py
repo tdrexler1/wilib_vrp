@@ -50,6 +50,16 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
         input_args_dict: Dict of user-input arguments.
     """
 
+    print('Breaks:')
+    intervals = solution.IntervalVarContainer()
+    for i in range(intervals.Size()):
+        brk = intervals.Element(i)
+        if brk.PerformedValue():
+            print(f'{brk.Var().Name()}: ' +
+                  f'Start({brk.StartValue()}) Duration({brk.DurationValue()})')
+        else:
+            print(f'{brk.Var().Name()}: Unperformed')
+
     # tracking variables for all routes
     total_distance = 0
     total_time = 0
@@ -180,19 +190,47 @@ def main():
     duration_callback_index = routing_model.RegisterTransitCallback(duration_callback)
 
     # convert input hours & minutes to seconds
-    max_duration = math.ceil(args_dict['max_hours'] * SECONDS_PER_HOUR -
-                             args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
+    #max_duration = math.ceil(args_dict['max_hours'] * SECONDS_PER_HOUR -
+    #                         args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
+    max_duration = math.ceil(args_dict['max_hours'] * SECONDS_PER_HOUR)
 
     # add duration constraint
     routing_model.AddDimension(
         duration_callback_index,
-        0,
+        600,
         max_duration,
         True,
         'Duration'
     )
     duration_dimension = routing_model.GetDimensionOrDie('Duration')
     # [END time dimension]
+
+    # [START break_constraint]
+    # warning: Need a pre-travel array using the solver's index order.
+    node_visit_transit = [0] * routing_model.Size()
+    for index in range(routing_model.Size()):
+        node = index_manager.IndexToNode(index)
+        node_visit_transit[index] = vrp_data_dict['service_time'][node]
+
+    break_duration = math.ceil(args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
+    ###print(type(break_duration))
+    break_intervals = {}
+    for v in range(vrp_data_dict['num_vehicles']):
+        break_intervals[v] = [
+            routing_model.solver().FixedDurationIntervalVar(
+                14400,  # start min
+                18000,  # start max
+                break_duration,  # duration: 10 min
+                False,  # optional: no
+                f'Break for vehicle {v}')
+        ]
+        duration_dimension.SetBreakIntervalsOfVehicle(
+            break_intervals[v],  # breaks
+            v,  # vehicle index
+            node_visit_transit)
+    # [END break_constraint]
+
+
 
     # choose distance or time as primary constraint
     if args_dict['constraint'] == 'distance':
@@ -204,10 +242,10 @@ def main():
 
     # set first solution heuristic
     search_parameters = pywrapcp.DefaultRoutingSearchParameters()
-    search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
+    search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION
     search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
     search_parameters.time_limit.seconds = 30
-    search_parameters.log_search = False
+    search_parameters.log_search = True
 
     # solve the problem
     vrp_solution = routing_model.SolveWithParameters(search_parameters)
