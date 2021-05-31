@@ -6,7 +6,7 @@ from ortools.constraint_solver import pywrapcp
 
 # TODO: add capacity constraint
 # DONE: add in exchange times at each stop
-# TODO: add in break time per route
+# DONE: add in break time per route
 # TODO: add function to output solutions in array, possibly CSV
 # DONE: add command-line inputs (# vehicles, maximum miles, maximum route time)
 # DONE: add toggle for time/distance as primary constraint
@@ -40,6 +40,7 @@ def format_problem_data(input_data_dict, n_vehicles):
 
 
 def format_time_display(time_in_seconds):
+
     mins, secs = divmod(time_in_seconds, 60)
     hrs, mins = divmod(mins, 60)
 
@@ -47,26 +48,16 @@ def format_time_display(time_in_seconds):
 
     return time_display_string
 
-def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_args_dict):
+
+def print_solution(model_data_dict, idx_manager, routing_mdl, solution):
     """ Prints VRP solution to console.
 
     Parameters:
         model_data_dict: Dict with distance & duration matrices and other problem data.
         idx_manager: OR-Tools routing index manager object.
         routing_mdl: OR-Tools routing model object.
-        solution: OR-Tools solution object, assuming the solver found a solution.
-        input_args_dict: Dict of user-input arguments.
+        solution: OR-Tools solution object.
     """
-
-    # print('Breaks:')
-    # intervals = solution.IntervalVarContainer()
-    # for i in range(intervals.Size()):
-    #     brk = intervals.Element(i)
-    #     if brk.PerformedValue():
-    #         print(f'{brk.Var().Name()}: ' +
-    #               f'Start({brk.StartValue()}) Duration({brk.DurationValue()})')
-    #     else:
-    #         print(f'{brk.Var().Name()}: Unperformed')
 
     # tracking variables for all routes
     total_distance = 0
@@ -78,10 +69,7 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
 
     for vehicle_id in range(model_data_dict['num_vehicles']):
 
-        # tracking variables for each route
         num_stops = 0
-
-        ##arccost_route_time = 0
 
         index = routing_mdl.Start(vehicle_id)
         plan_output = f'Route for vehicle {vehicle_id + 1}:\n\t'
@@ -92,60 +80,24 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution, input_ar
             # substitute library names for index numbers
             plan_output += f'{model_data_dict["library_names"][idx_manager.IndexToNode(index)]} -> '
 
-            # previous_index = index
-            # index = solution.Value(routing_mdl.NextVar(index))
-            # arccost_route_time += routing_mdl.GetArcCostForVehicle(previous_index, index, vehicle_id)
-
             num_stops += 1
 
             index = solution.Value(routing_mdl.NextVar(index))
 
         route_distance = solution.Value(distance_dimension.CumulVar(index))
-
         route_time = solution.Value(time_dimension.CumulVar(index))
 
         plan_output += f' {model_data_dict["library_names"][idx_manager.IndexToNode(index)]}\n'
         plan_output += f'\tRoute distance: {route_distance/METERS_PER_MILE:.2f} miles\n'
-
-        #mins, secs = divmod(route_time, 60)
-        #hours, mins = divmod(mins, 60)
-        #hrs, mins = format_time_display(route_time)
-        #plan_output += f'Route time: {hrs} {"hours" if hrs > 1 else "hour"}, ' \
-        #               f'{mins} {"minutes" if mins > 1 else "minute"}\n'
-
         plan_output += f'\tRoute time: {format_time_display(route_time)}\n'
-
         plan_output += f'\tNumber of stops: {num_stops - 1}\n'
 
         brk = break_intervals.Element(vehicle_id)
-        #plan_output += f'\t{brk.Var().Name()}:\n\t'
         if brk.PerformedValue():
             plan_output += f'\tBreak: start time = {format_time_display(brk.StartValue())}; ' \
                            f'end time = {format_time_display(brk.StartValue() + brk.DurationValue())}\n'
-
-            #hrs, mins = format_time_display(brk.StartValue())
-
-
-            #brk_end_value = brk.StartValue() + brk.DurationValue()
-
-            #brk_start_mins, brk_start_secs = divmod(brk.StartValue(), 60)
-            #brk_start_hrs, brk_start_mins = divmod(brk_start_mins, 60)
-            #brk_end_mins, brk_end_secs = divmod(brk_end_value, 60)
-            #brk_end_hrs, brk_end_mins = divmod(brk_end_mins, 60)
-            #plan_output += f'{brk.Var().Name()}:\n\t' \
-            #               f'start: {brk_start_hrs} {"hours" if brk_start_hrs > 1 else "hour"}, ' \
-            #               f'{brk_start_mins} {"minutes" if brk_start_mins > 1 else "minute"}' \
-            #               f', end: {brk_end_hrs} {"hours" if brk_end_hrs > 1 else "hour"}, ' \
-            #               f'{brk_end_mins} {"minutes" if brk_end_mins > 1 else "minute"}\n'
         else:
             plan_output += f'\tNo break.\n'
-
-        # arc_mins, arc_secs = divmod(arccost_route_time, 60)
-        # arc_hours, arc_mins = divmod(arc_mins, 60)
-        # plan_output += f'Arc cost route time: {arc_hours} {"hours" if arc_hours > 1 else "hour"}, ' \
-        #                f'{arc_mins} {"minutes" if arc_mins > 1 else "minute"}\n'
-
-
 
         print(plan_output)
 
@@ -237,11 +189,12 @@ def main():
     # max_duration = math.ceil(args_dict['max_hours'] * SECONDS_PER_HOUR -
     #                          args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
     max_duration = math.ceil(args_dict['max_hours'] * SECONDS_PER_HOUR)
+    break_duration = math.ceil(args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
 
     # add duration constraint
     routing_model.AddDimension(
         duration_callback_index,
-        1800,
+        break_duration,
         max_duration,
         True,
         'Duration'
@@ -250,14 +203,13 @@ def main():
     # [END time dimension]
 
     # [START break_constraint]
+    # https://github.com/google/or-tools/blob/master/ortools/constraint_solver/samples/vrp_breaks.py
     # warning: Need a pre-travel array using the solver's index order.
     node_visit_transit = [0] * routing_model.Size()
     for index in range(routing_model.Size()):
         node = index_manager.IndexToNode(index)
         node_visit_transit[index] = vrp_data_dict['service_time'][node]
 
-    break_duration = math.ceil(args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
-    ###print(type(break_duration))
     break_intervals = {}
     for v in range(vrp_data_dict['num_vehicles']):
         break_intervals[v] = [
@@ -282,16 +234,10 @@ def main():
         routing_model.SetArcCostEvaluatorOfAllVehicles(duration_callback_index)
         duration_dimension.SetGlobalSpanCostCoefficient(100)
 
-    # set first solution heuristic
+    #
     search_parameters = pywrapcp.DefaultRoutingSearchParameters()
     search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.SAVINGS
-
     search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.AUTOMATIC
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH
-
     search_parameters.time_limit.seconds = 60
     search_parameters.log_search = False
 
