@@ -253,7 +253,7 @@ def main():
     print(f'Solver status: {solver_status_code_dict[routing_model.status()]}\n')
 
     if vrp_solution:
-        print_solution(vrp_data_dict, index_manager, routing_model, vrp_solution, args_dict)
+        print_solution(vrp_data_dict, index_manager, routing_model, vrp_solution)
     else:
         print('No solution found.')
 
