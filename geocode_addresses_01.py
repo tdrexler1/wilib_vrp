@@ -8,6 +8,7 @@ import os
 import yaml
 import pickle
 
+GEOCODE_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
 
 def format_api_request_data(input_file):
     """ Reads in location data & prepares it for Google Maps API.
@@ -19,13 +20,16 @@ def format_api_request_data(input_file):
         A dict with the API key, a list of formatted address strings, and dataframe of descriptive data for each stop.
     """
 
-    # Google Maps API key
+    # Google GEOCODING API key
+    # TODO: create YAML file with geocoding API key
+
     try:
         with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as conf:
             conf_data = yaml.full_load(conf)
-            dist_matrix_api_key = conf_data['google_maps']['dist_matrix_api_key']
+            geocode_api_key = conf_data['google_maps']['geocoding_api_key']
     except OSError as e:
         print(e)
+
 
     # read in data
     stop_data = pd.read_excel(
@@ -33,34 +37,47 @@ def format_api_request_data(input_file):
         header=0,
         index_col='id',
         dtype=str,
-        usecols='A:S')
+        usecols='A:S',
+        engine='openpyxl')
 
     # build address string formatted for API request
-    stop_data['api_address_string'] = \
-        stop_data['address_number'] + '+' + \
-        stop_data['address_street'].str.split().str.join('+') + '+' + \
-        stop_data['address_city'].str.split().str.join('+') + '+' + \
+    stop_data['geo_api_address_string'] = \
+        stop_data['address_number'] + '%20' + \
+        stop_data['address_street'].str.split().str.join('%20') + '%20' + \
+        stop_data['address_city'].str.split().str.join('%20') + '%20' + \
         stop_data['address_state']
 
-    # limit 25 origins or 25 destinations per API request - https://stackoverflow.com/a/52062952
-    # divide data into groups w/ max 25 addresses
-    max_stops = 25
-    num_addresses = len(stop_data['api_address_string'])
-    num_groups = math.ceil(num_addresses / max_stops)
+    # TODO: pull id column & geo_address_url_string columns; convert to dict
+    # TODO: iterate through dict keys to send requests, return results to lat & lng keys
+    # TODO: convert dict to dataframe and left join to stop data
+    # TODO: seems like there should be a better way to do this??? how about DataFrame.apply()
 
-    # store each address group as nested list
-    address_array = []
-    for i in range(num_groups):
-        address_array.append(stop_data['api_address_string'].tolist()[i * max_stops: (i + 1) * max_stops])
+    address_urls_list = stop_data['geo_api_address_string'].tolist()
 
-    data_dict = {'api_key': dist_matrix_api_key,
-                 'addresses': address_array,
-                 'library_info': stop_data.drop(columns=['api_address_string']).to_dict('index')
-                 }
+    for address_url in address_urls_list:
 
-    return data_dict
+        request_url = f"{GEOCODE_BASE_URL}?address={address_url}&key={geocode_api_key}"
+
+        json_result = urllib.request.urlopen(request_url).read()
+
+        # results as JSON object
+        response = json.loads(json_result)
+
+        if response["status"] in ["OK", "ZERO_RESULTS"]:
+            #print(response)
+            print(f"lat = {response['results'][0]['geometry']['location']['lat']}, "
+                  f"lng = {response['results'][0]['geometry']['location']['lng']}")
+        #result = json.load(urllib.request.urlopen(url))
+
+        #if result["status"] in ["OK", "ZERO_RESULTS"]:
+        #    print(json.dumps(result))
+            #print(json.dumps([s["formatted_address"] for s in result], indent=2))
+        #    return result["results"]
+
+    #raise Exception(result["error_message"])
 
 
+'''
 def create_matrices(stop_data_dict):
     """ Sends Google Maps API requests to create distance & duration matrices for each group of addresses;
     assembles group matrices into full matrices.
@@ -237,14 +254,17 @@ def check_matrix_results(d_matrix):
         zero_indices == check_list
     except RuntimeError:
         print('There was a problem building the matrix.')
-
+'''
 
 def main():
     data_file = 'NWLS_delivery_stops.xlsx'
 
     # read and format address data
-    input_data = format_api_request_data(data_file)
+    format_api_request_data(data_file)
 
+
+
+    '''
     # create distance & duration matrices w/ Google Maps API
     distance_matrix, duration_matrix = create_matrices(input_data)
 
@@ -259,6 +279,7 @@ def main():
 
     with open('vrp_data_dict.pickle', 'wb') as pick_file:
         pickle.dump(data_dict, pick_file)
+    '''
 
 
 if __name__ == '__main__':
