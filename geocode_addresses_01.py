@@ -41,7 +41,7 @@ def format_api_request_data(input_file):
         engine='openpyxl')
 
     # build address string formatted for API request
-    stop_data['geo_api_address_string'] = \
+    stop_data['geo_address_url_string'] = \
         stop_data['address_number'] + '%20' + \
         stop_data['address_street'].str.split().str.join('%20') + '%20' + \
         stop_data['address_city'].str.split().str.join('%20') + '%20' + \
@@ -52,7 +52,7 @@ def format_api_request_data(input_file):
     # TODO: convert dict to dataframe and left join to stop data
     # TODO: seems like there should be a better way to do this??? how about DataFrame.apply()
 
-    address_urls_list = stop_data['geo_api_address_string'].tolist()
+    address_urls_list = stop_data['geo_address_url_string'].tolist()
 
     for address_url in address_urls_list:
 

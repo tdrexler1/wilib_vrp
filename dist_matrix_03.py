@@ -33,7 +33,8 @@ def format_api_request_data(input_file):
         header=0,
         index_col='id',
         dtype=str,
-        usecols='A:S')
+        usecols='A:S',
+        engine='openpyxl')
 
     # build address string formatted for API request
     stop_data['api_address_string'] = \
