@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Google Maps - gmplot</title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyARPwnKPJU-N4NvcnSEWYfPXJqBfbq2EdQ"></script>
+<script type="text/javascript">
+    function initialize() {
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 15,
+            center: new google.maps.LatLng(43.049550, -89.392370)
+        });
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.049523, -89.392370),
+            destination: new google.maps.LatLng(42.773510, -88.944005),
+            waypoints: [
+                {location: new google.maps.LatLng(42.519449, -89.031225), stopover: true},
+                {location: new google.maps.LatLng(42.679132, -89.018979), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "blue"
+                                            } 
+                                    }).setDirections(response);
+            }
+        });
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(42.679132, -89.018979),
+            destination: new google.maps.LatLng(43.049523, -89.392370),
+            waypoints: [
+                {location: new google.maps.LatLng(42.773510, -88.944005), stopover: true},
+                {location: new google.maps.LatLng(42.519449, -89.031225), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "green"
+                                            } 
+                                    }).setDirections(response);
+            }
+        });
+
+    }
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+    <div id="map_canvas" style="width: 100%; height: 100%;" />
+</body>
+</html>
