@@ -3,26 +3,40 @@
 import pandas as pd
 import json
 import urllib.request
-import math
 import os
 import yaml
-import pickle
 
 GEOCODE_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
 
-def format_api_request_data(input_file):
-    """ Reads in location data & prepares it for Google Maps API.
+def geocode_api_request(x, api_key):
+    #GEOCODE_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
+
+    request_url = f"{GEOCODE_BASE_URL}?address={x}&key={api_key}"
+
+    json_result = urllib.request.urlopen(request_url).read()
+
+    # results as JSON object
+    response = json.loads(json_result)
+
+    if response["status"] in ["OK", "ZERO_RESULTS"]:
+        # print(response)
+        print(f"lat = {response['results'][0]['geometry']['location']['lat']}, "
+              f"lng = {response['results'][0]['geometry']['location']['lng']}")
+        return (response['results'][0]['geometry']['location']['lat'],
+                response['results'][0]['geometry']['location']['lng'])
+
+
+def geocode_addresses(input_file):
+    """ Adds geocodes for library locations using address and/or PlusCode data.
 
     Params:
         input_file: Excel filename.
 
     Returns:
-        A dict with the API key, a list of formatted address strings, and dataframe of descriptive data for each stop.
+        None
     """
 
     # Google GEOCODING API key
-    # TODO: create YAML file with geocoding API key
-
     try:
         with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as conf:
             conf_data = yaml.full_load(conf)
@@ -30,29 +44,34 @@ def format_api_request_data(input_file):
     except OSError as e:
         print(e)
 
-
     # read in data
     stop_data = pd.read_excel(
         input_file,
         header=0,
-        index_col='id',
+        index_col='LIBID',
         dtype=str,
-        usecols='A:S',
         engine='openpyxl')
 
     # build address string formatted for API request
-    stop_data['geo_address_url_string'] = \
-        stop_data['address_number'] + '%20' + \
-        stop_data['address_street'].str.split().str.join('%20') + '%20' + \
-        stop_data['address_city'].str.split().str.join('%20') + '%20' + \
-        stop_data['address_state']
+    stop_data['geo_address_url_string'] = stop_data['address_full_no_unit'].str.replace(",", "").str.split().str.join('%20')
+        #stop_data['address_number'] + '%20' + \
+        #stop_data['address_street'].str.split().str.join('%20') + '%20' + \
+        #stop_data['address_city'].str.split().str.join('%20') + '%20' + \
+        #stop_data['address_state']
+    #print(stop_data['geo_address_url_string'])
 
     # TODO: pull id column & geo_address_url_string columns; convert to dict
     # TODO: iterate through dict keys to send requests, return results to lat & lng keys
     # TODO: convert dict to dataframe and left join to stop data
     # TODO: seems like there should be a better way to do this??? how about DataFrame.apply()
 
-    address_urls_list = stop_data['geo_address_url_string'].tolist()
+    stop_data['geo_coords'] = stop_data.apply(geocode_api_request(stop_data['geo_address_url_string'], geocode_api_key))
+
+    print(stop_data.head())
+
+
+
+    '''address_urls_list = stop_data['geo_address_url_string'].tolist()
 
     for address_url in address_urls_list:
 
@@ -72,7 +91,7 @@ def format_api_request_data(input_file):
         #if result["status"] in ["OK", "ZERO_RESULTS"]:
         #    print(json.dumps(result))
             #print(json.dumps([s["formatted_address"] for s in result], indent=2))
-        #    return result["results"]
+        #    return result["results"]'''
 
     #raise Exception(result["error_message"])
 
@@ -257,10 +276,10 @@ def check_matrix_results(d_matrix):
 '''
 
 def main():
-    data_file = 'NWLS_delivery_stops.xlsx'
+    data_file = 'wi_library_directory_testfile.xlsx'
 
     # read and format address data
-    format_api_request_data(data_file)
+    geocode_addresses(data_file)
 
 
 
