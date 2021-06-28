@@ -54,6 +54,9 @@ gmap.directions(
 
 gmap.draw("gmap.html")
 
-filepath = 'C:\\Users\\zzzlib\\PycharmProjects\\wilib_vrp\\gmap.html'
+filepath = 'C:/Users/tdrex/PycharmProjects/wilib_vrp/gmap.html'
 
-webbrowser.open('file:\\' + filepath)
+# https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
+chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+webbrowser.get(chrome_path).open('file:\\' + filepath)
+#webbrowser.open('file:\\' + filepath)

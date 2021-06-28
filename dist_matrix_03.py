@@ -54,6 +54,7 @@ def format_api_request_data(input_file):
     for i in range(num_groups):
         address_array.append(stop_data['api_address_string'].tolist()[i * max_stops: (i + 1) * max_stops])
 
+    # TODO: drop all columns not used for mapping/presentation
     data_dict = {'api_key': dist_matrix_api_key,
                  'addresses': address_array,
                  'library_info': stop_data.drop(columns=['api_address_string']).to_dict('index')
@@ -241,7 +242,7 @@ def check_matrix_results(d_matrix):
 
 
 def main():
-    data_file = 'NWLS_delivery_stops.xlsx'
+    data_file = 'wi_library_directory_testfile_small.xlsx'
 
     # read and format address data
     input_data = format_api_request_data(data_file)
