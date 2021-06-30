@@ -15,29 +15,29 @@ pd.options.display.max_rows = 1000
 def add_region_data(stop_df):
 
     ideal_region_01 = ['Ashland', 'Barron', 'Bayfield', 'Burnett', 'Chippewa', 'Douglas', 'Dunn', 'Eau Claire', 'Pepin',
-                       'Pierce', 'Polk', 'Rusk', 'Sawyer', 'St. Croix', 'Washburn'] #15
+                       'Pierce', 'Polk', 'Rusk', 'Sawyer', 'St. Croix', 'Washburn']
     ideal_region_02 = ['Clark', 'Forest', 'Iron', 'Langlade', 'Lincoln', 'Marathon', 'Oneida', 'Portage', 'Price',
-                       'Taylor', 'Vilas', 'Wood'] #12
+                       'Taylor', 'Vilas', 'Wood']
     ideal_region_03 = ['Brown', 'Door', 'Florence', 'Kewaunee', 'Marinette', 'Menominee', 'Oconto', 'Outagamie',
-                       'Shawano', 'Waupaca'] #10
+                       'Shawano', 'Waupaca']
     ideal_region_04 = ['Adams', 'Buffalo', 'Crawford', 'Jackson', 'Juneau', 'La Crosse', 'Monroe', 'Richland',
-                       'Trempaealeau', 'Vernon'] #10
+                       'Trempaealeau', 'Vernon']
     ideal_region_05 = ['Calumet', 'Dodge', 'Fond du Lac', 'Green Lake', 'Manitowoc', 'Marquette', 'Ozaukee', 'Sheboygan',
-                       'Washington', 'Waushara', 'Winnebago'] #11
-    ideal_region_06 = ['Columbia', 'Dane', 'Grant', 'Green', 'Iowa', 'Lafayette', 'Rock', 'Sauk'] #8
-    ideal_region_07 = ['Jefferson', 'Kenosha', 'Milwaukee', 'Racine', 'Walworth', 'Waukesha'] #6
+                       'Washington', 'Waushara', 'Winnebago']
+    ideal_region_06 = ['Columbia', 'Dane', 'Grant', 'Green', 'Iowa', 'Lafayette', 'Rock', 'Sauk']
+    ideal_region_07 = ['Jefferson', 'Kenosha', 'Milwaukee', 'Racine', 'Walworth', 'Waukesha']
 
-    starter_region_01 = ['Ashland', 'Bayfield', 'Burnett', 'Douglas', 'Iron', 'Sawyer', 'Vilas', 'Washburn'] #8
-    starter_region_02 = ['Barron', 'Chippewa', 'Dunn', 'Eau Claire', 'Pepin', 'Pierce', 'Polk', 'Rusk', 'St. Croix'] #9
-    starter_region_03 = ['Clark', 'Forest', 'Langlade', 'Lincoln', 'Marathon', 'Oneida', 'Price', 'Taylor'] #8
+    starter_region_01 = ['Ashland', 'Bayfield', 'Burnett', 'Douglas', 'Iron', 'Sawyer', 'Vilas', 'Washburn']
+    starter_region_02 = ['Barron', 'Chippewa', 'Dunn', 'Eau Claire', 'Pepin', 'Pierce', 'Polk', 'Rusk', 'St. Croix']
+    starter_region_03 = ['Clark', 'Forest', 'Langlade', 'Lincoln', 'Marathon', 'Oneida', 'Price', 'Taylor']
     starter_region_04 = ['Brown', 'Door', 'Florence', 'Kewaunee', 'Marinette', 'Menominee', 'Oconto', 'Outagamie',
-                         'Shawano', 'Waupaca'] #10
-    starter_region_05 = ['Buffalo', 'Jackson', 'Juneau', 'La Crosse', 'Monroe', 'Trempealeau', 'Vernon'] #7
+                         'Shawano', 'Waupaca']
+    starter_region_05 = ['Buffalo', 'Jackson', 'Juneau', 'La Crosse', 'Monroe', 'Trempealeau', 'Vernon']
     starter_region_06 = ['Calumet', 'Dodge', 'Fond du Lac', 'Green Lake', 'Manitowoc', 'Marquette', 'Ozaukee', 'Sheboygan',
-                         'Washington', 'Waushara', 'Winnebago'] #11
+                         'Washington', 'Waushara', 'Winnebago']
     starter_region_07 = ['Adams', 'Columbia', 'Crawford', 'Dane', 'Grant', 'Green', 'Iowa', 'Lafayette', 'Portage',
-                         'Richland', 'Sauk', 'Wood'] #12
-    starter_region_08 = ['Jefferson', 'Kenosha', 'Milwaukee', 'Racine', 'Rock', 'Walworth', 'Waukesha'] #7
+                         'Richland', 'Sauk', 'Wood']
+    starter_region_08 = ['Jefferson', 'Kenosha', 'Milwaukee', 'Racine', 'Rock', 'Walworth', 'Waukesha']
 
     ideal_region_tuples = [(x, 'ideal_region_01') for x in ideal_region_01] + \
                           [(x, 'ideal_region_02') for x in ideal_region_02] + \
