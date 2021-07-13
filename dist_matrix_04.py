@@ -266,7 +266,7 @@ def main():
 
     model_column = model + '_proposal_region'
     hub_column = model + '_regional_hub'
-    region_stop_data = stop_data.loc[stop_data[model_column] == model_region]
+    region_stop_data = stop_data.loc[stop_data[model_column] == model_region].copy()
     region_stop_data.sort_values(hub_column, inplace=True)
 
     print(region_stop_data[['stop_short_name', 'county', 'starter_proposal_region', 'ideal_proposal_region']])
