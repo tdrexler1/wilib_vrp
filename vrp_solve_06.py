@@ -113,6 +113,8 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution):
 
 
 def main():
+    #1.To "force" assignment of a node to a specific vehicle you can use:
+    # routing.VehicleVar(locatin_index).SetValue(vehicle_id)
 
     # parse command line arguments
     parser = argparse.ArgumentParser(description='Solve the vehicle routing problem.',
