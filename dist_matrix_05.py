@@ -9,89 +9,71 @@ import os
 import yaml
 import pickle
 
-# TODO: following two lines for testing only
-pd.options.display.width = 0
-pd.options.display.max_rows = 1000
+
+def prep_input_data(in_dataframe, config_dict):
+
+    model_region = config_dict['model'] + '_region_' + \
+        ('0' + str(config_dict['region_number'])
+         if config_dict['region_number'] < 10
+         else str(config_dict['region_number'])
+         )
+
+    model_column = config_dict['model'] + '_proposal_region'
+    hub_column = config_dict['model'] + '_regional_hub'
+
+    region_stop_data = in_dataframe.loc[(in_dataframe[model_column] == model_region) &
+                                        (in_dataframe['redundant_address'] == 'False')].copy()
+    region_stop_data.sort_values(hub_column, inplace=True)
+
+    region_stop_data['api_address_string'] = \
+        region_stop_data['address_number'] + '+' + \
+        region_stop_data['address_street'].str.split().str.join('+') + '+' + \
+        region_stop_data['address_city'].str.split().str.join('+') + '+' + \
+        region_stop_data['address_state']
+
+    return region_stop_data
 
 
-def format_api_request_data(input_file):
-    """ Reads in location data & prepares it for Google Maps API.
-
-    Params:
-        input_file: Excel filename.
-
-    Returns:
-        A dict with the API key, a list of formatted address strings, and dataframe of descriptive data for each stop.
-    """
-
-    # Google Maps API key
-    try:
-        with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as conf:
-            conf_data = yaml.full_load(conf)
-            dist_matrix_api_key = conf_data['google_maps']['dist_matrix_api_key']
-    except OSError as e:
-        print(e)
-
-    # read in data
-    stop_data = pd.read_excel(
-        input_file,
-        header=0,
-        index_col='id',
-        dtype=str,
-        usecols='A:S',
-        engine='openpyxl')
-
-    # build address string formatted for API request
-    stop_data['api_address_string'] = \
-        stop_data['address_number'] + '+' + \
-        stop_data['address_street'].str.split().str.join('+') + '+' + \
-        stop_data['address_city'].str.split().str.join('+') + '+' + \
-        stop_data['address_state']
+def create_api_address_lists(stop_df):
 
     # limit 25 origins or 25 destinations per API request - https://stackoverflow.com/a/52062952
     # divide data into groups w/ max 25 addresses
     max_stops = 25
-    num_addresses = len(stop_data['api_address_string'])
+    num_addresses = len(stop_df['api_address_string'])
     num_groups = math.ceil(num_addresses / max_stops)
 
     # store each address group as nested list
     address_array = []
     for i in range(num_groups):
-        address_array.append(stop_data['api_address_string'].tolist()[i * max_stops: (i + 1) * max_stops])
+        address_array.append(stop_df['api_address_string'].tolist()[i * max_stops: (i + 1) * max_stops])
 
-    # TODO: drop all columns not used for mapping/presentation
-    data_dict = {'api_key': dist_matrix_api_key,
-                 'addresses': address_array,
-                 'library_info': stop_data.drop(columns=['api_address_string']).to_dict('index')
-                 }
-
-    return data_dict
+    return address_array
 
 
-def create_matrices(stop_data_dict):
+def create_matrices(address_array, config_dict):
     """ Sends Google Maps API requests to create distance & duration matrices for each group of addresses;
     assembles group matrices into full matrices.
 
     Params:
-        stop_data_dict: Dict containing data for each stop, including addresses formatted as API request strings.
+
 
     Returns:
         Distance and duration matrices w/ rows as nested lists.
     """
 
-    api_key = stop_data_dict["api_key"]
+    api_key = config_dict['dist_matrix_api_key']
     max_elements = 100  # limit 100 elements per API request - https://tinyurl.com/3sywy4ky
 
     distance_matrix_array = []
     duration_matrix_array = []
 
     # destination addresses for each group in address array
-    for m in range(len(stop_data_dict['addresses'])):
-        destination_group = stop_data_dict['addresses'][m]
+    for m in range(len(address_array)):
+        destination_group = address_array[m]
 
         # origin addresses for each group in address array
-        for n in range(len(stop_data_dict['addresses'])):
-            origin_group = stop_data_dict['addresses'][n]
+        for n in range(len(address_array)):
+            origin_group = address_array[n]
 
             max_rows = max_elements // len(origin_group)
 
@@ -242,53 +224,13 @@ def check_matrix_results(d_matrix):
     # compare zero indices with integers
     try:
         zero_indices == check_list
+        print('Everything looks good.')
     except RuntimeError:
         print('There was a problem building the matrix.')
 
 
 def main():
-
-    data_file = 'hub_recognition_test_data.xlsx'
-
-    model = 'ideal'
-    region = 7
-
-    #model = 'starter'
-    #region = 8
-
-    model_region = model + '_region_' + ('0' + str(region) if region < 10 else str(region))
-
-    stop_data = pd.read_excel(
-        data_file,
-        header=0,
-        index_col='LIBID',
-        dtype=str,
-        engine='openpyxl')
-
-    model_column = model + '_proposal_region'
-    hub_column = model + '_regional_hub'
-    region_stop_data = stop_data.loc[stop_data[model_column] == model_region].copy()
-    region_stop_data.sort_values(hub_column, inplace=True)
-
-    print(region_stop_data[['stop_short_name', 'county', 'starter_proposal_region', 'ideal_proposal_region']])
-
-'''    # read and format address data
-    input_data = format_api_request_data(data_file)
-
-    # create distance & duration matrices w/ Google Maps API
-    distance_matrix, duration_matrix = create_matrices(input_data)
-
-    # check results
-    check_matrix_results(distance_matrix)
-    check_matrix_results(duration_matrix)
-
-    # store matrices & dataframe of descriptive data
-    data_dict = {'distance_matrix': distance_matrix,
-                 'duration_matrix': duration_matrix,
-                 'library_info': input_data['library_info']}
-
-    with open('vrp_data_dict.pickle', 'wb') as pick_file:
-        pickle.dump(data_dict, pick_file)'''
+    pass
 
 
 if __name__ == '__main__':

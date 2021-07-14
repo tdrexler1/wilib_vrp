@@ -1,10 +1,18 @@
-import geocode_addresses_03
-import dist_matrix_04
-import vrp_solve_06
+import geocode_addresses_03 as geo
+import dist_matrix_05 as dist
+import vrp_solve_06 as solve
 #import vrp_route_map_01
 
 import argparse
 import sys
+import pandas as pd
+import os
+import yaml
+
+# following two lines for testing only
+pd.options.display.width = 0
+pd.options.display.max_rows = 1000
+
 
 def main():
     # noinspection PyTypeChecker
@@ -50,12 +58,38 @@ def main():
                                                                         '(opens in default browser window).')
     options_group.add_argument('-h', '--help', action='help', help='Show this message and exit.')
 
-
     args_dict = vars(parser_obj.parse_args())
-    for k, v in args_dict.items():
-        print(f'key: {k}, value: {v}')
 
-    #dist_matrix_04.main()
+    stop_data = pd.read_excel(
+        args_dict['input_file'],
+        header=0,
+        index_col='LIBID',
+        dtype=str,
+        engine='openpyxl')
+
+    # Google Maps API keys
+    try:
+        with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as api_keys:
+            key_data = yaml.full_load(api_keys)
+    except OSError as e:
+        print(e)
+    api_dict = key_data['google_maps']
+
+    conf_dict = {**args_dict, **api_dict}
+
+    region_data = dist.prep_input_data(stop_data, conf_dict)
+
+    api_address_array = dist.create_api_address_lists(region_data)
+
+    # create distance & duration matrices w/ Google Maps API
+    distance_matrix, duration_matrix = dist.create_matrices(api_address_array, conf_dict)
+
+    # check results
+    dist.check_matrix_results(distance_matrix)
+    dist.check_matrix_results(duration_matrix)
+
+    #print(distance_matrix)
+    #print(api_address_array)
 
 if __name__ == '__main__':
     main()
