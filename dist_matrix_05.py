@@ -1,13 +1,6 @@
-#! python3
-
-import argparse
-import pandas as pd
-import json
-import urllib.request
 import math
-import os
-import yaml
-import pickle
+import urllib.request
+import json
 
 
 def prep_input_data(in_dataframe, config_dict):
@@ -224,7 +217,6 @@ def check_matrix_results(d_matrix):
     # compare zero indices with integers
     try:
         zero_indices == check_list
-        print('Everything looks good.')
     except RuntimeError:
         print('There was a problem building the matrix.')
 
