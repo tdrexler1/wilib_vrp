@@ -1,7 +1,7 @@
 import geocode_addresses_03 as geo
 import dist_matrix_05 as dist
 import vrp_solve_07 as solve
-#import vrp_route_map_01
+import vrp_route_map_02 as map
 
 import argparse
 import sys
@@ -97,12 +97,16 @@ def main():
     vrp_solution = solve.solve_vrp(vrp_model)
 
     if vrp_solution:
-        solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
-        routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+        #solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+        opt_routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
     else:
         print('No solution found.')
 
-    print(routes)
+    for i, route in enumerate(opt_routes):
+        print('Route', i+1, route)
+
+    # TODO: send route solutions to mapper
+    map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'])
 
 
 if __name__ == '__main__':

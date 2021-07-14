@@ -5,7 +5,7 @@ from ortools.constraint_solver import pywrapcp
 # TODO: add capacity constraint
 # DONE: add in exchange times at each stop
 # DONE: add in break time per route
-# TODO: add function to output solutions in array, possibly CSV
+# DONE: add function to output solutions in array, possibly CSV
 # DONE: add command-line inputs (# vehicles, maximum miles, maximum route time)
 # DONE: add toggle for time/distance as primary constraint
 # TODO: figure out how to force certain stops to the same routes
