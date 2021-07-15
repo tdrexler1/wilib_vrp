@@ -1,8 +1,12 @@
 import gmplot
-from gmplot import _Route
+#from gmplot import _Route
+from gmplot.gmplot import _Route
 import webbrowser
 
 # TODO: need to override class _Route(object)
+from gmplot.gmplot import _Route
+
+
 def write_mod(self, w):
     '''
     Write the route.
@@ -44,7 +48,7 @@ def write_mod(self, w):
 # Google GENERAL MAPS API key - works for maps_javascript_api & directions_api
 
 def map_vrp_routes(route_array, stop_data, gmaps_api_key):
-    gmplot._Route.write = write_mod
+    _Route.write = write_mod
     gmap = gmplot.GoogleMapPlotter(43.04955, -89.39237, 15, apikey=gmaps_api_key)
     route_colors = ['blue', 'green', 'red']
 
