@@ -58,7 +58,6 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key):
     gmap = gmplot.GoogleMapPlotter(43.04955, -89.39237, 15, apikey=gmaps_api_key)
     route_colors = ['blue', 'green', 'red']
 
-    # TODO: convert dataframe to dictionary to pull data for markers (labels, info_window, etc.)
     stop_data_dict = stop_data.to_dict()
 
     for n, route in enumerate(route_array):
@@ -67,32 +66,24 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key):
         destination = (float(stop_data.loc[route[-1], 'latitude']), float(stop_data.loc[route[-1], 'longitude']))
         waypoints_list = \
             [(float(stop_data.loc[x, 'latitude']), float(stop_data.loc[x, 'longitude'])) for x in route[1:-2]]
+
         gmap.directions(origin, destination, waypoints=waypoints_list, route_color=route_colors[n])
 
-
-
-        marker_info_dict = {}
-        for m, stop in enumerate(route):
-            marker_info_dict[stop]['latitude'] = float(stop_data.loc[stop, 'latitude'])
-            marker_info_dict[stop]['longitude'] = float(stop_data.loc[stop, 'longitude'])
-            marker_info_dict[stop]['label'] = list(string.ascii_uppercase)[m]
-            marker_info_dict[stop]['title'] = stop_data.loc[stop, 'stop_short_name']
-
-        title_list = [stop_data.loc[x, 'stop_short_name'] for x in route]
-        info_windows = [f'{stop_data.loc[x, "stop_short_name"]}<br>{stop_data.loc[x, "stop_type"]}' for x in route]
         # TODO: write a function to create the info window string
+        # TODO: add origin/destination marker with special formatting
 
-        for m, wp in enumerate(waypoints_list):
-            gmap.marker(wp[0], wp[1],
+        for m, wp in enumerate(route[1:-2]):
+            gmap.marker(float(stop_data_dict['latitude'][wp]), float(stop_data_dict['longitude'][wp]),
                         color=route_colors[n],
                         label=list(string.ascii_uppercase)[m],
-                        title=title_list[m+1],
-                        info_window=info_windows[m+1])
+                        title=stop_data_dict['stop_short_name'][wp],
+                        info_window=f"{stop_data_dict['stop_short_name'][wp]}<br>{stop_data_dict['stop_type'][wp]}"
+                        )
 
     gmap.draw('gmap.html')
 
-    #filepath = 'C:/Users/tdrex/PycharmProjects/wilib_vrp/gmap.html'
-    filepath = 'C:/Users/zzzlib/PycharmProjects/wilib_vrp/gmap.html'
+    filepath = 'C:/Users/tdrex/PycharmProjects/wilib_vrp/gmap.html'
+    #filepath = 'C:/Users/zzzlib/PycharmProjects/wilib_vrp/gmap.html'
 
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
