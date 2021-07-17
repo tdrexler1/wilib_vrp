@@ -108,8 +108,61 @@ class _MarkerInfoWindow_mod(object):
         ))
         w.write()
 
+
+class _Marker_mod(object):
+    def __init__(self, position, **kwargs):
+        '''
+        Args:
+            position (str): JavaScript code that represents the position of the marker.
+
+        Optional:
+
+        Args:
+            name (str): JavaScript name of the marker.
+            title (str): Hover-over title of the marker.
+            label (str): Label displayed on the marker.
+            icon (str): JavaScript code that represents the icon.
+            draggable (bool): Whether or not the marker is draggable.
+        '''
+        self._position = position
+        self._name = kwargs.get('name')
+        self._title = kwargs.get('title')
+        self._label = kwargs.get('label')
+        self._label_color = kwargs.get('label_color')
+        self._icon = kwargs.get('icon')
+        self._draggable = kwargs.get('draggable')
+
+
+
+    def write(self, w):
+        '''
+        Write the marker.
+
+        Args:
+            w (_Writer): Writer used to write the marker.
+        '''
+        if self._name is not None: w.write('var %s = ' % self._name, end_in_newline=False)
+
+        w.write('new google.maps.Marker({')
+        w.indent()
+        w.write('position: %s,' % self._position)
+
+        if self._title is not None: w.write('title: "%s",' % self._title)
+        if self._label is not None: w.write('''label: {
+                                                 text: "%s",
+                                                 color: "%s"
+                                            },''' % (self._label, self._label_color))
+        if self._icon is not None: w.write('icon: %s,' % self._icon)
+        if self._draggable is not None: w.write('draggable: %s,' % str(self._draggable).lower())
+
+        w.write('map: map')
+        w.dedent()
+        w.write('});')
+        w.write()
+
+
 # GoogleMapPlotter
-def write_point(self, w, lat, lng, color, title, precision, color_cache, label, info_window=None, draggable=None): # TODO: Bundle args into some Point or Marker class (counts as an API change).
+def write_point(self, w, lat, lng, color, title, precision, color_cache, label, label_color=None, info_window=None, draggable=None ): # TODO: Bundle args into some Point or Marker class (counts as an API change).
     # Write the marker icon (if it isn't written already).
     marker_icon = _MarkerIcon(color)
     marker_icon.write(w, color_cache)
@@ -118,7 +171,7 @@ def write_point(self, w, lat, lng, color, title, precision, color_cache, label, 
     marker_name = ('info_marker_%d' % self._num_info_markers) if info_window is not None else None
 
     # Write the actual marker:
-    marker = _Marker(_format_LatLng(lat, lng, precision), name=marker_name, title=title, label=label, icon=marker_icon.name, draggable=draggable)
+    marker = _Marker_mod(_format_LatLng(lat, lng, precision), name=marker_name, title=title, label=label, label_color=label_color, icon=marker_icon.name, draggable=draggable)
     marker.write(w)
 
     # Write the marker's info window, if specified:
@@ -195,3 +248,42 @@ def directions(self, origin, destination, **kwargs):
     .. image:: GoogleMapPlotter.directions.png
     '''
     self._routes.append(_Route_mod(origin, destination, **kwargs))
+
+def marker(self, lat, lng, color='#FF0000', c=None, title=None, precision=6, label=None, **kwargs):
+    '''
+    Display a marker.
+
+    Args:
+        lat (float): Latitude of the marker.
+        lng (float): Longitude of the marker.
+
+    Optional:
+
+    Args:
+        color/c (str): Marker color. Can be hex ('#00FFFF'), named ('cyan'), or matplotlib-like ('c'). Defaults to red.
+        title (str): Hover-over title of the marker.
+        precision (int): Number of digits after the decimal to round to for lat/lng values. Defaults to 6.
+        label (str): Label displayed on the marker.
+        info_window (str): HTML content to be displayed in a pop-up `info window`_.
+        draggable (bool): Whether or not the marker is `draggable`_.
+
+    .. _info window: https://developers.google.com/maps/documentation/javascript/infowindows
+    .. _draggable: https://developers.google.com/maps/documentation/javascript/markers#draggable
+
+    Usage::
+
+        import gmplot
+        apikey = '' # (your API key here)
+        gmap = gmplot.GoogleMapPlotter(37.766956, -122.438481, 13, apikey=apikey)
+
+        gmap.marker(37.793575, -122.464334, label='H', info_window="<a href='https://www.presidio.gov/'>The Presidio</a>")
+        gmap.marker(37.768442, -122.441472, color='green', title='Buena Vista Park')
+        gmap.marker(37.783333, -122.439494, precision=2, color='#FFD700')
+
+        gmap.draw('map.html')
+
+    .. image:: GoogleMapPlotter.marker.png
+    '''
+    self.points.append(
+        (lat, lng, c or color, title, precision, label, kwargs.get('label_color'), kwargs.get('info_window'), kwargs.get('draggable')))
+    print(kwargs.get('label_color'))
