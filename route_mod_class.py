@@ -1,8 +1,6 @@
 from gmplot.utility import _get_value, _INDENT_LEVEL
 from gmplot.gmplot import _format_LatLng
 from gmplot.gmplot import _MarkerIcon
-from gmplot.gmplot import _Marker
-from gmplot.gmplot import _MarkerInfoWindow
 
 import json
 
@@ -128,11 +126,12 @@ class _Marker_mod(object):
         self._name = kwargs.get('name')
         self._title = kwargs.get('title')
         self._label = kwargs.get('label')
-        self._label_color = kwargs.get('label_color')
         self._icon = kwargs.get('icon')
         self._draggable = kwargs.get('draggable')
-
-
+        self._label_color = kwargs.get('label_color')
+        self._label_font_family = kwargs.get('label_font_family')
+        self._label_font_size = kwargs.get('label_font_size')
+        self._label_font_weight = kwargs.get('label_font_weight')
 
     def write(self, w):
         '''
@@ -148,10 +147,19 @@ class _Marker_mod(object):
         w.write('position: %s,' % self._position)
 
         if self._title is not None: w.write('title: "%s",' % self._title)
-        if self._label is not None: w.write('''label: {
-                                                 text: "%s",
-                                                 color: "%s"
-                                            },''' % (self._label, self._label_color))
+        if self._label is not None:
+            w.write('label: {')
+            w.indent()
+            w.write('text: "%s",' % self._label)
+            w.write('color: "%s",' % self._label_color)
+            if self._label_font_family is not None:
+                w.write('fontFamily: "%s"' % self._label_font_family)
+            if self._label_font_size is not None:
+                w.write('fontSize: "%s",' % self._label_font_size)
+            if self._label_font_weight is not None:
+                w.write('fontWeight: "%s"' % self._label_font_weight)
+            w.dedent()
+            w.write('},')
         if self._icon is not None: w.write('icon: %s,' % self._icon)
         if self._draggable is not None: w.write('draggable: %s,' % str(self._draggable).lower())
 
@@ -162,7 +170,9 @@ class _Marker_mod(object):
 
 
 # GoogleMapPlotter
-def write_point(self, w, lat, lng, color, title, precision, color_cache, label, label_color=None, info_window=None, draggable=None ): # TODO: Bundle args into some Point or Marker class (counts as an API change).
+def write_point(self, w, lat, lng, color, title, precision, color_cache, label, info_window=None, draggable=None,
+                label_color=None, label_font_family=None, label_font_size=None, label_font_weight=None ): # TODO: Bundle args into some Point or Marker class (counts as an API change).
+
     # Write the marker icon (if it isn't written already).
     marker_icon = _MarkerIcon(color)
     marker_icon.write(w, color_cache)
@@ -171,7 +181,10 @@ def write_point(self, w, lat, lng, color, title, precision, color_cache, label, 
     marker_name = ('info_marker_%d' % self._num_info_markers) if info_window is not None else None
 
     # Write the actual marker:
-    marker = _Marker_mod(_format_LatLng(lat, lng, precision), name=marker_name, title=title, label=label, label_color=label_color, icon=marker_icon.name, draggable=draggable)
+    marker = _Marker_mod(_format_LatLng(lat, lng, precision), name=marker_name, title=title, label=label,
+                         icon=marker_icon.name, draggable=draggable,
+                         label_color=label_color, label_font_family=label_font_family,
+                         label_font_size=label_font_size, label_font_weight=label_font_weight)
     marker.write(w)
 
     # Write the marker's info window, if specified:
@@ -249,6 +262,7 @@ def directions(self, origin, destination, **kwargs):
     '''
     self._routes.append(_Route_mod(origin, destination, **kwargs))
 
+# GoogleMapPlotter
 def marker(self, lat, lng, color='#FF0000', c=None, title=None, precision=6, label=None, **kwargs):
     '''
     Display a marker.
@@ -285,5 +299,15 @@ def marker(self, lat, lng, color='#FF0000', c=None, title=None, precision=6, lab
     .. image:: GoogleMapPlotter.marker.png
     '''
     self.points.append(
-        (lat, lng, c or color, title, precision, label, kwargs.get('label_color'), kwargs.get('info_window'), kwargs.get('draggable')))
-    print(kwargs.get('label_color'))
+        (lat, lng, c or color, title, precision, label, kwargs.get('info_window'), kwargs.get('draggable'),
+         kwargs.get('label_color'), kwargs.get('label_font_family'), kwargs.get('label_font_size'), kwargs.get('label_font_weight')))
+
+
+# GoogleMapPlotter
+def write_points(self, w, color_cache=set()):
+    # TODO: Having a mutable set as a default parameter is done on purpose for backward compatibility.
+    #       Should get rid of this in next major version (counts as an API change of course).
+    self._num_info_markers = 0  # TODO: Instead of resetting the count here, point writing should be refactored into its own class (counts as an API change).
+    for point in self.points:
+        self.write_point(w, point[0], point[1], point[2], point[3], point[4], color_cache, point[5], point[6],
+                         point[7], point[8], point[9], point[10], point[11])  # TODO: Not maintainable.

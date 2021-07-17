@@ -101,7 +101,8 @@ def main():
         #solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
         opt_routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
         if conf_dict['map']:
-            map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'])
+            map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'], conf_dict['model'],
+                               conf_dict['region_number'])
     else:
         print('No solution found.')
 
