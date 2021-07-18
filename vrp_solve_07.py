@@ -2,7 +2,7 @@ import math
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
-# TODO: add capacity constraint
+# DONE: add capacity constraint
 # DONE: add in exchange times at each stop
 # DONE: add in break time per route
 # DONE: add function to output solutions in array, possibly CSV
@@ -27,19 +27,22 @@ def format_ORtools_data(dist_mtrx, dur_mtrx, stop_info, conf_dict):
         'depot': 0,
         'library_names': stop_info['stop_short_name'].tolist(),
         'library_ids': stop_info.index.tolist(),
-        'service_time': stop_info['service_time_mins'].astype(float).multiply(SECONDS_PER_MINUTE).astype(int).tolist()
+        'service_time': stop_info['service_time_mins'].astype(float).multiply(SECONDS_PER_MINUTE).astype(int).tolist(),
+        'demands': stop_info['avg_pickup'].astype(int).tolist(),
+        'vehicle_capacities': [conf_dict['veh_cap']] * conf_dict['num_vehicles']
     }
 
     # exchange time at each stop
     problem_data_dict['service_time'][problem_data_dict['depot']] = 0
     assert len(problem_data_dict['duration_matrix']) == len(problem_data_dict['service_time'])
-
+    print(problem_data_dict['vehicle_capacities'])
     return problem_data_dict
 
 
 def vrp_setup(vrp_data_dict, config_dict):
     # 1.To "force" assignment of a node to a specific vehicle you can use:
     # routing.VehicleVar(locatin_index).SetValue(vehicle_id)
+    # https://gist.github.com/Mizux/f200bd2b0fc6ad622922b0ca9e868823
 
     # create routing index manager
     index_manager = pywrapcp.RoutingIndexManager(
@@ -107,6 +110,25 @@ def vrp_setup(vrp_data_dict, config_dict):
     duration_dimension = routing_model.GetDimensionOrDie('Duration')
     # [END time dimension]
 
+    # [START capacity constraint]
+    def demand_callback(from_index):
+        """Returns the demand of the node."""
+        # Convert from routing variable Index to demands NodeIndex.
+        from_node = index_manager.IndexToNode(from_index)
+        return vrp_data_dict['demands'][from_node]
+
+    demand_callback_index = routing_model.RegisterUnaryTransitCallback(demand_callback)
+
+    routing_model.AddDimensionWithVehicleCapacity(
+        demand_callback_index,
+        0,
+        vrp_data_dict['vehicle_capacities'],
+        True,
+        'Capacity'
+    )
+
+    # [END capacity constraint]
+
     # [START break_constraint]
     # https://github.com/google/or-tools/blob/master/ortools/constraint_solver/samples/vrp_breaks.py
     # warning: Need a pre-travel array using the solver's index order.
@@ -140,14 +162,30 @@ def vrp_setup(vrp_data_dict, config_dict):
         duration_dimension.SetGlobalSpanCostCoefficient(100)
 
     return routing_model, index_manager
-    ### break here into new function
+
 
 def solve_vrp(vrp_model):
 
     #
     search_parameters = pywrapcp.DefaultRoutingSearchParameters()
-    search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.SAVINGS
+
+    search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.AUTOMATIC
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.SAVINGS
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.CHRISTOFIDES
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.GLOBAL_CHEAPEST_ARC
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_ARC
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.FIRST_UNBOUND_MIN_VALUE
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION
+    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_INSERTION
+
     search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.AUTOMATIC
+    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT
+    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
+    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING
+    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH
+    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.OBJECTIVE_TABU_SEARCH
+
     search_parameters.time_limit.seconds = 60
     search_parameters.log_search = False
 
@@ -192,11 +230,13 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution):
 
     distance_dimension = routing_mdl.GetDimensionOrDie('Distance')
     time_dimension = routing_mdl.GetDimensionOrDie('Duration')
+    volume_dimension = routing_mdl.GetDimensionOrDie('Capacity')
     break_intervals = solution.IntervalVarContainer()
 
     for vehicle_id in range(model_data_dict['num_vehicles']):
 
         num_stops = 0
+
 
         index = routing_mdl.Start(vehicle_id)
         plan_output = f'Route for vehicle {vehicle_id + 1}:\n\t'
@@ -213,10 +253,12 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution):
 
         route_distance = solution.Value(distance_dimension.CumulVar(index))
         route_time = solution.Value(time_dimension.CumulVar(index))
+        route_load = solution.Value(volume_dimension.CumulVar(index))
 
         plan_output += f' {model_data_dict["library_names"][idx_manager.IndexToNode(index)]}\n'
         plan_output += f'\tRoute distance: {route_distance/METERS_PER_MILE:.2f} miles\n'
         plan_output += f'\tRoute time: {format_time_display(route_time)}\n'
+        plan_output += f'\tRoute load: {route_load} containers\n'
         plan_output += f'\tNumber of stops: {num_stops - 1}\n'
 
         brk = break_intervals.Element(vehicle_id)

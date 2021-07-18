@@ -20,6 +20,7 @@ def main():
         prog='tool',
         description='Set up and solve a Vehicle Routing Problem for a proposed WI library delivery region.',
         usage='input_file {ideal, starter} region_number {distance, duration} num_vehicles max_hours max_miles'
+              ' veh_cap break_time_minutes'
               '\n       [-g/--geocode] [-r/--regions] [-o/--output] [--out_format {csv, xlsx}] [-m/--map] [-h/--help]',
         add_help=False,
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27, width=200)
@@ -43,6 +44,8 @@ def main():
                              help='Maximum allowable route time in hours.')
     param_group.add_argument('max_miles', action='store', default=500, type=float,
                              help='Maximum allowable route distance in miles.')
+    param_group.add_argument('veh_cap', action='store', default=50, type=int,
+                             help='Vehicle capacity (all vehicles)')
     param_group.add_argument('break_time_minutes', action='store', default=0, type=float,
                              help='Total break time per route in minutes.')
 
@@ -98,19 +101,13 @@ def main():
     vrp_solution = solve.solve_vrp(vrp_model)
 
     if vrp_solution:
-        #solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+        solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
         opt_routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
         if conf_dict['map']:
             map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'], conf_dict['model'],
                                conf_dict['region_number'])
     else:
         print('No solution found.')
-
-    #for i, route in enumerate(opt_routes):
-    #    print('Route', i+1, route)
-
-
-    #map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'])
 
 
 if __name__ == '__main__':

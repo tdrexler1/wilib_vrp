@@ -67,7 +67,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
     gmap = gmplot.GoogleMapPlotter(
         float(stop_data_dict['latitude'][hub_id]),
         float(stop_data_dict['longitude'][hub_id]),
-        15,
+        10,
         apikey=gmaps_api_key
     )
 
