@@ -2,6 +2,7 @@ import gmplot
 import webbrowser
 import string
 import random
+import os
 
 # TODO: need to override class _Route(object)
 from route_mod_class import write_point, write_map, directions, marker, write_points
@@ -110,10 +111,9 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
 
     gmap.draw('gmap.html')
 
-    filepath = 'C:/Users/tdrex/PycharmProjects/wilib_vrp/gmap.html'
-    #filepath = 'C:/Users/zzzlib/PycharmProjects/wilib_vrp/gmap.html'
+    filepath = os.path.expanduser('~/PycharmProjects/wilib_vrp/gmap.html')
 
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
     webbrowser.get(chrome_path).open('file://' + filepath)
-    #webbrowser.open('file:\\' + filepath)
+    #webbrowser.open('file://' + filepath)

@@ -19,9 +19,15 @@ def main():
     parser_obj = argparse.ArgumentParser(
         prog='tool',
         description='Set up and solve a Vehicle Routing Problem for a proposed WI library delivery region.',
-        usage='input_file {ideal, starter} region_number {distance, duration} num_vehicles max_hours max_miles'
-              ' veh_cap break_time_minutes'
-              '\n       [-g/--geocode] [-r/--regions] [-o/--output] [--out_format {csv, xlsx}] [-m/--map] [-h/--help]',
+        usage='input_file {ideal, starter} region_number {distance, duration, capacity} '
+              'num_vehicles max_hours max_miles veh_cap break_time_minutes'
+              '\n       {automatic, path_cheapest_arc, savings, sweep, christofides, parallel_cheapest_insertion, '
+              'local_cheapest_insertion, global_cheapest_arc, local_cheapest_arc, first_unbound_min_value}'
+              '\n       {automatic, greedy_descent, guided_local_search, simulated_annealing, tabu_search, '
+              'objective_tabu_search}'
+              '\n       [-g/--geocode] [-r/--regions] [-o/--output] '
+              '[--out_format {csv, xlsx}] [-m/--map] [-t/--text_file] '
+              '\n       [-h/--help]',
         add_help=False,
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27, width=200)
     )
@@ -36,8 +42,8 @@ def main():
 
     param_group = parser_obj.add_argument_group(title='VRP parameter arguments')
     param_group.add_argument('constraint', action='store', default='duration', type=str,
-                             choices=['distance', 'duration'],
-                             help="Select whether routes should be balanced by 'distance' or 'duration'.")
+                             choices=['distance', 'duration', 'capacity'],
+                             help="Select whether routes should be balanced by 'distance', 'duration', or 'capacity'.")
     param_group.add_argument('num_vehicles', action='store', default=1, type=int, choices=range(1, 11),
                              help='Number of vehicles/routes (1-10).')
     param_group.add_argument('max_hours', action='store', default=8, type=float,
@@ -49,16 +55,33 @@ def main():
     param_group.add_argument('break_time_minutes', action='store', default=0, type=float,
                              help='Total break time per route in minutes.')
 
+    strategy_group = parser_obj.add_argument_group(title='Search strategy arguments.')
+    strategy_group.add_argument('first_solution_strategy',
+                                choices=['automatic', 'path_cheapest_arc', 'savings', 'sweep', 'christofides',
+                                         'parallel_cheapest_insertion', 'local_cheapest_insertion',
+                                         'global_cheapest_arc', 'local_cheapest_arc', 'first_unbound_min_value'],
+                                action='store', default='automatic', type=str,
+                                help='Method the solver uses to find an initial solution.')
+    strategy_group.add_argument('local_search_options', choices=['automatic', 'greedy_descent', 'guided_local_search',
+                                                                 'simulated_annealing', 'tabu_search',
+                                                                 'objective_tabu_search'],
+                                action='store', default='automatic', type=str,
+                                help='Local search strategy/metaheuristic.')
+
     options_group = parser_obj.add_argument_group(title='Optional arguments')
 
-    options_group.add_argument('-g', '--geocode', action='store_true', help='Flag to add location geocode data.')
-    options_group.add_argument('-r', '--regions', action='store_true', help='Flag to add proposed region data.')
-    options_group.add_argument('-o', '--output', action='store_true', help='Flag to export updated data to a file.')
+    options_group.add_argument('-g', '--geocode', action='store_true', help='Add location geocode data to data file.')
+    options_group.add_argument('-r', '--regions', action='store_true', help='Add proposed region data to data file.')
+    options_group.add_argument('-o', '--output', action='store_true', help='Export updated data set to a file.')
     options_group.add_argument('--out_format', required='-o' in sys.argv or '--output' in sys.argv,
                         choices=['csv', 'xlsx'], default='csv', type=str,
-                        help="Output file format ('csv' or 'xlsx').")
-    options_group.add_argument('-m', '--map', action='store_true', help='Flag to map optimal route plan '
+                        help="Updated data set output file format ('csv' or 'xlsx').")
+    options_group.add_argument('-m', '--map', action='store_true', help='Map optimal route plan '
                                                                         '(opens in default browser window).')
+    options_group.add_argument('-t', '--text_file', action='store_true', help='Export solution to text file.')
+    options_group.add_argument('-v', '--vehicle_increment', action='store_true', help='Add one vehicle to fleet and '
+                                                                                      'resolve VRP until '
+                                                                                      'feasible solution is found.')
     options_group.add_argument('-h', '--help', action='help', help='Show this message and exit.')
 
     args_dict = vars(parser_obj.parse_args())
