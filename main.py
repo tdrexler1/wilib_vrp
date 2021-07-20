@@ -13,18 +13,16 @@ import yaml
 pd.options.display.width = 0
 pd.options.display.max_rows = 1000
 
-
 def main():
     # noinspection PyTypeChecker
     parser_obj = argparse.ArgumentParser(
         prog='tool',
         description='Set up and solve a Vehicle Routing Problem for a proposed WI library delivery region.',
-        usage='input_file {ideal, starter} region_number {distance, duration, capacity} '
+        usage='input_file {ideal, starter} region_number {distance, duration} '
               'num_vehicles max_hours max_miles veh_cap break_time_minutes'
               '\n       {automatic, path_cheapest_arc, savings, sweep, christofides, parallel_cheapest_insertion, '
               'local_cheapest_insertion, global_cheapest_arc, local_cheapest_arc, first_unbound_min_value}'
-              '\n       {automatic, greedy_descent, guided_local_search, simulated_annealing, tabu_search, '
-              'objective_tabu_search}'
+              '\n       {automatic, greedy_descent, guided_local_search, simulated_annealing, tabu_search}'
               '\n       [-g/--geocode] [-r/--regions] [-o/--output] '
               '[--out_format {csv, xlsx}] [-m/--map] [-t/--text_file] '
               '\n       [-h/--help]',
@@ -42,8 +40,8 @@ def main():
 
     param_group = parser_obj.add_argument_group(title='VRP parameter arguments')
     param_group.add_argument('constraint', action='store', default='duration', type=str,
-                             choices=['distance', 'duration', 'capacity'],
-                             help="Select whether routes should be balanced by 'distance', 'duration', or 'capacity'.")
+                             choices=['distance', 'duration'],
+                             help="Select whether routes should be balanced by 'distance' or 'duration'.")
     param_group.add_argument('num_vehicles', action='store', default=1, type=int, choices=range(1, 11),
                              help='Number of vehicles/routes (1-10).')
     param_group.add_argument('max_hours', action='store', default=8, type=float,
@@ -62,9 +60,9 @@ def main():
                                          'global_cheapest_arc', 'local_cheapest_arc', 'first_unbound_min_value'],
                                 action='store', default='automatic', type=str,
                                 help='Method the solver uses to find an initial solution.')
-    strategy_group.add_argument('local_search_options', choices=['automatic', 'greedy_descent', 'guided_local_search',
-                                                                 'simulated_annealing', 'tabu_search',
-                                                                 'objective_tabu_search'],
+    strategy_group.add_argument('local_search_metaheuristic', choices=['automatic', 'greedy_descent',
+                                                                       'guided_local_search', 'simulated_annealing',
+                                                                       'tabu_search'],
                                 action='store', default='automatic', type=str,
                                 help='Local search strategy/metaheuristic.')
 
@@ -121,7 +119,7 @@ def main():
 
     vrp_model, vrp_index = solve.vrp_setup(vrp_input_dict, conf_dict)
 
-    vrp_solution = solve.solve_vrp(vrp_model)
+    vrp_solution = solve.solve_vrp(vrp_model, conf_dict)
 
     if vrp_solution:
         solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)

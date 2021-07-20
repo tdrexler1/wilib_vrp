@@ -35,7 +35,7 @@ def format_ORtools_data(dist_mtrx, dur_mtrx, stop_info, conf_dict):
     # exchange time at each stop
     problem_data_dict['service_time'][problem_data_dict['depot']] = 0
     assert len(problem_data_dict['duration_matrix']) == len(problem_data_dict['service_time'])
-    print(problem_data_dict['vehicle_capacities'])
+
     return problem_data_dict
 
 
@@ -126,7 +126,7 @@ def vrp_setup(vrp_data_dict, config_dict):
         True,
         'Capacity'
     )
-
+    capacity_dimension = routing_model.GetDimensionOrDie('Capacity')
     # [END capacity constraint]
 
     # [START break_constraint]
@@ -157,36 +157,48 @@ def vrp_setup(vrp_data_dict, config_dict):
     if config_dict['constraint'] == 'distance':
         routing_model.SetArcCostEvaluatorOfAllVehicles(distance_callback_index)
         distance_dimension.SetGlobalSpanCostCoefficient(100)
-    else:
+    elif config_dict['constraint'] == 'duration':
         routing_model.SetArcCostEvaluatorOfAllVehicles(duration_callback_index)
         duration_dimension.SetGlobalSpanCostCoefficient(100)
 
     return routing_model, index_manager
 
 
-def solve_vrp(vrp_model):
+def solve_vrp(vrp_model, config_dict):
+    search_param_args = \
+        {
+            'first_solution_strategy':
+                {
+                    'automatic': routing_enums_pb2.FirstSolutionStrategy.AUTOMATIC,
+                    'path_cheapest_arc': routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC,
+                    'savings': routing_enums_pb2.FirstSolutionStrategy.SAVINGS,
+                    'sweep': routing_enums_pb2.FirstSolutionStrategy.SWEEP,
+                    'christofides': routing_enums_pb2.FirstSolutionStrategy.CHRISTOFIDES,
+                    'parallel_cheapest_insertion': routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION,
+                    'local_cheapest_insertion': routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_INSERTION,
+                    'global_cheapest_arc': routing_enums_pb2.FirstSolutionStrategy.GLOBAL_CHEAPEST_ARC,
+                    'local_cheapest_arc': routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_ARC,
+                    'first_unbound_min_value': routing_enums_pb2.FirstSolutionStrategy.FIRST_UNBOUND_MIN_VALUE
+                },
+            'local_search_metaheuristic':
+                {
+                    'automatic': routing_enums_pb2.LocalSearchMetaheuristic.AUTOMATIC,
+                    'greedy_descent': routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT,
+                    'guided_local_search': routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH,
+                    'simulated_annealing': routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING,
+                    'tabu_search': routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH
+                }
+        }
 
     #
     search_parameters = pywrapcp.DefaultRoutingSearchParameters()
 
-    search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.AUTOMATIC
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.SAVINGS
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.CHRISTOFIDES
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.GLOBAL_CHEAPEST_ARC
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_ARC
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.FIRST_UNBOUND_MIN_VALUE
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION
-    #search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_INSERTION
+    search_parameters.first_solution_strategy = \
+        search_param_args['first_solution_strategy'][config_dict['first_solution_strategy']]
+    search_parameters.local_search_metaheuristic = \
+        search_param_args['local_search_metaheuristic'][config_dict['local_search_metaheuristic']]
 
-    search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.AUTOMATIC
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH
-    #search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.OBJECTIVE_TABU_SEARCH
-
-    search_parameters.time_limit.seconds = 60
+    search_parameters.time_limit.seconds = 30
     search_parameters.log_search = False
 
     # solve the problem
@@ -230,7 +242,7 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution):
 
     distance_dimension = routing_mdl.GetDimensionOrDie('Distance')
     time_dimension = routing_mdl.GetDimensionOrDie('Duration')
-    volume_dimension = routing_mdl.GetDimensionOrDie('Capacity')
+    capacity_dimension = routing_mdl.GetDimensionOrDie('Capacity')
     break_intervals = solution.IntervalVarContainer()
 
     for vehicle_id in range(model_data_dict['num_vehicles']):
@@ -253,7 +265,7 @@ def print_solution(model_data_dict, idx_manager, routing_mdl, solution):
 
         route_distance = solution.Value(distance_dimension.CumulVar(index))
         route_time = solution.Value(time_dimension.CumulVar(index))
-        route_load = solution.Value(volume_dimension.CumulVar(index))
+        route_load = solution.Value(capacity_dimension.CumulVar(index))
 
         plan_output += f' {model_data_dict["library_names"][idx_manager.IndexToNode(index)]}\n'
         plan_output += f'\tRoute distance: {route_distance/METERS_PER_MILE:.2f} miles\n'
