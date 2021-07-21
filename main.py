@@ -14,6 +14,7 @@ pd.options.display.width = 0
 pd.options.display.max_rows = 1000
 
 def main():
+    # TODO: add this all to a function or separate file
     # noinspection PyTypeChecker
     parser_obj = argparse.ArgumentParser(
         prog='tool',

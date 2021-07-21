@@ -4,7 +4,6 @@ import string
 import random
 import os
 
-# TODO: need to override class _Route(object)
 from route_mod_class import write_point, write_map, directions, marker, write_points
 from gmplot.gmplot import GoogleMapPlotter
 
@@ -30,7 +29,7 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
                          'school': 'School library',
                          'uw_madison': 'UW-Madison campus library',
                          'uw_system': 'UW-System campus library',
-                         'wi_state_gove': 'WI Government',
+                         'wi_state_gov': 'WI Government',
                          'wi_tech_college': 'WI Technical College library'}
 
     iw_text_string = f"<strong>{library_data['stop_full_name'][lib_id]}</strong>" \
@@ -56,8 +55,6 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
 
 
 def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_number):
-
-
 
     route_colors = random.sample(ROUTE_COLORS, len(route_array))
 
@@ -116,4 +113,6 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
     webbrowser.get(chrome_path).open('file://' + filepath)
+
+    # open system default browser
     #webbrowser.open('file://' + filepath)
