@@ -69,12 +69,15 @@ def main():
 
     options_group = parser_obj.add_argument_group(title='Optional arguments')
 
+    ## TODO: maybe take geocoding out of main - standalone proggram
     options_group.add_argument('-g', '--geocode', action='store_true', help='Add location geocode data to data file.')
     options_group.add_argument('-r', '--regions', action='store_true', help='Add proposed region data to data file.')
     options_group.add_argument('-o', '--output', action='store_true', help='Export updated data set to a file.')
     options_group.add_argument('--out_format', required='-o' in sys.argv or '--output' in sys.argv,
                         choices=['csv', 'xlsx'], default='csv', type=str,
                         help="Updated data set output file format ('csv' or 'xlsx').")
+
+    # TODO: add optional arg for screenshot
     options_group.add_argument('-m', '--map', action='store_true', help='Map optimal route plan '
                                                                         '(opens in default browser window).')
     options_group.add_argument('-t', '--text_file', action='store_true', help='Export solution to text file.')

@@ -4,6 +4,10 @@ import string
 import random
 import os
 
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options # chromedriver must be in PATH
+import time
+
 from route_mod_class import write_point, write_map, directions, marker, write_points
 from gmplot.gmplot import GoogleMapPlotter
 
@@ -106,9 +110,11 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
                         info_window=write_infowindow_text(stop_data_dict, wp, m, n)
                         )
 
-    gmap.draw('gmap.html')
+    out_filename = 'gmaps\\' + model_name + '_' + \
+                   ('0' + str(region_number) if region_number < 10 else str(region_number)) + '.html'
+    gmap.draw(out_filename)
 
-    filepath = os.path.expanduser('~/PycharmProjects/wilib_vrp/gmap.html')
+    filepath = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\' + out_filename)
 
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
@@ -116,3 +122,18 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
 
     # open system default browser
     #webbrowser.open('file://' + filepath)
+
+    screenshot_map(filepath)
+
+def screenshot_map(map_filepath):
+
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+
+    png_filepath = map_filepath[:-4] + 'png'
+
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.set_window_size(1920, 1080)
+    driver.get(map_filepath)
+    time.sleep(5)
+    driver.save_screenshot(png_filepath)
