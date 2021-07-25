@@ -1,4 +1,3 @@
-import geocode_addresses_03 as geo
 import dist_matrix_05 as dist
 import vrp_solve_07 as solve
 import vrp_route_map_02 as map
@@ -13,8 +12,8 @@ import yaml
 pd.options.display.width = 0
 pd.options.display.max_rows = 1000
 
-def main():
-    # TODO: add this all to a function or separate file
+
+def parse_args():
     # noinspection PyTypeChecker
     parser_obj = argparse.ArgumentParser(
         prog='tool',
@@ -22,10 +21,10 @@ def main():
         usage='input_file {ideal, starter} region_number {distance, duration} '
               'num_vehicles max_hours max_miles veh_cap break_time_minutes'
               '\n       {automatic, path_cheapest_arc, savings, sweep, christofides, parallel_cheapest_insertion, '
-              'local_cheapest_insertion, global_cheapest_arc, local_cheapest_arc, first_unbound_min_value}'
+              '\n        local_cheapest_insertion, global_cheapest_arc, local_cheapest_arc, first_unbound_min_value}'
               '\n       {automatic, greedy_descent, guided_local_search, simulated_annealing, tabu_search}'
-              '\n       [-g/--geocode] [-r/--regions] [-o/--output] '
-              '[--out_format {csv, xlsx}] [-m/--map] [-t/--text_file] '
+              '\n       [-v/--vehicle_increment]'
+              '\n       [-d/--display] [-m/--map] [-s/--screenshot] [-t/--text_file]'
               '\n       [-h/--help]',
         add_help=False,
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27, width=200)
@@ -33,9 +32,9 @@ def main():
 
     setup_group = parser_obj.add_argument_group(title='Problem setup arguments')
     setup_group.add_argument('input_file', action='store', type=str,
-                        help="Name of file containing input library data ('csv' or 'xlsx' format).")
+                             help="Name of file containing input library data ('csv' or 'xlsx' format).")
     setup_group.add_argument('model', choices=['ideal', 'starter'], default='ideal',
-                        help='PLSR Delivery Workgroup proposed model version.')
+                             help='PLSR Delivery Workgroup proposed model version.')
     setup_group.add_argument('region_number', type=int, choices=range(1, 8) if 'ideal' in sys.argv else range(1, 9),
                              help='Model region number (1-7 for ideal model, 1-8 for starter model).')
 
@@ -66,27 +65,64 @@ def main():
                                                                        'tabu_search'],
                                 action='store', default='automatic', type=str,
                                 help='Local search strategy/metaheuristic.')
+    strategy_group.add_argument('-v', '--vehicle_increment', action='store_true', help='Add one vehicle to fleet and '
+                                                                                       'resolve VRP until '
+                                                                                       'feasible solution is found.')
 
-    options_group = parser_obj.add_argument_group(title='Optional arguments')
+    output_options_group = parser_obj.add_argument_group(title='Optional output arguments.')
+    output_options_group.add_argument('-d', '--display', action='store_true', help='Display solution on screen.')
+    output_options_group.add_argument('-m', '--map', action='store_true', help='Map optimal route plan '
+                                                                               '(opens in default browser window).')
+    output_options_group.add_argument('-s', '--screenshot', action='store_true',
+                                      help='Create a PNG screenshot of route plan map.')
+    output_options_group.add_argument('-t', '--text_file', action='store_true', help='Export solution to text file.')
 
-    ## TODO: maybe take geocoding out of main - standalone proggram
-    options_group.add_argument('-g', '--geocode', action='store_true', help='Add location geocode data to data file.')
-    options_group.add_argument('-r', '--regions', action='store_true', help='Add proposed region data to data file.')
-    options_group.add_argument('-o', '--output', action='store_true', help='Export updated data set to a file.')
-    options_group.add_argument('--out_format', required='-o' in sys.argv or '--output' in sys.argv,
-                        choices=['csv', 'xlsx'], default='csv', type=str,
-                        help="Updated data set output file format ('csv' or 'xlsx').")
+    output_options_group.add_argument('-h', '--help', action='help', help='Show this message and exit.')
 
-    # TODO: add optional arg for screenshot
-    options_group.add_argument('-m', '--map', action='store_true', help='Map optimal route plan '
-                                                                        '(opens in default browser window).')
-    options_group.add_argument('-t', '--text_file', action='store_true', help='Export solution to text file.')
-    options_group.add_argument('-v', '--vehicle_increment', action='store_true', help='Add one vehicle to fleet and '
-                                                                                      'resolve VRP until '
-                                                                                      'feasible solution is found.')
-    options_group.add_argument('-h', '--help', action='help', help='Show this message and exit.')
+    return vars(parser_obj.parse_args())
 
-    args_dict = vars(parser_obj.parse_args())
+
+def construct_model_id(args_dict):
+
+    search_param_args = \
+        {
+            'first_solution_strategy':
+                {
+                    'path_cheapest_arc': '01',
+                    'savings': '02',
+                    'sweep': '03',
+                    'christofides': '04',
+                    'parallel_cheapest_insertion': '05',
+                    'local_cheapest_insertion': '06',
+                    'global_cheapest_arc': '07',
+                    'local_cheapest_arc': '08',
+                    'first_unbound_min_value': '09',
+                    'automatic': '10'
+                },
+            'local_search_metaheuristic':
+                {
+                    'greedy_descent': '01',
+                    'guided_local_search': '02',
+                    'simulated_annealing': '03',
+                    'tabu_search': '04',
+                    'automatic': '05',
+                }
+        }
+
+    id_string = 'idl' if args_dict['model'] == 'ideal' else 'str'
+    id_string += str(args_dict['region_number']) if args_dict['region_number'] < 10 else str(args_dict['region_number'])
+    id_string += '_'
+    id_string += ('0' + str(int(args_dict['max_hours']))) if args_dict['max_hours'] < 10 \
+        else str(int(args_dict['max_hours']))
+    id_string += search_param_args['first_solution_strategy'][args_dict['first_solution_strategy']]
+    id_string += search_param_args['local_search_metaheuristic'][args_dict['local_search_metaheuristic']]
+
+    return id_string
+
+
+def main():
+
+    args_dict = parse_args()
 
     stop_data = pd.read_excel(
         args_dict['input_file'],
@@ -104,6 +140,8 @@ def main():
     api_dict = key_data['google_maps']
 
     conf_dict = {**args_dict, **api_dict}
+
+    conf_dict['model_id'] = construct_model_id(args_dict)
 
     region_data = dist.prep_input_data(stop_data, conf_dict)
 
@@ -126,11 +164,25 @@ def main():
     vrp_solution = solve.solve_vrp(vrp_model, conf_dict)
 
     if vrp_solution:
-        solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
-        opt_routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
-        if conf_dict['map']:
-            map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'], conf_dict['model'],
-                               conf_dict['region_number'])
+
+        output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\solution_output\\')
+        if not os.path.isdir(output_dir_path):
+            os.mkdir(output_dir_path)
+        output_file_name = output_dir_path + conf_dict['model_id']
+
+        if conf_dict['display']:
+            solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+
+        if conf_dict['map'] or conf_dict['screenshot']:
+
+            opt_routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+            route_map = map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'],
+                                           conf_dict['model_id'], output_file_name)
+
+            if conf_dict['map']:
+                map.display_map(route_map)
+            if conf_dict['screenshot']:
+                map.screenshot_map(route_map)
     else:
         print('No solution found.')
 

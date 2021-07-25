@@ -306,9 +306,3 @@ def get_routes(model_data_dict, idx_manager, routing_mdl, solution):
             route.append(model_data_dict['library_ids'][idx_manager.IndexToNode(index)])
         routes.append(route)
     return routes
-
-def main():
-    pass
-
-if __name__ == '__main__':
-    main()

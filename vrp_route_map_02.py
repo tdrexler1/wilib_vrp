@@ -2,7 +2,6 @@ import gmplot
 import webbrowser
 import string
 import random
-import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options # chromedriver must be in PATH
@@ -58,7 +57,7 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
     return iw_text_string
 
 
-def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_number):
+def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, map_file_name):
 
     route_colors = random.sample(ROUTE_COLORS, len(route_array))
 
@@ -73,11 +72,12 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
         apikey=gmaps_api_key
     )
 
+    proposal_type = 'Ideal' if model_id[0:2] == 'idl' else 'Starter'
     gmap.marker(float(stop_data_dict['latitude'][hub_id]), float(stop_data_dict['longitude'][hub_id]),
                 color='white',
                 label='*',
-                title=f"Region {region_number} Hub",
-                info_window=f"<strong>{model_name.capitalize()} proposal, region {region_number} hub</strong>"
+                title=f"Region {model_id[3:4]} Hub",
+                info_window=f"<strong>{proposal_type} proposal, region {model_id[3:4]} hub</strong>"
                             f"<br>"
                             f"<br>"
                             f"Location:"
@@ -110,30 +110,31 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_name, region_num
                         info_window=write_infowindow_text(stop_data_dict, wp, m, n)
                         )
 
-    out_filename = 'gmaps\\' + model_name + '_' + \
-                   ('0' + str(region_number) if region_number < 10 else str(region_number)) + '.html'
-    gmap.draw(out_filename)
+    gmap_file = map_file_name + '.html'
 
-    filepath = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\' + out_filename)
+    gmap.draw(gmap_file)
+
+    return gmap_file
+
+def display_map(route_map):
 
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-    webbrowser.get(chrome_path).open('file://' + filepath)
+    webbrowser.get(chrome_path).open('file://' + route_map)
 
     # open system default browser
-    #webbrowser.open('file://' + filepath)
+    #webbrowser.open('file://' + map_file_name + route_map)
 
-    screenshot_map(filepath)
 
-def screenshot_map(map_filepath):
+def screenshot_map(route_map):
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
-    png_filepath = map_filepath[:-4] + 'png'
+    png_filepath = route_map[:-4] + 'png'
 
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(1920, 1080)
-    driver.get(map_filepath)
+    driver.get(route_map)
     time.sleep(5)
     driver.save_screenshot(png_filepath)

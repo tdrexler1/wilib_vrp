@@ -124,11 +124,11 @@ def main():
                                            '\n     [-h]',
                                      add_help=False)
     parser.add_argument('input_file', action='store', type=str,
-                        help="Input file of library data ('csv' or 'xlsx')")
+                        help="Name of file containing input library data ('csv' or 'xlsx' format).")
     parser.add_argument('out_format', choices=['csv', 'xlsx'], default='csv', type=str,
-                        help="Output file format ('csv' or 'xlsx')")
-    parser.add_argument('-g', '--geocode', action='store_true', help='flag to add location geocode data')
-    parser.add_argument('-r', '--regions', action='store_true', help='flag to add proposed region data')
+                        help="Updated data set output file format ('csv' or 'xlsx').")
+    parser.add_argument('-g', '--geocode', action='store_true', help='Add location geocode data to data file.')
+    parser.add_argument('-r', '--regions', action='store_true', help='Add proposed region data to data file.')
 
     args_dict = vars(parser.parse_args())
 
