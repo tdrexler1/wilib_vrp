@@ -215,7 +215,6 @@ def solve_vrp(vrp_model, config_dict):
     return vrp_solution
 
 
-
 def format_time_display(time_in_seconds):
 
     mins, secs = divmod(time_in_seconds, 60)
@@ -306,3 +305,70 @@ def get_routes(model_data_dict, idx_manager, routing_mdl, solution):
             route.append(model_data_dict['library_ids'][idx_manager.IndexToNode(index)])
         routes.append(route)
     return routes
+
+def build_solution_string(model_data_dict, idx_manager, routing_mdl, solution):
+    """ Prints VRP solution to console.
+
+    Parameters:
+        model_data_dict: Dict with distance & duration matrices and other problem data.
+        idx_manager: OR-Tools routing index manager object.
+        routing_mdl: OR-Tools routing model object.
+        solution: OR-Tools solution object.
+    """
+
+    # tracking variables for all routes
+    total_distance = 0
+    total_time = 0
+    plan_output = ''
+
+    distance_dimension = routing_mdl.GetDimensionOrDie('Distance')
+    time_dimension = routing_mdl.GetDimensionOrDie('Duration')
+    capacity_dimension = routing_mdl.GetDimensionOrDie('Capacity')
+    break_intervals = solution.IntervalVarContainer()
+
+    for vehicle_id in range(model_data_dict['num_vehicles']):
+
+        num_stops = 0
+
+        index = routing_mdl.Start(vehicle_id)
+        plan_output += f'Route for vehicle {vehicle_id + 1}:\n\t'
+
+        # iterate over all stops on the route
+        while not routing_mdl.IsEnd(index):
+
+            # substitute library names for index numbers
+            plan_output += f'{model_data_dict["library_names"][idx_manager.IndexToNode(index)]} -> '
+
+            num_stops += 1
+
+            index = solution.Value(routing_mdl.NextVar(index))
+
+        route_distance = solution.Value(distance_dimension.CumulVar(index))
+        route_time = solution.Value(time_dimension.CumulVar(index))
+        route_load = solution.Value(capacity_dimension.CumulVar(index))
+
+        plan_output += f' {model_data_dict["library_names"][idx_manager.IndexToNode(index)]}\n'
+        plan_output += f'\tRoute distance: {route_distance/METERS_PER_MILE:.2f} miles\n'
+        plan_output += f'\tRoute time: {format_time_display(route_time)}\n'
+        plan_output += f'\tRoute load: {route_load} containers\n'
+        plan_output += f'\tNumber of stops: {num_stops - 1}\n'
+
+        brk = break_intervals.Element(vehicle_id)
+        if brk.PerformedValue():
+            plan_output += f'\tBreak: start time = {format_time_display(brk.StartValue())}; ' \
+                           f'end time = {format_time_display(brk.StartValue() + brk.DurationValue())}\n\n'
+        else:
+            plan_output += f'\tNo break.\n\n'
+
+        total_distance += route_distance
+        total_time += route_time
+
+    plan_output += f'Total distance, all routes: {total_distance/METERS_PER_MILE:.2f} miles\n'
+
+    total_mins, total_secs = divmod(total_time, 60)
+    total_hours, total_mins = divmod(total_mins, 60)
+    plan_output += f'Total time, all routes: {total_hours} {"hours" if total_hours > 1 else "hour"}, ' \
+                   f'{total_mins} {"minutes" if total_mins > 1 else "minute"}'
+    plan_output += f'\n'
+
+    return plan_output

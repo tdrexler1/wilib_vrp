@@ -219,11 +219,3 @@ def check_matrix_results(d_matrix):
         zero_indices == check_list
     except RuntimeError:
         print('There was a problem building the matrix.')
-
-
-def main():
-    pass
-
-
-if __name__ == '__main__':
-    main()

@@ -82,42 +82,42 @@ def parse_args():
     return vars(parser_obj.parse_args())
 
 
-def construct_model_id(args_dict):
-
-    search_param_args = \
-        {
-            'first_solution_strategy':
-                {
-                    'path_cheapest_arc': '01',
-                    'savings': '02',
-                    'sweep': '03',
-                    'christofides': '04',
-                    'parallel_cheapest_insertion': '05',
-                    'local_cheapest_insertion': '06',
-                    'global_cheapest_arc': '07',
-                    'local_cheapest_arc': '08',
-                    'first_unbound_min_value': '09',
-                    'automatic': '10'
-                },
-            'local_search_metaheuristic':
-                {
-                    'greedy_descent': '01',
-                    'guided_local_search': '02',
-                    'simulated_annealing': '03',
-                    'tabu_search': '04',
-                    'automatic': '05',
-                }
-        }
-
-    id_string = 'idl' if args_dict['model'] == 'ideal' else 'str'
-    id_string += str(args_dict['region_number']) if args_dict['region_number'] < 10 else str(args_dict['region_number'])
-    id_string += '_'
-    id_string += ('0' + str(int(args_dict['max_hours']))) if args_dict['max_hours'] < 10 \
-        else str(int(args_dict['max_hours']))
-    id_string += search_param_args['first_solution_strategy'][args_dict['first_solution_strategy']]
-    id_string += search_param_args['local_search_metaheuristic'][args_dict['local_search_metaheuristic']]
-
-    return id_string
+# def construct_model_id(args_dict):
+#
+#     search_param_codes = \
+#         {
+#             'first_solution_strategy':
+#                 {
+#                     'path_cheapest_arc': '01',
+#                     'savings': '02',
+#                     'sweep': '03',
+#                     'christofides': '04',
+#                     'parallel_cheapest_insertion': '05',
+#                     'local_cheapest_insertion': '06',
+#                     'global_cheapest_arc': '07',
+#                     'local_cheapest_arc': '08',
+#                     'first_unbound_min_value': '09',
+#                     'automatic': '10'
+#                 },
+#             'local_search_metaheuristic':
+#                 {
+#                     'greedy_descent': '01',
+#                     'guided_local_search': '02',
+#                     'simulated_annealing': '03',
+#                     'tabu_search': '04',
+#                     'automatic': '05',
+#                 }
+#         }
+#
+#     id_string = 'idl' if args_dict['model'] == 'ideal' else 'str'
+#     id_string += str(args_dict['region_number']) if args_dict['region_number'] < 10 else str(args_dict['region_number'])
+#     id_string += '_'
+#     id_string += ('0' + str(int(args_dict['max_hours']))) if args_dict['max_hours'] < 10 \
+#         else str(int(args_dict['max_hours']))
+#     id_string += search_param_codes['first_solution_strategy'][args_dict['first_solution_strategy']]
+#     id_string += search_param_codes['local_search_metaheuristic'][args_dict['local_search_metaheuristic']]
+#
+#     return id_string
 
 
 def main():
@@ -137,11 +137,12 @@ def main():
             key_data = yaml.full_load(api_keys)
     except OSError as e:
         print(e)
+
     api_dict = key_data['google_maps']
 
     conf_dict = {**args_dict, **api_dict}
 
-    conf_dict['model_id'] = construct_model_id(args_dict)
+    #conf_dict['model_id'] = construct_model_id(args_dict)
 
     region_data = dist.prep_input_data(stop_data, conf_dict)
 
@@ -157,6 +158,8 @@ def main():
     dist.check_matrix_results(distance_matrix)
     dist.check_matrix_results(duration_matrix)
 
+    # TODO: put this all in an object with model, solution, index manager, etc.
+
     vrp_input_dict = solve.format_ORtools_data(distance_matrix, duration_matrix, region_data, conf_dict)
 
     vrp_model, vrp_index = solve.vrp_setup(vrp_input_dict, conf_dict)
@@ -170,8 +173,20 @@ def main():
             os.mkdir(output_dir_path)
         output_file_name = output_dir_path + conf_dict['model_id']
 
-        if conf_dict['display']:
-            solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+        if conf_dict['display'] or conf_dict['text_file']:
+            route_plan = solve.build_solution_string(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+            #solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+            if conf_dict['display']:
+                print(route_plan)
+            if conf_dict['text_file']:
+                results_text_file = \
+                    output_dir_path + \
+                    conf_dict['model'] + \
+                    (str(args_dict['region_number']) if args_dict['region_number'] < 10 \
+                        else str(args_dict['region_number'])) + \
+                    '_results.txt'
+                with open(results_text_file, 'a') as outfile:
+                    outfile.write(route_plan)
 
         if conf_dict['map'] or conf_dict['screenshot']:
 
