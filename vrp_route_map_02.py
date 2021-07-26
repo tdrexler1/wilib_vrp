@@ -2,10 +2,10 @@ import gmplot
 import webbrowser
 import string
 import random
+import time
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options # chromedriver must be in PATH
-import time
 
 from route_mod_class import write_point, write_map, directions, marker, write_points
 from gmplot.gmplot import GoogleMapPlotter
@@ -57,7 +57,7 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
     return iw_text_string
 
 
-def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, map_file_name):
+def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
     route_colors = random.sample(ROUTE_COLORS, len(route_array))
 
@@ -110,7 +110,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, map_file_nam
                         info_window=write_infowindow_text(stop_data_dict, wp, m, n)
                         )
 
-    gmap_file = map_file_name + '.html'
+    gmap_file = output_dir + model_id + '.html'
 
     gmap.draw(gmap_file)
 

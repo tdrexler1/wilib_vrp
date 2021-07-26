@@ -1,6 +1,6 @@
 import dist_matrix_05 as dist
-import vrp_solve_07 as solve
-import vrp_route_map_02 as map
+import vrp_route_map_02 as mapper
+from vrp_solve_08 import VrpModelObj
 
 import argparse
 import sys
@@ -82,44 +82,6 @@ def parse_args():
     return vars(parser_obj.parse_args())
 
 
-# def construct_model_id(args_dict):
-#
-#     search_param_codes = \
-#         {
-#             'first_solution_strategy':
-#                 {
-#                     'path_cheapest_arc': '01',
-#                     'savings': '02',
-#                     'sweep': '03',
-#                     'christofides': '04',
-#                     'parallel_cheapest_insertion': '05',
-#                     'local_cheapest_insertion': '06',
-#                     'global_cheapest_arc': '07',
-#                     'local_cheapest_arc': '08',
-#                     'first_unbound_min_value': '09',
-#                     'automatic': '10'
-#                 },
-#             'local_search_metaheuristic':
-#                 {
-#                     'greedy_descent': '01',
-#                     'guided_local_search': '02',
-#                     'simulated_annealing': '03',
-#                     'tabu_search': '04',
-#                     'automatic': '05',
-#                 }
-#         }
-#
-#     id_string = 'idl' if args_dict['model'] == 'ideal' else 'str'
-#     id_string += str(args_dict['region_number']) if args_dict['region_number'] < 10 else str(args_dict['region_number'])
-#     id_string += '_'
-#     id_string += ('0' + str(int(args_dict['max_hours']))) if args_dict['max_hours'] < 10 \
-#         else str(int(args_dict['max_hours']))
-#     id_string += search_param_codes['first_solution_strategy'][args_dict['first_solution_strategy']]
-#     id_string += search_param_codes['local_search_metaheuristic'][args_dict['local_search_metaheuristic']]
-#
-#     return id_string
-
-
 def main():
 
     args_dict = parse_args()
@@ -142,8 +104,6 @@ def main():
 
     conf_dict = {**args_dict, **api_dict}
 
-    #conf_dict['model_id'] = construct_model_id(args_dict)
-
     region_data = dist.prep_input_data(stop_data, conf_dict)
 
     api_address_array = dist.create_api_address_lists(region_data)
@@ -158,24 +118,20 @@ def main():
     dist.check_matrix_results(distance_matrix)
     dist.check_matrix_results(duration_matrix)
 
-    # TODO: put this all in an object with model, solution, index manager, etc.
+    vrp_model = VrpModelObj(distance_matrix, duration_matrix, region_data, conf_dict)
 
-    vrp_input_dict = solve.format_ORtools_data(distance_matrix, duration_matrix, region_data, conf_dict)
+    vrp_model_id = vrp_model.get_model_id()
 
-    vrp_model, vrp_index = solve.vrp_setup(vrp_input_dict, conf_dict)
-
-    vrp_solution = solve.solve_vrp(vrp_model, conf_dict)
+    vrp_solution = vrp_model.solve_vrp()
 
     if vrp_solution:
 
         output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\solution_output\\')
         if not os.path.isdir(output_dir_path):
             os.mkdir(output_dir_path)
-        output_file_name = output_dir_path + conf_dict['model_id']
 
         if conf_dict['display'] or conf_dict['text_file']:
-            route_plan = solve.build_solution_string(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
-            #solve.print_solution(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
+            route_plan = vrp_model.get_vrp_route_plan()
             if conf_dict['display']:
                 print(route_plan)
             if conf_dict['text_file']:
@@ -190,15 +146,17 @@ def main():
 
         if conf_dict['map'] or conf_dict['screenshot']:
 
-            opt_routes = solve.get_routes(vrp_input_dict, vrp_index, vrp_model, vrp_solution)
-            route_map = map.map_vrp_routes(opt_routes, region_data, conf_dict['general_maps_api_key'],
-                                           conf_dict['model_id'], output_file_name)
+            optimal_routes = vrp_model.get_vrp_route_array()
+
+            route_map = mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'],
+                                           vrp_model_id, output_dir_path)
 
             if conf_dict['map']:
-                map.display_map(route_map)
+                mapper.display_map(route_map)
             if conf_dict['screenshot']:
-                map.screenshot_map(route_map)
+                mapper.screenshot_map(route_map)
     else:
+
         print('No solution found.')
 
 

@@ -18,18 +18,12 @@ class VrpModelObj(object):
     SECONDS_PER_HOUR = 3600
     SECONDS_PER_MINUTE = 60
 
-    def __init__(self, name, vrp_distance_matrix, vrp_duration_matrix, region_df, config_dict):
-        self.name = name
+    def __init__(self, vrp_distance_matrix, vrp_duration_matrix, region_df, config_dict):
         self._vrp_distance_matrix = vrp_distance_matrix
         self._vrp_duration_matrix = vrp_duration_matrix
+        self._vrp_num_vehicles = config_dict['num_vehicles']
         self._region_df = region_df
         self._config_dict = config_dict
-
-    def get_name(self):
-        return self.name
-
-    def set_name(self, newname):
-        self.name = newname
 
     def _format_vrp_model_id(self):
 
@@ -78,14 +72,14 @@ class VrpModelObj(object):
         self._vrp_input_data_dict = {
             'distance_matrix': self._vrp_distance_matrix,
             'duration_matrix': self._vrp_duration_matrix,
-            'num_vehicles': self._config_dict['num_vehicles'],
+            'num_vehicles': self._vrp_num_vehicles,
             'depot': 0,
             'library_names': self._region_df['stop_short_name'].tolist(),
             'library_ids': self._region_df.index.tolist(),
             'service_time': self._region_df['service_time_mins'].astype(float).multiply(self.SECONDS_PER_MINUTE).astype(
                 int).tolist(),
             'demands': self._region_df['avg_pickup'].astype(int).tolist(),
-            'vehicle_capacities': [self._config_dict['veh_cap']] * self._config_dict['num_vehicles']
+            'vehicle_capacities': [self._config_dict['veh_cap']] * self._vrp_num_vehicles
         }
 
         # exchange time at each stop
@@ -254,7 +248,7 @@ class VrpModelObj(object):
         search_parameters.local_search_metaheuristic = \
             search_param_args['local_search_metaheuristic'][self._config_dict['local_search_metaheuristic']]
 
-        search_parameters.time_limit.seconds = 30
+        search_parameters.time_limit.seconds = 15
         search_parameters.log_search = False
 
         # solve the problem
@@ -266,7 +260,8 @@ class VrpModelObj(object):
             3: 'ROUTING_FAIL_TIMEOUT - Time limit reached before finding a solution',
             4: 'ROUTING_INVALID - Model, model parameters, or flags are not valid'
         }
-        print(f'Solver status: {solver_status_code_dict[self._vrp_routing_model.status()]}\n')
+        print(f'Solver status: {solver_status_code_dict[self._vrp_routing_model.status()]}' +
+              (f'\n' if self._vrp_routing_model.status() == 1 else f''))
 
     @staticmethod
     def _format_time_display(time_in_seconds):
@@ -283,14 +278,25 @@ class VrpModelObj(object):
         # tracking variables for all routes
         total_distance = 0
         total_time = 0
-        vrp_route_plan = ''
+        vrp_route_plan = f"Model ID: {self._vrp_model_id}\n" \
+                         f"{self._config_dict['model'].capitalize()} proposal, " \
+                         f"region {self._config_dict['region_number']}\n\n" \
+                         f"Solution strategies:\n" \
+                         f"\tFirst solution strategy: {self._config_dict['first_solution_strategy']}\n" \
+                         f"\tLocal search metaheuristic: {self._config_dict['local_search_metaheuristic']}\n\n" \
+                         f"Model parameters:\n" \
+                         f"\tMaximum hours per route: {self._config_dict['max_hours']}\n" \
+                         f"\tMaximum distance per route: {self._config_dict['max_miles']} miles\n" \
+                         f"\tVehicle capacity: {self._config_dict['veh_cap']}\n" \
+                         f"\tDriver break time: {self._config_dict['break_time_minutes']} minutes\n" \
+                         f"\tNumber of vehicles/routes: {self._vrp_num_vehicles}\n\n"
 
         distance_dimension = self._vrp_routing_model.GetDimensionOrDie('Distance')
         time_dimension = self._vrp_routing_model.GetDimensionOrDie('Duration')
         capacity_dimension = self._vrp_routing_model.GetDimensionOrDie('Capacity')
         break_intervals = self._vrp_solution.IntervalVarContainer()
 
-        for vehicle_id in range(self._vrp_input_data_dict['num_vehicles']):
+        for vehicle_id in range(self._vrp_num_vehicles):
 
             num_stops = 0
 
@@ -312,7 +318,7 @@ class VrpModelObj(object):
             route_load = self._vrp_solution.Value(capacity_dimension.CumulVar(index))
 
             vrp_route_plan += \
-                f' {self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]}\n'
+                f' {self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]}\n\n'
             vrp_route_plan += f'\tRoute distance: {route_distance / self.METERS_PER_MILE:.2f} miles\n'
             vrp_route_plan += f'\tRoute time: {self._format_time_display(route_time)}\n'
             vrp_route_plan += f'\tRoute load: {route_load} containers\n'
@@ -334,7 +340,8 @@ class VrpModelObj(object):
         total_hours, total_mins = divmod(total_mins, 60)
         vrp_route_plan += f'Total time, all routes: {total_hours} {"hours" if total_hours > 1 else "hour"}, ' \
                        f'{total_mins} {"minutes" if total_mins > 1 else "minute"}'
-        vrp_route_plan += f'\n'
+        vrp_route_plan += f'\n\n' \
+                          f'------------------------\n\n'
 
         self._vrp_route_plan = vrp_route_plan
 
@@ -353,14 +360,38 @@ class VrpModelObj(object):
         self._vrp_route_array = vrp_route_array
 
     def solve_vrp(self):
-        self.__vrp_format_input_data()
-        self.__vrp_initialize()
-        self.__vrp_solve()
+        if self._config_dict['vehicle_increment']:
+            while self._vrp_num_vehicles < 15:
+                print(f'Trying to solve VRP using {self._vrp_num_vehicles} ' +
+                      ('vehicles...' if self._vrp_num_vehicles > 1 else 'vehicle...'), end='')
+                self.__vrp_format_input_data()
+                self.__vrp_initialize()
+                self.__vrp_solve()
+                if self._vrp_solution:
+                    return self._vrp_solution
+                self._vrp_num_vehicles += 1
+            return None
+
+        else:
+            self.__vrp_format_input_data()
+            self.__vrp_initialize()
+            self.__vrp_solve()
+            if self._vrp_solution:
+                return self._vrp_solution
+            else:
+                return None
+
 
     def get_vrp_route_plan(self):
-        self.__vrp_format_solution()
-        return self._vrp_route_plan
+        if self._vrp_solution:
+            self.__vrp_format_solution()
+            return self._vrp_route_plan
+        else:
+            return None
 
     def get_vrp_route_array(self):
-        self.__vrp_list_routes()
-        return self._vrp_route_array
+        if self._vrp_solution:
+            self.__vrp_list_routes()
+            return self._vrp_route_array
+        else:
+            return None
