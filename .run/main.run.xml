@@ -12,7 +12,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-    <option name="PARAMETERS" value="hub_recognition_test_data_geo.xlsx starter 8 duration 1 10 500 60 30 automatic automatic --display --vehicle_increment" />
+    <option name="PARAMETERS" value="wi_library_directory_01_geo_reg.csv starter 8 duration 1 10 500 60 30 automatic automatic --display --vehicle_increment --map" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

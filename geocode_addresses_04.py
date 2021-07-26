@@ -68,7 +68,7 @@ def add_region_data(stop_df):
 
 
 def geocode_api_request(x, api_key):
-    print(x)
+
     geocode_base_url = "https://maps.googleapis.com/maps/api/geocode/json"
 
     request_url = f"{geocode_base_url}?address={x}&key={api_key}"

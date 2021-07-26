@@ -15,7 +15,8 @@ def prep_input_data(in_dataframe, config_dict):
     hub_column = config_dict['model'] + '_regional_hub'
 
     region_stop_data = in_dataframe.loc[(in_dataframe[model_column] == model_region) &
-                                        (in_dataframe['redundant_address'] == 'False')].copy()
+                                        (in_dataframe['redundant_address'] == 'FALSE')].copy()
+
     region_stop_data.sort_values(hub_column, inplace=True)
 
     region_stop_data['api_address_string'] = \

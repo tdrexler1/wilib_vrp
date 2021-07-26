@@ -14,9 +14,9 @@ class VrpModelObj(object):
     """
 
     # constants
-    METERS_PER_MILE = 1609.34
-    SECONDS_PER_HOUR = 3600
-    SECONDS_PER_MINUTE = 60
+    _METERS_PER_MILE = 1609.34
+    _SECONDS_PER_HOUR = 3600
+    _SECONDS_PER_MINUTE = 60
 
     def __init__(self, vrp_distance_matrix, vrp_duration_matrix, region_df, config_dict):
         self._vrp_distance_matrix = vrp_distance_matrix
@@ -76,7 +76,7 @@ class VrpModelObj(object):
             'depot': 0,
             'library_names': self._region_df['stop_short_name'].tolist(),
             'library_ids': self._region_df.index.tolist(),
-            'service_time': self._region_df['service_time_mins'].astype(float).multiply(self.SECONDS_PER_MINUTE).astype(
+            'service_time': self._region_df['service_time_mins'].astype(float).multiply(self._SECONDS_PER_MINUTE).astype(
                 int).tolist(),
             'demands': self._region_df['avg_pickup'].astype(int).tolist(),
             'vehicle_capacities': [self._config_dict['veh_cap']] * self._vrp_num_vehicles
@@ -115,7 +115,7 @@ class VrpModelObj(object):
         distance_callback_index = vrp_routing_model.RegisterTransitCallback(distance_callback)
 
         # convert input miles to meters
-        max_distance = math.ceil(self._config_dict['max_miles'] * self.METERS_PER_MILE)
+        max_distance = math.ceil(self._config_dict['max_miles'] * self._METERS_PER_MILE)
 
         # add distance constraint
         vrp_routing_model.AddDimension(
@@ -143,10 +143,10 @@ class VrpModelObj(object):
         duration_callback_index = vrp_routing_model.RegisterTransitCallback(duration_callback)
 
         # convert input hours & minutes to seconds
-        # max_duration = math.ceil(args_dict['max_hours'] * SECONDS_PER_HOUR -
-        #                          args_dict['break_time_minutes'] * SECONDS_PER_MINUTE)
-        max_duration = math.ceil(self._config_dict['max_hours'] * self.SECONDS_PER_HOUR)
-        break_duration = math.ceil(self._config_dict['break_time_minutes'] * self.SECONDS_PER_MINUTE)
+        # max_duration = math.ceil(args_dict['max_hours'] * self._SECONDS_PER_HOUR -
+        #                          args_dict['break_time_minutes'] * self._SECONDS_PER_MINUTE)
+        max_duration = math.ceil(self._config_dict['max_hours'] * self._SECONDS_PER_HOUR)
+        break_duration = math.ceil(self._config_dict['break_time_minutes'] * self._SECONDS_PER_MINUTE)
 
         # add duration constraint
         vrp_routing_model.AddDimension(
@@ -319,7 +319,7 @@ class VrpModelObj(object):
 
             vrp_route_plan += \
                 f' {self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]}\n\n'
-            vrp_route_plan += f'\tRoute distance: {route_distance / self.METERS_PER_MILE:.2f} miles\n'
+            vrp_route_plan += f'\tRoute distance: {route_distance / self._METERS_PER_MILE:.2f} miles\n'
             vrp_route_plan += f'\tRoute time: {self._format_time_display(route_time)}\n'
             vrp_route_plan += f'\tRoute load: {route_load} containers\n'
             vrp_route_plan += f'\tNumber of stops: {num_stops - 1}\n'
@@ -334,7 +334,7 @@ class VrpModelObj(object):
             total_distance += route_distance
             total_time += route_time
 
-        vrp_route_plan += f'Total distance, all routes: {total_distance / self.METERS_PER_MILE:.2f} miles\n'
+        vrp_route_plan += f'Total distance, all routes: {total_distance / self._METERS_PER_MILE:.2f} miles\n'
 
         total_mins, total_secs = divmod(total_time, 60)
         total_hours, total_mins = divmod(total_mins, 60)
