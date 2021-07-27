@@ -26,7 +26,7 @@ def parse_args():
               '\n       {automatic, path_cheapest_arc, savings, sweep, christofides, parallel_cheapest_insertion, '
               '\n        local_cheapest_insertion, global_cheapest_arc, local_cheapest_arc, first_unbound_min_value}'
               '\n       {automatic, greedy_descent, guided_local_search, simulated_annealing, tabu_search}'
-              '\n       [-v/--vehicle_increment]'
+              '\n       [-v/--vehicle_increment] [-p/--pickled_data]'
               '\n       [-d/--display] [-m/--map] [-s/--screenshot] [-t/--text_file]'
               '\n       [-h/--help]',
         add_help=False,
@@ -40,6 +40,8 @@ def parse_args():
                              help='PLSR Delivery Workgroup proposed model version.')
     setup_group.add_argument('region_number', type=int, choices=range(1, 8) if 'ideal' in sys.argv else range(1, 9),
                              help='Model region number (1-7 for ideal model, 1-8 for starter model).')
+    setup_group.add_argument('-p', '--pickled_data', action='store_true',
+                             help='Retrieve saved distance and duration matrices.')
 
     param_group = parser_obj.add_argument_group(title='VRP parameter arguments')
     param_group.add_argument('constraint', action='store', default='duration', type=str,
@@ -125,12 +127,13 @@ def main():
 
     conf_dict = {**args_dict, **api_dict}
 
+    # TODO: this whole thing with the output text file name and the pickle file name needs to be sorted out
     output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\solution_output\\')
     if not os.path.isdir(output_dir_path):
         os.mkdir(output_dir_path)
 
-
     region_data = dist.prep_input_data(stop_data, conf_dict)
+
     if not conf_dict['pickled_data']:
         api_address_array = dist.create_api_address_lists(region_data)
 

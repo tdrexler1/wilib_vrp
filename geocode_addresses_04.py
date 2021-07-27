@@ -21,7 +21,7 @@ def add_region_data(stop_df):
     ideal_region_03 = ['Brown', 'Door', 'Florence', 'Kewaunee', 'Marinette', 'Menominee', 'Oconto', 'Outagamie',
                        'Shawano', 'Waupaca']
     ideal_region_04 = ['Adams', 'Buffalo', 'Crawford', 'Jackson', 'Juneau', 'La Crosse', 'Monroe', 'Richland',
-                       'Trempaealeau', 'Vernon']
+                       'Trempealeau', 'Vernon']
     ideal_region_05 = ['Calumet', 'Dodge', 'Fond du Lac', 'Green Lake', 'Manitowoc', 'Marquette', 'Ozaukee', 'Sheboygan',
                        'Washington', 'Waushara', 'Winnebago']
     ideal_region_06 = ['Columbia', 'Dane', 'Grant', 'Green', 'Iowa', 'Lafayette', 'Rock', 'Sauk']
@@ -104,7 +104,7 @@ def add_geocode_data(stop_data):
     # build urls for libraries with address location data
     #stop_data.loc[stop_data['pluscode'].isna(), 'geo_address_url_string'] = \
     #    stop_data['address_full_no_unit'].str.replace(",", "").str.split().str.join('%20')
-    # https: // stackoverflow.com / a / 52270276
+    # https://stackoverflow.com/a/52270276
     address_cols = \
         ['address_number', 'address_street_dir_prefix', 'address_street', 'address_street_suffix',
          'address_street_dir_suffix', 'address_city', 'address_state', 'address_zip']
@@ -176,6 +176,7 @@ def main():
         out_df.to_csv(outfile_name + '.csv')
     elif args_dict['out_format'] == 'xlsx':
         out_df.to_excel(outfile_name + '.xlsx', sheet_name='wi_library_directory')
+
 
 if __name__ == '__main__':
     main()
