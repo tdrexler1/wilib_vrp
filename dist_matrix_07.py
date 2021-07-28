@@ -63,14 +63,16 @@ def create_api_address_lists(stop_df):
 
     # limit 25 origins or 25 destinations per API request - https://stackoverflow.com/a/52062952
     # divide data into groups w/ max 25 addresses
+
+    stop_coords = [[eval(x)[1], eval(x)[0]] for x in stop_df['geo_coords']]
     max_stops = 25
-    num_addresses = len(stop_df['api_address_string'])
+    num_addresses = len(stop_df['geo_coords'])
     num_groups = math.ceil(num_addresses / max_stops)
 
     # store each address group as nested list
     address_array = []
     for i in range(num_groups):
-        address_array.append(stop_df['api_address_string'].tolist()[i * max_stops: (i + 1) * max_stops])
+        address_array.append(stop_coords[i * max_stops: (i + 1) * max_stops])
 
     return address_array
 
@@ -85,9 +87,10 @@ def create_matrices(address_array, config_dict):
     Returns:
         Distance and duration matrices w/ rows as nested lists.
     """
-
-    api_key = config_dict['dist_matrix_api_key']
-    max_elements = 100  # limit 100 elements per API request - https://tinyurl.com/3sywy4ky
+    ors_key = '5b3ce3597851110001cf6248a4ae3ffaaac04be6a6cffb15da6fd335'
+    ors_client = openrouteservice.Client(key=ors_key)
+    #api_key = config_dict['dist_matrix_api_key']
+    # max_elements = 100  # limit 100 elements per API request - https://tinyurl.com/3sywy4ky
 
     distance_matrix_array = []
     duration_matrix_array = []
@@ -100,44 +103,54 @@ def create_matrices(address_array, config_dict):
         for n in range(len(address_array)):
             origin_group = address_array[n]
 
-            max_rows = max_elements // len(origin_group)
+            # max_rows = max_elements // len(origin_group)
+            #
+            # # q * max_rows + r = number of addresses in group
+            # q, r = divmod(len(destination_group), max_rows)
 
-            # q * max_rows + r = number of addresses in group
-            q, r = divmod(len(destination_group), max_rows)
+            numbers = list(range(0, len(address_array[m])))
 
-            group_distance_matrix = []
-            group_duration_matrix = []
 
-            # q API requests of max_rows each
-            for i in range(q):
-                destination_addresses = destination_group[i * max_rows: (i + 1) * max_rows]
-                response = send_request(destination_addresses, origin_group, api_key)
+            request = {'locations': address_array[m]+address_array[n],
+                       'destinations': numbers,
+                       'metrics': ['distance', 'duration'],
+                       'units': 'm'}
+            stop_matrix = ors_client.distance_matrix(**request)
 
-                # build partial matrices from API response
-                partial_matrices = build_matrices(response)
+            group_distance_matrix = stop_matrix['distances']
+            group_duration_matrix = stop_matrix['durations']
 
-                group_distance_matrix += partial_matrices[0]
-                group_duration_matrix += partial_matrices[1]
-
-            # remaining r rows
-            if r > 0:
-                destination_addresses = destination_group[q * max_rows: q * max_rows + r]
-                response = send_request(destination_addresses, origin_group, api_key)
-
-                # build partial matrices from API response
-                partial_matrices = build_matrices(response)
-
-                group_distance_matrix += partial_matrices[0]
-                group_duration_matrix += partial_matrices[1]
+            # # q API requests of max_rows each
+            # for i in range(q):
+            #     destination_addresses = destination_group[i * max_rows: (i + 1) * max_rows]
+            #     response = send_request(destination_addresses, origin_group, api_key)
+            #
+            #     # build partial matrices from API response
+            #     partial_matrices = build_matrices(response)
+            #
+            #     group_distance_matrix += partial_matrices[0]
+            #     group_duration_matrix += partial_matrices[1]
+            #
+            # # remaining r rows
+            # if r > 0:
+            #     destination_addresses = destination_group[q * max_rows: q * max_rows + r]
+            #     response = send_request(destination_addresses, origin_group, api_key)
+            #
+            #     # build partial matrices from API response
+            #     partial_matrices = build_matrices(response)
+            #
+            #     group_distance_matrix += partial_matrices[0]
+            #     group_duration_matrix += partial_matrices[1]
 
             distance_matrix_array.append(group_distance_matrix)
             duration_matrix_array.append(group_duration_matrix)
 
     # create full matrices from arrays of group matrices
-    full_distance_matrix = assemble_full_matrix(distance_matrix_array)
-    full_duration_matrix = assemble_full_matrix(duration_matrix_array)
+    #full_distance_matrix = assemble_full_matrix(distance_matrix_array)
+    #full_duration_matrix = assemble_full_matrix(duration_matrix_array)
+    print(distance_matrix_array)
 
-    return full_distance_matrix, full_duration_matrix
+    #return full_distance_matrix, full_duration_matrix
 
 
 def send_request(orig_addresses, dest_addresses, api_key):
@@ -307,26 +320,34 @@ def main():
 
     region_data = prep_input_data(stop_data, conf_dict)
 
-    ors_client = openrouteservice.Client(key=ors_key)
+    #ors_client = openrouteservice.Client(key=ors_key)
 
-    stop_coords = [[eval(x)[1], eval(x)[0]] for x in region_data['geo_coords']]
-    request = {'locations': stop_coords[:59],
+    #stop_coords = [[eval(x)[1], eval(x)[0]] for x in region_data['geo_coords']]
 
-               'metrics': ['distance', 'duration'],
-               'units': 'm'}
-    stop_matrix = ors_client.distance_matrix(**request)
-    print(stop_matrix)
+    #max_locations = 59
+
+
+
+    api_address_array = create_api_address_lists(region_data)
+    # print(api_address_array)
+
+    #request = {'locations': api_address_array[0],
+    #           'destinations': api_address_array[1],
+    #           'metrics': ['distance', 'duration'],
+    #           'units': 'm'}
+    #stop_matrix = ors_client.distance_matrix(**request)
+    #print(stop_matrix)
     #print(stop_coords)
-    # api_address_array = create_api_address_lists(region_data)
+
     #
     # # create distance & duration matrices w/ Google Maps API
-    # print('Building distance and duration matrices...')
-    # distance_matrix, duration_matrix = create_matrices(api_address_array, conf_dict)
+    print('Building distance and duration matrices...')
+    distance_matrix, duration_matrix = create_matrices(api_address_array, conf_dict)
     #
     # # check results
-    # check_matrix_results(distance_matrix)
-    # check_matrix_results(duration_matrix)
-    # print('Distance and duration matrices complete.')
+    check_matrix_results(distance_matrix)
+    check_matrix_results(duration_matrix)
+    print('Distance and duration matrices complete.')
     #
     # save_matrices(distance_matrix, duration_matrix, conf_dict)
 
