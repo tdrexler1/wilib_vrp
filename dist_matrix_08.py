@@ -111,16 +111,16 @@ def create_matrices(address_array, config_dict):
             #print(f'm={m}, n={n}, numbers={numbers}')
             #print(origin_group+destination_group)
             #print(len(origin_group+destination_group))
-            #request = {'locations': origin_group+destination_group,
-            #           'destinations': numbers,
-            #           'metrics': ['distance', 'duration'],
-            #           'units': 'm'}
+            request = {'locations': origin_group+destination_group,
+                       'destinations': numbers,
+                       'metrics': ['distance', 'duration'],
+                       'units': 'm'}
             #print(request)
 
             response_dict = ors_client.distance_matrix(**request)
             print(response_dict)
-            group_distance_matrix = response_dict['distances']
-            group_duration_matrix = response_dict['durations']
+            group_distance_matrix = response_dict['distances'][:len(origin_group)]
+            group_duration_matrix = response_dict['durations'][:len(origin_group)]
 
             distance_matrix_array.append(group_distance_matrix)
             duration_matrix_array.append(group_duration_matrix)
@@ -198,10 +198,10 @@ def build_matrices(response):
 
 def assemble_full_matrix(input_matrix):
     """ Builds full matrix from address group matrices. """
-    #print(len(input_matrix))
-    #for x in input_matrix:
-    #    print(len(x), end=', ')
-    #print(input_matrix)
+    print(len(input_matrix))
+    for x in input_matrix:
+        print(len(x), end=', ')
+    print(input_matrix)
     # number of groups along each axis of full matrix
     groups_per = int(math.sqrt(len(input_matrix)))
 
@@ -209,7 +209,7 @@ def assemble_full_matrix(input_matrix):
 
     # 'i' & 'j' iterate over group matrices
     for i in range(groups_per):
-        print(input_matrix[i*groups_per])
+        ##print(input_matrix[i*groups_per])
         # 'r' iterates over rows/lists in each group
         for r in range(len(input_matrix[i * groups_per])):
             this_row = []
@@ -221,7 +221,8 @@ def assemble_full_matrix(input_matrix):
                 k = j + i * groups_per
 
                 this_row += input_matrix[k][r]
-                #print(f"i={i}, j={j}, r={r}, k={k}")
+                print(f"i={i}, j={j}, r={r}, k={k}")
+                print(this_row)
             row_list.append(this_row)
 
     return row_list
@@ -303,16 +304,16 @@ def main():
     region_data = prep_input_data(stop_data, args_dict)
 
     api_address_array = create_api_address_lists(region_data)
-    print(api_address_array)
+    #print(api_address_array)
 
     # create distance & duration matrices
     print('Building distance and duration matrices...')
-    #distance_matrix, duration_matrix = create_matrices(api_address_array, args_dict)
+    distance_matrix, duration_matrix = create_matrices(api_address_array, args_dict)
 
     # check results
-    #check_matrix_results(distance_matrix)
-    #check_matrix_results(duration_matrix)
-    #print('Distance and duration matrices complete.')
+    check_matrix_results(distance_matrix)
+    check_matrix_results(duration_matrix)
+    print('Distance and duration matrices complete.')
 
     # save_matrices(distance_matrix, duration_matrix, conf_dict)
 
