@@ -65,10 +65,9 @@ def create_api_address_lists(stop_df):
     # divide data into groups w/ max 25 addresses
 
     stop_coords = [[eval(x)[1], eval(x)[0]] for x in stop_df['geo_coords']]
-    ###stop_coords = [x for x in stop_df['stop_short_name']]
     max_stops = 25
     num_addresses = len(stop_df['geo_coords'])
-    ##num_addresses = 43
+
     num_groups = math.ceil(num_addresses / max_stops)
 
     # store each address group as nested list
@@ -92,9 +91,6 @@ def create_matrices(address_array, config_dict):
 
     ors_client = openrouteservice.Client(key=config_dict['ors_key'])
 
-    #api_key = config_dict['dist_matrix_api_key']
-    # max_elements = 100  # limit 100 elements per API request - https://tinyurl.com/3sywy4ky
-
     distance_matrix_array = []
     duration_matrix_array = []
 
@@ -102,23 +98,21 @@ def create_matrices(address_array, config_dict):
     for m in range(len(address_array)):
         #destination_group = address_array[m]
         origin_group = address_array[m]
+
         # origin addresses for each group in address array
         for n in range(len(address_array)):
             #origin_group = address_array[n]
             destination_group = address_array[n]
-            #print(f'm={m}, n={n}, origin={len(origin_group)}, dest={len(destination_group)}')
+
             numbers = list( range( len( origin_group ), ( len(origin_group) + len( destination_group) ) ) )
-            #print(f'm={m}, n={n}, numbers={numbers}')
-            #print(origin_group+destination_group)
-            #print(len(origin_group+destination_group))
+
             request = {'locations': origin_group+destination_group,
                        'destinations': numbers,
                        'metrics': ['distance', 'duration'],
                        'units': 'm'}
-            #print(request)
 
             response_dict = ors_client.distance_matrix(**request)
-            ##print(response_dict)
+
             group_distance_matrix = response_dict['distances'][:len(origin_group)]
             group_duration_matrix = response_dict['durations'][:len(origin_group)]
 
@@ -128,7 +122,6 @@ def create_matrices(address_array, config_dict):
     # create full matrices from arrays of group matrices
     full_distance_matrix = assemble_full_matrix(distance_matrix_array)
     full_duration_matrix = assemble_full_matrix(duration_matrix_array)
-    ###print(distance_matrix_array)
 
     return full_distance_matrix, full_duration_matrix
 
@@ -198,10 +191,7 @@ def build_matrices(response):
 
 def assemble_full_matrix(input_matrix):
     """ Builds full matrix from address group matrices. """
-    ##print(len(input_matrix))
-    ##for x in input_matrix:
-    ##    print(len(x), end=', ')
-    ##print(input_matrix)
+
     # number of groups along each axis of full matrix
     groups_per = int(math.sqrt(len(input_matrix)))
 
@@ -209,7 +199,7 @@ def assemble_full_matrix(input_matrix):
 
     # 'i' & 'j' iterate over group matrices
     for i in range(groups_per):
-        ##print(input_matrix[i*groups_per])
+
         # 'r' iterates over rows/lists in each group
         for r in range(len(input_matrix[i * groups_per])):
             this_row = []
@@ -221,8 +211,7 @@ def assemble_full_matrix(input_matrix):
                 k = j + i * groups_per
 
                 this_row += input_matrix[k][r]
-                ##print(f"i={i}, j={j}, r={r}, k={k}")
-                ##print(this_row)
+
             row_list.append(this_row)
 
     return row_list
@@ -289,7 +278,6 @@ def main():
             engine='openpyxl'
         )
 
-    # Google Maps API keys
     try:
         with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as api_keys:
             key_data = yaml.full_load(api_keys)
@@ -298,13 +286,9 @@ def main():
 
     args_dict['ors_key'] = key_data['open_route_service']['ors_key']
 
-    ###for k, v in args_dict.items():
-    ###    print(f'{k}, {v}')
-
     region_data = prep_input_data(stop_data, args_dict)
 
     api_address_array = create_api_address_lists(region_data)
-    #print(api_address_array)
 
     # create distance & duration matrices
     print('Building distance and duration matrices...')
