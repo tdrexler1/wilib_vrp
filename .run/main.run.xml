@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-    <module name="wilib_vrp" />
+  <configuration default="false" name="wi_lib_vrp" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <module name="wi_lib_vrp" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
@@ -11,8 +11,8 @@
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-    <option name="PARAMETERS" value="hub_recognition_test_data_geo.csv starter 8 duration 1 10 500 60 30 automatic automatic --display --vehicle_increment --map -p" />
+    <option name="SCRIPT_NAME" value="C:\Users\tdrex\PycharmProjects\wilib_vrp\wi_lib_vrp.py" />
+    <option name="PARAMETERS" value="wi_library_directory_01_geo_reg.csv ideal 1 duration 1 8 500 40 30 christofides automatic --display --vehicle_increment --text_file" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

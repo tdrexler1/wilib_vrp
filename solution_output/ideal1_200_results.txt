@@ -1,0 +1,491 @@
+Model ID: idl1_080205
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	Rice Lake PL -> La Pointe PL -> Bayfield PL ->  Rice Lake PL
+
+	Route distance: 256.60 miles
+	Route time: 7 hours, 56 minutes
+	Route load: 14 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	Rice Lake PL -> SupPL - Lake Nebagamon PL -> Port Wing mailabook -> Cornucopia mailabook -> Washburn PL -> Ashland PL -> Northern Waters LS -> Mellen PL ->  Rice Lake PL
+
+	Route distance: 292.08 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 24 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	Rice Lake PL -> Hudson PL -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL -> MenPL - Elk Mound Branch ->  Rice Lake PL
+
+	Route distance: 274.36 miles
+	Route time: 7 hours, 55 minutes
+	Route load: 60 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 6 minutes; end time = 4 hours, 36 minutes
+
+Route for vehicle 4:
+	Rice Lake PL -> Birchwood mailabook -> Hayward PL -> Cable PL -> Barnes mailabook -> Drummond PL -> Mason mailabook -> Iron River PL -> Brule mailabook -> Poplar mailabook -> SupPL - Superior PL -> UW-Superior ->  Rice Lake PL
+
+	Route distance: 272.86 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 35 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 12 minutes; end time = 4 hours, 42 minutes
+
+Route for vehicle 5:
+	Rice Lake PL -> St. Croix Falls PL -> Dresser PL -> Osceola PL -> Somerset PL -> New Richmond PL -> Roberts PL -> Hammond PL -> Baldwin PL -> Woodville PL -> Spring Valley PL -> Elmwood PL -> UW-Stout -> MenPL - Menomonie PL -> Colfax PL -> Bloomer PL ->  Rice Lake PL
+
+	Route distance: 220.19 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 103 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 41 minutes; end time = 6 hours, 11 minutes
+
+Route for vehicle 6:
+	Rice Lake PL -> Cornell PL -> Cadott PL -> Stanley PL -> Stanley CI -> Fairchild PL -> Augusta PL -> Fall Creek PL -> Altoona PL -> Chippewa Valley TC -> UW-Eau Claire -> Eau Claire PL -> IFLS -> Chippewa Valley CI -> Chippewa Falls PL -> Chetek PL -> UW-Barron ->  Rice Lake PL
+
+	Route distance: 218.02 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 96 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 4 minutes; end time = 4 hours, 34 minutes
+
+Route for vehicle 7:
+	Rice Lake PL -> Lac Courte Oreilles Library -> Winter PL -> Glidden mailabook -> Hawkins PL -> Ladysmith PL -> Bruce PL -> Cameron PL ->  Rice Lake PL
+
+	Route distance: 244.96 miles
+	Route time: 7 hours, 49 minutes
+	Route load: 26 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	Rice Lake PL -> Shell Lake PL -> Spooner PL -> Minong mailabook -> Gordon mailabook -> Solon Springs mailabook -> SupPL - Solon Springs PL -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Grantsburg PL -> Frederic PL -> Milltown PL -> Luck PL -> Cumberland PL ->  Rice Lake PL
+
+	Route distance: 220.67 miles
+	Route time: 7 hours, 18 minutes
+	Route load: 47 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Route for vehicle 9:
+	Rice Lake PL -> Sand Creek PL -> Boyceville PL -> Glenwood City PL -> Clear Lake PL -> Deer Park PL -> Amery PL -> Centuria PL -> Balsam Lake PL -> Turtle Lake PL -> Barron PL ->  Rice Lake PL
+
+	Route distance: 178.04 miles
+	Route time: 5 hours, 36 minutes
+	Route load: 42 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 36 minutes; end time = 6 hours, 6 minutes
+
+Total distance, all routes: 2177.80 miles
+Total time, all routes: 68 hours, 22 minutes
+
+------------------------
+
+Model ID: idl1_080405
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	Rice Lake PL -> Chippewa Falls PL -> Chippewa Valley CI -> Cadott PL -> Stanley PL -> Stanley CI -> Fairchild PL -> Augusta PL -> Fall Creek PL -> Altoona PL -> Chippewa Valley TC -> UW-Eau Claire -> Eau Claire PL -> IFLS -> MenPL - Elk Mound Branch -> Bloomer PL -> UW-Barron ->  Rice Lake PL
+
+	Route distance: 213.92 miles
+	Route time: 7 hours, 41 minutes
+	Route load: 99 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 37 minutes; end time = 6 hours, 7 minutes
+
+Route for vehicle 2:
+	Rice Lake PL -> Chetek PL -> Sand Creek PL -> Colfax PL -> MenPL - Menomonie PL -> UW-Stout -> Durand PL -> Pepin PL -> Plum City PL -> Elmwood PL -> Spring Valley PL -> Glenwood City PL -> Boyceville PL -> Barron PL ->  Rice Lake PL
+
+	Route distance: 221.84 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 62 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 38 minutes; end time = 6 hours, 8 minutes
+
+Route for vehicle 3:
+	Rice Lake PL -> La Pointe PL ->  Rice Lake PL
+
+	Route distance: 256.57 miles
+	Route time: 7 hours, 49 minutes
+	Route load: 11 containers
+	Number of stops: 1
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Rice Lake PL -> Lac Courte Oreilles Library -> Cable PL -> Mason mailabook -> Washburn PL -> Mellen PL -> Glidden mailabook ->  Rice Lake PL
+
+	Route distance: 272.93 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 17 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Route for vehicle 5:
+	Rice Lake PL -> Minong mailabook -> Gordon mailabook -> SupPL - Solon Springs PL -> Solon Springs mailabook -> Barnes mailabook -> Drummond PL -> Brule mailabook -> Poplar mailabook -> SupPL - Superior PL -> UW-Superior -> Spooner PL ->  Rice Lake PL
+
+	Route distance: 252.62 miles
+	Route time: 7 hours, 18 minutes
+	Route load: 37 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 49 minutes; end time = 5 hours, 19 minutes
+
+Route for vehicle 6:
+	Rice Lake PL -> Shell Lake PL -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Grantsburg PL -> Frederic PL -> Milltown PL -> Luck PL ->  Rice Lake PL
+
+	Route distance: 156.54 miles
+	Route time: 4 hours, 53 minutes
+	Route load: 31 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Route for vehicle 7:
+	Rice Lake PL -> Balsam Lake PL -> Centuria PL -> St. Croix Falls PL -> Dresser PL -> Osceola PL -> Somerset PL -> Hudson PL -> Roberts PL -> New Richmond PL -> Deer Park PL -> Amery PL ->  Rice Lake PL
+
+	Route distance: 179.50 miles
+	Route time: 7 hours, 6 minutes
+	Route load: 75 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 8:
+	Rice Lake PL -> Cumberland PL -> Hammond PL -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Baldwin PL -> Woodville PL -> Clear Lake PL -> Turtle Lake PL ->  Rice Lake PL
+
+	Route distance: 204.97 miles
+	Route time: 6 hours, 48 minutes
+	Route load: 67 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Route for vehicle 9:
+	Rice Lake PL -> SupPL - Lake Nebagamon PL -> Iron River PL -> Port Wing mailabook -> Cornucopia mailabook -> Bayfield PL -> Northern Waters LS -> Ashland PL -> Hayward PL ->  Rice Lake PL
+
+	Route distance: 288.46 miles
+	Route time: 7 hours, 42 minutes
+	Route load: 30 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 10:
+	Rice Lake PL -> Birchwood mailabook -> Winter PL -> Hawkins PL -> Ladysmith PL -> Cornell PL -> Bruce PL -> Cameron PL ->  Rice Lake PL
+
+	Route distance: 195.94 miles
+	Route time: 6 hours, 36 minutes
+	Route load: 27 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 2243.30 miles
+Total time, all routes: 71 hours, 32 minutes
+
+------------------------
+
+Model ID: idl1_100405
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	Rice Lake PL -> Sand Creek PL -> Colfax PL -> MenPL - Menomonie PL -> UW-Stout -> MenPL - Elk Mound Branch -> IFLS -> Eau Claire PL -> UW-Eau Claire -> Chippewa Valley TC -> Altoona PL -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Stanley CI -> Stanley PL -> Cadott PL -> Chippewa Valley CI -> Chippewa Falls PL -> Chetek PL -> UW-Barron ->  Rice Lake PL
+
+	Route distance: 236.38 miles
+	Route time: 8 hours, 57 minutes
+	Route load: 120 containers
+	Number of stops: 20
+	Break: start time = 4 hours, 37 minutes; end time = 5 hours, 7 minutes
+
+Route for vehicle 2:
+	Rice Lake PL -> Luck PL -> Milltown PL -> Balsam Lake PL -> Centuria PL -> St. Croix Falls PL -> Dresser PL -> Osceola PL -> Somerset PL -> Hudson PL -> Prescott PL -> UW-River Falls -> River Falls PL -> Roberts PL -> Hammond PL -> New Richmond PL ->  Rice Lake PL
+
+	Route distance: 226.48 miles
+	Route time: 8 hours, 26 minutes
+	Route load: 108 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	Rice Lake PL -> Poplar mailabook -> Port Wing mailabook -> Cornucopia mailabook -> La Pointe PL -> Bayfield PL -> Washburn PL -> Iron River PL -> Brule mailabook -> SupPL - Lake Nebagamon PL ->  Rice Lake PL
+
+	Route distance: 296.40 miles
+	Route time: 9 hours, 19 minutes
+	Route load: 27 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 53 minutes; end time = 6 hours, 23 minutes
+
+Route for vehicle 4:
+	Rice Lake PL -> Shell Lake PL -> Spooner PL -> Hayward PL -> Minong mailabook -> Gordon mailabook -> Solon Springs mailabook -> SupPL - Solon Springs PL -> SupPL - Superior PL -> UW-Superior -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Grantsburg PL -> Frederic PL ->  Rice Lake PL
+
+	Route distance: 302.89 miles
+	Route time: 9 hours, 19 minutes
+	Route load: 50 containers
+	Number of stops: 14
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 5:
+	Rice Lake PL -> Barron PL -> Boyceville PL -> Glenwood City PL -> Woodville PL -> Spring Valley PL -> Elmwood PL -> Durand PL -> Pepin PL -> Plum City PL -> Ellsworth PL -> Baldwin PL -> Deer Park PL -> Amery PL -> Clear Lake PL -> Turtle Lake PL -> Cumberland PL ->  Rice Lake PL
+
+	Route distance: 257.66 miles
+	Route time: 9 hours, 19 minutes
+	Route load: 68 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 32 minutes; end time = 5 hours, 2 minutes
+
+Route for vehicle 6:
+	Rice Lake PL -> Lac Courte Oreilles Library -> Cable PL -> Barnes mailabook -> Drummond PL -> Mason mailabook -> Ashland PL -> Northern Waters LS -> Mellen PL -> Glidden mailabook -> Winter PL -> Birchwood mailabook ->  Rice Lake PL
+
+	Route distance: 287.08 miles
+	Route time: 9 hours, 12 minutes
+	Route load: 26 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 18 minutes; end time = 5 hours, 48 minutes
+
+Route for vehicle 7:
+	Rice Lake PL -> Cameron PL -> Bruce PL -> Hawkins PL -> Ladysmith PL -> Cornell PL -> Bloomer PL ->  Rice Lake PL
+
+	Route distance: 158.22 miles
+	Route time: 4 hours, 36 minutes
+	Route load: 30 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 36 minutes; end time = 5 hours, 6 minutes
+
+Total distance, all routes: 1765.12 miles
+Total time, all routes: 59 hours, 12 minutes
+
+------------------------
+
+Model ID: idl1_080505
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 11
+
+Route for vehicle 1:
+	Rice Lake PL -> Altoona PL -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Chippewa Valley TC -> UW-Eau Claire -> Eau Claire PL -> IFLS -> Bloomer PL -> Chetek PL -> UW-Barron ->  Rice Lake PL
+
+	Route distance: 187.23 miles
+	Route time: 5 hours, 35 minutes
+	Route load: 78 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 35 minutes; end time = 6 hours, 5 minutes
+
+Route for vehicle 2:
+	Rice Lake PL -> Luck PL -> Milltown PL -> Frederic PL -> Grantsburg PL -> Siren mailabook -> Webster PL -> Town of Scott mailabook -> Spooner PL -> Shell Lake PL ->  Rice Lake PL
+
+	Route distance: 158.82 miles
+	Route time: 5 hours, 5 minutes
+	Route load: 36 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 5 minutes; end time = 5 hours, 35 minutes
+
+Route for vehicle 3:
+	Rice Lake PL -> Cameron PL -> Bruce PL -> Hawkins PL -> Ladysmith PL -> Cornell PL -> Cadott PL -> Stanley CI -> Stanley PL -> Chippewa Valley CI -> Chippewa Falls PL ->  Rice Lake PL
+
+	Route distance: 207.71 miles
+	Route time: 6 hours, 41 minutes
+	Route load: 47 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 17 minutes; end time = 5 hours, 47 minutes
+
+Route for vehicle 4:
+	Rice Lake PL -> Minong mailabook -> Gordon mailabook -> Solon Springs mailabook -> SupPL - Solon Springs PL -> SupPL - Superior PL -> UW-Superior -> Poplar mailabook -> Brule mailabook -> Barnes mailabook -> Hayward PL -> Lac Courte Oreilles Library ->  Rice Lake PL
+
+	Route distance: 229.53 miles
+	Route time: 7 hours, 7 minutes
+	Route load: 34 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 5:
+	Rice Lake PL -> SupPL - Lake Nebagamon PL -> Iron River PL -> Port Wing mailabook -> Cornucopia mailabook -> Bayfield PL -> Washburn PL -> Drummond PL ->  Rice Lake PL
+
+	Route distance: 275.46 miles
+	Route time: 7 hours, 14 minutes
+	Route load: 24 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	Rice Lake PL -> Cumberland PL -> Balsam Lake PL -> Centuria PL -> St. Croix Falls PL -> Dresser PL -> Osceola PL -> Somerset PL -> New Richmond PL -> Glenwood City PL -> Boyceville PL -> UW-Stout -> MenPL - Menomonie PL -> Barron PL ->  Rice Lake PL
+
+	Route distance: 186.81 miles
+	Route time: 7 hours, 6 minutes
+	Route load: 80 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 7:
+	Rice Lake PL -> Cable PL -> Mason mailabook -> Ashland PL -> Northern Waters LS -> Mellen PL -> Glidden mailabook -> Winter PL -> Birchwood mailabook ->  Rice Lake PL
+
+	Route distance: 256.76 miles
+	Route time: 7 hours, 49 minutes
+	Route load: 24 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	Rice Lake PL -> Sand Creek PL -> Colfax PL -> MenPL - Elk Mound Branch -> Durand PL -> Pepin PL -> Plum City PL -> Elmwood PL -> Spring Valley PL -> Woodville PL -> Clear Lake PL -> Turtle Lake PL ->  Rice Lake PL
+
+	Route distance: 221.13 miles
+	Route time: 7 hours, 26 minutes
+	Route load: 42 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 40 minutes; end time = 5 hours, 10 minutes
+
+Route for vehicle 9:
+	Rice Lake PL -> Hammond PL -> Roberts PL -> Hudson PL -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Baldwin PL -> Deer Park PL -> Amery PL ->  Rice Lake PL
+
+	Route distance: 217.41 miles
+	Route time: 7 hours, 10 minutes
+	Route load: 80 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 15 minutes; end time = 5 hours, 45 minutes
+
+Route for vehicle 10:
+	Rice Lake PL ->  Rice Lake PL
+
+	Route distance: 0.00 miles
+	Route time: 0 hour, 0 minute
+	Route load: 9 containers
+	Number of stops: 0
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 11:
+	Rice Lake PL -> La Pointe PL ->  Rice Lake PL
+
+	Route distance: 256.57 miles
+	Route time: 7 hours, 49 minutes
+	Route load: 11 containers
+	Number of stops: 1
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 2197.42 miles
+Total time, all routes: 69 hours, 6 minutes
+
+------------------------
+
+Model ID: idl1_100505
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	Rice Lake PL -> Sand Creek PL -> Colfax PL -> MenPL - Elk Mound Branch -> IFLS -> Eau Claire PL -> UW-Eau Claire -> Chippewa Valley TC -> Altoona PL -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Stanley CI -> Stanley PL -> Cadott PL -> Cornell PL -> Chippewa Valley CI -> Chippewa Falls PL -> Bloomer PL -> Chetek PL ->  Rice Lake PL
+
+	Route distance: 243.70 miles
+	Route time: 8 hours, 56 minutes
+	Route load: 109 containers
+	Number of stops: 19
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 2:
+	Rice Lake PL -> Shell Lake PL -> Spooner PL -> Minong mailabook -> SupPL - Solon Springs PL -> Solon Springs mailabook -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Grantsburg PL -> Frederic PL -> Luck PL -> Milltown PL -> Centuria PL -> Balsam Lake PL -> Cumberland PL ->  Rice Lake PL
+
+	Route distance: 231.74 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 52 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 55 minutes; end time = 5 hours, 25 minutes
+
+Route for vehicle 3:
+	Rice Lake PL -> Hayward PL -> Cable PL -> Drummond PL -> Mason mailabook -> Mellen PL -> Glidden mailabook -> Winter PL -> Hawkins PL -> Ladysmith PL -> Bruce PL -> Cameron PL ->  Rice Lake PL
+
+	Route distance: 278.49 miles
+	Route time: 9 hours, 3 minutes
+	Route load: 34 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Rice Lake PL -> Gordon mailabook -> SupPL - Lake Nebagamon PL -> Brule mailabook -> Iron River PL -> Northern Waters LS -> Ashland PL -> Washburn PL -> Cornucopia mailabook -> Port Wing mailabook -> Poplar mailabook -> SupPL - Superior PL -> UW-Superior ->  Rice Lake PL
+
+	Route distance: 321.53 miles
+	Route time: 8 hours, 42 minutes
+	Route load: 41 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 51 minutes; end time = 5 hours, 21 minutes
+
+Route for vehicle 5:
+	Rice Lake PL -> UW-Barron -> Barron PL -> Boyceville PL -> Glenwood City PL -> Elmwood PL -> Spring Valley PL -> Woodville PL -> Baldwin PL -> River Falls PL -> UW-River Falls -> Roberts PL -> New Richmond PL -> Somerset PL -> Osceola PL -> Dresser PL -> St. Croix Falls PL ->  Rice Lake PL
+
+	Route distance: 226.24 miles
+	Route time: 8 hours, 37 minutes
+	Route load: 93 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 51 minutes; end time = 6 hours, 21 minutes
+
+Route for vehicle 6:
+	Rice Lake PL -> Turtle Lake PL -> Clear Lake PL -> Amery PL -> Deer Park PL -> Hammond PL -> Hudson PL -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL -> UW-Stout -> MenPL - Menomonie PL ->  Rice Lake PL
+
+	Route distance: 261.53 miles
+	Route time: 8 hours, 47 minutes
+	Route load: 84 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 20 minutes; end time = 5 hours, 50 minutes
+
+Route for vehicle 7:
+	Rice Lake PL -> Barnes mailabook -> Bayfield PL -> La Pointe PL -> Lac Courte Oreilles Library -> Birchwood mailabook ->  Rice Lake PL
+
+	Route distance: 269.67 miles
+	Route time: 9 hours, 3 minutes
+	Route load: 16 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1832.91 miles
+Total time, all routes: 61 hours, 0 minute
+
+------------------------
+

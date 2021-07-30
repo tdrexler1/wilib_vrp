@@ -1,0 +1,357 @@
+Model ID: str3_080205
+Starter proposal, region 3
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Ogema PL -> MaraCo - Rothschild Branch -> MaraCo - Mosinee Branch -> MaraCo - Edgar Branch -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL -> Phillips PL ->  Ogema PL
+
+	Route distance: 240.44 miles
+	Route time: 7 hours, 7 minutes
+	Route load: 39 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 31 minutes; end time = 5 hours, 1 minute
+
+Route for vehicle 2:
+	Ogema PL -> Westboro PL -> Rib Lake PL -> MaraCo - Athens Branch -> MaraCo - Stratford Branch -> MaraCo - Spencer Branch -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Colby PL -> Dorchester PL ->  Ogema PL
+
+	Route distance: 186.90 miles
+	Route time: 6 hours, 46 minutes
+	Route load: 26 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 4 minutes; end time = 5 hours, 34 minutes
+
+Route for vehicle 3:
+	Ogema PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch -> UW-Wausau -> MaraCo - Wausau PL -> Northcentral TC -> MaraCo - Marathon City Branch -> Abbotsford PL -> Stetsonville PL -> Medford PL ->  Ogema PL
+
+	Route distance: 202.27 miles
+	Route time: 5 hours, 59 minutes
+	Route load: 40 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 59 minutes; end time = 6 hours, 29 minutes
+
+Route for vehicle 4:
+	Ogema PL -> Merrill PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> Tomahawk PL ->  Ogema PL
+
+	Route distance: 235.61 miles
+	Route time: 7 hours, 7 minutes
+	Route load: 21 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 5:
+	Ogema PL -> Park Falls PL -> Minocqua PL -> Three Lakes PL -> AntPL - Elcho PL -> Nicolet Area TC -> Rhinelander PL ->  Ogema PL
+
+	Route distance: 222.97 miles
+	Route time: 7 hours, 7 minutes
+	Route load: 22 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 19 minutes; end time = 4 hours, 49 minutes
+
+Total distance, all routes: 1088.19 miles
+Total time, all routes: 34 hours, 7 minutes
+
+------------------------
+
+Model ID: str3_100205
+Starter proposal, region 3
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Ogema PL -> MaraCo - Rothschild Branch -> MaraCo - Hatley Branch -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> Nicolet Area TC -> Rhinelander PL ->  Ogema PL
+
+	Route distance: 272.08 miles
+	Route time: 8 hours, 5 minutes
+	Route load: 29 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 44 minutes; end time = 5 hours, 14 minutes
+
+Route for vehicle 2:
+	Ogema PL -> Park Falls PL -> Phillips PL -> Merrill PL -> MaraCo - Mosinee Branch -> MaraCo - Marathon City Branch -> MaraCo - Edgar Branch -> MaraCo - Stratford Branch -> MaraCo - Athens Branch -> Rib Lake PL -> Westboro PL ->  Ogema PL
+
+	Route distance: 250.78 miles
+	Route time: 7 hours, 52 minutes
+	Route load: 40 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 22 minutes; end time = 5 hours, 52 minutes
+
+Route for vehicle 3:
+	Ogema PL -> Northcentral TC -> UW-Wausau -> MaraCo - Wausau PL -> AntPL - Antigo PL -> AntPL - Elcho PL -> Three Lakes PL -> Minocqua PL -> Tomahawk PL ->  Ogema PL
+
+	Route distance: 251.67 miles
+	Route time: 7 hours, 47 minutes
+	Route load: 38 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 28 minutes; end time = 4 hours, 58 minutes
+
+Route for vehicle 4:
+	Ogema PL -> Stetsonville PL -> Dorchester PL -> Abbotsford PL -> Colby PL -> MaraCo - Spencer Branch -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL -> Medford PL ->  Ogema PL
+
+	Route distance: 194.76 miles
+	Route time: 7 hours, 17 minutes
+	Route load: 39 containers
+	Number of stops: 14
+	Break: start time = 4 hours, 47 minutes; end time = 5 hours, 17 minutes
+
+Total distance, all routes: 969.29 miles
+Total time, all routes: 31 hours, 2 minutes
+
+------------------------
+
+Model ID: str3_080405
+Starter proposal, region 3
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Ogema PL -> Stetsonville PL -> Abbotsford PL -> Colby PL -> MaraCo - Spencer Branch -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL ->  Ogema PL
+
+	Route distance: 192.27 miles
+	Route time: 6 hours, 58 minutes
+	Route load: 35 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 4 minutes; end time = 4 hours, 34 minutes
+
+Route for vehicle 2:
+	Ogema PL -> Dorchester PL -> MaraCo - Athens Branch -> MaraCo - Stratford Branch -> MaraCo - Edgar Branch -> MaraCo - Marathon City Branch -> MaraCo - Mosinee Branch -> UW-Wausau -> MaraCo - Wausau PL -> Northcentral TC ->  Ogema PL
+
+	Route distance: 183.47 miles
+	Route time: 5 hours, 38 minutes
+	Route load: 39 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 38 minutes; end time = 6 hours, 8 minutes
+
+Route for vehicle 3:
+	Ogema PL -> Tomahawk PL -> Rhinelander PL -> Three Lakes PL -> AntPL - Elcho PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch -> MaraCo - Rothschild Branch ->  Ogema PL
+
+	Route distance: 237.45 miles
+	Route time: 6 hours, 58 minutes
+	Route load: 33 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Ogema PL -> Nicolet Area TC -> Crandon PL -> Laona PL -> Wabeno PL -> AntPL - White Lake PL ->  Ogema PL
+
+	Route distance: 237.62 miles
+	Route time: 6 hours, 58 minutes
+	Route load: 9 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 4 minutes; end time = 4 hours, 34 minutes
+
+Route for vehicle 5:
+	Ogema PL -> Phillips PL -> Park Falls PL -> Minocqua PL -> Merrill PL -> Medford PL -> Rib Lake PL -> Westboro PL ->  Ogema PL
+
+	Route distance: 198.05 miles
+	Route time: 5 hours, 54 minutes
+	Route load: 32 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 54 minutes; end time = 6 hours, 24 minutes
+
+Total distance, all routes: 1048.86 miles
+Total time, all routes: 32 hours, 28 minutes
+
+------------------------
+
+Model ID: str3_100405
+Starter proposal, region 3
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Ogema PL -> Stetsonville PL -> Dorchester PL -> Colby PL -> MaraCo - Spencer Branch -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL -> Medford PL ->  Ogema PL
+
+	Route distance: 194.28 miles
+	Route time: 7 hours, 9 minutes
+	Route load: 36 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 38 minutes; end time = 5 hours, 8 minutes
+
+Route for vehicle 2:
+	Ogema PL -> Westboro PL -> Rib Lake PL -> MaraCo - Athens Branch -> MaraCo - Marathon City Branch -> UW-Wausau -> MaraCo - Wausau PL -> Northcentral TC -> MaraCo - Edgar Branch -> MaraCo - Stratford Branch -> Abbotsford PL ->  Ogema PL
+
+	Route distance: 164.65 miles
+	Route time: 5 hours, 27 minutes
+	Route load: 40 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Route for vehicle 3:
+	Ogema PL -> Merrill PL -> MaraCo - Mosinee Branch -> MaraCo - Rothschild Branch -> MaraCo - Hatley Branch -> AntPL - Elcho PL -> Three Lakes PL -> Nicolet Area TC -> Tomahawk PL ->  Ogema PL
+
+	Route distance: 259.59 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Ogema PL -> Phillips PL -> Park Falls PL -> Minocqua PL -> Rhinelander PL -> Crandon PL -> Laona PL -> Wabeno PL -> AntPL - White Lake PL -> AntPL - Antigo PL ->  Ogema PL
+
+	Route distance: 288.59 miles
+	Route time: 8 hours, 56 minutes
+	Route load: 30 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 36 minutes; end time = 5 hours, 6 minutes
+
+Total distance, all routes: 907.11 miles
+Total time, all routes: 29 hours, 21 minutes
+
+------------------------
+
+Model ID: str3_080505
+Starter proposal, region 3
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Ogema PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> Tomahawk PL ->  Ogema PL
+
+	Route distance: 232.06 miles
+	Route time: 6 hours, 49 minutes
+	Route load: 13 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	Ogema PL -> UW-Wausau -> MaraCo - Wausau PL -> MaraCo - Rothschild Branch -> MaraCo - Hatley Branch -> AntPL - Antigo PL -> AntPL - Elcho PL -> Nicolet Area TC ->  Ogema PL
+
+	Route distance: 210.98 miles
+	Route time: 6 hours, 38 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 47 minutes; end time = 5 hours, 17 minutes
+
+Route for vehicle 3:
+	Ogema PL -> Stetsonville PL -> Abbotsford PL -> MaraCo - Spencer Branch -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL -> Medford PL ->  Ogema PL
+
+	Route distance: 192.33 miles
+	Route time: 6 hours, 58 minutes
+	Route load: 34 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 1 minute; end time = 5 hours, 31 minutes
+
+Route for vehicle 4:
+	Ogema PL -> Phillips PL -> Park Falls PL -> Minocqua PL -> Three Lakes PL -> Rhinelander PL ->  Ogema PL
+
+	Route distance: 192.67 miles
+	Route time: 5 hours, 32 minutes
+	Route load: 27 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 5:
+	Ogema PL -> Westboro PL -> Rib Lake PL -> Dorchester PL -> Colby PL -> MaraCo - Athens Branch -> MaraCo - Stratford Branch -> MaraCo - Edgar Branch -> MaraCo - Marathon City Branch -> MaraCo - Mosinee Branch -> Northcentral TC -> Merrill PL ->  Ogema PL
+
+	Route distance: 206.01 miles
+	Route time: 6 hours, 54 minutes
+	Route load: 34 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 12 minutes; end time = 4 hours, 42 minutes
+
+Total distance, all routes: 1034.05 miles
+Total time, all routes: 32 hours, 53 minutes
+
+------------------------
+
+Model ID: str3_100505
+Starter proposal, region 3
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Ogema PL -> Westboro PL -> Rib Lake PL -> MaraCo - Athens Branch -> MaraCo - Stratford Branch -> MaraCo - Edgar Branch -> MaraCo - Marathon City Branch -> MaraCo - Mosinee Branch -> MaraCo - Rothschild Branch -> UW-Wausau -> Northcentral TC -> Merrill PL ->  Ogema PL
+
+	Route distance: 181.06 miles
+	Route time: 6 hours, 31 minutes
+	Route load: 39 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 2 minutes; end time = 4 hours, 32 minutes
+
+Route for vehicle 2:
+	Ogema PL -> Phillips PL -> Park Falls PL -> Minocqua PL -> Three Lakes PL -> AntPL - Elcho PL -> Nicolet Area TC -> Rhinelander PL -> Tomahawk PL ->  Ogema PL
+
+	Route distance: 223.51 miles
+	Route time: 7 hours, 24 minutes
+	Route load: 36 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Route for vehicle 3:
+	Ogema PL -> Stetsonville PL -> Dorchester PL -> Abbotsford PL -> Colby PL -> MaraCo - Spencer Branch -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL -> Medford PL ->  Ogema PL
+
+	Route distance: 194.76 miles
+	Route time: 7 hours, 17 minutes
+	Route load: 39 containers
+	Number of stops: 14
+	Break: start time = 4 hours, 47 minutes; end time = 5 hours, 17 minutes
+
+Route for vehicle 4:
+	Ogema PL -> Crandon PL -> Laona PL -> Wabeno PL -> AntPL - White Lake PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch -> MaraCo - Wausau PL ->  Ogema PL
+
+	Route distance: 273.92 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 32 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 873.24 miles
+Total time, all routes: 29 hours, 3 minutes
+
+------------------------
+

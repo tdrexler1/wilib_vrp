@@ -1,0 +1,67 @@
+Model ID: idl5_080205
+Ideal proposal, region 5
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Fond du Lac PL -> Kettle Moraine CI -> Endeavor PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Princeton PL ->  Fond du Lac PL
+
+	Route distance: 271.80 miles
+	Route time: 7 hours, 27 minutes
+	Number of stops: 7
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 2:
+	Fond du Lac PL -> Plymouth PL -> Kohler PL -> Sheboygan Falls PL -> Monarch LS -> UW-Sheboygan -> Sheboygan PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL -> Brillion PL -> Chilton PL -> New Holstein PL -> Kiel PL -> Lakeland University -> Elkhart Lake PL ->  Fond du Lac PL
+
+	Route distance: 180.01 miles
+	Route time: 7 hours, 17 minutes
+	Number of stops: 16
+	Break: start time = 5 hours, 26 minutes; end time = 5 hours, 56 minutes
+
+Route for vehicle 3:
+	Fond du Lac PL -> North Fond du Lac PL -> Ripon College -> Green Lake PL -> Montello PL -> Packwaukee PL -> Oxford PL -> Neshkoro PL -> Wautoma PL -> Wild Rose PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL -> Berlin PL ->  Fond du Lac PL
+
+	Route distance: 193.90 miles
+	Route time: 7 hours, 23 minutes
+	Number of stops: 14
+	Break: start time = 5 hours, 18 minutes; end time = 5 hours, 48 minutes
+
+Route for vehicle 4:
+	Fond du Lac PL -> Hartford PL -> Slinger PL -> Germantown PL -> Mequon PL -> Concordia University -> Cedarburg PL -> Grafton PL -> Saukville PL -> Port Washington PL -> Oostburg PL -> Cedar Grove PL -> Random Lake PL -> West Bend PL -> UW-Washington Co -> Kewaskum PL -> Campbellsport PL ->  Fond du Lac PL
+
+	Route distance: 172.63 miles
+	Route time: 7 hours, 4 minutes
+	Number of stops: 16
+	Break: start time = 5 hours, 9 minutes; end time = 5 hours, 39 minutes
+
+Route for vehicle 5:
+	Fond du Lac PL -> Oakfield PL -> Waupun PL -> Waupun CI -> Dodge CI -> Fox Lake CI -> Markesan PL -> Kingston PL -> Fox Lake PL -> Beaver Dam PL -> Reeseville PL -> Juneau PL -> Horicon PL -> Hustisford PL -> Iron Ridge PL -> Mayville PL -> Theresa PL -> Lomira PL -> Brownsville PL ->  Fond du Lac PL
+
+	Route distance: 165.32 miles
+	Route time: 7 hours, 18 minutes
+	Number of stops: 18
+	Break: start time = 5 hours, 41 minutes; end time = 6 hours, 11 minutes
+
+Route for vehicle 6:
+	Fond du Lac PL -> Oshkosh PL -> UW-Oshkosh -> WMHI -> WRC -> Neenah PL -> Menasha PL -> UW-Fox Cities -> Winneconne PL -> Omro PL -> Ripon PL -> Brandon PL -> Fond du Lac PL - XP -> UW-Fond du Lac -> Moraine Park TC -> Marian University ->  Fond du Lac PL
+
+	Route distance: 130.79 miles
+	Route time: 5 hours, 30 minutes
+	Number of stops: 15
+	Break: start time = 5 hours, 30 minutes; end time = 6 hours, 0 minute
+
+Total distance, all routes: 1114.44 miles
+Total time, all routes: 42 hours, 1 minute
+
+------------------------
+

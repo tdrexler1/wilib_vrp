@@ -1,0 +1,402 @@
+Model ID: str1_080205
+Starter proposal, region 1
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Northern Waters LS -> Town of Scott mailabook -> Webster PL -> Grantsburg PL -> Siren mailabook ->  Northern Waters LS
+
+	Route distance: 265.21 miles
+	Route time: 7 hours, 16 minutes
+	Route load: 10 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 10 minutes; end time = 4 hours, 40 minutes
+
+Route for vehicle 2:
+	Northern Waters LS -> Boulder Junction PL -> Sayner PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL ->  Northern Waters LS
+
+	Route distance: 239.28 miles
+	Route time: 7 hours, 19 minutes
+	Route load: 12 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 24 minutes; end time = 4 hours, 54 minutes
+
+Route for vehicle 3:
+	Northern Waters LS -> Ashland PL -> Washburn PL -> Bayfield PL -> La Pointe PL -> Cornucopia mailabook -> Port Wing mailabook -> Iron River PL -> Barnes mailabook ->  Northern Waters LS
+
+	Route distance: 151.07 miles
+	Route time: 6 hours, 53 minutes
+	Route load: 22 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 17 minutes; end time = 5 hours, 47 minutes
+
+Route for vehicle 4:
+	Northern Waters LS -> Lac Courte Oreilles Library -> Hayward PL -> Minong mailabook -> Gordon mailabook -> Solon Springs mailabook -> SupPL - Solon Springs PL -> SupPL - Superior PL -> UW-Superior -> Poplar mailabook -> SupPL - Lake Nebagamon PL -> Brule mailabook ->  Northern Waters LS
+
+	Route distance: 223.19 miles
+	Route time: 7 hours, 10 minutes
+	Route load: 28 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 10 minutes; end time = 5 hours, 40 minutes
+
+Route for vehicle 5:
+	Northern Waters LS -> Drummond PL -> Winter PL -> Birchwood mailabook -> Shell Lake PL -> Spooner PL -> Cable PL -> Mason mailabook ->  Northern Waters LS
+
+	Route distance: 245.77 miles
+	Route time: 7 hours, 7 minutes
+	Route load: 17 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 23 minutes; end time = 4 hours, 53 minutes
+
+Route for vehicle 6:
+	Northern Waters LS -> Hurley PL -> Mercer PL -> Presque Isle PL -> Winchester PL -> Manitowish Waters PL -> Lac du Flambeau PL -> Glidden mailabook -> Mellen PL ->  Northern Waters LS
+
+	Route distance: 210.88 miles
+	Route time: 7 hours, 19 minutes
+	Route load: 12 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1335.41 miles
+Total time, all routes: 43 hours, 6 minutes
+
+------------------------
+
+Model ID: str1_100205
+Starter proposal, region 1
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Northern Waters LS -> Ashland PL -> Washburn PL -> La Pointe PL -> Bayfield PL -> Mason mailabook -> Drummond PL -> Barnes mailabook -> SupPL - Solon Springs PL -> Solon Springs mailabook -> SupPL - Lake Nebagamon PL -> Brule mailabook -> Iron River PL ->  Northern Waters LS
+
+	Route distance: 176.24 miles
+	Route time: 7 hours, 58 minutes
+	Route load: 31 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 31 minutes; end time = 6 hours, 1 minute
+
+Route for vehicle 2:
+	Northern Waters LS -> Hurley PL -> Mercer PL -> Lac du Flambeau PL -> Boulder Junction PL -> Sayner PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL -> Presque Isle PL -> Winchester PL -> Manitowish Waters PL ->  Northern Waters LS
+
+	Route distance: 273.45 miles
+	Route time: 9 hours, 15 minutes
+	Route load: 20 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 8 minutes; end time = 4 hours, 38 minutes
+
+Route for vehicle 3:
+	Northern Waters LS -> Mellen PL -> Glidden mailabook -> Winter PL -> Hayward PL -> Minong mailabook -> Gordon mailabook -> SupPL - Superior PL -> UW-Superior -> Poplar mailabook -> Port Wing mailabook -> Cornucopia mailabook ->  Northern Waters LS
+
+	Route distance: 291.16 miles
+	Route time: 9 hours, 3 minutes
+	Route load: 25 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 29 minutes; end time = 4 hours, 59 minutes
+
+Route for vehicle 4:
+	Northern Waters LS -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Grantsburg PL -> Spooner PL -> Shell Lake PL -> Birchwood mailabook -> Lac Courte Oreilles Library -> Cable PL ->  Northern Waters LS
+
+	Route distance: 310.21 miles
+	Route time: 9 hours, 10 minutes
+	Route load: 21 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 13 minutes; end time = 5 hours, 43 minutes
+
+Total distance, all routes: 1051.06 miles
+Total time, all routes: 35 hours, 28 minutes
+
+------------------------
+
+Model ID: str1_080405
+Starter proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Northern Waters LS -> Mason mailabook -> Winter PL -> Birchwood mailabook -> Shell Lake PL -> Spooner PL -> Gordon mailabook -> Barnes mailabook ->  Northern Waters LS
+
+	Route distance: 254.01 miles
+	Route time: 7 hours, 16 minutes
+	Route load: 16 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 1 minute; end time = 5 hours, 31 minutes
+
+Route for vehicle 2:
+	Northern Waters LS -> Town of Scott mailabook -> Webster PL -> Grantsburg PL -> Siren mailabook ->  Northern Waters LS
+
+	Route distance: 265.21 miles
+	Route time: 7 hours, 16 minutes
+	Route load: 10 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	Northern Waters LS -> Drummond PL -> Cable PL -> Lac Courte Oreilles Library -> Hayward PL -> Minong mailabook -> SupPL - Solon Springs PL -> Solon Springs mailabook -> SupPL - Lake Nebagamon PL -> Brule mailabook -> Port Wing mailabook -> Cornucopia mailabook -> Washburn PL ->  Northern Waters LS
+
+	Route distance: 216.92 miles
+	Route time: 7 hours, 16 minutes
+	Route load: 23 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 46 minutes; end time = 6 hours, 16 minutes
+
+Route for vehicle 4:
+	Northern Waters LS -> Bayfield PL -> La Pointe PL -> Iron River PL -> SupPL - Superior PL -> UW-Superior -> Poplar mailabook ->  Northern Waters LS
+
+	Route distance: 182.94 miles
+	Route time: 7 hours, 15 minutes
+	Route load: 23 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Route for vehicle 5:
+	Northern Waters LS -> Hurley PL -> Manitowish Waters PL -> Sayner PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL ->  Northern Waters LS
+
+	Route distance: 231.67 miles
+	Route time: 7 hours, 16 minutes
+	Route load: 15 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	Northern Waters LS -> Mercer PL -> Winchester PL -> Presque Isle PL -> Boulder Junction PL -> Lac du Flambeau PL -> Glidden mailabook -> Mellen PL -> Ashland PL ->  Northern Waters LS
+
+	Route distance: 209.43 miles
+	Route time: 7 hours, 10 minutes
+	Route load: 14 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 47 minutes; end time = 6 hours, 17 minutes
+
+Total distance, all routes: 1360.19 miles
+Total time, all routes: 43 hours, 32 minutes
+
+------------------------
+
+Model ID: str1_100405
+Starter proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Northern Waters LS -> Mason mailabook -> Cable PL -> Hayward PL -> Lac Courte Oreilles Library -> Winter PL -> Birchwood mailabook -> Spooner PL -> Minong mailabook -> Barnes mailabook -> Drummond PL ->  Northern Waters LS
+
+	Route distance: 267.72 miles
+	Route time: 8 hours, 8 minutes
+	Route load: 19 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 59 minutes; end time = 5 hours, 29 minutes
+
+Route for vehicle 2:
+	Northern Waters LS -> Shell Lake PL -> Grantsburg PL -> Siren mailabook -> Webster PL -> Town of Scott mailabook -> Gordon mailabook -> SupPL - Solon Springs PL -> Solon Springs mailabook -> SupPL - Lake Nebagamon PL ->  Northern Waters LS
+
+	Route distance: 278.98 miles
+	Route time: 8 hours, 8 minutes
+	Route load: 22 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 49 minutes; end time = 5 hours, 19 minutes
+
+Route for vehicle 3:
+	Northern Waters LS -> Ashland PL -> Washburn PL -> Bayfield PL -> La Pointe PL -> Cornucopia mailabook -> Port Wing mailabook -> SupPL - Superior PL -> UW-Superior -> Poplar mailabook -> Brule mailabook -> Iron River PL ->  Northern Waters LS
+
+	Route distance: 182.40 miles
+	Route time: 7 hours, 55 minutes
+	Route load: 34 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 4 minutes; end time = 4 hours, 34 minutes
+
+Route for vehicle 4:
+	Northern Waters LS -> Hurley PL -> Manitowish Waters PL -> Sayner PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL -> Presque Isle PL -> Winchester PL ->  Northern Waters LS
+
+	Route distance: 243.79 miles
+	Route time: 8 hours, 7 minutes
+	Route load: 17 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 13 minutes; end time = 5 hours, 43 minutes
+
+Route for vehicle 5:
+	Northern Waters LS -> Mercer PL -> Boulder Junction PL -> Lac du Flambeau PL -> Glidden mailabook -> Mellen PL ->  Northern Waters LS
+
+	Route distance: 196.14 miles
+	Route time: 5 hours, 44 minutes
+	Route load: 7 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 44 minutes; end time = 6 hours, 14 minutes
+
+Total distance, all routes: 1169.03 miles
+Total time, all routes: 38 hours, 4 minutes
+
+------------------------
+
+Model ID: str1_080505
+Starter proposal, region 1
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Northern Waters LS -> Mason mailabook -> Cable PL -> Hayward PL -> Lac Courte Oreilles Library -> Birchwood mailabook -> Shell Lake PL -> Minong mailabook -> Gordon mailabook -> Barnes mailabook -> Drummond PL ->  Northern Waters LS
+
+	Route distance: 231.45 miles
+	Route time: 7 hours, 17 minutes
+	Route load: 16 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 30 minutes; end time = 6 hours, 0 minute
+
+Route for vehicle 2:
+	Northern Waters LS -> Winchester PL -> Presque Isle PL -> Boulder Junction PL -> Lac du Flambeau PL -> Glidden mailabook -> Mellen PL ->  Northern Waters LS
+
+	Route distance: 205.34 miles
+	Route time: 6 hours, 51 minutes
+	Route load: 7 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 36 minutes; end time = 6 hours, 6 minutes
+
+Route for vehicle 3:
+	Northern Waters LS -> Ashland PL -> Washburn PL -> Bayfield PL -> Cornucopia mailabook -> Port Wing mailabook -> SupPL - Superior PL -> UW-Superior -> Solon Springs mailabook -> SupPL - Solon Springs PL -> Poplar mailabook -> Brule mailabook -> Iron River PL ->  Northern Waters LS
+
+	Route distance: 207.65 miles
+	Route time: 6 hours, 50 minutes
+	Route load: 38 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Northern Waters LS -> Spooner PL -> Siren mailabook -> Grantsburg PL -> Webster PL -> Town of Scott mailabook -> SupPL - Lake Nebagamon PL ->  Northern Waters LS
+
+	Route distance: 272.37 miles
+	Route time: 7 hours, 32 minutes
+	Route load: 17 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 4 minutes; end time = 4 hours, 34 minutes
+
+Route for vehicle 5:
+	Northern Waters LS -> La Pointe PL -> Winter PL ->  Northern Waters LS
+
+	Route distance: 214.15 miles
+	Route time: 7 hours, 39 minutes
+	Route load: 6 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	Northern Waters LS -> Hurley PL -> Mercer PL -> Manitowish Waters PL -> Sayner PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL ->  Northern Waters LS
+
+	Route distance: 232.00 miles
+	Route time: 7 hours, 22 minutes
+	Route load: 17 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Total distance, all routes: 1362.96 miles
+Total time, all routes: 43 hours, 33 minutes
+
+------------------------
+
+Model ID: str1_100505
+Starter proposal, region 1
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Northern Waters LS -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Grantsburg PL -> SupPL - Superior PL -> UW-Superior ->  Northern Waters LS
+
+	Route distance: 311.40 miles
+	Route time: 8 hours, 2 minutes
+	Route load: 21 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	Northern Waters LS -> Winchester PL -> Manitowish Waters PL -> Lac du Flambeau PL -> Winter PL -> Glidden mailabook -> Mellen PL ->  Northern Waters LS
+
+	Route distance: 249.41 miles
+	Route time: 8 hours, 2 minutes
+	Route load: 9 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 52 minutes; end time = 5 hours, 22 minutes
+
+Route for vehicle 3:
+	Northern Waters LS -> Mason mailabook -> Cable PL -> Hayward PL -> Lac Courte Oreilles Library -> Birchwood mailabook -> Shell Lake PL -> Spooner PL -> Minong mailabook -> Gordon mailabook -> Solon Springs mailabook -> SupPL - Solon Springs PL -> Barnes mailabook -> Drummond PL ->  Northern Waters LS
+
+	Route distance: 238.62 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 27 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 16 minutes; end time = 5 hours, 46 minutes
+
+Route for vehicle 4:
+	Northern Waters LS -> Ashland PL -> Washburn PL -> Bayfield PL -> La Pointe PL -> Cornucopia mailabook -> Port Wing mailabook -> Poplar mailabook -> SupPL - Lake Nebagamon PL -> Brule mailabook -> Iron River PL ->  Northern Waters LS
+
+	Route distance: 154.01 miles
+	Route time: 7 hours, 3 minutes
+	Route load: 25 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 15 minutes; end time = 5 hours, 45 minutes
+
+Route for vehicle 5:
+	Northern Waters LS -> Hurley PL -> Mercer PL -> Presque Isle PL -> Boulder Junction PL -> Sayner PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL ->  Northern Waters LS
+
+	Route distance: 249.01 miles
+	Route time: 8 hours, 2 minutes
+	Route load: 17 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1202.45 miles
+Total time, all routes: 39 hours, 1 minute
+
+------------------------
+

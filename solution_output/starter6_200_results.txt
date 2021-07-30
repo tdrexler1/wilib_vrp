@@ -1,0 +1,456 @@
+Model ID: str6_080205
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	Brillion PL -> Westfield PL -> Oxford PL -> Kettle Moraine CI -> Endeavor PL -> Packwaukee PL ->  Brillion PL
+
+	Route distance: 284.63 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 13 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	Brillion PL -> UW-Fox Cities -> Fox Lake CI -> Markesan PL -> Kingston PL -> Montello PL -> Neshkoro PL -> Wautoma PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL ->  Brillion PL
+
+	Route distance: 249.92 miles
+	Route time: 7 hours, 56 minutes
+	Route load: 33 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 3:
+	Brillion PL -> Grafton PL -> Cedarburg PL -> Mequon PL -> Germantown PL -> Slinger PL -> Hartford PL -> Iron Ridge PL -> Hustisford PL -> Reeseville PL -> Juneau PL -> Horicon PL -> Mayville PL -> Theresa PL ->  Brillion PL
+
+	Route distance: 240.42 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 103 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 7 minutes; end time = 4 hours, 37 minutes
+
+Route for vehicle 4:
+	Brillion PL -> Beaver Dam PL -> Fox Lake PL -> Oakfield PL -> Brownsville PL -> Lomira PL -> Campbellsport PL -> Kewaskum PL -> UW-Washington Co -> West Bend PL -> Saukville PL -> Concordia University -> Port Washington PL ->  Brillion PL
+
+	Route distance: 253.91 miles
+	Route time: 7 hours, 53 minutes
+	Route load: 61 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 40 minutes; end time = 5 hours, 10 minutes
+
+Route for vehicle 5:
+	Brillion PL -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> Waupun PL -> Waupun CI -> Dodge CI -> Brandon PL -> Ripon PL -> Ripon College -> Princeton PL -> Green Lake PL -> Berlin PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL ->  Brillion PL
+
+	Route distance: 200.69 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 47 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 6:
+	Brillion PL -> Sheboygan PL -> UW-Sheboygan -> Kohler PL -> Sheboygan Falls PL -> Monarch LS -> Oostburg PL -> Cedar Grove PL -> Random Lake PL -> Plymouth PL -> Fond du Lac PL - XP -> North Fond du Lac PL -> Oshkosh PL -> UW-Oshkosh -> Omro PL -> Winneconne PL ->  Brillion PL
+
+	Route distance: 209.25 miles
+	Route time: 7 hours, 38 minutes
+	Route load: 175 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 12 minutes; end time = 5 hours, 42 minutes
+
+Route for vehicle 7:
+	Brillion PL -> Menasha PL -> Neenah PL -> WMHI -> WRC -> Chilton PL -> New Holstein PL -> Kiel PL -> Elkhart Lake PL -> Lakeland University -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL ->  Brillion PL
+
+	Route distance: 157.28 miles
+	Route time: 5 hours, 52 minutes
+	Route load: 65 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Total distance, all routes: 1596.10 miles
+Total time, all routes: 53 hours, 9 minutes
+
+------------------------
+
+Model ID: str6_100205
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Brillion PL -> Fox Lake CI -> Markesan PL -> Kingston PL -> Montello PL -> Packwaukee PL -> Endeavor PL -> Kettle Moraine CI -> Oxford PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL ->  Brillion PL
+
+	Route distance: 322.17 miles
+	Route time: 9 hours, 56 minutes
+	Route load: 35 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 2:
+	Brillion PL -> Cedar Grove PL -> Grafton PL -> Cedarburg PL -> Concordia University -> Mequon PL -> Germantown PL -> Slinger PL -> Hartford PL -> Iron Ridge PL -> Hustisford PL -> Reeseville PL -> Juneau PL -> Horicon PL -> Mayville PL -> Theresa PL -> UW-Washington Co -> West Bend PL -> Kewaskum PL -> Campbellsport PL ->  Brillion PL
+
+	Route distance: 276.07 miles
+	Route time: 9 hours, 56 minutes
+	Route load: 133 containers
+	Number of stops: 19
+	Break: start time = 5 hours, 10 minutes; end time = 5 hours, 40 minutes
+
+Route for vehicle 3:
+	Brillion PL -> Chilton PL -> Lomira PL -> Brownsville PL -> Oakfield PL -> Beaver Dam PL -> Fox Lake PL -> Dodge CI -> Waupun CI -> Waupun PL -> Brandon PL -> Ripon PL -> Ripon College -> Berlin PL -> Green Lake PL -> Princeton PL -> Neshkoro PL -> Wautoma PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL ->  Brillion PL
+
+	Route distance: 264.19 miles
+	Route time: 9 hours, 45 minutes
+	Route load: 62 containers
+	Number of stops: 21
+	Break: start time = 5 hours, 16 minutes; end time = 5 hours, 46 minutes
+
+Route for vehicle 4:
+	Brillion PL -> Menasha PL -> Neenah PL -> WRC -> WMHI -> UW-Oshkosh -> Oshkosh PL -> Fond du Lac PL - XP -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> North Fond du Lac PL -> Omro PL -> Winneconne PL -> UW-Fox Cities ->  Brillion PL
+
+	Route distance: 148.54 miles
+	Route time: 5 hours, 49 minutes
+	Route load: 133 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 49 minutes; end time = 6 hours, 19 minutes
+
+Route for vehicle 5:
+	Brillion PL -> New Holstein PL -> Kiel PL -> Lakeland University -> Elkhart Lake PL -> Plymouth PL -> Random Lake PL -> Saukville PL -> Port Washington PL -> Oostburg PL -> Monarch LS -> Sheboygan Falls PL -> Kohler PL -> UW-Sheboygan -> Sheboygan PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL ->  Brillion PL
+
+	Route distance: 184.51 miles
+	Route time: 7 hours, 43 minutes
+	Route load: 128 containers
+	Number of stops: 18
+	Break: start time = 4 hours, 33 minutes; end time = 5 hours, 3 minutes
+
+Total distance, all routes: 1195.47 miles
+Total time, all routes: 43 hours, 10 minutes
+
+------------------------
+
+Model ID: str6_080405
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 8
+
+Route for vehicle 1:
+	Brillion PL -> Chilton PL -> New Holstein PL -> Kiel PL -> Elkhart Lake PL -> Lakeland University -> Sheboygan Falls PL -> Kohler PL -> Sheboygan PL -> UW-Sheboygan -> Monarch LS -> Oostburg PL -> Cedar Grove PL -> Port Washington PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL ->  Brillion PL
+
+	Route distance: 178.77 miles
+	Route time: 7 hours, 14 minutes
+	Route load: 109 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 47 minutes; end time = 6 hours, 17 minutes
+
+Route for vehicle 2:
+	Brillion PL -> North Fond du Lac PL -> Brownsville PL -> Horicon PL -> Juneau PL -> Reeseville PL -> Hustisford PL -> Iron Ridge PL -> Mayville PL -> Theresa PL -> Lomira PL -> Campbellsport PL -> Fond du Lac PL - XP ->  Brillion PL
+
+	Route distance: 214.94 miles
+	Route time: 7 hours, 21 minutes
+	Route load: 33 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 3:
+	Brillion PL -> Omro PL -> Winneconne PL -> Oxford PL -> Packwaukee PL -> Montello PL -> Plymouth PL ->  Brillion PL
+
+	Route distance: 239.82 miles
+	Route time: 7 hours, 18 minutes
+	Route load: 33 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 48 minutes; end time = 6 hours, 18 minutes
+
+Route for vehicle 4:
+	Brillion PL -> Poy Sippi PL -> Pine River PL -> Redgranite CI -> Redgranite PL -> Wautoma PL -> Coloma PL -> Westfield PL -> Endeavor PL -> Hancock PL -> Plainfield PL -> Wild Rose PL ->  Brillion PL
+
+	Route distance: 244.42 miles
+	Route time: 7 hours, 19 minutes
+	Route load: 28 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 48 minutes; end time = 5 hours, 18 minutes
+
+Route for vehicle 5:
+	Brillion PL -> Saukville PL -> Grafton PL -> Cedarburg PL -> Concordia University -> Mequon PL -> Germantown PL -> Slinger PL -> Hartford PL -> UW-Washington Co -> West Bend PL -> Kewaskum PL -> Random Lake PL ->  Brillion PL
+
+	Route distance: 219.75 miles
+	Route time: 7 hours, 22 minutes
+	Route load: 120 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	Brillion PL -> Kettle Moraine CI ->  Brillion PL
+
+	Route distance: 260.83 miles
+	Route time: 7 hours, 1 minute
+	Route load: 5 containers
+	Number of stops: 1
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 7:
+	Brillion PL -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> Oakfield PL -> Waupun PL -> Waupun CI -> Dodge CI -> Beaver Dam PL -> Fox Lake PL -> Fox Lake CI -> Brandon PL ->  Brillion PL
+
+	Route distance: 174.51 miles
+	Route time: 7 hours, 12 minutes
+	Route load: 28 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 8:
+	Brillion PL -> Menasha PL -> Neenah PL -> WRC -> WMHI -> UW-Oshkosh -> Oshkosh PL -> Berlin PL -> Neshkoro PL -> Princeton PL -> Kingston PL -> Markesan PL -> Green Lake PL -> Ripon College -> Ripon PL -> UW-Fox Cities ->  Brillion PL
+
+	Route distance: 188.77 miles
+	Route time: 7 hours, 22 minutes
+	Route load: 144 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Total distance, all routes: 1721.81 miles
+Total time, all routes: 58 hours, 14 minutes
+
+------------------------
+
+Model ID: str6_100405
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Brillion PL -> Green Lake PL -> Markesan PL -> Kingston PL -> Endeavor PL -> Packwaukee PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL -> Wautoma PL -> Neshkoro PL -> Berlin PL -> Omro PL ->  Brillion PL
+
+	Route distance: 258.80 miles
+	Route time: 8 hours, 31 minutes
+	Route load: 46 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 2:
+	Brillion PL -> Lakeland University -> Sheboygan PL -> Concordia University -> Mequon PL -> West Bend PL -> UW-Washington Co -> Kewaskum PL -> Campbellsport PL -> Lomira PL -> Brownsville PL -> Fond du Lac PL - XP -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> Winneconne PL ->  Brillion PL
+
+	Route distance: 243.91 miles
+	Route time: 8 hours, 32 minutes
+	Route load: 89 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 3:
+	Brillion PL -> Germantown PL -> Slinger PL -> Hartford PL -> Theresa PL -> Waupun CI -> Dodge CI -> Brandon PL -> Ripon PL -> Ripon College -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL ->  Brillion PL
+
+	Route distance: 269.27 miles
+	Route time: 8 hours, 25 minutes
+	Route load: 58 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Brillion PL -> UW-Fox Cities -> North Fond du Lac PL -> Fox Lake CI -> Fox Lake PL -> Kettle Moraine CI -> Oxford PL -> Montello PL -> Princeton PL ->  Brillion PL
+
+	Route distance: 304.66 miles
+	Route time: 8 hours, 37 minutes
+	Route load: 22 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 34 minutes; end time = 6 hours, 4 minutes
+
+Route for vehicle 5:
+	Brillion PL -> Chilton PL -> Waupun PL -> Beaver Dam PL -> Reeseville PL -> Juneau PL -> Horicon PL -> Hustisford PL -> Iron Ridge PL -> Mayville PL -> Oakfield PL -> Oshkosh PL -> UW-Oshkosh -> WMHI -> WRC -> Neenah PL -> Menasha PL ->  Brillion PL
+
+	Route distance: 213.04 miles
+	Route time: 8 hours, 4 minutes
+	Route load: 137 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 46 minutes; end time = 6 hours, 16 minutes
+
+Route for vehicle 6:
+	Brillion PL -> New Holstein PL -> Kiel PL -> Elkhart Lake PL -> Plymouth PL -> Random Lake PL -> Saukville PL -> Cedarburg PL -> Grafton PL -> Port Washington PL -> Cedar Grove PL -> Oostburg PL -> UW-Sheboygan -> Monarch LS -> Sheboygan Falls PL -> Kohler PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL ->  Brillion PL
+
+	Route distance: 189.73 miles
+	Route time: 7 hours, 59 minutes
+	Route load: 142 containers
+	Number of stops: 19
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Total distance, all routes: 1479.41 miles
+Total time, all routes: 50 hours, 10 minutes
+
+------------------------
+
+Model ID: str6_080505
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	Brillion PL -> New Holstein PL -> Kiel PL -> Lakeland University -> Elkhart Lake PL -> Plymouth PL -> Random Lake PL -> Cedar Grove PL -> Oostburg PL -> Monarch LS -> Sheboygan Falls PL -> Kohler PL -> UW-Sheboygan -> Sheboygan PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL ->  Brillion PL
+
+	Route distance: 163.31 miles
+	Route time: 7 hours, 11 minutes
+	Route load: 111 containers
+	Number of stops: 17
+	Break: start time = 4 hours, 1 minute; end time = 4 hours, 31 minutes
+
+Route for vehicle 2:
+	Brillion PL -> Menasha PL -> Neenah PL -> WMHI -> WRC -> Oshkosh PL -> UW-Oshkosh -> Ripon PL -> Ripon College -> Princeton PL -> Neshkoro PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL -> Winneconne PL ->  Brillion PL
+
+	Route distance: 169.64 miles
+	Route time: 7 hours, 3 minutes
+	Route load: 137 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Route for vehicle 3:
+	Brillion PL -> Chilton PL -> Fond du Lac PL - XP -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> Waupun PL -> Waupun CI -> Fox Lake CI -> Markesan PL -> Kingston PL -> Fox Lake PL -> Oakfield PL -> North Fond du Lac PL ->  Brillion PL
+
+	Route distance: 202.26 miles
+	Route time: 7 hours, 25 minutes
+	Route load: 32 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 18 minutes; end time = 5 hours, 48 minutes
+
+Route for vehicle 4:
+	Brillion PL -> Port Washington PL -> Saukville PL -> Grafton PL -> Cedarburg PL -> Concordia University -> Mequon PL -> Germantown PL -> Slinger PL -> Hartford PL -> UW-Washington Co -> West Bend PL -> Kewaskum PL -> Campbellsport PL ->  Brillion PL
+
+	Route distance: 209.14 miles
+	Route time: 7 hours, 28 minutes
+	Route load: 133 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 5:
+	Brillion PL -> UW-Fox Cities -> Brandon PL -> Dodge CI -> Beaver Dam PL -> Reeseville PL -> Juneau PL -> Horicon PL -> Hustisford PL -> Iron Ridge PL -> Mayville PL -> Theresa PL -> Lomira PL -> Brownsville PL ->  Brillion PL
+
+	Route distance: 213.76 miles
+	Route time: 7 hours, 31 minutes
+	Route load: 37 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 8 minutes; end time = 5 hours, 38 minutes
+
+Route for vehicle 6:
+	Brillion PL -> Omro PL -> Berlin PL -> Wautoma PL -> Coloma PL -> Westfield PL -> Endeavor PL -> Packwaukee PL -> Hancock PL -> Plainfield PL -> Wild Rose PL ->  Brillion PL
+
+	Route distance: 245.73 miles
+	Route time: 7 hours, 20 minutes
+	Route load: 33 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 7:
+	Brillion PL -> Montello PL -> Kettle Moraine CI -> Oxford PL -> Green Lake PL ->  Brillion PL
+
+	Route distance: 262.05 miles
+	Route time: 7 hours, 26 minutes
+	Route load: 14 containers
+	Number of stops: 4
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Total distance, all routes: 1465.90 miles
+Total time, all routes: 51 hours, 27 minutes
+
+------------------------
+
+Model ID: str6_100505
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Brillion PL -> New Holstein PL -> Kiel PL -> Lakeland University -> Plymouth PL -> Random Lake PL -> Saukville PL -> Grafton PL -> Cedarburg PL -> Mequon PL -> Concordia University -> Port Washington PL -> Cedar Grove PL -> Oostburg PL -> Monarch LS -> Sheboygan Falls PL -> Kohler PL -> UW-Sheboygan -> Sheboygan PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL ->  Brillion PL
+
+	Route distance: 210.06 miles
+	Route time: 9 hours, 0 minute
+	Route load: 183 containers
+	Number of stops: 22
+	Break: start time = 4 hours, 46 minutes; end time = 5 hours, 16 minutes
+
+Route for vehicle 2:
+	Brillion PL -> Chilton PL -> Lomira PL -> Theresa PL -> Mayville PL -> Iron Ridge PL -> Hustisford PL -> Reeseville PL -> Hartford PL -> Slinger PL -> Germantown PL -> West Bend PL -> UW-Washington Co -> Kewaskum PL -> Campbellsport PL -> Elkhart Lake PL ->  Brillion PL
+
+	Route distance: 229.92 miles
+	Route time: 8 hours, 28 minutes
+	Route load: 77 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 54 minutes; end time = 5 hours, 24 minutes
+
+Route for vehicle 3:
+	Brillion PL -> Fond du Lac PL - XP -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> Oakfield PL -> Waupun PL -> Waupun CI -> Dodge CI -> Fox Lake CI -> Fox Lake PL -> Beaver Dam PL -> Juneau PL -> Horicon PL -> Brownsville PL -> North Fond du Lac PL -> Oshkosh PL -> UW-Oshkosh -> WMHI -> WRC -> Neenah PL -> Menasha PL ->  Brillion PL
+
+	Route distance: 201.22 miles
+	Route time: 8 hours, 55 minutes
+	Route load: 147 containers
+	Number of stops: 22
+	Break: start time = 4 hours, 43 minutes; end time = 5 hours, 13 minutes
+
+Route for vehicle 4:
+	Brillion PL -> UW-Fox Cities -> Ripon PL -> Ripon College -> Brandon PL -> Markesan PL -> Kingston PL -> Green Lake PL -> Princeton PL -> Neshkoro PL -> Wautoma PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL -> Omro PL -> Winneconne PL ->  Brillion PL
+
+	Route distance: 231.83 miles
+	Route time: 8 hours, 19 minutes
+	Route load: 53 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 16 minutes; end time = 4 hours, 46 minutes
+
+Route for vehicle 5:
+	Brillion PL -> Berlin PL -> Montello PL -> Packwaukee PL -> Endeavor PL -> Kettle Moraine CI -> Oxford PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL ->  Brillion PL
+
+	Route distance: 307.15 miles
+	Route time: 9 hours, 0 minute
+	Route load: 31 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 36 minutes; end time = 6 hours, 6 minutes
+
+Total distance, all routes: 1180.19 miles
+Total time, all routes: 43 hours, 46 minutes
+
+------------------------
+

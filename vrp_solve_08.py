@@ -107,7 +107,7 @@ class VrpModelObj(object):
             # convert routing variable index to distance matrix NodeIndex
             from_node = vrp_index_manager.IndexToNode(from_index)
             to_node = vrp_index_manager.IndexToNode(to_index)
-            return self._vrp_input_data_dict['distance_matrix'][from_node][to_node]
+            return math.ceil(self._vrp_input_data_dict['distance_matrix'][from_node][to_node])
 
         # register distance_callback
         distance_callback_index = vrp_routing_model.RegisterTransitCallback(distance_callback)
@@ -134,15 +134,13 @@ class VrpModelObj(object):
             # convert routing variable index to duration matrix NodeIndex
             from_node = vrp_index_manager.IndexToNode(from_index)
             to_node = vrp_index_manager.IndexToNode(to_index)
-            return self._vrp_input_data_dict['duration_matrix'][from_node][to_node] + \
-                   self._vrp_input_data_dict['service_time'][from_node]
+            return math.ceil(self._vrp_input_data_dict['duration_matrix'][from_node][to_node] + \
+                   self._vrp_input_data_dict['service_time'][from_node])
 
         # register duration_callback
         duration_callback_index = vrp_routing_model.RegisterTransitCallback(duration_callback)
 
         # convert input hours & minutes to seconds
-        # max_duration = math.ceil(args_dict['max_hours'] * self._SECONDS_PER_HOUR -
-        #                          args_dict['break_time_minutes'] * self._SECONDS_PER_MINUTE)
         max_duration = math.ceil(self._config_dict['max_hours'] * self._SECONDS_PER_HOUR)
         break_duration = math.ceil(self._config_dict['break_time_minutes'] * self._SECONDS_PER_MINUTE)
 
@@ -163,7 +161,7 @@ class VrpModelObj(object):
             """Returns the demand of the node."""
             # Convert from routing variable Index to demands NodeIndex.
             from_node = vrp_index_manager.IndexToNode(from_index)
-            return self._vrp_input_data_dict['demands'][from_node]
+            return math.ceil(self._vrp_input_data_dict['demands'][from_node])
 
         demand_callback_index = vrp_routing_model.RegisterUnaryTransitCallback(demand_callback)
 
@@ -359,7 +357,7 @@ class VrpModelObj(object):
 
     def solve_vrp(self):
         if self._config_dict['vehicle_increment']:
-            while self._vrp_num_vehicles < 15:
+            while self._vrp_num_vehicles <= 15:
                 print(f'Trying to solve VRP using {self._vrp_num_vehicles} ' +
                       ('vehicles...' if self._vrp_num_vehicles > 1 else 'vehicle...'), end='')
                 self.__vrp_format_input_data()
@@ -378,7 +376,6 @@ class VrpModelObj(object):
                 return self._vrp_solution
             else:
                 return None
-
 
     def get_vrp_route_plan(self):
         if self._vrp_solution:

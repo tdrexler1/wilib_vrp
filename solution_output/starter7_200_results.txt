@@ -1,0 +1,491 @@
+Model ID: str7_100205
+Starter proposal, region 7
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	South Central LS -> Rome PL -> Nekoosa PL -> Pittsville PL -> UW-Marshfield -> Marshfield PL -> Arpin PL -> Vesper PL -> Wisconsin Rapids PL -> Mid-State TC -> PortCo - Plover Branch -> PortCo - Stevens Point PL -> UW-Stevens Point -> PortCo - Rosholt Branch ->  South Central LS
+
+	Route distance: 364.11 miles
+	Route time: 9 hours, 51 minutes
+	Route load: 50 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 55 minutes; end time = 6 hours, 25 minutes
+
+Route for vehicle 2:
+	South Central LS -> Southwest Wisconsin LS -> Fennimore PL -> Lancaster PL -> Potosi PL -> Cassville PL -> Bloomington PL -> Prairie du Chien PL -> Boscobel PL -> Gays Mills PL -> Soldiers Grove PL -> Viola PL -> UW-Richland -> Richland Center PL -> Muscoda PL ->  South Central LS
+
+	Route distance: 323.26 miles
+	Route time: 9 hours, 51 minutes
+	Route load: 26 containers
+	Number of stops: 14
+	Break: start time = 4 hours, 19 minutes; end time = 4 hours, 49 minutes
+
+Route for vehicle 3:
+	South Central LS -> Portage PL -> PortCo - Almond Branch -> Amherst PL -> Rosholt SD -> Adams County PL -> Wisconsin Dells PL -> La Valle PL -> Reedsburg PL -> Rock Springs PL -> North Freedom PL -> UW-Baraboo -> Baraboo PL -> Sauk City PL ->  South Central LS
+
+	Route distance: 332.94 miles
+	Route time: 9 hours, 51 minutes
+	Route load: 63 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	South Central LS -> Middleton PL -> Black Earth PL -> Spring Green PL -> Plain PL -> Lone Rock PL -> Montfort PL -> Livingston PL -> Belmont PL -> Platteville PL -> UW-Platteville -> Dickeyville PL -> Cuba City PL -> Hazel Green PL -> Benton PL -> Shullsburg PL -> Gratiot PL -> Darlington PL -> Mineral Point PL -> Mount Horeb PL -> Verona PL -> Fitchburg PL ->  South Central LS
+
+	Route distance: 251.38 miles
+	Route time: 9 hours, 38 minutes
+	Route load: 107 containers
+	Number of stops: 21
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 5:
+	South Central LS -> CCIC -> MadPL - Hawthorne Branch -> Madison Area TC -> MadPL - Lakeview Branch -> MMHI -> Waunakee PL -> DeForest PL -> Lodi PL -> Poynette PL -> Rio PL -> Wyocena PL -> Pardeeville PL -> Cambria PL -> Randolph PL -> Columbus PL -> Sun Prairie PL -> Marshall PL -> Deerfield PL -> Cambridge PL -> Stoughton PL -> Brodhead PL ->  South Central LS
+
+	Route distance: 224.73 miles
+	Route time: 9 hours, 11 minutes
+	Route load: 128 containers
+	Number of stops: 21
+	Break: start time = 5 hours, 17 minutes; end time = 5 hours, 47 minutes
+
+Route for vehicle 6:
+	South Central LS -> MadPL - South Madison Branch -> Oakhill CI -> Oregon PL -> Albany PL -> Monticello PL -> Monroe PL -> Argyle PL -> Blanchardville PL -> New Glarus PL -> Belleville PL -> Verona Shelving Facility -> MadPL - Meadowridge Branch -> MadPL - Sequoya Branch -> Ebling Health Sciences -> WI Water Library -> Steenbock Library -> Middleton Shelving -> Social Work Library -> AMP Library -> Law Library -> Journalism ->  South Central LS
+
+	Route distance: 123.90 miles
+	Route time: 6 hours, 34 minutes
+	Route load: 110 containers
+	Number of stops: 21
+	Break: start time = 5 hours, 59 minutes; end time = 6 hours, 29 minutes
+
+Route for vehicle 7:
+	South Central LS -> MadPL - Ashman Branch -> Cross Plains PL -> Prairie du Sac PL -> Mazomanie PL -> Barneveld PL -> Southwest WI TC -> Cobb PL -> Dodgeville PL -> Edgewood College -> MadPL - Monroe Street Branch -> Space Science Library -> Geology & Geophysics -> MERIT Library -> Business Library -> Kohler Art Library -> WHS -> College Library -> GSCC -> Memorial Library -> MadPL - Central Library -> Wisconsin State Law Library -> DPI/RLL -> MadPL - Pinney Branch -> Dane County LS -> Monona PL -> Madison Metro SD -> McFarland PL ->  South Central LS
+
+	Route distance: 198.09 miles
+	Route time: 8 hours, 57 minutes
+	Route load: 187 containers
+	Number of stops: 27
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1818.43 miles
+Total time, all routes: 63 hours, 57 minutes
+
+------------------------
+
+Model ID: str7_080405
+Starter proposal, region 7
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	South Central LS -> MadPL - South Madison Branch -> MadPL - Meadowridge Branch -> MadPL - Sequoya Branch -> Edgewood College -> MadPL - Monroe Street Branch -> Space Science Library -> Geology & Geophysics -> MERIT Library -> Journalism -> WHS -> Memorial Library -> GSCC -> College Library -> Middleton Shelving -> Social Work Library -> Business Library -> MadPL - Central Library -> CCIC -> Wisconsin State Law Library -> DPI/RLL -> Kohler Art Library -> Law Library -> AMP Library -> Ebling Health Sciences -> WI Water Library -> Steenbock Library ->  South Central LS
+
+	Route distance: 23.76 miles
+	Route time: 4 hours, 12 minutes
+	Route load: 161 containers
+	Number of stops: 26
+	Break: start time = 4 hours, 12 minutes; end time = 4 hours, 42 minutes
+
+Route for vehicle 2:
+	South Central LS -> Madison Metro SD -> Monona PL -> Dane County LS -> MadPL - Pinney Branch -> MadPL - Lakeview Branch -> MMHI -> Waunakee PL -> Lodi PL -> Poynette PL -> Rio PL -> Wyocena PL -> Pardeeville PL -> Cambria PL -> Randolph PL -> Columbus PL -> Marshall PL -> Sun Prairie PL ->  South Central LS
+
+	Route distance: 144.34 miles
+	Route time: 6 hours, 46 minutes
+	Route load: 117 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 22 minutes; end time = 5 hours, 52 minutes
+
+Route for vehicle 3:
+	South Central LS -> MadPL - Ashman Branch -> Black Earth PL -> Sauk City PL -> Prairie du Sac PL -> Baraboo PL -> UW-Baraboo -> North Freedom PL -> Rock Springs PL -> Reedsburg PL -> La Valle PL -> UW-Richland -> Richland Center PL -> Plain PL -> Spring Green PL -> Dodgeville PL -> Fitchburg PL ->  South Central LS
+
+	Route distance: 205.35 miles
+	Route time: 7 hours, 51 minutes
+	Route load: 102 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 37 minutes; end time = 6 hours, 7 minutes
+
+Route for vehicle 4:
+	South Central LS -> Belmont PL -> Livingston PL -> Boscobel PL -> Soldiers Grove PL -> Gays Mills PL -> Viola PL -> Muscoda PL -> Lone Rock PL -> Mazomanie PL -> Cross Plains PL -> Middleton PL ->  South Central LS
+
+	Route distance: 248.70 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 46 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 3 minutes; end time = 5 hours, 33 minutes
+
+Route for vehicle 5:
+	South Central LS -> Wisconsin Dells PL -> Adams County PL -> Rome PL -> Mid-State TC -> Wisconsin Rapids PL -> Vesper PL -> Arpin PL -> Pittsville PL -> Nekoosa PL ->  South Central LS
+
+	Route distance: 286.99 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 36 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	South Central LS -> UW-Marshfield -> Marshfield PL -> UW-Stevens Point -> PortCo - Stevens Point PL -> PortCo - Plover Branch ->  South Central LS
+
+	Route distance: 309.86 miles
+	Route time: 6 hours, 48 minutes
+	Route load: 23 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 5 minutes; end time = 4 hours, 35 minutes
+
+Route for vehicle 7:
+	South Central LS -> MadPL - Hawthorne Branch -> Madison Area TC -> DeForest PL -> Portage PL -> Rosholt SD -> PortCo - Rosholt Branch -> Amherst PL -> PortCo - Almond Branch ->  South Central LS
+
+	Route distance: 266.21 miles
+	Route time: 7 hours, 25 minutes
+	Route load: 43 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 8:
+	South Central LS -> Verona PL -> Cobb PL -> Montfort PL -> Southwest WI TC -> Southwest Wisconsin LS -> Fennimore PL -> Prairie du Chien PL -> Bloomington PL -> Cassville PL -> Potosi PL -> Lancaster PL -> Mineral Point PL ->  South Central LS
+
+	Route distance: 244.81 miles
+	Route time: 7 hours, 48 minutes
+	Route load: 39 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 25 minutes; end time = 4 hours, 55 minutes
+
+Route for vehicle 9:
+	South Central LS -> Oakhill CI -> Verona Shelving Facility -> Barneveld PL -> Platteville PL -> UW-Platteville -> Dickeyville PL -> Cuba City PL -> Hazel Green PL -> Benton PL -> Shullsburg PL -> Gratiot PL -> Darlington PL -> Argyle PL -> Blanchardville PL -> New Glarus PL -> Belleville PL ->  South Central LS
+
+	Route distance: 208.50 miles
+	Route time: 7 hours, 30 minutes
+	Route load: 32 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Route for vehicle 10:
+	South Central LS -> McFarland PL -> Deerfield PL -> Cambridge PL -> Stoughton PL -> Oregon PL -> Albany PL -> Brodhead PL -> Monroe PL -> Monticello PL -> Mount Horeb PL ->  South Central LS
+
+	Route distance: 151.49 miles
+	Route time: 5 hours, 10 minutes
+	Route load: 72 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 10 minutes; end time = 5 hours, 40 minutes
+
+Total distance, all routes: 2090.02 miles
+Total time, all routes: 69 hours, 13 minutes
+
+------------------------
+
+Model ID: str7_100405
+Starter proposal, region 7
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 8
+
+Route for vehicle 1:
+	South Central LS -> Steenbock Library -> WI Water Library -> Ebling Health Sciences -> Middleton PL -> Waunakee PL -> Sauk City PL -> Prairie du Sac PL -> Portage PL -> PortCo - Almond Branch -> DeForest PL -> Madison Area TC -> MadPL - Hawthorne Branch -> Space Science Library -> Geology & Geophysics -> MERIT Library -> Journalism -> WHS -> GSCC -> Memorial Library -> College Library -> Middleton Shelving -> Social Work Library -> Business Library -> MadPL - Central Library -> CCIC -> Wisconsin State Law Library -> DPI/RLL -> Kohler Art Library -> Law Library -> AMP Library -> MadPL - Monroe Street Branch ->  South Central LS
+
+	Route distance: 234.78 miles
+	Route time: 9 hours, 29 minutes
+	Route load: 193 containers
+	Number of stops: 31
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	South Central LS -> Monona PL -> Madison Metro SD -> Dane County LS -> MadPL - Pinney Branch -> MMHI -> MadPL - Lakeview Branch -> Sun Prairie PL -> Marshall PL -> Columbus PL -> Wyocena PL -> Pardeeville PL -> Cambria PL -> Randolph PL -> Rio PL -> Poynette PL -> Lodi PL -> Mazomanie PL -> Black Earth PL -> Mount Horeb PL -> Barneveld PL -> Verona PL -> MadPL - South Madison Branch ->  South Central LS
+
+	Route distance: 210.91 miles
+	Route time: 9 hours, 1 minute
+	Route load: 153 containers
+	Number of stops: 22
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 3:
+	South Central LS -> MadPL - Ashman Branch -> Baraboo PL -> UW-Baraboo -> North Freedom PL -> Rock Springs PL -> Reedsburg PL -> La Valle PL -> Viola PL -> Soldiers Grove PL -> Gays Mills PL -> Boscobel PL -> Muscoda PL -> Richland Center PL -> UW-Richland -> Lone Rock PL -> Spring Green PL -> Plain PL ->  South Central LS
+
+	Route distance: 260.78 miles
+	Route time: 9 hours, 16 minutes
+	Route load: 72 containers
+	Number of stops: 17
+	Break: start time = 4 hours, 41 minutes; end time = 5 hours, 11 minutes
+
+Route for vehicle 4:
+	South Central LS -> Wisconsin Dells PL -> Adams County PL -> Rome PL -> Nekoosa PL -> Vesper PL -> Arpin PL -> UW-Marshfield -> Marshfield PL -> Pittsville PL -> Wisconsin Rapids PL -> Mid-State TC -> PortCo - Plover Branch -> PortCo - Stevens Point PL -> UW-Stevens Point ->  South Central LS
+
+	Route distance: 338.35 miles
+	Route time: 9 hours, 36 minutes
+	Route load: 59 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 18 minutes; end time = 5 hours, 48 minutes
+
+Route for vehicle 5:
+	South Central LS -> Rosholt SD -> PortCo - Rosholt Branch -> Amherst PL -> Cross Plains PL -> Montfort PL -> Fennimore PL -> Southwest Wisconsin LS -> Southwest WI TC -> Cobb PL -> Dodgeville PL ->  South Central LS
+
+	Route distance: 394.76 miles
+	Route time: 9 hours, 47 minutes
+	Route load: 21 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 6:
+	South Central LS -> Oakhill CI -> Oregon PL -> Belleville PL -> Monticello PL -> Argyle PL -> Dickeyville PL -> Potosi PL -> Cassville PL -> Prairie du Chien PL -> Bloomington PL -> Lancaster PL -> Livingston PL -> Platteville PL -> UW-Platteville -> Belmont PL -> Mineral Point PL ->  South Central LS
+
+	Route distance: 296.66 miles
+	Route time: 9 hours, 48 minutes
+	Route load: 41 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 12 minutes; end time = 4 hours, 42 minutes
+
+Route for vehicle 7:
+	South Central LS -> Fitchburg PL -> Edgewood College -> MadPL - Sequoya Branch -> MadPL - Meadowridge Branch -> Verona Shelving Facility -> New Glarus PL -> Blanchardville PL -> Darlington PL -> Cuba City PL -> Hazel Green PL -> Benton PL -> Shullsburg PL -> Gratiot PL -> Monroe PL -> Brodhead PL -> Albany PL -> Stoughton PL -> Cambridge PL -> Deerfield PL -> McFarland PL ->  South Central LS
+
+	Route distance: 238.38 miles
+	Route time: 9 hours, 24 minutes
+	Route load: 132 containers
+	Number of stops: 20
+	Break: start time = 5 hours, 39 minutes; end time = 6 hours, 9 minutes
+
+Route for vehicle 8:
+	South Central LS ->  South Central LS
+
+	Route distance: 0.00 miles
+	Route time: 0 hour, 0 minute
+	Route load: 0 containers
+	Number of stops: 0
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1974.62 miles
+Total time, all routes: 66 hours, 24 minutes
+
+------------------------
+
+Model ID: str7_080505
+Starter proposal, region 7
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 11
+
+Route for vehicle 1:
+	South Central LS -> PortCo - Almond Branch -> CCIC -> Wisconsin State Law Library -> Kohler Art Library -> College Library -> GSCC -> Memorial Library -> WHS -> Law Library -> Journalism -> Business Library -> AMP Library -> Social Work Library -> Middleton Shelving -> Steenbock Library -> WI Water Library -> Ebling Health Sciences -> MadPL - Sequoya Branch -> Edgewood College -> MadPL - Monroe Street Branch -> Space Science Library -> Geology & Geophysics -> MERIT Library ->  South Central LS
+
+	Route distance: 210.20 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 86 containers
+	Number of stops: 23
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 2:
+	South Central LS -> MadPL - Lakeview Branch -> MMHI -> Waunakee PL -> Lodi PL -> Prairie du Sac PL -> Sauk City PL -> Oakhill CI -> Oregon PL -> Stoughton PL -> McFarland PL -> Madison Metro SD -> MadPL - Pinney Branch -> Dane County LS -> Monona PL ->  South Central LS
+
+	Route distance: 116.72 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 125 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 3:
+	South Central LS -> Cambridge PL -> Deerfield PL -> Marshall PL -> Sun Prairie PL -> Columbus PL -> Wyocena PL -> Pardeeville PL -> Cambria PL -> Randolph PL -> Rio PL -> Poynette PL -> Madison Area TC -> MadPL - Central Library ->  South Central LS
+
+	Route distance: 160.37 miles
+	Route time: 5 hours, 51 minutes
+	Route load: 106 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 51 minutes; end time = 6 hours, 21 minutes
+
+Route for vehicle 4:
+	South Central LS -> MadPL - South Madison Branch -> MadPL - Meadowridge Branch -> Belleville PL -> Monticello PL -> Albany PL -> Brodhead PL -> Monroe PL -> Gratiot PL -> Benton PL -> Cuba City PL -> Hazel Green PL -> Shullsburg PL -> Darlington PL -> Argyle PL -> Blanchardville PL -> New Glarus PL -> Fitchburg PL ->  South Central LS
+
+	Route distance: 205.32 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 80 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 46 minutes; end time = 6 hours, 16 minutes
+
+Route for vehicle 5:
+	South Central LS -> Verona PL -> Mount Horeb PL -> Barneveld PL -> Cobb PL -> Livingston PL -> Platteville PL -> UW-Platteville -> Lancaster PL -> Boscobel PL -> Fennimore PL -> Southwest Wisconsin LS -> Southwest WI TC -> Montfort PL -> Dodgeville PL ->  South Central LS
+
+	Route distance: 201.33 miles
+	Route time: 6 hours, 56 minutes
+	Route load: 56 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 35 minutes; end time = 6 hours, 5 minutes
+
+Route for vehicle 6:
+	South Central LS -> MadPL - Ashman Branch -> Baraboo PL -> UW-Baraboo -> Wisconsin Dells PL -> La Valle PL -> Reedsburg PL -> Rock Springs PL -> North Freedom PL -> Plain PL -> Richland Center PL -> UW-Richland -> Lone Rock PL -> Spring Green PL -> Middleton PL ->  South Central LS
+
+	Route distance: 215.56 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 98 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 49 minutes; end time = 6 hours, 19 minutes
+
+Route for vehicle 7:
+	South Central LS -> Bloomington PL -> Prairie du Chien PL -> Gays Mills PL -> Soldiers Grove PL -> Viola PL -> Muscoda PL -> Mazomanie PL -> Black Earth PL -> Cross Plains PL ->  South Central LS
+
+	Route distance: 258.44 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 19 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 25 minutes; end time = 4 hours, 55 minutes
+
+Route for vehicle 8:
+	South Central LS -> PortCo - Rosholt Branch -> Rosholt SD -> Amherst PL -> PortCo - Plover Branch -> Mid-State TC -> Wisconsin Rapids PL -> PortCo - Stevens Point PL -> UW-Stevens Point ->  South Central LS
+
+	Route distance: 314.37 miles
+	Route time: 7 hours, 44 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 14 minutes; end time = 4 hours, 44 minutes
+
+Route for vehicle 9:
+	South Central LS -> Adams County PL -> Rome PL -> Vesper PL -> Arpin PL -> Marshfield PL -> Pittsville PL -> Nekoosa PL ->  South Central LS
+
+	Route distance: 301.52 miles
+	Route time: 7 hours, 57 minutes
+	Route load: 17 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 10 minutes; end time = 4 hours, 40 minutes
+
+Route for vehicle 10:
+	South Central LS -> Verona Shelving Facility -> Dickeyville PL -> Potosi PL -> Cassville PL -> Belmont PL -> Mineral Point PL ->  South Central LS
+
+	Route distance: 211.81 miles
+	Route time: 5 hours, 14 minutes
+	Route load: 8 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 11:
+	South Central LS -> DPI/RLL -> MadPL - Hawthorne Branch -> DeForest PL -> Portage PL -> UW-Marshfield ->  South Central LS
+
+	Route distance: 306.50 miles
+	Route time: 6 hours, 46 minutes
+	Route load: 36 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 2502.16 miles
+Total time, all routes: 77 hours, 21 minutes
+
+------------------------
+
+Model ID: str7_100505
+Starter proposal, region 7
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 200
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 8
+
+Route for vehicle 1:
+	South Central LS -> PortCo - Almond Branch -> MadPL - South Madison Branch -> MadPL - Central Library -> CCIC -> Wisconsin State Law Library -> DPI/RLL -> MadPL - Hawthorne Branch -> Madison Metro SD -> McFarland PL -> MadPL - Pinney Branch -> Madison Area TC -> MMHI -> MadPL - Lakeview Branch -> Kohler Art Library -> College Library -> GSCC -> Memorial Library -> WHS -> Law Library -> Journalism -> Business Library -> AMP Library -> Social Work Library -> Middleton Shelving -> Steenbock Library -> WI Water Library -> Ebling Health Sciences -> Space Science Library -> Geology & Geophysics -> MERIT Library ->  South Central LS
+
+	Route distance: 249.97 miles
+	Route time: 9 hours, 34 minutes
+	Route load: 170 containers
+	Number of stops: 30
+	Break: start time = 5 hours, 36 minutes; end time = 6 hours, 6 minutes
+
+Route for vehicle 2:
+	South Central LS -> Waunakee PL -> Lodi PL -> Prairie du Sac PL -> Black Earth PL -> Mount Horeb PL -> Blanchardville PL -> New Glarus PL -> Verona Shelving Facility -> Oakhill CI ->  South Central LS
+
+	Route distance: 127.05 miles
+	Route time: 4 hours, 33 minutes
+	Route load: 46 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 33 minutes; end time = 5 hours, 3 minutes
+
+Route for vehicle 3:
+	South Central LS -> Fitchburg PL -> Belleville PL -> Monticello PL -> Albany PL -> Oregon PL -> Stoughton PL -> Cambridge PL -> Deerfield PL -> Marshall PL -> Sun Prairie PL -> DeForest PL -> Wyocena PL -> Pardeeville PL -> Cambria PL -> Randolph PL -> Columbus PL -> Rio PL -> Poynette PL ->  South Central LS
+
+	Route distance: 234.16 miles
+	Route time: 8 hours, 50 minutes
+	Route load: 110 containers
+	Number of stops: 18
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	South Central LS -> Brodhead PL -> Monroe PL -> Gratiot PL -> Belmont PL -> UW-Platteville -> Platteville PL -> Lancaster PL -> Southwest WI TC -> Southwest Wisconsin LS -> Fennimore PL -> Dickeyville PL -> Cuba City PL -> Hazel Green PL -> Benton PL -> Shullsburg PL -> Darlington PL -> Argyle PL -> Verona PL ->  South Central LS
+
+	Route distance: 263.01 miles
+	Route time: 9 hours, 37 minutes
+	Route load: 62 containers
+	Number of stops: 18
+	Break: start time = 4 hours, 28 minutes; end time = 4 hours, 58 minutes
+
+Route for vehicle 5:
+	South Central LS -> MadPL - Ashman Branch -> Sauk City PL -> Baraboo PL -> UW-Baraboo -> North Freedom PL -> Rock Springs PL -> Reedsburg PL -> La Valle PL -> Plain PL -> Spring Green PL -> Lone Rock PL -> Richland Center PL -> UW-Richland -> Muscoda PL -> Cobb PL -> Montfort PL -> Livingston PL -> Mineral Point PL -> Dodgeville PL ->  South Central LS
+
+	Route distance: 247.08 miles
+	Route time: 9 hours, 2 minutes
+	Route load: 82 containers
+	Number of stops: 19
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 6:
+	South Central LS -> MadPL - Meadowridge Branch -> Barneveld PL -> Potosi PL -> Cassville PL -> Bloomington PL -> Prairie du Chien PL -> Boscobel PL -> Gays Mills PL -> Soldiers Grove PL -> Viola PL -> Mazomanie PL -> Cross Plains PL -> Middleton PL -> MadPL - Sequoya Branch -> Edgewood College -> MadPL - Monroe Street Branch ->  South Central LS
+
+	Route distance: 296.02 miles
+	Route time: 9 hours, 37 minutes
+	Route load: 109 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 7:
+	South Central LS -> Amherst PL -> PortCo - Rosholt Branch -> Rosholt SD -> PortCo - Plover Branch -> Mid-State TC -> Wisconsin Rapids PL -> Vesper PL -> Arpin PL -> UW-Marshfield -> Marshfield PL -> UW-Stevens Point -> PortCo - Stevens Point PL ->  South Central LS
+
+	Route distance: 369.37 miles
+	Route time: 9 hours, 30 minutes
+	Route load: 46 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 57 minutes; end time = 6 hours, 27 minutes
+
+Route for vehicle 8:
+	South Central LS -> Monona PL -> Dane County LS -> Portage PL -> Wisconsin Dells PL -> Adams County PL -> Rome PL -> Nekoosa PL -> Pittsville PL ->  South Central LS
+
+	Route distance: 273.64 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 46 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Total distance, all routes: 2060.31 miles
+Total time, all routes: 68 hours, 41 minutes
+
+------------------------
+

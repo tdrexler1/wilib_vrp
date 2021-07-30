@@ -1,0 +1,375 @@
+Model ID: idl4_080205
+Ideal proposal, region 4
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Winding Rivers LS -> LaxCo - Campbell Branch -> Elroy PL -> Wonewoc-Union Center HS -> Wonewoc PL -> Mauston PL -> Adams County PL -> Rome PL -> Necedah PL -> Tomah PL ->  Winding Rivers LS
+
+	Route distance: 223.71 miles
+	Route time: 6 hours, 47 minutes
+	Route load: 31 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	Winding Rivers LS -> Cashton HS -> Cashton PL -> La Farge HS -> La Farge PL -> Viola PL -> UW-Richland -> Lone Rock PL -> Richland Center PL -> Hillsboro PL -> Ontario PL -> LaxCo - Bangor Branch -> LaxCo - West Salem PL ->  Winding Rivers LS
+
+	Route distance: 180.51 miles
+	Route time: 6 hours, 47 minutes
+	Route load: 30 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	Winding Rivers LS -> Sparta PL -> Norwalk PL -> Wilton PL -> Kendall PL -> New Lisbon PL -> New Lisbon CI -> Jackson CI -> Black River Falls PL -> Taylor PL -> Blair PL -> Ettrick PL -> Melrose-Mindoro SD ->  Winding Rivers LS
+
+	Route distance: 183.59 miles
+	Route time: 6 hours, 37 minutes
+	Route load: 27 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 6 minutes; end time = 5 hours, 36 minutes
+
+Route for vehicle 4:
+	Winding Rivers LS -> LaxCo - Onalaska PL -> LaxPL - North Community Branch -> UW-La Crosse -> Western TC -> LaxPL - La Crosse PL -> Viterbo University -> LaxPL - South Community Branch -> De Soto PL -> Prairie du Chien PL -> Gays Mills PL -> Soldiers Grove PL -> Readstown PL -> Viroqua PL -> Viroqua SD -> Westby PL -> Coon Valley PL ->  Winding Rivers LS
+
+	Route distance: 170.38 miles
+	Route time: 6 hours, 44 minutes
+	Route load: 56 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 3 minutes; end time = 5 hours, 33 minutes
+
+Route for vehicle 5:
+	Winding Rivers LS -> Galesville PL -> Cochrane-Fountain City SD -> Alma PL -> Mondovi PL -> Strum PL -> Osseo PL -> Whitehall PL -> Independence PL -> Arcadia PL -> Arcadia HS -> Trempealeau PL -> Holmen MS/HS -> LaxCo - Holmen PL ->  Winding Rivers LS
+
+	Route distance: 187.92 miles
+	Route time: 6 hours, 47 minutes
+	Route load: 34 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 47 minutes; end time = 6 hours, 17 minutes
+
+Total distance, all routes: 946.12 miles
+Total time, all routes: 33 hours, 44 minutes
+
+------------------------
+
+Model ID: idl4_100205
+Ideal proposal, region 4
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Winding Rivers LS -> De Soto PL -> Prairie du Chien PL -> Gays Mills PL -> Soldiers Grove PL -> Readstown PL -> UW-Richland -> Lone Rock PL -> Richland Center PL -> Elroy PL -> Kendall PL -> Tomah PL ->  Winding Rivers LS
+
+	Route distance: 258.48 miles
+	Route time: 8 hours, 7 minutes
+	Route load: 20 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 4 minutes; end time = 4 hours, 34 minutes
+
+Route for vehicle 2:
+	Winding Rivers LS -> New Lisbon PL -> New Lisbon CI -> Necedah PL -> Rome PL -> Adams County PL -> Mauston PL -> Wonewoc-Union Center HS -> Wonewoc PL -> Hillsboro PL -> Ontario PL -> Wilton PL -> Norwalk PL -> Sparta PL -> Melrose-Mindoro SD ->  Winding Rivers LS
+
+	Route distance: 240.74 miles
+	Route time: 8 hours, 7 minutes
+	Route load: 42 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 3:
+	Winding Rivers LS -> LaxCo - Holmen PL -> Holmen MS/HS -> Galesville PL -> Ettrick PL -> Blair PL -> Taylor PL -> Jackson CI -> Black River Falls PL -> Cashton HS -> Cashton PL -> La Farge HS -> La Farge PL -> Viola PL -> Viroqua PL -> Viroqua SD -> Westby PL -> Coon Valley PL -> LaxCo - Bangor Branch -> LaxCo - West Salem PL ->  Winding Rivers LS
+
+	Route distance: 201.46 miles
+	Route time: 8 hours, 5 minutes
+	Route load: 54 containers
+	Number of stops: 19
+	Break: start time = 5 hours, 49 minutes; end time = 6 hours, 19 minutes
+
+Route for vehicle 4:
+	Winding Rivers LS -> Trempealeau PL -> Arcadia HS -> Arcadia PL -> Independence PL -> Whitehall PL -> Osseo PL -> Strum PL -> Mondovi PL -> Alma PL -> Cochrane-Fountain City SD -> LaxCo - Campbell Branch -> LaxCo - Onalaska PL -> LaxPL - North Community Branch -> UW-La Crosse -> Western TC -> LaxPL - La Crosse PL -> Viterbo University -> LaxPL - South Community Branch ->  Winding Rivers LS
+
+	Route distance: 202.49 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 57 containers
+	Number of stops: 18
+	Break: start time = 4 hours, 38 minutes; end time = 5 hours, 8 minutes
+
+Total distance, all routes: 903.18 miles
+Total time, all routes: 32 hours, 14 minutes
+
+------------------------
+
+Model ID: idl4_080405
+Ideal proposal, region 4
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Winding Rivers LS -> Viroqua SD -> Viroqua PL -> Viola PL -> UW-Richland -> Lone Rock PL -> Richland Center PL -> La Farge PL -> La Farge HS ->  Winding Rivers LS
+
+	Route distance: 172.25 miles
+	Route time: 5 hours, 20 minutes
+	Route load: 22 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 20 minutes; end time = 5 hours, 50 minutes
+
+Route for vehicle 2:
+	Winding Rivers LS -> New Lisbon CI -> New Lisbon PL -> Mauston PL -> Adams County PL -> Rome PL -> Necedah PL -> Tomah PL -> LaxCo - Bangor Branch ->  Winding Rivers LS
+
+	Route distance: 191.95 miles
+	Route time: 5 hours, 19 minutes
+	Route load: 28 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 3:
+	Winding Rivers LS -> LaxCo - West Salem PL -> Galesville PL -> Ettrick PL -> Taylor PL -> Blair PL -> Whitehall PL -> Strum PL -> Osseo PL -> Jackson CI -> Black River Falls PL -> Melrose-Mindoro SD ->  Winding Rivers LS
+
+	Route distance: 165.27 miles
+	Route time: 5 hours, 23 minutes
+	Route load: 28 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 23 minutes; end time = 5 hours, 53 minutes
+
+Route for vehicle 4:
+	Winding Rivers LS -> LaxCo - Campbell Branch -> Cochrane-Fountain City SD -> Alma PL -> Mondovi PL -> Independence PL -> Arcadia PL -> Arcadia HS -> Trempealeau PL -> Holmen MS/HS -> LaxCo - Holmen PL ->  Winding Rivers LS
+
+	Route distance: 163.06 miles
+	Route time: 5 hours, 25 minutes
+	Route load: 29 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 25 minutes; end time = 5 hours, 55 minutes
+
+Route for vehicle 5:
+	Winding Rivers LS -> Westby PL -> Readstown PL -> Soldiers Grove PL -> Gays Mills PL -> Prairie du Chien PL -> De Soto PL -> LaxPL - South Community Branch -> Viterbo University -> LaxPL - La Crosse PL -> Western TC -> UW-La Crosse ->  Winding Rivers LS
+
+	Route distance: 165.39 miles
+	Route time: 5 hours, 26 minutes
+	Route load: 35 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 26 minutes; end time = 5 hours, 56 minutes
+
+Route for vehicle 6:
+	Winding Rivers LS -> LaxCo - Onalaska PL -> LaxPL - North Community Branch -> Coon Valley PL -> Cashton HS -> Cashton PL -> Ontario PL -> Hillsboro PL -> Wonewoc PL -> Wonewoc-Union Center HS -> Elroy PL -> Kendall PL -> Wilton PL -> Norwalk PL -> Sparta PL ->  Winding Rivers LS
+
+	Route distance: 141.90 miles
+	Route time: 5 hours, 26 minutes
+	Route load: 41 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 26 minutes; end time = 5 hours, 56 minutes
+
+Total distance, all routes: 999.83 miles
+Total time, all routes: 32 hours, 22 minutes
+
+------------------------
+
+Model ID: idl4_100405
+Ideal proposal, region 4
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Winding Rivers LS -> LaxCo - Holmen PL -> Holmen MS/HS -> Galesville PL -> Ettrick PL -> Blair PL -> Taylor PL -> Jackson CI -> Black River Falls PL -> Melrose-Mindoro SD -> Sparta PL -> Norwalk PL -> Ontario PL -> La Farge HS -> La Farge PL -> Cashton PL -> Cashton HS -> LaxCo - Bangor Branch ->  Winding Rivers LS
+
+	Route distance: 195.90 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 42 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 11 minutes; end time = 5 hours, 41 minutes
+
+Route for vehicle 2:
+	Winding Rivers LS -> Tomah PL -> New Lisbon PL -> New Lisbon CI -> Necedah PL -> Rome PL -> Adams County PL -> Mauston PL -> Wonewoc-Union Center HS -> Wonewoc PL -> Hillsboro PL -> Elroy PL -> Kendall PL -> Wilton PL -> LaxCo - West Salem PL ->  Winding Rivers LS
+
+	Route distance: 226.44 miles
+	Route time: 7 hours, 40 minutes
+	Route load: 44 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 3:
+	Winding Rivers LS -> Coon Valley PL -> Westby PL -> Viroqua SD -> Viroqua PL -> Viola PL -> Lone Rock PL -> Richland Center PL -> UW-Richland -> Readstown PL -> Soldiers Grove PL -> Gays Mills PL -> Prairie du Chien PL -> De Soto PL ->  Winding Rivers LS
+
+	Route distance: 243.65 miles
+	Route time: 8 hours, 1 minute
+	Route load: 30 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 44 minutes; end time = 6 hours, 14 minutes
+
+Route for vehicle 4:
+	Winding Rivers LS -> Trempealeau PL -> Arcadia HS -> Arcadia PL -> Independence PL -> Whitehall PL -> Osseo PL -> Strum PL -> Mondovi PL -> Alma PL -> Cochrane-Fountain City SD -> LaxCo - Campbell Branch -> LaxCo - Onalaska PL -> LaxPL - North Community Branch -> UW-La Crosse -> Western TC -> LaxPL - La Crosse PL -> Viterbo University -> LaxPL - South Community Branch ->  Winding Rivers LS
+
+	Route distance: 202.49 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 57 containers
+	Number of stops: 18
+	Break: start time = 5 hours, 40 minutes; end time = 6 hours, 10 minutes
+
+Total distance, all routes: 868.49 miles
+Total time, all routes: 31 hours, 31 minutes
+
+------------------------
+
+Model ID: idl4_080505
+Ideal proposal, region 4
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Winding Rivers LS -> LaxCo - Campbell Branch -> Cochrane-Fountain City SD -> Alma PL -> Mondovi PL -> Strum PL -> Osseo PL -> Whitehall PL -> Ettrick PL -> Melrose-Mindoro SD ->  Winding Rivers LS
+
+	Route distance: 179.87 miles
+	Route time: 5 hours, 29 minutes
+	Route load: 19 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 29 minutes; end time = 5 hours, 59 minutes
+
+Route for vehicle 2:
+	Winding Rivers LS -> LaxCo - Onalaska PL -> New Lisbon CI -> New Lisbon PL -> Mauston PL -> Adams County PL -> Rome PL -> Necedah PL -> Tomah PL ->  Winding Rivers LS
+
+	Route distance: 206.23 miles
+	Route time: 5 hours, 34 minutes
+	Route load: 35 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 34 minutes; end time = 6 hours, 4 minutes
+
+Route for vehicle 3:
+	Winding Rivers LS -> LaxCo - Holmen PL -> Holmen MS/HS -> Galesville PL -> Trempealeau PL -> Arcadia HS -> Arcadia PL -> Independence PL -> Blair PL -> Taylor PL -> Jackson CI -> Black River Falls PL -> Sparta PL -> LaxCo - West Salem PL ->  Winding Rivers LS
+
+	Route distance: 151.45 miles
+	Route time: 5 hours, 31 minutes
+	Route load: 43 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 31 minutes; end time = 6 hours, 1 minute
+
+Route for vehicle 4:
+	Winding Rivers LS -> Westby PL -> Soldiers Grove PL -> Gays Mills PL -> Prairie du Chien PL -> De Soto PL -> LaxPL - South Community Branch -> Viterbo University -> LaxPL - La Crosse PL -> Western TC -> UW-La Crosse -> LaxPL - North Community Branch ->  Winding Rivers LS
+
+	Route distance: 164.95 miles
+	Route time: 5 hours, 25 minutes
+	Route load: 36 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 25 minutes; end time = 5 hours, 55 minutes
+
+Route for vehicle 5:
+	Winding Rivers LS -> Coon Valley PL -> Viroqua SD -> Viroqua PL -> Readstown PL -> Viola PL -> Hillsboro PL -> Wonewoc PL -> Wonewoc-Union Center HS -> Elroy PL -> Kendall PL -> Wilton PL -> Norwalk PL -> LaxCo - Bangor Branch ->  Winding Rivers LS
+
+	Route distance: 148.14 miles
+	Route time: 5 hours, 24 minutes
+	Route load: 33 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 6:
+	Winding Rivers LS -> UW-Richland -> Lone Rock PL -> Richland Center PL -> La Farge PL -> La Farge HS -> Ontario PL -> Cashton PL -> Cashton HS ->  Winding Rivers LS
+
+	Route distance: 176.87 miles
+	Route time: 5 hours, 27 minutes
+	Route load: 17 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Total distance, all routes: 1027.52 miles
+Total time, all routes: 32 hours, 53 minutes
+
+------------------------
+
+Model ID: idl4_100505
+Ideal proposal, region 4
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Winding Rivers LS -> Viola PL -> Lone Rock PL -> Kendall PL -> Wilton PL -> Sparta PL -> LaxCo - Bangor Branch -> LaxCo - Holmen PL -> Holmen MS/HS -> Trempealeau PL -> LaxCo - Campbell Branch -> LaxPL - North Community Branch -> UW-La Crosse -> Western TC -> LaxPL - La Crosse PL -> Viterbo University -> LaxPL - South Community Branch ->  Winding Rivers LS
+
+	Route distance: 253.02 miles
+	Route time: 8 hours, 50 minutes
+	Route load: 53 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 12 minutes; end time = 5 hours, 42 minutes
+
+Route for vehicle 2:
+	Winding Rivers LS -> Viroqua SD -> Viroqua PL -> Westby PL -> Cashton HS -> Cashton PL -> Norwalk PL -> Ontario PL -> La Farge HS -> La Farge PL -> Hillsboro PL -> Wonewoc PL -> Wonewoc-Union Center HS -> Mauston PL -> Adams County PL -> Rome PL ->  Winding Rivers LS
+
+	Route distance: 259.98 miles
+	Route time: 8 hours, 44 minutes
+	Route load: 45 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 31 minutes; end time = 5 hours, 1 minute
+
+Route for vehicle 3:
+	Winding Rivers LS -> LaxCo - Onalaska PL -> Galesville PL -> Ettrick PL -> Taylor PL -> Blair PL -> Whitehall PL -> Independence PL -> Arcadia PL -> Arcadia HS -> Cochrane-Fountain City SD -> Alma PL -> Mondovi PL -> Strum PL -> Osseo PL -> Jackson CI -> Black River Falls PL -> Melrose-Mindoro SD ->  Winding Rivers LS
+
+	Route distance: 242.39 miles
+	Route time: 8 hours, 48 minutes
+	Route load: 43 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 4:
+	Winding Rivers LS -> Coon Valley PL -> De Soto PL -> Prairie du Chien PL -> Gays Mills PL -> Soldiers Grove PL -> Readstown PL -> UW-Richland -> Richland Center PL -> Elroy PL -> New Lisbon PL -> New Lisbon CI -> Necedah PL -> Tomah PL -> LaxCo - West Salem PL ->  Winding Rivers LS
+
+	Route distance: 267.77 miles
+	Route time: 8 hours, 47 minutes
+	Route load: 32 containers
+	Number of stops: 14
+	Break: start time = 4 hours, 37 minutes; end time = 5 hours, 7 minutes
+
+Total distance, all routes: 1023.16 miles
+Total time, all routes: 35 hours, 10 minutes
+
+------------------------
+
