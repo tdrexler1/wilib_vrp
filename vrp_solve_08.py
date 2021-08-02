@@ -16,6 +16,61 @@ class VrpModelObj(object):
     _SECONDS_PER_HOUR = 3600
     _SECONDS_PER_MINUTE = 60
 
+    _search_param_dict = \
+        {
+            'first_solution_strategy':
+                {
+                    'path_cheapest_arc':
+                        {'model_id_code': '01',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC},
+                    'savings':
+                        {'model_id_code': '02',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.SAVINGS},
+                    'sweep':
+                        {'model_id_code': '03',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.SWEEP},
+                    'christofides':
+                        {'model_id_code': '04',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.CHRISTOFIDES},
+                    'parallel_cheapest_insertion':
+                        {'model_id_code': '05',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION},
+                    'local_cheapest_insertion':
+                        {'model_id_code': '06',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_INSERTION},
+                    'global_cheapest_arc':
+                        {'model_id_code': '07',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.GLOBAL_CHEAPEST_ARC},
+                    'local_cheapest_arc':
+                        {'model_id_code': '08',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_ARC},
+                    'first_unbound_min_value':
+                        {'model_id_code': '09',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.FIRST_UNBOUND_MIN_VALUE},
+                    'automatic':
+                        {'model_id_code': '10',
+                         'solver_param': routing_enums_pb2.FirstSolutionStrategy.AUTOMATIC}
+                },
+            'local_search_metaheuristic':
+                {
+                    'greedy_descent':
+                        {'model_id_code': '01',
+                         'solver_param': routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT},
+                    'guided_local_search':
+                        {'model_id_code': '02',
+                         'solver_param': routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH},
+                    'simulated_annealing':
+                        {'model_id_code': '03',
+                         'solver_param': routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING},
+                    'tabu_search':
+                        {'model_id_code': '04',
+                         'solver_param': routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH},
+                    'automatic':
+                        {'model_id_code': '05',
+                         'solver_param': routing_enums_pb2.LocalSearchMetaheuristic.AUTOMATIC}
+                }
+        }
+
     def __init__(self, vrp_distance_matrix, vrp_duration_matrix, region_df, config_dict):
         self._vrp_distance_matrix = vrp_distance_matrix
         self._vrp_duration_matrix = vrp_duration_matrix
@@ -58,6 +113,8 @@ class VrpModelObj(object):
             else str(int(self._config_dict['max_hours']))
         id_string += search_param_codes['first_solution_strategy'][self._config_dict['first_solution_strategy']]
         id_string += search_param_codes['local_search_metaheuristic'][self._config_dict['local_search_metaheuristic']]
+        id_string += ('0' + str(int(self._config_dict['veh_cap']))) if self._config_dict['veh_cap'] < 100 else \
+            str(int(self._config_dict['veh_cap']))
 
         self._vrp_model_id = id_string
 
