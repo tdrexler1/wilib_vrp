@@ -19,7 +19,8 @@ GoogleMapPlotter.write_points = write_points
 # Google GENERAL MAPS API key - works for maps_javascript_api & directions_api
 
 ROUTE_COLORS = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
-                '#DB7093', '#6B8E23', '#00BFFF', '#483D8B']
+                '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#DCDCDC', '#D8BFD8', '#AFEEEE', '#FOE68C',
+                '#800000', '#ADFF2F']
 
 def write_infowindow_text(library_data, lib_id, stop_number, route_number):
 
