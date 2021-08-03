@@ -80,39 +80,18 @@ class VrpModelObj(object):
 
     def _format_vrp_model_id(self):
 
-        search_param_codes = \
-            {
-                'first_solution_strategy':
-                    {
-                        'path_cheapest_arc': '01',
-                        'savings': '02',
-                        'sweep': '03',
-                        'christofides': '04',
-                        'parallel_cheapest_insertion': '05',
-                        'local_cheapest_insertion': '06',
-                        'global_cheapest_arc': '07',
-                        'local_cheapest_arc': '08',
-                        'first_unbound_min_value': '09',
-                        'automatic': '10'
-                    },
-                'local_search_metaheuristic':
-                    {
-                        'greedy_descent': '01',
-                        'guided_local_search': '02',
-                        'simulated_annealing': '03',
-                        'tabu_search': '04',
-                        'automatic': '05',
-                    }
-            }
-
         id_string = 'idl' if self._config_dict['model'] == 'ideal' else 'str'
         id_string += str(self._config_dict['region_number']) if self._config_dict['region_number'] < 10 else str(
             self._config_dict['region_number'])
         id_string += '_'
         id_string += ('0' + str(int(self._config_dict['max_hours']))) if self._config_dict['max_hours'] < 10 \
             else str(int(self._config_dict['max_hours']))
-        id_string += search_param_codes['first_solution_strategy'][self._config_dict['first_solution_strategy']]
-        id_string += search_param_codes['local_search_metaheuristic'][self._config_dict['local_search_metaheuristic']]
+        id_string += \
+            self._search_param_dict['first_solution_strategy']\
+                [self._config_dict['first_solution_strategy']]['model_id_code']
+        id_string += \
+            self._search_param_dict['local_search_metaheuristic']\
+                [self._config_dict['local_search_metaheuristic']]['model_id_code']
         id_string += ('0' + str(int(self._config_dict['veh_cap']))) if self._config_dict['veh_cap'] < 100 else \
             str(int(self._config_dict['veh_cap']))
 
@@ -268,38 +247,15 @@ class VrpModelObj(object):
         self._vrp_routing_model = vrp_routing_model
 
     def __vrp_solve(self):
-        search_param_args = \
-            {
-                'first_solution_strategy':
-                    {
-                        'automatic': routing_enums_pb2.FirstSolutionStrategy.AUTOMATIC,
-                        'path_cheapest_arc': routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC,
-                        'savings': routing_enums_pb2.FirstSolutionStrategy.SAVINGS,
-                        'sweep': routing_enums_pb2.FirstSolutionStrategy.SWEEP,
-                        'christofides': routing_enums_pb2.FirstSolutionStrategy.CHRISTOFIDES,
-                        'parallel_cheapest_insertion': routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION,
-                        'local_cheapest_insertion': routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_INSERTION,
-                        'global_cheapest_arc': routing_enums_pb2.FirstSolutionStrategy.GLOBAL_CHEAPEST_ARC,
-                        'local_cheapest_arc': routing_enums_pb2.FirstSolutionStrategy.LOCAL_CHEAPEST_ARC,
-                        'first_unbound_min_value': routing_enums_pb2.FirstSolutionStrategy.FIRST_UNBOUND_MIN_VALUE
-                    },
-                'local_search_metaheuristic':
-                    {
-                        'automatic': routing_enums_pb2.LocalSearchMetaheuristic.AUTOMATIC,
-                        'greedy_descent': routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT,
-                        'guided_local_search': routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH,
-                        'simulated_annealing': routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING,
-                        'tabu_search': routing_enums_pb2.LocalSearchMetaheuristic.TABU_SEARCH
-                    }
-            }
 
-        #
         search_parameters = pywrapcp.DefaultRoutingSearchParameters()
 
         search_parameters.first_solution_strategy = \
-            search_param_args['first_solution_strategy'][self._config_dict['first_solution_strategy']]
+            self._search_param_dict['first_solution_strategy']\
+            [self._config_dict['first_solution_strategy']]['solver_param']
         search_parameters.local_search_metaheuristic = \
-            search_param_args['local_search_metaheuristic'][self._config_dict['local_search_metaheuristic']]
+            self._search_param_dict['local_search_metaheuristic']\
+            [self._config_dict['local_search_metaheuristic']]['solver_param']
 
         search_parameters.time_limit.seconds = 15
         search_parameters.log_search = False

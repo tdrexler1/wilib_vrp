@@ -47,8 +47,8 @@ def parse_args():
     param_group.add_argument('constraint', action='store', default='duration', type=str,
                              choices=['distance', 'duration'],
                              help="Select whether routes should be balanced by 'distance' or 'duration'.")
-    param_group.add_argument('num_vehicles', action='store', default=1, type=int, choices=range(1, 11),
-                             help='Number of vehicles/routes (1-10).')
+    param_group.add_argument('num_vehicles', action='store', default=1, type=int, choices=range(1, 16),
+                             help='Number of vehicles/routes (1-15).')
     param_group.add_argument('max_hours', action='store', default=8, type=float,
                              help='Maximum allowable route time in hours.')
     param_group.add_argument('max_miles', action='store', default=500, type=float,
@@ -122,25 +122,22 @@ def main():
 
     conf_dict = {**args_dict, **api_dict}
 
-    # TODO: this whole thing with the output text file name and the pickle file name needs to be sorted out
-    output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\solution_output\\')
-    if not os.path.isdir(output_dir_path):
-        os.mkdir(output_dir_path)
+    vrp_output_path = '.\\vrp_output\\'
 
     region_data = dist.prep_input_data(stop_data, conf_dict)
 
     if conf_dict['build_matrices']:
-        pass
-        #api_address_array = dist.create_api_address_lists(region_data)
+
+        api_address_array = dist.create_api_address_lists(region_data)
 
         # create distance & duration matrices w/ Google Maps API
-        #print('Building distance and duration matrices...', end='')
-        #distance_matrix, duration_matrix = dist.create_matrices(api_address_array, conf_dict)
+        print('Building distance and duration matrices...', end='')
+        distance_matrix, duration_matrix = dist.create_matrices(api_address_array, conf_dict)
 
     else:
         print('Retrieving distance and duration matrices...', end='')
         matrix_pickle_name = \
-            output_dir_path + \
+            '.\\vrp_matrix_data\\' + \
             conf_dict['model'] + \
             str(conf_dict['region_number']) + \
             '_matrices.pickle'
@@ -165,30 +162,54 @@ def main():
     if vrp_solution:
 
         if conf_dict['display'] or conf_dict['text_file']:
+
+            #if not os.path.isdir(vrp_output_path):
+            #    os.mkdir(vrp_output_path)
+
             route_plan = vrp_model.get_vrp_route_plan()
             if conf_dict['display']:
                 print(route_plan)
+
             if conf_dict['text_file']:
-                results_text_file = \
-                    output_dir_path + \
-                    conf_dict['model'] + \
-                    str(conf_dict['region_number']) + \
-                    '_' + str(conf_dict['veh_cap']) + \
-                    '_results.txt'
-                with open(results_text_file, 'a') as outfile:
+                text_file_path = vrp_output_path + 'solution_files\\'
+
+                if not os.path.isdir(text_file_path):
+                    os.makedirs(text_file_path)
+
+                results_text_file = text_file_path + vrp_model_id + '_results.txt'
+                    #conf_dict['model'] + \
+                    #str(conf_dict['region_number']) + \
+                    #'_' + str(conf_dict['veh_cap']) + \
+
+
+                with open(results_text_file, 'w') as outfile:
                     outfile.write(route_plan)
 
         if conf_dict['map'] or conf_dict['screenshot']:
 
+            #if not os.path.isdir(vrp_output_path):
+            #    os.mkdir(vrp_output_path)
+
+            map_file_path = vrp_output_path + 'map_files\\'
+            if not os.path.isdir(map_file_path):
+                os.makedirs(map_file_path)
+
             optimal_routes = vrp_model.get_vrp_route_array()
 
-            route_map = mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'],
-                                           vrp_model_id, output_dir_path)
+            route_map = \
+                mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'], vrp_model_id,
+                                      map_file_path)
+            route_map_filepath = os.path.abspath(route_map)
 
             if conf_dict['map']:
-                mapper.display_map(route_map)
+                mapper.display_map(route_map_filepath)
+
             if conf_dict['screenshot']:
-                mapper.screenshot_map(route_map)
+                screenshot_file_path = vrp_output_path + 'screenshots\\'
+                if not os.path.isdir(screenshot_file_path):
+                    os.makedirs(screenshot_file_path)
+
+                mapper.screenshot_map(route_map_filepath, screenshot_file_path)
     else:
 
         print('No solution found.')

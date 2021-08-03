@@ -11,8 +11,8 @@
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <option name="SCRIPT_NAME" value="C:\Users\tdrex\PycharmProjects\wilib_vrp\wi_lib_vrp.py" />
-    <option name="PARAMETERS" value="wi_library_directory_01_geo_reg.csv ideal 1 duration 1 8 500 40 30 christofides automatic --display --vehicle_increment --text_file" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wi_lib_vrp.py" />
+    <option name="PARAMETERS" value="wi_library_directory_01_geo_reg.csv ideal 1 duration 12 8 500 100 30 savings automatic --display --map --screenshot" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

@@ -3,6 +3,7 @@ import webbrowser
 import string
 import random
 import time
+import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options # chromedriver must be in PATH
@@ -19,7 +20,7 @@ GoogleMapPlotter.write_points = write_points
 # Google GENERAL MAPS API key - works for maps_javascript_api & directions_api
 
 ROUTE_COLORS = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
-                '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#DCDCDC', '#D8BFD8', '#AFEEEE', '#FOE68C',
+                '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#DCDCDC', '#D8BFD8', '#AFEEEE', '#F0E68C',
                 '#800000', '#ADFF2F']
 
 def write_infowindow_text(library_data, lib_id, stop_number, route_number):
@@ -36,9 +37,16 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
                          'wi_state_gov': 'WI Government',
                          'wi_tech_college': 'WI Technical College library'}
 
+    stop_address = \
+        str(library_data['address_number'][lib_id]) + \
+        str(library_data['address_street_dir_prefix'][lib_id]) + \
+        str(library_data['address_street'][lib_id]) + \
+        str(library_data['address_street_suffix'][lib_id]) + \
+        str(library_data['address_street_dir_suffix'][lib_id])
+
     iw_text_string = f"<strong>{library_data['stop_full_name'][lib_id]}</strong>" \
                      f"<br>" \
-                     f"{library_data['address_street_number'][lib_id]}" \
+                     f"{stop_address}" \
                      f"<br>" \
                      f"{library_data['address_city'][lib_id]}, WI {library_data['address_zip'][lib_id]}" \
                      f"<br>" \
@@ -74,6 +82,14 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
     )
 
     proposal_type = 'Ideal' if model_id[0:2] == 'idl' else 'Starter'
+
+    hub_address = \
+        str(stop_data_dict['address_number'][hub_id]) + \
+        str(stop_data_dict['address_street_dir_prefix'][hub_id]) + \
+        str(stop_data_dict['address_street'][hub_id]) + \
+        str(stop_data_dict['address_street_suffix'][hub_id]) + \
+        str(stop_data_dict['address_street_dir_suffix'][hub_id])
+
     gmap.marker(float(stop_data_dict['latitude'][hub_id]), float(stop_data_dict['longitude'][hub_id]),
                 color='white',
                 label='*',
@@ -85,7 +101,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
                             f"<br>"
                             f"{stop_data_dict['stop_full_name'][hub_id]}"
                             f"<br>"
-                            f"{stop_data_dict['address_street_number'][hub_id]}"
+                            f"{hub_address}"
                             f"<br>"
                             f"{stop_data_dict['address_city'][hub_id]}, WI {stop_data_dict['address_zip'][hub_id]}",
                 label_color='black',
@@ -119,6 +135,9 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
 def display_map(route_map):
 
+    #route_map_filepath = os.path.abspath(route_map)
+
+
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
     webbrowser.get(chrome_path).open('file://' + route_map)
@@ -127,15 +146,18 @@ def display_map(route_map):
     #webbrowser.open('file://' + map_file_name + route_map)
 
 
-def screenshot_map(route_map):
+def screenshot_map(route_map, output_dir):
+
+    #print(route_map)
+    #print(os.path.abspath(route_map))
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
-    png_filepath = route_map[:-4] + 'png'
-
+    png_filepath = output_dir + os.path.basename(route_map)[:-4] + 'png'
+    print(png_filepath)
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(1920, 1080)
     driver.get(route_map)
-    time.sleep(5)
+    time.sleep(2)
     driver.save_screenshot(png_filepath)
