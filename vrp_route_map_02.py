@@ -135,9 +135,6 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
 def display_map(route_map):
 
-    #route_map_filepath = os.path.abspath(route_map)
-
-
     # https://stackoverflow.com/questions/22445217/python-webbrowser-open-to-open-chrome-browser
     chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
     webbrowser.get(chrome_path).open('file://' + route_map)
@@ -148,14 +145,11 @@ def display_map(route_map):
 
 def screenshot_map(route_map, output_dir):
 
-    #print(route_map)
-    #print(os.path.abspath(route_map))
-
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
     png_filepath = output_dir + os.path.basename(route_map)[:-4] + 'png'
-    print(png_filepath)
+
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(1920, 1080)
     driver.get(route_map)

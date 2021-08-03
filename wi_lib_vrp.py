@@ -163,10 +163,8 @@ def main():
 
         if conf_dict['display'] or conf_dict['text_file']:
 
-            #if not os.path.isdir(vrp_output_path):
-            #    os.mkdir(vrp_output_path)
-
             route_plan = vrp_model.get_vrp_route_plan()
+
             if conf_dict['display']:
                 print(route_plan)
 
@@ -177,18 +175,11 @@ def main():
                     os.makedirs(text_file_path)
 
                 results_text_file = text_file_path + vrp_model_id + '_results.txt'
-                    #conf_dict['model'] + \
-                    #str(conf_dict['region_number']) + \
-                    #'_' + str(conf_dict['veh_cap']) + \
-
 
                 with open(results_text_file, 'w') as outfile:
                     outfile.write(route_plan)
 
         if conf_dict['map'] or conf_dict['screenshot']:
-
-            #if not os.path.isdir(vrp_output_path):
-            #    os.mkdir(vrp_output_path)
 
             map_file_path = vrp_output_path + 'map_files\\'
             if not os.path.isdir(map_file_path):
