@@ -102,15 +102,12 @@ def add_geocode_data(stop_data):
         stop_data['pluscode'].str.replace("+", "%2B").str.replace(" ", "%20").str.replace(",", "")
 
     # build urls for libraries with address location data
-    #stop_data.loc[stop_data['pluscode'].isna(), 'geo_address_url_string'] = \
-    #    stop_data['address_full_no_unit'].str.replace(",", "").str.split().str.join('%20')
     # https://stackoverflow.com/a/52270276
     address_cols = \
         ['address_number', 'address_street_dir_prefix', 'address_street', 'address_street_suffix',
          'address_street_dir_suffix', 'address_city', 'address_state', 'address_zip']
     stop_data.loc[stop_data['pluscode'].isna(), 'geo_address_url_string'] = \
         stop_data[address_cols].apply(lambda x: ' '.join(x.values.astype(str)), axis=1).str.replace('nan', '').str.split().str.join('%20')
-
 
     # add column with (lat, lon) pairs
     stop_data['geo_coords'] = stop_data['geo_address_url_string'].apply(geocode_api_request, api_key=geocode_api_key)

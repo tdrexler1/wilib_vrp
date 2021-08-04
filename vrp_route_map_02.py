@@ -38,11 +38,13 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
                          'wi_tech_college': 'WI Technical College library'}
 
     stop_address = \
-        str(library_data['address_number'][lib_id]) + \
-        str(library_data['address_street_dir_prefix'][lib_id]) + \
-        str(library_data['address_street'][lib_id]) + \
-        str(library_data['address_street_suffix'][lib_id]) + \
-        str(library_data['address_street_dir_suffix'][lib_id])
+        ' '.join(
+            f"{str(library_data['address_number'][lib_id])} "
+            f"{str(library_data['address_street_dir_prefix'][lib_id])} "
+            f"{str(library_data['address_street'][lib_id])} "
+            f"{str(library_data['address_street_suffix'][lib_id])} "
+            f"{str(library_data['address_street_dir_suffix'][lib_id])}".replace('nan', '').split()
+        )
 
     iw_text_string = f"<strong>{library_data['stop_full_name'][lib_id]}</strong>" \
                      f"<br>" \
@@ -70,15 +72,24 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
     route_colors = random.sample(ROUTE_COLORS, len(route_array))
 
+    bounds_dict = {'north': float(stop_data['latitude'].max()),
+                   'south': float(stop_data['latitude'].min()),
+                   'east': float(stop_data['longitude'].min()),
+                   'west': float(stop_data['longitude'].max())}
+
     stop_data_dict = stop_data.to_dict()
 
     hub_id = route_array[0][0]
 
     gmap = gmplot.GoogleMapPlotter(
-        float(stop_data_dict['latitude'][hub_id]),
-        float(stop_data_dict['longitude'][hub_id]),
-        10,
-        apikey=gmaps_api_key
+        (bounds_dict['north'] + bounds_dict['south'])/2,
+        (bounds_dict['east'] + bounds_dict['west'])/2,
+
+        #float(stop_data_dict['latitude'][hub_id]),
+        #float(stop_data_dict['longitude'][hub_id]),
+        15,
+        apikey=gmaps_api_key,
+        fit_bounds=bounds_dict
     )
 
     proposal_type = 'Ideal' if model_id[0:2] == 'idl' else 'Starter'
