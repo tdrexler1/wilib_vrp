@@ -72,6 +72,27 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
     route_colors = random.sample(ROUTE_COLORS, len(route_array))
 
+    # https://gis.stackexchange.com/a/49813
+    # https://developers.google.com/maps/documentation/javascript/reference/coordinates#LatLngBounds
+    # https://github.com/fullstackreact/google-maps-react/issues/63
+    # https://stackoverflow.com/a/11153612
+    # marker_latitudes = stop_data['latitude'].astype(float).tolist()
+    # marker_longitudes = stop_data['longitude'].astype(float).tolist()
+
+    # print(marker_latitudes[1])
+    # print(type(marker_latitudes[1]))
+
+    # fit_bounds_dict = [(marker_latitudes.min(), marker_longitudes.min()),
+    #                    (marker_latitudes.max(), marker_longitudes.max())]
+
+    # fit_bounds_dict = {'north': marker_latitudes.max(),
+    #                'south': marker_latitudes.min(),
+    #                'east': marker_longitudes.max(),
+    #                'west': marker_longitudes.min()}
+    # fit_bounds_dict = {'north': max(marker_latitudes),
+    #                'south': min(marker_latitudes),
+    #                'east': max(marker_longitudes),
+    #                'west': min(marker_longitudes)}
     bounds_dict = {'north': float(stop_data['latitude'].max()),
                    'south': float(stop_data['latitude'].min()),
                    'east': float(stop_data['longitude'].min()),
@@ -87,9 +108,10 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
         #float(stop_data_dict['latitude'][hub_id]),
         #float(stop_data_dict['longitude'][hub_id]),
-        15,
+        0,
         apikey=gmaps_api_key,
-        fit_bounds=bounds_dict
+        fit_bounds=bounds_dict,
+        title=f'{model_id} Route Map'
     )
 
     proposal_type = 'Ideal' if model_id[0:2] == 'idl' else 'Starter'
