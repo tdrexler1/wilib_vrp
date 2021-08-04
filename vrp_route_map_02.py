@@ -17,6 +17,11 @@ GoogleMapPlotter.write_point = write_point
 GoogleMapPlotter.marker = marker
 GoogleMapPlotter.write_points = write_points
 
+# Google GENERAL MAPS API key - works for maps_javascript_api & directions_api
+
+ROUTE_COLORS = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
+                '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#DCDCDC', '#D8BFD8', '#AFEEEE', '#F0E68C',
+                '#800000', '#ADFF2F']
 
 def write_infowindow_text(library_data, lib_id, stop_number, route_number):
 
@@ -33,11 +38,13 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
                          'wi_tech_college': 'WI Technical College library'}
 
     stop_address = \
-        str(library_data['address_number'][lib_id]) + \
-        str(library_data['address_street_dir_prefix'][lib_id]) + \
-        str(library_data['address_street'][lib_id]) + \
-        str(library_data['address_street_suffix'][lib_id]) + \
-        str(library_data['address_street_dir_suffix'][lib_id])
+        ' '.join(
+            f"{str(library_data['address_number'][lib_id])} "
+            f"{str(library_data['address_street_dir_prefix'][lib_id])} "
+            f"{str(library_data['address_street'][lib_id])} "
+            f"{str(library_data['address_street_suffix'][lib_id])} "
+            f"{str(library_data['address_street_dir_suffix'][lib_id])}".replace('nan', '').split()
+        )
 
     iw_text_string = f"<strong>{library_data['stop_full_name'][lib_id]}</strong>" \
                      f"<br>" \
@@ -62,46 +69,27 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
 
 
 def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
-    # Google GENERAL MAPS API key - works for maps_javascript_api & directions_api
-
-    ROUTE_COLORS = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
-                    '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#DCDCDC', '#D8BFD8', '#AFEEEE', '#F0E68C',
-                    '#800000', '#ADFF2F']
 
     route_colors = random.sample(ROUTE_COLORS, len(route_array))
 
-    # https://gis.stackexchange.com/a/49813
-    # https://developers.google.com/maps/documentation/javascript/reference/coordinates#LatLngBounds
-    # https://github.com/fullstackreact/google-maps-react/issues/63
-    marker_latitudes = stop_data['latitude'].astype(float).tolist()
-    marker_longitudes = stop_data['longitude'].astype(float).tolist()
-
-    # print(marker_latitudes[1])
-    # print(type(marker_latitudes[1]))
-
-    # fit_bounds_dict = [(marker_latitudes.min(), marker_longitudes.min()),
-    #                    (marker_latitudes.max(), marker_longitudes.max())]
-
-    # fit_bounds_dict = {'north': marker_latitudes.max(),
-    #                'south': marker_latitudes.min(),
-    #                'east': marker_longitudes.max(),
-    #                'west': marker_longitudes.min()}
-    fit_bounds_dict = {'north': max(marker_latitudes),
-                   'south': min(marker_latitudes),
-                   'east': max(marker_longitudes),
-                   'west': min(marker_longitudes)}
+    bounds_dict = {'north': float(stop_data['latitude'].max()),
+                   'south': float(stop_data['latitude'].min()),
+                   'east': float(stop_data['longitude'].min()),
+                   'west': float(stop_data['longitude'].max())}
 
     stop_data_dict = stop_data.to_dict()
 
     hub_id = route_array[0][0]
 
     gmap = gmplot.GoogleMapPlotter(
-        float(stop_data_dict['latitude'][hub_id]),
-        float(stop_data_dict['longitude'][hub_id]),
-        10,
+        (bounds_dict['north'] + bounds_dict['south'])/2,
+        (bounds_dict['east'] + bounds_dict['west'])/2,
+
+        #float(stop_data_dict['latitude'][hub_id]),
+        #float(stop_data_dict['longitude'][hub_id]),
+        15,
         apikey=gmaps_api_key,
-        title=f'Model {model_id} Route Map',
-        fit_bounds=fit_bounds_dict
+        fit_bounds=bounds_dict
     )
 
     proposal_type = 'Ideal' if model_id[0:2] == 'idl' else 'Starter'
