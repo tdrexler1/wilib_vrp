@@ -53,7 +53,9 @@ class _Route_mod(object):
                         if (status == google.maps.DirectionsStatus.OK) {
                             new google.maps.DirectionsRenderer({
         						map: map, polylineOptions: {
-        							strokeColor: "%s"
+        							strokeColor: "%s",
+        							strokeOpacity: 1.0,
+        							strokeWeight: 3,
         						}, suppressMarkers: true 
         					}).setDirections(response);
                         }

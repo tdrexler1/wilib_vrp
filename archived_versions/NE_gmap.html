@@ -1,0 +1,679 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Google Maps - gmplot</title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyARPwnKPJU-N4NvcnSEWYfPXJqBfbq2EdQ"></script>
+<script type="text/javascript">
+    function initialize() {
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 15,
+            center: new google.maps.LatLng(43.049550, -89.392370)
+        });
+
+        var prev_infowindow = false;
+
+        var marker_icon_FFFFFF = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAAClklEQVRIia3VsUsbYRjH8e9FLkmhJ06lTbno4CCUaglUOpS4dHCpo4YO+QsE6dpRoSiiKF0KrnYoXUKkg6bYBG4LHiRQpIVAFZq2EErE2iZXek8H78TY5HLm/C0v3N3zufd97733VfDOHeAhcBsIATbwBTCAD52KlA7XHwHPgfvxeJzR0VEGBgao1+uUy2UODw8BisAz4F2XjqEAi4qi2KlUSkzTFNu25WJM05RUKiWKotjAokfnUIA1TdNka2vrP6hdstmsaJomwFoneC4ajYphGL5AN4ZhSDQaFWDuIhgDTlZWVi4FulldXRXgxHHOsjA4OCiWZfWEWpYlQ0NDAizA6TIBmEqn06iq2u1Dto2qqqTTaYApF+0DRiYmJnoC3SSTSYARoC8EqEA4Ho8HQp36MKC6w0dEAqHn60OABVgHBweBUKfeAiz3f94vFAqBUKd+3/EAmNd1XZrNZs9LStd1AebPv+gWcLy0tNQTury8LMCx47RkNhwOSz6fvxRYKBQkEokIMNtpatY1TZNisegL3Nvbk/7+fgHWveZbAV7FYjGpVqueYK1Wc+fxNR5bn5trQHlycrLtXupmZmZGgI/A9W6gm3vAn83NzbZgLpcTQICkX9DNC13XpdFotIC2bcv4+LgAby4LAtwAfm1sbLSgu7u7wukCv9sLCvBybGysBZ2enhZ8HHZeSQBSKpVERKRer7tHxxOvopDXTcAEPmUyGQC2t7dpNBq/gWwQFOBtLpcDYGdnB+A98NNHnWceRyIRaTabMjw8LMDToCDATUDy+bwoiiLAg24Ffob/DahlMhlE5C9QCtjJsxQTiYQAFT8P++kpQK1SqQD4OnP8oj+Ojo7gdCO+MvS701avEv3qtJ/9PPwP0ZvxC1UctAkAAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_0 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.049523, -89.392370),
+            title: "Region 0 Hub",
+            label: {
+                text: "*",
+                color: "black",
+                fontSize: "20px",
+                fontWeight: "bold"
+            },
+            icon: marker_icon_FFFFFF,
+            map: map
+        });
+
+        var info_window_0 = new google.maps.InfoWindow({
+            content: '<strong>Ne w/ west bend</strong><br><br>Location:<br>South Central Library System<br>1601 Gilson St<br>Madison, WI 53718'
+        });
+        
+        info_marker_0.addListener('click', function() {
+            info_window_0.open(map, info_marker_0);
+        });
+        
+        google.maps.event.addListener(info_marker_0, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_0.open(map, info_marker_0);
+            prev_infowindow = info_window_0
+        
+        });
+
+        var marker_icon_1E90FF = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAADCklEQVRIia2VW0gUYRTHf7M3rxm7QZSGBUYJvmQk9VAGUQQhvhYVC90epKJCEKSXqIfIHroQJD1EWBiFQVlBF1GzKHJFMwtLWrpsKV3W1vY2O+7s14Mz7KqrO67+Xz7mfOf/mzmc830jMb1KgPVAAWACYsAP4AXwPoV3kjYDnYCw2AtFVkmFyFmzW2SVVAiLvVAAQtvfnMwsJXk+jSTVZJdul/I21WArWAXS+DTlew//WusI9dwSCFEH1GovmgSVgHOmjHlHFjgbySqpSFlO+P19vA27iEX8F4BjOtickHNEsmaeWFj1hMwVSauaJOvClWQsLyfU3biOWPQv8DoRmg/cs1eesWaXbjcE1GWxF2Ky5SB/eFwOXAP8Jm2vyuJYmp274fCMgLpyNxzC4liWDVTB2JgAVOaUOZHM1rSgktlKTpkToFKHmoHijKKNaQF1ZRSVAxQDZhNgBWwWe+GsoJrfBlhN8bCYIt2o4n4ToABKdPjrrJCaXwEU/Tz3y5+ezQqq+fuBmF5+c9DVgFCVtIBCHSXoagBohvhIXVZ9noC//XxaUP+zC6g+TwC4DPETFQD8EXfHtsyiciyOZYaBEXcHwzf3QEytBloToQCdCNUR7r2zNrN4C+b5+SmByvduftdvRSihi8BJPZ7s6rthnp+/c1F1F+a8xVMCY0EvQ2dLUX2e28AOEmbKNCFXAPvVkcE+7829IKae3eGmg6g+zwCwjwlDPhEKEAaccv+jaLC7MSlQHmgh1HML4ABj/RinZFCAN0C9734tIhqZUIvA9+A4QBPQkcw8FRTglOrzhINd18d/5ad2lG+dgoTGzAT6C2gIPL80Lhh4WQ9jo9OXDhTgivKjl9HBtwDE5BHC75oBrk5nSgXtBgZCfXcBkPsfI0blMNpxTBcK8FD++HQM+vEJQBtJOj5TaJvyzYVQFf0makllMAJ1iWgE5fMrol43wCsDHkP6PW/jUQFEgay5grpsS1YLwG0k2Uj5AH+if9wAhv45RqHDMXkEwD+X0J/aOjiX0CFt/WIk+T+qxhtde398rAAAAABJRU5ErkJggg==",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_1 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.417730, -88.211727),
+            title: "UW-Washington Co",
+            label: {
+                text: "A",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_1 = new google.maps.InfoWindow({
+            content: '<strong>UW-Washington County</strong><br>400 University Dr<br>West Bend, WI 53095<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #1<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_1.addListener('click', function() {
+            info_window_1.open(map, info_marker_1);
+        });
+        
+        google.maps.event.addListener(info_marker_1, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_1.open(map, info_marker_1);
+            prev_infowindow = info_window_1
+        
+        });
+
+        var info_marker_2 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.701694, -87.758893),
+            title: "Monarch LS",
+            label: {
+                text: "B",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_2 = new google.maps.InfoWindow({
+            content: '<strong>Monarch Library System</strong><br>4632 S Taylor Dr<br>Sheboygan, WI 53081<br><br>Stop type: Library system<br><br>Route: #1<br>Route order: stop #2<br><br>Average drop-off: 5<br>Average pick-up: 5'
+        });
+        
+        info_marker_2.addListener('click', function() {
+            info_window_2.open(map, info_marker_2);
+        });
+        
+        google.maps.event.addListener(info_marker_2, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_2.open(map, info_marker_2);
+            prev_infowindow = info_window_2
+        
+        });
+
+        var info_marker_3 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.737187, -87.754812),
+            title: "UW-Sheboygan",
+            label: {
+                text: "C",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_3 = new google.maps.InfoWindow({
+            content: '<strong>UW-Sheboygan</strong><br>1 University Dr<br>Sheboygan, WI 53081<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #3<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_3.addListener('click', function() {
+            info_window_3.open(map, info_marker_3);
+        });
+        
+        google.maps.event.addListener(info_marker_3, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_3.open(map, info_marker_3);
+            prev_infowindow = info_window_3
+        
+        });
+
+        var info_marker_4 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.065562, -87.656188),
+            title: "UW-Manitowoc",
+            label: {
+                text: "D",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_4 = new google.maps.InfoWindow({
+            content: '<strong>UW-Manitowoc</strong><br>705 Viebahn St<br>Manitowoc, WI 54220<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #4<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_4.addListener('click', function() {
+            info_window_4.open(map, info_marker_4);
+        });
+        
+        google.maps.event.addListener(info_marker_4, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_4.open(map, info_marker_4);
+            prev_infowindow = info_window_4
+        
+        });
+
+        var info_marker_5 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.090873, -87.657111),
+            title: "Manitowoc-Calumet LS",
+            label: {
+                text: "E",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_5 = new google.maps.InfoWindow({
+            content: '<strong>Manitowoc-Calumet Library System</strong><br>707 Quay St<br>Manitowoc, WI 54220<br><br>Stop type: Library system<br><br>Route: #1<br>Route order: stop #5<br><br>Average drop-off: 3<br>Average pick-up: 3'
+        });
+        
+        info_marker_5.addListener('click', function() {
+            info_window_5.open(map, info_marker_5);
+        });
+        
+        google.maps.event.addListener(info_marker_5, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_5.open(map, info_marker_5);
+            prev_infowindow = info_window_5
+        
+        });
+
+        var info_marker_6 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.531312, -87.921312),
+            title: "UW-Green Bay",
+            label: {
+                text: "F",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_6 = new google.maps.InfoWindow({
+            content: '<strong>UW-Green Bay</strong><br>2420 Nicolet Dr<br>Green Bay, WI 54311<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #6<br><br>Average drop-off: 2<br>Average pick-up: 1'
+        });
+        
+        info_marker_6.addListener('click', function() {
+            info_window_6.open(map, info_marker_6);
+        });
+        
+        google.maps.event.addListener(info_marker_6, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_6.open(map, info_marker_6);
+            prev_infowindow = info_window_6
+        
+        });
+
+        var info_marker_7 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.527324, -88.107314),
+            title: "Northeast WI TC",
+            label: {
+                text: "G",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_7 = new google.maps.InfoWindow({
+            content: '<strong>Northeast Wisconsin Technical College</strong><br>2740 W Mason St<br>Green Bay, WI 54303<br><br>Stop type: WI Technical College library<br><br>Route: #1<br>Route order: stop #7<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_7.addListener('click', function() {
+            info_window_7.open(map, info_marker_7);
+        });
+        
+        google.maps.event.addListener(info_marker_7, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_7.open(map, info_marker_7);
+            prev_infowindow = info_window_7
+        
+        });
+
+        var info_marker_8 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.473973, -88.004198),
+            title: "Nicolet FLS",
+            label: {
+                text: "H",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_8 = new google.maps.InfoWindow({
+            content: '<strong>Nicolet Federated Library System</strong><br>1595 Allouez Ave, Ste 4<br>Green Bay, WI 54311<br><br>Stop type: Library system<br><br>Route: #1<br>Route order: stop #8<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_8.addListener('click', function() {
+            info_window_8.open(map, info_marker_8);
+        });
+        
+        google.maps.event.addListener(info_marker_8, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_8.open(map, info_marker_8);
+            prev_infowindow = info_window_8
+        
+        });
+
+        var info_marker_9 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.444410, -88.069460),
+            title: "St. Norbert College",
+            label: {
+                text: "I",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_9 = new google.maps.InfoWindow({
+            content: '<strong>St. Norbert College</strong><br>310 College Ave<br>De Pere, WI 54115<br><br>Stop type: Academic library (private)<br><br>Route: #1<br>Route order: stop #9<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_9.addListener('click', function() {
+            info_window_9.open(map, info_marker_9);
+        });
+        
+        google.maps.event.addListener(info_marker_9, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_9.open(map, info_marker_9);
+            prev_infowindow = info_window_9
+        
+        });
+
+        var info_marker_10 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.283563, -88.458937),
+            title: "Fox Valley TC",
+            label: {
+                text: "J",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_10 = new google.maps.InfoWindow({
+            content: '<strong>Fox Valley Technical College</strong><br>1825 N Bluemound Dr<br>Appleton, WI 54912<br><br>Stop type: WI Technical College library<br><br>Route: #1<br>Route order: stop #10<br><br>Average drop-off: 1<br>Average pick-up: 0'
+        });
+        
+        info_marker_10.addListener('click', function() {
+            info_window_10.open(map, info_marker_10);
+        });
+        
+        google.maps.event.addListener(info_marker_10, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_10.open(map, info_marker_10);
+            prev_infowindow = info_window_10
+        
+        });
+
+        var info_marker_11 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.263695, -88.406681),
+            title: "Outagamie Waupaca LS",
+            label: {
+                text: "K",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_11 = new google.maps.InfoWindow({
+            content: '<strong>Outagamie Waupaca Library System</strong><br>225 N Oneida St<br>Appleton, WI 54911<br><br>Stop type: Library system<br><br>Route: #1<br>Route order: stop #11<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_11.addListener('click', function() {
+            info_window_11.open(map, info_marker_11);
+        });
+        
+        google.maps.event.addListener(info_marker_11, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_11.open(map, info_marker_11);
+            prev_infowindow = info_window_11
+        
+        });
+
+        var info_marker_12 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.261302, -88.397792),
+            title: "Lawrence University",
+            label: {
+                text: "L",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_12 = new google.maps.InfoWindow({
+            content: '<strong>Lawrence University</strong><br>113 S Lawe St<br>Appleton, WI 54911<br><br>Stop type: Academic library (private)<br><br>Route: #1<br>Route order: stop #12<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_12.addListener('click', function() {
+            info_window_12.open(map, info_marker_12);
+        });
+        
+        google.maps.event.addListener(info_marker_12, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_12.open(map, info_marker_12);
+            prev_infowindow = info_window_12
+        
+        });
+
+        var info_marker_13 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.231102, -88.415622),
+            title: "UW-Fox Cities",
+            label: {
+                text: "M",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_13 = new google.maps.InfoWindow({
+            content: '<strong>UW-Fox Cities</strong><br>1478 Midway Rd<br>Menasha, WI 54952<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #13<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_13.addListener('click', function() {
+            info_window_13.open(map, info_marker_13);
+        });
+        
+        google.maps.event.addListener(info_marker_13, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_13.open(map, info_marker_13);
+            prev_infowindow = info_window_13
+        
+        });
+
+        var info_marker_14 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.074492, -88.518417),
+            title: "WMHI",
+            label: {
+                text: "N",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_14 = new google.maps.InfoWindow({
+            content: '<strong>Winnebago Mental Health Institute</strong><br>1300 South Dr<br>Oshkosh, WI 54901<br><br>Stop type: WI Government<br><br>Route: #1<br>Route order: stop #14<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_14.addListener('click', function() {
+            info_window_14.open(map, info_marker_14);
+        });
+        
+        google.maps.event.addListener(info_marker_14, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_14.open(map, info_marker_14);
+            prev_infowindow = info_window_14
+        
+        });
+
+        var info_marker_15 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.076687, -88.516062),
+            title: "WRC",
+            label: {
+                text: "O",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_15 = new google.maps.InfoWindow({
+            content: '<strong>Wisconsin Resource Center</strong><br>1505 North Dr<br>Oshkosh, WI 54901<br><br>Stop type: WI Government<br><br>Route: #1<br>Route order: stop #15<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_15.addListener('click', function() {
+            info_window_15.open(map, info_marker_15);
+        });
+        
+        google.maps.event.addListener(info_marker_15, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_15.open(map, info_marker_15);
+            prev_infowindow = info_window_15
+        
+        });
+
+        var info_marker_16 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.026313, -88.549563),
+            title: "UW-Oshkosh",
+            label: {
+                text: "P",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_16 = new google.maps.InfoWindow({
+            content: '<strong>UW-Oshkosh</strong><br>801 Elmwood Ave<br>Oshkosh, WI 54901<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #16<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_16.addListener('click', function() {
+            info_window_16.open(map, info_marker_16);
+        });
+        
+        google.maps.event.addListener(info_marker_16, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_16.open(map, info_marker_16);
+            prev_infowindow = info_window_16
+        
+        });
+
+        var info_marker_17 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.018153, -88.535836),
+            title: "Winnefox LS",
+            label: {
+                text: "Q",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_17 = new google.maps.InfoWindow({
+            content: '<strong>Winnefox Library System</strong><br>106 Washington Ave<br>Oshkosh, WI 54901<br><br>Stop type: Library system<br><br>Route: #1<br>Route order: stop #17<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_17.addListener('click', function() {
+            info_window_17.open(map, info_marker_17);
+        });
+        
+        google.maps.event.addListener(info_marker_17, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_17.open(map, info_marker_17);
+            prev_infowindow = info_window_17
+        
+        });
+
+        var info_marker_18 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.790187, -88.413438),
+            title: "UW-Fond du Lac",
+            label: {
+                text: "R",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_18 = new google.maps.InfoWindow({
+            content: '<strong>UW-Fond du Lac</strong><br>400 University Dr<br>Fond du Lac, WI 54935<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #18<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_18.addListener('click', function() {
+            info_window_18.open(map, info_marker_18);
+        });
+        
+        google.maps.event.addListener(info_marker_18, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_18.open(map, info_marker_18);
+            prev_infowindow = info_window_18
+        
+        });
+
+        var info_marker_19 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.784864, -88.417819),
+            title: "Moraine Park TC",
+            label: {
+                text: "S",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_19 = new google.maps.InfoWindow({
+            content: '<strong>Moraine Park Technical College</strong><br>235 N National Ave<br>Fond du Lac, WI 54936<br><br>Stop type: WI Technical College library<br><br>Route: #1<br>Route order: stop #19<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_19.addListener('click', function() {
+            info_window_19.open(map, info_marker_19);
+        });
+        
+        google.maps.event.addListener(info_marker_19, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_19.open(map, info_marker_19);
+            prev_infowindow = info_window_19
+        
+        });
+
+        var info_marker_20 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.777437, -88.420687),
+            title: "Marian University",
+            label: {
+                text: "T",
+                color: "white",
+            },
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var info_window_20 = new google.maps.InfoWindow({
+            content: '<strong>Marian University</strong><br>45 S National Ave<br>Fond du Lac, WI 54935<br><br>Stop type: Academic library (private)<br><br>Route: #1<br>Route order: stop #20<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_20.addListener('click', function() {
+            info_window_20.open(map, info_marker_20);
+        });
+        
+        google.maps.event.addListener(info_marker_20, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_20.open(map, info_marker_20);
+            prev_infowindow = info_window_20
+        
+        });
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.049523, -89.392370),
+            destination: new google.maps.LatLng(43.049523, -89.392370),
+            waypoints: [
+                {location: new google.maps.LatLng(43.417730, -88.211727), stopover: true},
+                {location: new google.maps.LatLng(43.701694, -87.758893), stopover: true},
+                {location: new google.maps.LatLng(43.737187, -87.754812), stopover: true},
+                {location: new google.maps.LatLng(44.065562, -87.656188), stopover: true},
+                {location: new google.maps.LatLng(44.090873, -87.657111), stopover: true},
+                {location: new google.maps.LatLng(44.531312, -87.921312), stopover: true},
+                {location: new google.maps.LatLng(44.527324, -88.107314), stopover: true},
+                {location: new google.maps.LatLng(44.473973, -88.004198), stopover: true},
+                {location: new google.maps.LatLng(44.444410, -88.069460), stopover: true},
+                {location: new google.maps.LatLng(44.283563, -88.458937), stopover: true},
+                {location: new google.maps.LatLng(44.263695, -88.406681), stopover: true},
+                {location: new google.maps.LatLng(44.261302, -88.397792), stopover: true},
+                {location: new google.maps.LatLng(44.231102, -88.415622), stopover: true},
+                {location: new google.maps.LatLng(44.074492, -88.518417), stopover: true},
+                {location: new google.maps.LatLng(44.076687, -88.516062), stopover: true},
+                {location: new google.maps.LatLng(44.026313, -88.549563), stopover: true},
+                {location: new google.maps.LatLng(44.018153, -88.535836), stopover: true},
+                {location: new google.maps.LatLng(43.790187, -88.413438), stopover: true},
+                {location: new google.maps.LatLng(43.784864, -88.417819), stopover: true},
+                {location: new google.maps.LatLng(43.777437, -88.420687), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "#1e90ff"
+                                            }, suppressMarkers: true 
+                                    }).setDirections(response);
+            }
+        });
+
+    }
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+    <div id="map_canvas" style="width: 100%; height: 100%;" />
+</body>
+</html>
