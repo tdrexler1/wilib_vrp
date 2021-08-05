@@ -248,7 +248,7 @@ def check_matrix_results(d_matrix):
 
 def main():
 
-    data_file = '../hub_recognition_test_data.xlsx'
+    data_file = 'hub_recognition_test_data.xlsx'
 
     model = 'ideal'
     region = 7
