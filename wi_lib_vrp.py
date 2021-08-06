@@ -1,7 +1,7 @@
 #! python3
 
 import dist_matrix_09 as dist
-import vrp_route_map_02 as mapper
+import vrp_route_map_03 as mapper
 from vrp_solve_08 import VrpModelObj
 
 import argparse
@@ -202,6 +202,16 @@ def main():
 
                 mapper.screenshot_map(route_map_filepath, screenshot_file_path)
     else:
+        if conf_dict['text_file']:
+            text_file_path = vrp_output_path + 'solution_files\\'
+
+            if not os.path.isdir(text_file_path):
+                os.makedirs(text_file_path)
+
+            results_text_file = text_file_path + vrp_model_id + '_results.txt'
+
+            with open(results_text_file, 'w') as outfile:
+                outfile.write(vrp_model.vrp_format_solution_header() + f'No solution found.')
 
         print('No solution found.')
 

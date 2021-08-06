@@ -282,12 +282,9 @@ class VrpModelObj(object):
 
         return time_display_string
 
-    def __vrp_format_solution(self):
+    def vrp_format_solution_header(self):
 
-        # tracking variables for all routes
-        total_distance = 0
-        total_time = 0
-        vrp_route_plan = f"Model ID: {self._vrp_model_id}\n" \
+        vrp_route_plan_header = f"Model ID: {self._vrp_model_id}\n" \
                          f"{self._config_dict['model'].capitalize()} proposal, " \
                          f"region {self._config_dict['region_number']}\n\n" \
                          f"Solution strategies:\n" \
@@ -299,6 +296,16 @@ class VrpModelObj(object):
                          f"\tVehicle capacity: {self._config_dict['veh_cap']}\n" \
                          f"\tDriver break time: {self._config_dict['break_time_minutes']} minutes\n" \
                          f"\tNumber of vehicles/routes: {self._vrp_num_vehicles}\n\n"
+
+        return vrp_route_plan_header
+
+    def __vrp_format_solution(self):
+
+        # tracking variables for all routes
+        total_distance = 0
+        total_time = 0
+
+        vrp_route_plan = self.vrp_format_solution_header()
 
         distance_dimension = self._vrp_routing_model.GetDimensionOrDie('Distance')
         time_dimension = self._vrp_routing_model.GetDimensionOrDie('Duration')
