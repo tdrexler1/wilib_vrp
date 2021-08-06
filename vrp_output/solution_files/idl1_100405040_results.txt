@@ -1,0 +1,15 @@
+Model ID: idl1_100405040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 16
+
+No solution found.
