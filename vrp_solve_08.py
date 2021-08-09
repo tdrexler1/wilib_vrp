@@ -86,12 +86,15 @@ class VrpModelObj(object):
         id_string += '_'
         id_string += ('0' + str(int(self._config_dict['max_hours']))) if self._config_dict['max_hours'] < 10 \
             else str(int(self._config_dict['max_hours']))
+        id_string += '_'
         id_string += \
             self._search_param_dict['first_solution_strategy']\
                 [self._config_dict['first_solution_strategy']]['model_id_code']
+        id_string += '_'
         id_string += \
             self._search_param_dict['local_search_metaheuristic']\
                 [self._config_dict['local_search_metaheuristic']]['model_id_code']
+        id_string += '_'
         id_string += ('0' + str(int(self._config_dict['veh_cap']))) if self._config_dict['veh_cap'] < 100 else \
             str(int(self._config_dict['veh_cap']))
 
@@ -295,7 +298,7 @@ class VrpModelObj(object):
                          f"\tMaximum distance per route: {self._config_dict['max_miles']} miles\n" \
                          f"\tVehicle capacity: {self._config_dict['veh_cap']}\n" \
                          f"\tDriver break time: {self._config_dict['break_time_minutes']} minutes\n" \
-                         f"\tNumber of vehicles/routes: {self._vrp_num_vehicles}\n\n"
+                         f"\tNumber of vehicles/routes: {self._vrp_num_vehicles if self._vrp_solution else '15+'}\n\n"
 
         return vrp_route_plan_header
 
@@ -307,55 +310,61 @@ class VrpModelObj(object):
 
         vrp_route_plan = self.vrp_format_solution_header()
 
-        distance_dimension = self._vrp_routing_model.GetDimensionOrDie('Distance')
-        time_dimension = self._vrp_routing_model.GetDimensionOrDie('Duration')
-        capacity_dimension = self._vrp_routing_model.GetDimensionOrDie('Capacity')
-        break_intervals = self._vrp_solution.IntervalVarContainer()
+        if not self._vrp_solution:
+            vrp_route_plan += f'No solution found.'
 
-        for vehicle_id in range(self._vrp_num_vehicles):
+        else:
 
-            num_stops = 0
+            distance_dimension = self._vrp_routing_model.GetDimensionOrDie('Distance')
+            time_dimension = self._vrp_routing_model.GetDimensionOrDie('Duration')
+            capacity_dimension = self._vrp_routing_model.GetDimensionOrDie('Capacity')
+            break_intervals = self._vrp_solution.IntervalVarContainer()
 
-            index = self._vrp_routing_model.Start(vehicle_id)
-            vrp_route_plan += f'Route for vehicle {vehicle_id + 1}:\n\t'
+            for vehicle_id in range(self._vrp_num_vehicles):
 
-            # iterate over all stops on the route
-            while not self._vrp_routing_model.IsEnd(index):
-                # substitute library names for index numbers
+                num_stops = 0
+
+                index = self._vrp_routing_model.Start(vehicle_id)
+                vrp_route_plan += f'Route for vehicle {vehicle_id + 1}:\n\t'
+
+                # iterate over all stops on the route
+                while not self._vrp_routing_model.IsEnd(index):
+                    # substitute library names for index numbers
+                    vrp_route_plan += \
+                        f'{self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]} -> '
+
+                    num_stops += 1
+
+                    index = self._vrp_solution.Value(self._vrp_routing_model.NextVar(index))
+
+                route_distance = self._vrp_solution.Value(distance_dimension.CumulVar(index))
+                route_time = self._vrp_solution.Value(time_dimension.CumulVar(index))
+                route_load = self._vrp_solution.Value(capacity_dimension.CumulVar(index))
+
                 vrp_route_plan += \
-                    f'{self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]} -> '
+                    f' {self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]}\n\n'
+                vrp_route_plan += f'\tRoute distance: {route_distance / self._METERS_PER_MILE:.2f} miles\n'
+                vrp_route_plan += f'\tRoute time: {self._format_time_display(route_time)}\n'
+                vrp_route_plan += f'\tRoute load: {route_load} containers\n'
+                vrp_route_plan += f'\tNumber of stops: {num_stops - 1}\n'
 
-                num_stops += 1
+                brk = break_intervals.Element(vehicle_id)
+                if brk.PerformedValue():
+                    vrp_route_plan += f'\tBreak: start time = {self._format_time_display(brk.StartValue())}; ' \
+                                   f'end time = {self._format_time_display(brk.StartValue() + brk.DurationValue())}\n\n'
+                else:
+                    vrp_route_plan += f'\tNo break.\n\n'
 
-                index = self._vrp_solution.Value(self._vrp_routing_model.NextVar(index))
+                total_distance += route_distance
+                total_time += route_time
 
-            route_distance = self._vrp_solution.Value(distance_dimension.CumulVar(index))
-            route_time = self._vrp_solution.Value(time_dimension.CumulVar(index))
-            route_load = self._vrp_solution.Value(capacity_dimension.CumulVar(index))
+            vrp_route_plan += f'Total distance, all routes: {total_distance / self._METERS_PER_MILE:.2f} miles\n'
 
-            vrp_route_plan += \
-                f' {self._vrp_input_data_dict["library_names"][self._vrp_index_manager.IndexToNode(index)]}\n\n'
-            vrp_route_plan += f'\tRoute distance: {route_distance / self._METERS_PER_MILE:.2f} miles\n'
-            vrp_route_plan += f'\tRoute time: {self._format_time_display(route_time)}\n'
-            vrp_route_plan += f'\tRoute load: {route_load} containers\n'
-            vrp_route_plan += f'\tNumber of stops: {num_stops - 1}\n'
+            total_mins, total_secs = divmod(total_time, 60)
+            total_hours, total_mins = divmod(total_mins, 60)
+            vrp_route_plan += f'Total time, all routes: {total_hours} {"hours" if total_hours > 1 else "hour"}, ' \
+                              f'{total_mins} {"minutes" if total_mins > 1 else "minute"}'
 
-            brk = break_intervals.Element(vehicle_id)
-            if brk.PerformedValue():
-                vrp_route_plan += f'\tBreak: start time = {self._format_time_display(brk.StartValue())}; ' \
-                               f'end time = {self._format_time_display(brk.StartValue() + brk.DurationValue())}\n\n'
-            else:
-                vrp_route_plan += f'\tNo break.\n\n'
-
-            total_distance += route_distance
-            total_time += route_time
-
-        vrp_route_plan += f'Total distance, all routes: {total_distance / self._METERS_PER_MILE:.2f} miles\n'
-
-        total_mins, total_secs = divmod(total_time, 60)
-        total_hours, total_mins = divmod(total_mins, 60)
-        vrp_route_plan += f'Total time, all routes: {total_hours} {"hours" if total_hours > 1 else "hour"}, ' \
-                       f'{total_mins} {"minutes" if total_mins > 1 else "minute"}'
         vrp_route_plan += f'\n\n' \
                           f'------------------------\n\n'
 
@@ -398,11 +407,9 @@ class VrpModelObj(object):
                 return None
 
     def get_vrp_route_plan(self):
-        if self._vrp_solution:
-            self.__vrp_format_solution()
-            return self._vrp_route_plan
-        else:
-            return None
+        self.__vrp_format_solution()
+        return self._vrp_route_plan
+
 
     def get_vrp_route_array(self):
         if self._vrp_solution:

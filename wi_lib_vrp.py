@@ -159,59 +159,70 @@ def main():
 
     vrp_solution = vrp_model.solve_vrp()
 
-    if vrp_solution:
+    if conf_dict['display'] or conf_dict['text_file']:
 
-        if conf_dict['display'] or conf_dict['text_file']:
+        route_plan = vrp_model.get_vrp_route_plan()
 
-            route_plan = vrp_model.get_vrp_route_plan()
+        if conf_dict['display']:
+            print(route_plan)
 
-            if conf_dict['display']:
-                print(route_plan)
-
-            if conf_dict['text_file']:
-                text_file_path = vrp_output_path + 'solution_files\\'
-
-                if not os.path.isdir(text_file_path):
-                    os.makedirs(text_file_path)
-
-                results_text_file = text_file_path + vrp_model_id + '_results.txt'
-
-                with open(results_text_file, 'w') as outfile:
-                    outfile.write(route_plan)
-
-        if conf_dict['map'] or conf_dict['screenshot']:
-
-            map_file_path = vrp_output_path + 'map_files\\'
-            if not os.path.isdir(map_file_path):
-                os.makedirs(map_file_path)
-
-            optimal_routes = vrp_model.get_vrp_route_array()
-
-            route_map = \
-                mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'], vrp_model_id,
-                                      map_file_path)
-            route_map_filepath = os.path.abspath(route_map)
-
-            if conf_dict['map']:
-                mapper.display_map(route_map_filepath)
-
-            if conf_dict['screenshot']:
-                screenshot_file_path = vrp_output_path + 'screenshots\\'
-                if not os.path.isdir(screenshot_file_path):
-                    os.makedirs(screenshot_file_path)
-
-                mapper.screenshot_map(route_map_filepath, screenshot_file_path)
-    else:
         if conf_dict['text_file']:
             text_file_path = vrp_output_path + 'solution_files\\'
 
             if not os.path.isdir(text_file_path):
                 os.makedirs(text_file_path)
 
-            results_text_file = text_file_path + vrp_model_id + '_results.txt'
+            results_text_file = text_file_path + \
+                conf_dict['model'] + \
+                str(conf_dict['region_number']) + \
+                '_' + str(conf_dict['veh_cap']) + \
+                '_results.txt'
 
-            with open(results_text_file, 'w') as outfile:
-                outfile.write(vrp_model.vrp_format_solution_header() + f'No solution found.')
+            with open(results_text_file, 'a') as outfile:
+                outfile.write(route_plan)
+
+    if (conf_dict['map'] or conf_dict['screenshot']) and vrp_solution:
+
+        map_file_path = vrp_output_path + 'map_files\\'
+        if not os.path.isdir(map_file_path):
+            os.makedirs(map_file_path)
+
+        optimal_routes = vrp_model.get_vrp_route_array()
+
+        route_map = \
+            mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'], vrp_model_id,
+                                  map_file_path)
+        route_map_filepath = os.path.abspath(route_map)
+
+        if conf_dict['map']:
+            mapper.display_map(route_map_filepath)
+
+        if conf_dict['screenshot']:
+            screenshot_file_path = vrp_output_path + 'screenshots\\'
+            if not os.path.isdir(screenshot_file_path):
+                os.makedirs(screenshot_file_path)
+
+            mapper.screenshot_map(route_map_filepath, screenshot_file_path)
+    # else:
+    #     route_plan = vrp_model.get_vrp_route_plan()
+    #
+    #     if conf_dict['display']:
+    #         print(route_plan)
+    #
+    #     if conf_dict['text_file']:
+    #         text_file_path = vrp_output_path + 'solution_files\\'
+    #
+    #         if not os.path.isdir(text_file_path):
+    #             os.makedirs(text_file_path)
+    #
+    #         results_text_file = text_file_path + \
+    #                             conf_dict['model'] + \
+    #                             str(conf_dict['region_number']) + \
+    #                             '_' + str(conf_dict['veh_cap']) + \
+    #                             '_results.txt'
+    #
+    #         with open(results_text_file, 'a') as outfile:
+    #             outfile.write(route_plan)
 
         print('No solution found.')
 
