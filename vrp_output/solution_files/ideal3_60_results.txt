@@ -1,0 +1,656 @@
+Model ID: idl3_080205
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	Nicolet FLS -> Suring PL -> Lakewood PL -> MariCo - Goodman Library Station Branch -> Florence PL -> MariCo - Niagara Branch -> MariCo - Wausaukee Branch -> MariCo - Crivitz Branch ->  Nicolet FLS
+
+	Route distance: 275.25 miles
+	Route time: 7 hours, 55 minutes
+	Route load: 16 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> Kewaunee PL -> Algoma PL -> DoorCo - Forestville Branch -> DoorCo - Sturgeon Bay PL -> DoorCo - Baileys Harbor Branch -> DoorCo - Sister Bay Branch -> DoorCo - Washington Island Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch -> DoorCo - Egg Harbor Branch ->  Nicolet FLS
+
+	Route distance: 203.56 miles
+	Route time: 7 hours, 55 minutes
+	Route load: 31 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> BrownCo - Pulaski Branch -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> Marion PL -> Clintonville PL -> Manawa PL -> Iola PL -> Scandinavia PL -> Waupaca PL -> Weyauwega PL -> Fremont PL ->  Nicolet FLS
+
+	Route distance: 247.92 miles
+	Route time: 7 hours, 53 minutes
+	Route load: 56 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 4 minutes; end time = 5 hours, 34 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> Oneida PL -> Seymour PL -> Black Creek PL -> ShawCo - Bonduel Branch -> ShawCo - Shawano PL -> Keshena PL -> Gillett PL -> Oconto Falls PL -> Lena PL -> MariCo - Coleman Branch -> MariCo - Peshtigo Branch -> UW-Marinette -> MariCo - Marinette PL -> Oconto PL -> BrownCo - Weyers-Hilliard Branch -> Northeast WI TC ->  Nicolet FLS
+
+	Route distance: 203.77 miles
+	Route time: 7 hours, 40 minutes
+	Route load: 49 containers
+	Number of stops: 16
+	Break: start time = 5 hours, 6 minutes; end time = 5 hours, 36 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> Shiocton PL -> New London PL -> Hortonville PL -> Fox Valley TC -> Appleton PL -> Lawrence University ->  Nicolet FLS
+
+	Route distance: 93.68 miles
+	Route time: 3 hours, 6 minutes
+	Route load: 59 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> UW-Green Bay -> BrownCo - Green Bay PL -> BrownCo - Southwest Branch -> BrownCo - Ashwaubenon Branch -> BrownCo - Wrightstown Branch -> Kaukauna PL -> Little Chute PL -> Kimberly PL -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 69.99 miles
+	Route time: 3 hours, 14 minutes
+	Route load: 58 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 7:
+	Nicolet FLS -> BrownCo - East Branch -> BrownCo - Denmark Branch ->  Nicolet FLS
+
+	Route distance: 32.71 miles
+	Route time: 1 hour, 3 minutes
+	Route load: 18 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1126.86 miles
+Total time, all routes: 38 hours, 49 minutes
+
+------------------------
+
+Model ID: idl3_100205
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Nicolet FLS -> MariCo - Wausaukee Branch -> MariCo - Niagara Branch -> Florence PL -> MariCo - Goodman Library Station Branch -> Lakewood PL -> Suring PL -> Gillett PL -> Oconto Falls PL ->  Nicolet FLS
+
+	Route distance: 273.20 miles
+	Route time: 8 hours, 4 minutes
+	Route load: 19 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 18 minutes; end time = 5 hours, 48 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> BrownCo - Denmark Branch -> Algoma PL -> DoorCo - Forestville Branch -> DoorCo - Sturgeon Bay PL -> DoorCo - Baileys Harbor Branch -> DoorCo - Washington Island Branch -> DoorCo - Sister Bay Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch ->  Nicolet FLS
+
+	Route distance: 214.48 miles
+	Route time: 8 hours, 1 minute
+	Route load: 30 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> Marion PL -> Clintonville PL -> New London PL -> Manawa PL -> Iola PL -> Scandinavia PL -> Waupaca PL -> Weyauwega PL -> Fremont PL ->  Nicolet FLS
+
+	Route distance: 256.73 miles
+	Route time: 8 hours, 2 minutes
+	Route load: 56 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 13 minutes; end time = 5 hours, 43 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> BrownCo - Pulaski Branch -> ShawCo - Bonduel Branch -> ShawCo - Shawano PL -> Keshena PL -> Shiocton PL -> Hortonville PL -> Fox Valley TC -> Kimberly PL -> Little Chute PL -> Kaukauna PL -> BrownCo - Wrightstown Branch ->  Nicolet FLS
+
+	Route distance: 154.88 miles
+	Route time: 5 hours, 12 minutes
+	Route load: 59 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 12 minutes; end time = 5 hours, 42 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> DoorCo - Egg Harbor Branch -> Oneida PL -> Seymour PL -> Black Creek PL -> Appleton PL -> Lawrence University -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 195.99 miles
+	Route time: 5 hours, 20 minutes
+	Route load: 60 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 20 minutes; end time = 5 hours, 50 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> Kewaunee PL -> UW-Green Bay -> Oconto PL -> MariCo - Peshtigo Branch -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Crivitz Branch -> MariCo - Coleman Branch -> Lena PL -> BrownCo - Weyers-Hilliard Branch -> Northeast WI TC -> BrownCo - Ashwaubenon Branch -> BrownCo - Southwest Branch -> BrownCo - Green Bay PL -> BrownCo - East Branch ->  Nicolet FLS
+
+	Route distance: 209.97 miles
+	Route time: 7 hours, 35 minutes
+	Route load: 60 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 43 minutes; end time = 6 hours, 13 minutes
+
+Total distance, all routes: 1305.26 miles
+Total time, all routes: 42 hours, 17 minutes
+
+------------------------
+
+Model ID: idl3_080405
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 8
+
+Route for vehicle 1:
+	Nicolet FLS -> MariCo - Niagara Branch -> Florence PL -> MariCo - Crivitz Branch ->  Nicolet FLS
+
+	Route distance: 235.75 miles
+	Route time: 5 hours, 47 minutes
+	Route load: 9 containers
+	Number of stops: 3
+	Break: start time = 5 hours, 47 minutes; end time = 6 hours, 17 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> Oconto PL -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Peshtigo Branch -> MariCo - Coleman Branch -> Lena PL -> Gillett PL -> Oconto Falls PL -> BrownCo - Weyers-Hilliard Branch -> Northeast WI TC -> BrownCo - Ashwaubenon Branch -> BrownCo - Southwest Branch -> BrownCo - Green Bay PL -> BrownCo - East Branch ->  Nicolet FLS
+
+	Route distance: 171.39 miles
+	Route time: 5 hours, 52 minutes
+	Route load: 59 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> BrownCo - Pulaski Branch -> ShawCo - Bonduel Branch -> ShawCo - Shawano PL -> Keshena PL -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> Marion PL -> Clintonville PL ->  Nicolet FLS
+
+	Route distance: 180.09 miles
+	Route time: 5 hours, 45 minutes
+	Route load: 32 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 45 minutes; end time = 6 hours, 15 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> Suring PL -> Lakewood PL -> MariCo - Goodman Library Station Branch -> MariCo - Wausaukee Branch ->  Nicolet FLS
+
+	Route distance: 230.86 miles
+	Route time: 5 hours, 52 minutes
+	Route load: 10 containers
+	Number of stops: 4
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> Kimberly PL -> Little Chute PL -> Kaukauna PL -> BrownCo - Wrightstown Branch -> BrownCo - Denmark Branch -> Kewaunee PL -> Algoma PL -> DoorCo - Forestville Branch -> UW-Green Bay ->  Nicolet FLS
+
+	Route distance: 142.11 miles
+	Route time: 4 hours, 43 minutes
+	Route load: 52 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 43 minutes; end time = 5 hours, 13 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> Fox Valley TC -> Hortonville PL -> Fremont PL -> Weyauwega PL -> Waupaca PL -> Scandinavia PL -> Iola PL -> Manawa PL -> New London PL -> Shiocton PL -> Black Creek PL -> Seymour PL -> Oneida PL ->  Nicolet FLS
+
+	Route distance: 160.85 miles
+	Route time: 5 hours, 34 minutes
+	Route load: 60 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 34 minutes; end time = 6 hours, 4 minutes
+
+Route for vehicle 7:
+	Nicolet FLS -> DoorCo - Washington Island Branch -> DoorCo - Sister Bay Branch -> DoorCo - Baileys Harbor Branch ->  Nicolet FLS
+
+	Route distance: 189.21 miles
+	Route time: 5 hours, 52 minutes
+	Route load: 10 containers
+	Number of stops: 3
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 8:
+	Nicolet FLS -> DoorCo - Sturgeon Bay PL -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch -> DoorCo - Egg Harbor Branch -> Appleton PL -> Lawrence University -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 208.98 miles
+	Route time: 5 hours, 27 minutes
+	Route load: 58 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Total distance, all routes: 1519.24 miles
+Total time, all routes: 44 hours, 55 minutes
+
+------------------------
+
+Model ID: idl3_100405
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Nicolet FLS -> MariCo - Crivitz Branch -> MariCo - Niagara Branch -> Florence PL -> MariCo - Goodman Library Station Branch -> MariCo - Wausaukee Branch -> Lena PL -> BrownCo - East Branch ->  Nicolet FLS
+
+	Route distance: 256.02 miles
+	Route time: 7 hours, 27 minutes
+	Route load: 25 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> BrownCo - Denmark Branch -> UW-Green Bay -> MariCo - Coleman Branch -> Lakewood PL -> Suring PL -> Keshena PL -> Appleton PL -> Lawrence University -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 242.39 miles
+	Route time: 7 hours, 27 minutes
+	Route load: 59 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 31 minutes; end time = 5 hours, 1 minute
+
+Route for vehicle 3:
+	Nicolet FLS -> DoorCo - Forestville Branch -> DoorCo - Sturgeon Bay PL -> DoorCo - Baileys Harbor Branch -> DoorCo - Washington Island Branch -> DoorCo - Sister Bay Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch -> DoorCo - Egg Harbor Branch ->  Nicolet FLS
+
+	Route distance: 200.99 miles
+	Route time: 7 hours, 27 minutes
+	Route load: 25 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 50 minutes; end time = 5 hours, 20 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> Seymour PL -> ShawCo - Shawano PL -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> Marion PL -> New London PL -> Hortonville PL -> Fox Valley TC -> Little Chute PL -> Kaukauna PL -> BrownCo - Wrightstown Branch ->  Nicolet FLS
+
+	Route distance: 207.30 miles
+	Route time: 7 hours, 27 minutes
+	Route load: 58 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 11 minutes; end time = 4 hours, 41 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> BrownCo - Southwest Branch -> BrownCo - Ashwaubenon Branch -> Northeast WI TC -> BrownCo - Weyers-Hilliard Branch -> BrownCo - Pulaski Branch -> ShawCo - Bonduel Branch -> Clintonville PL -> Gillett PL -> Oconto Falls PL -> Oconto PL -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Peshtigo Branch -> BrownCo - Green Bay PL ->  Nicolet FLS
+
+	Route distance: 209.28 miles
+	Route time: 7 hours, 18 minutes
+	Route load: 59 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 8 minutes; end time = 5 hours, 38 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> Kewaunee PL -> Algoma PL -> Kimberly PL -> Fremont PL -> Weyauwega PL -> Waupaca PL -> Scandinavia PL -> Iola PL -> Manawa PL -> Shiocton PL -> Black Creek PL -> Oneida PL ->  Nicolet FLS
+
+	Route distance: 227.07 miles
+	Route time: 7 hours, 26 minutes
+	Route load: 58 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 37 minutes; end time = 5 hours, 7 minutes
+
+Total distance, all routes: 1343.06 miles
+Total time, all routes: 44 hours, 34 minutes
+
+------------------------
+
+Model ID: idl3_080505
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 8
+
+Route for vehicle 1:
+	Nicolet FLS -> BrownCo - Pulaski Branch -> ShawCo - Bonduel Branch -> ShawCo - Shawano PL -> Keshena PL -> New London PL -> Hortonville PL -> Shiocton PL -> Black Creek PL -> Seymour PL -> Oneida PL -> Northeast WI TC -> BrownCo - Ashwaubenon Branch -> BrownCo - Southwest Branch ->  Nicolet FLS
+
+	Route distance: 148.36 miles
+	Route time: 5 hours, 33 minutes
+	Route load: 59 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> BrownCo - Weyers-Hilliard Branch -> Clintonville PL -> Marion PL -> Manawa PL -> Fox Valley TC -> Kimberly PL -> Little Chute PL -> Kaukauna PL -> BrownCo - Wrightstown Branch -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 143.71 miles
+	Route time: 5 hours, 5 minutes
+	Route load: 58 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 5 minutes; end time = 5 hours, 35 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> MariCo - Crivitz Branch -> MariCo - Niagara Branch -> Lena PL -> Appleton PL -> Lawrence University ->  Nicolet FLS
+
+	Route distance: 254.06 miles
+	Route time: 6 hours, 41 minutes
+	Route load: 50 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 13 minutes; end time = 4 hours, 43 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> BrownCo - Denmark Branch -> Kewaunee PL -> Algoma PL -> DoorCo - Forestville Branch -> DoorCo - Sturgeon Bay PL -> DoorCo - Egg Harbor Branch -> UW-Green Bay -> BrownCo - East Branch ->  Nicolet FLS
+
+	Route distance: 151.34 miles
+	Route time: 4 hours, 41 minutes
+	Route load: 37 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 41 minutes; end time = 5 hours, 11 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> Oconto PL -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Peshtigo Branch -> MariCo - Coleman Branch -> Lakewood PL -> Suring PL -> Gillett PL -> Oconto Falls PL -> BrownCo - Green Bay PL ->  Nicolet FLS
+
+	Route distance: 204.18 miles
+	Route time: 6 hours, 31 minutes
+	Route load: 30 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> Iola PL -> Scandinavia PL -> Waupaca PL -> Weyauwega PL -> Fremont PL ->  Nicolet FLS
+
+	Route distance: 215.28 miles
+	Route time: 6 hours, 36 minutes
+	Route load: 35 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 2 minutes; end time = 4 hours, 32 minutes
+
+Route for vehicle 7:
+	Nicolet FLS -> MariCo - Goodman Library Station Branch -> Florence PL -> MariCo - Wausaukee Branch ->  Nicolet FLS
+
+	Route distance: 251.15 miles
+	Route time: 6 hours, 41 minutes
+	Route load: 8 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 46 minutes; end time = 5 hours, 16 minutes
+
+Route for vehicle 8:
+	Nicolet FLS -> DoorCo - Baileys Harbor Branch -> DoorCo - Washington Island Branch -> DoorCo - Sister Bay Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch ->  Nicolet FLS
+
+	Route distance: 190.51 miles
+	Route time: 6 hours, 40 minutes
+	Route load: 13 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Total distance, all routes: 1558.60 miles
+Total time, all routes: 48 hours, 32 minutes
+
+------------------------
+
+Model ID: idl3_100505
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 7
+
+Route for vehicle 1:
+	Nicolet FLS -> BrownCo - Southwest Branch -> BrownCo - Ashwaubenon Branch -> Northeast WI TC -> Oneida PL -> Seymour PL -> Black Creek PL -> Shiocton PL -> New London PL -> Hortonville PL -> Fox Valley TC -> Kaukauna PL -> BrownCo - Wrightstown Branch ->  Nicolet FLS
+
+	Route distance: 106.96 miles
+	Route time: 4 hours, 25 minutes
+	Route load: 60 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 25 minutes; end time = 4 hours, 55 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> BrownCo - Denmark Branch -> Kewaunee PL -> Algoma PL -> DoorCo - Forestville Branch -> DoorCo - Sturgeon Bay PL -> Oconto PL -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Peshtigo Branch -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 235.25 miles
+	Route time: 6 hours, 52 minutes
+	Route load: 38 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 36 minutes; end time = 5 hours, 6 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> ShawCo - Bonduel Branch -> Keshena PL -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> Manawa PL -> Weyauwega PL -> Appleton PL -> Lawrence University ->  Nicolet FLS
+
+	Route distance: 215.30 miles
+	Route time: 6 hours, 49 minutes
+	Route load: 60 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 46 minutes; end time = 5 hours, 16 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> BrownCo - East Branch -> UW-Green Bay -> Lena PL -> MariCo - Coleman Branch -> MariCo - Crivitz Branch -> Lakewood PL -> Suring PL -> Gillett PL -> Oconto Falls PL -> BrownCo - Pulaski Branch -> BrownCo - Weyers-Hilliard Branch -> BrownCo - Green Bay PL ->  Nicolet FLS
+
+	Route distance: 194.01 miles
+	Route time: 6 hours, 50 minutes
+	Route load: 44 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 22 minutes; end time = 5 hours, 52 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> ShawCo - Shawano PL -> Clintonville PL -> Marion PL -> Iola PL -> Scandinavia PL -> Waupaca PL -> Fremont PL -> Kimberly PL -> Little Chute PL -> St. Norbert College ->  Nicolet FLS
+
+	Route distance: 173.83 miles
+	Route time: 5 hours, 10 minutes
+	Route load: 60 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 10 minutes; end time = 5 hours, 40 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> MariCo - Niagara Branch -> Florence PL -> MariCo - Goodman Library Station Branch -> MariCo - Wausaukee Branch ->  Nicolet FLS
+
+	Route distance: 251.82 miles
+	Route time: 6 hours, 52 minutes
+	Route load: 10 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 57 minutes; end time = 5 hours, 27 minutes
+
+Route for vehicle 7:
+	Nicolet FLS -> DoorCo - Baileys Harbor Branch -> DoorCo - Sister Bay Branch -> DoorCo - Washington Island Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch -> DoorCo - Egg Harbor Branch ->  Nicolet FLS
+
+	Route distance: 190.68 miles
+	Route time: 6 hours, 52 minutes
+	Route load: 15 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1367.83 miles
+Total time, all routes: 43 hours, 51 minutes
+
+------------------------
+
+Model ID: idl3_081005
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 8
+
+Route for vehicle 1:
+	Nicolet FLS -> DoorCo - Baileys Harbor Branch -> DoorCo - Washington Island Branch -> DoorCo - Sister Bay Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch ->  Nicolet FLS
+
+	Route distance: 190.51 miles
+	Route time: 6 hours, 40 minutes
+	Route load: 13 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> BrownCo - Ashwaubenon Branch -> Northeast WI TC -> Oneida PL -> Seymour PL -> Black Creek PL -> Shiocton PL -> New London PL -> Weyauwega PL -> Waupaca PL -> Fremont PL -> Hortonville PL -> Fox Valley TC ->  Nicolet FLS
+
+	Route distance: 145.09 miles
+	Route time: 5 hours, 10 minutes
+	Route load: 59 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 10 minutes; end time = 5 hours, 40 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> MariCo - Niagara Branch -> Florence PL -> MariCo - Goodman Library Station Branch ->  Nicolet FLS
+
+	Route distance: 251.82 miles
+	Route time: 6 hours, 45 minutes
+	Route load: 7 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> BrownCo - Denmark Branch -> Kewaunee PL -> Algoma PL -> DoorCo - Forestville Branch -> DoorCo - Egg Harbor Branch -> DoorCo - Sturgeon Bay PL -> UW-Green Bay -> BrownCo - East Branch ->  Nicolet FLS
+
+	Route distance: 151.34 miles
+	Route time: 4 hours, 41 minutes
+	Route load: 37 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 41 minutes; end time = 5 hours, 11 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> Oconto PL -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Peshtigo Branch -> Appleton PL -> Lawrence University -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 178.46 miles
+	Route time: 4 hours, 32 minutes
+	Route load: 60 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 32 minutes; end time = 5 hours, 2 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> Lena PL -> MariCo - Coleman Branch -> MariCo - Crivitz Branch -> MariCo - Wausaukee Branch -> Lakewood PL -> Suring PL -> Gillett PL -> Oconto Falls PL -> BrownCo - Green Bay PL ->  Nicolet FLS
+
+	Route distance: 189.35 miles
+	Route time: 5 hours, 32 minutes
+	Route load: 24 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 32 minutes; end time = 6 hours, 2 minutes
+
+Route for vehicle 7:
+	Nicolet FLS -> Clintonville PL -> Marion PL -> Manawa PL -> Iola PL -> Scandinavia PL -> Kimberly PL -> Little Chute PL -> Kaukauna PL -> BrownCo - Wrightstown Branch ->  Nicolet FLS
+
+	Route distance: 173.59 miles
+	Route time: 5 hours, 12 minutes
+	Route load: 57 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 12 minutes; end time = 5 hours, 42 minutes
+
+Route for vehicle 8:
+	Nicolet FLS -> BrownCo - Pulaski Branch -> ShawCo - Bonduel Branch -> ShawCo - Shawano PL -> Keshena PL -> ShawCo - Mattoon Branch -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> ShawCo - Tigerton Branch -> BrownCo - Weyers-Hilliard Branch -> BrownCo - Southwest Branch ->  Nicolet FLS
+
+	Route distance: 185.13 miles
+	Route time: 5 hours, 43 minutes
+	Route load: 33 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 43 minutes; end time = 6 hours, 13 minutes
+
+Total distance, all routes: 1465.30 miles
+Total time, all routes: 44 hours, 18 minutes
+
+------------------------
+
+Model ID: idl3_101005
+Ideal proposal, region 3
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 60
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Nicolet FLS -> BrownCo - Green Bay PL -> UW-Green Bay -> ShawCo - Tigerton Branch -> Iola PL -> Scandinavia PL -> Manawa PL -> Weyauwega PL -> Fremont PL -> Kimberly PL -> Little Chute PL -> Kaukauna PL -> BrownCo - Wrightstown Branch ->  Nicolet FLS
+
+	Route distance: 202.20 miles
+	Route time: 6 hours, 45 minutes
+	Route load: 60 containers
+	Number of stops: 12
+	Break: start time = 5 hours, 29 minutes; end time = 5 hours, 59 minutes
+
+Route for vehicle 2:
+	Nicolet FLS -> BrownCo - Pulaski Branch -> ShawCo - Bonduel Branch -> Clintonville PL -> Marion PL -> ShawCo - Birnamwood Branch -> ShawCo - Wittenberg Branch -> Suring PL -> Gillett PL -> Oconto Falls PL -> MariCo - Coleman Branch -> Lena PL -> BrownCo - Weyers-Hilliard Branch -> BrownCo - Southwest Branch ->  Nicolet FLS
+
+	Route distance: 245.12 miles
+	Route time: 7 hours, 44 minutes
+	Route load: 48 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Route for vehicle 3:
+	Nicolet FLS -> UW-Marinette -> MariCo - Marinette PL -> MariCo - Niagara Branch -> Florence PL -> MariCo - Goodman Library Station Branch -> MariCo - Wausaukee Branch -> MariCo - Crivitz Branch ->  Nicolet FLS
+
+	Route distance: 288.56 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 19 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	Nicolet FLS -> Oconto PL -> MariCo - Peshtigo Branch -> Lakewood PL -> ShawCo - Mattoon Branch -> Keshena PL -> ShawCo - Shawano PL -> Appleton PL -> Lawrence University ->  Nicolet FLS
+
+	Route distance: 259.73 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 58 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 5 minutes; end time = 4 hours, 35 minutes
+
+Route for vehicle 5:
+	Nicolet FLS -> BrownCo - East Branch -> Algoma PL -> DoorCo - Forestville Branch -> DoorCo - Sturgeon Bay PL -> DoorCo - Baileys Harbor Branch -> DoorCo - Washington Island Branch -> DoorCo - Sister Bay Branch -> DoorCo - Ephraim Branch -> DoorCo - Fish Creek Branch -> DoorCo - Egg Harbor Branch ->  Nicolet FLS
+
+	Route distance: 201.40 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 39 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 44 minutes; end time = 6 hours, 14 minutes
+
+Route for vehicle 6:
+	Nicolet FLS -> Kewaunee PL -> BrownCo - Denmark Branch -> BrownCo - Ashwaubenon Branch -> Northeast WI TC -> Oneida PL -> Seymour PL -> Black Creek PL -> Shiocton PL -> Waupaca PL -> New London PL -> Hortonville PL -> Fox Valley TC -> St. Norbert College -> BrownCo - Kress Family Branch ->  Nicolet FLS
+
+	Route distance: 199.90 miles
+	Route time: 7 hours, 25 minutes
+	Route load: 60 containers
+	Number of stops: 14
+	Break: start time = 5 hours, 17 minutes; end time = 5 hours, 47 minutes
+
+Total distance, all routes: 1396.91 miles
+Total time, all routes: 45 hours, 26 minutes
+
+------------------------
+

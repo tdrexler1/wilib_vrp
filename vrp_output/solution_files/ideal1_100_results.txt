@@ -1,0 +1,100 @@
+Model ID: idl1_08_02_05_100
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 100
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	Rice Lake PL -> La Pointe PL -> Bayfield PL ->  Rice Lake PL
+
+	Route distance: 256.60 miles
+	Route time: 7 hours, 56 minutes
+	Route load: 14 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 45 minutes; end time = 5 hours, 15 minutes
+
+Route for vehicle 2:
+	Rice Lake PL -> Port Wing mailabook -> Cornucopia mailabook -> Washburn PL -> Ashland PL -> Northern Waters LS -> Mellen PL ->  Rice Lake PL
+
+	Route distance: 292.29 miles
+	Route time: 7 hours, 56 minutes
+	Route load: 22 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 8 minutes; end time = 4 hours, 38 minutes
+
+Route for vehicle 3:
+	Rice Lake PL -> Hudson PL -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL -> Bloomer PL ->  Rice Lake PL
+
+	Route distance: 271.46 miles
+	Route time: 7 hours, 55 minutes
+	Route load: 64 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 4:
+	Rice Lake PL -> Hayward PL -> Cable PL -> Barnes mailabook -> Drummond PL -> Mason mailabook -> Iron River PL -> Brule mailabook -> SupPL - Lake Nebagamon PL -> Poplar mailabook -> SupPL - Superior PL -> UW-Superior ->  Rice Lake PL
+
+	Route distance: 281.40 miles
+	Route time: 7 hours, 53 minutes
+	Route load: 36 containers
+	Number of stops: 11
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Route for vehicle 5:
+	Rice Lake PL -> MenPL - Elk Mound Branch -> MenPL - Menomonie PL -> UW-Stout -> Elmwood PL -> Spring Valley PL -> Woodville PL -> Baldwin PL -> Hammond PL -> Roberts PL -> New Richmond PL -> Somerset PL -> Osceola PL -> Dresser PL -> St. Croix Falls PL -> Cumberland PL ->  Rice Lake PL
+
+	Route distance: 229.71 miles
+	Route time: 7 hours, 55 minutes
+	Route load: 97 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 1 minute; end time = 5 hours, 31 minutes
+
+Route for vehicle 6:
+	Rice Lake PL -> Cornell PL -> Cadott PL -> Stanley PL -> Stanley CI -> Fairchild PL -> Augusta PL -> Fall Creek PL -> Altoona PL -> Chippewa Valley TC -> UW-Eau Claire -> Eau Claire PL -> IFLS -> Chippewa Valley CI -> Chippewa Falls PL -> Chetek PL ->  Rice Lake PL
+
+	Route distance: 218.57 miles
+	Route time: 7 hours, 42 minutes
+	Route load: 95 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 7:
+	Rice Lake PL -> Bruce PL -> Ladysmith PL -> Hawkins PL -> Glidden mailabook -> Winter PL -> Lac Courte Oreilles Library -> Birchwood mailabook ->  Rice Lake PL
+
+	Route distance: 241.97 miles
+	Route time: 7 hours, 56 minutes
+	Route load: 22 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	Rice Lake PL -> Minong mailabook -> Gordon mailabook -> Solon Springs mailabook -> SupPL - Solon Springs PL -> Town of Scott mailabook -> Webster PL -> Siren mailabook -> Frederic PL -> Luck PL -> Milltown PL -> Grantsburg PL -> Spooner PL -> Shell Lake PL ->  Rice Lake PL
+
+	Route distance: 246.74 miles
+	Route time: 7 hours, 39 minutes
+	Route load: 44 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 24 minutes; end time = 4 hours, 54 minutes
+
+Route for vehicle 9:
+	Rice Lake PL -> UW-Barron -> Sand Creek PL -> Colfax PL -> Boyceville PL -> Glenwood City PL -> Clear Lake PL -> Deer Park PL -> Amery PL -> Centuria PL -> Balsam Lake PL -> Turtle Lake PL -> Barron PL -> Cameron PL ->  Rice Lake PL
+
+	Route distance: 181.70 miles
+	Route time: 6 hours, 49 minutes
+	Route load: 53 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 49 minutes; end time = 6 hours, 19 minutes
+
+Total distance, all routes: 2220.44 miles
+Total time, all routes: 69 hours, 44 minutes
+
+------------------------
+
