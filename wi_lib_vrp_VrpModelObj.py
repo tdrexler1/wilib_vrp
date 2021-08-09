@@ -410,7 +410,6 @@ class VrpModelObj(object):
         self.__vrp_format_solution()
         return self._vrp_route_plan
 
-
     def get_vrp_route_array(self):
         if self._vrp_solution:
             self.__vrp_list_routes()

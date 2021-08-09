@@ -8,7 +8,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
 
-from route_mod_class import write_point, write_map, directions, marker, write_points
+from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points
 from gmplot.gmplot import GoogleMapPlotter
 
 GoogleMapPlotter.directions = directions

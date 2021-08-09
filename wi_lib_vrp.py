@@ -1,8 +1,8 @@
 #! python3
 
-import dist_matrix_09 as dist
-import vrp_route_map_03 as mapper
-from vrp_solve_08 import VrpModelObj
+import wi_lib_vrp_matrix_build as dist
+import wi_lib_vrp_route_viz as mapper
+from wi_lib_vrp_VrpModelObj import VrpModelObj
 
 import argparse
 import sys
