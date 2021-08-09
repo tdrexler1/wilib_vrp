@@ -12,7 +12,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wi_lib_vrp.py" />
-    <option name="PARAMETERS" value="wi_library_directory_geo_reg.csv ideal 1 duration 1 8 500 40 30 savings automatic --vehicle_increment --map --text_file" />
+    <option name="PARAMETERS" value="wi_library_directory_geo_reg.csv ideal 2 duration 1 8 500 60 30 christofides automatic --vehicle_increment --map" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

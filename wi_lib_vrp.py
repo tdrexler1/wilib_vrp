@@ -203,28 +203,6 @@ def main():
                 os.makedirs(screenshot_file_path)
 
             mapper.screenshot_map(route_map_filepath, screenshot_file_path)
-    # else:
-    #     route_plan = vrp_model.get_vrp_route_plan()
-    #
-    #     if conf_dict['display']:
-    #         print(route_plan)
-    #
-    #     if conf_dict['text_file']:
-    #         text_file_path = vrp_output_path + 'solution_files\\'
-    #
-    #         if not os.path.isdir(text_file_path):
-    #             os.makedirs(text_file_path)
-    #
-    #         results_text_file = text_file_path + \
-    #                             conf_dict['model'] + \
-    #                             str(conf_dict['region_number']) + \
-    #                             '_' + str(conf_dict['veh_cap']) + \
-    #                             '_results.txt'
-    #
-    #         with open(results_text_file, 'a') as outfile:
-    #             outfile.write(route_plan)
-
-        print('No solution found.')
 
 
 if __name__ == '__main__':
