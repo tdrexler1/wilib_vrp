@@ -19,9 +19,8 @@ GoogleMapPlotter.write_points = write_points
 
 # Google GENERAL MAPS API key - works for maps_javascript_api & directions_api
 
-ROUTE_COLORS = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
-                '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#DCDCDC', '#D8BFD8', '#AFEEEE', '#F0E68C',
-                '#800000', '#ADFF2F']
+
+
 
 def write_infowindow_text(library_data, lib_id, stop_number, route_number):
 
@@ -70,7 +69,13 @@ def write_infowindow_text(library_data, lib_id, stop_number, route_number):
 
 def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
 
-    route_colors = random.sample(ROUTE_COLORS, len(route_array))
+    ROUTE_COLORS = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
+                    '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#D8BFD8', '#800000', '#ADFF2F', '#FF1493',
+                    '#FF4500', '#4682B4', '#32CD32', '#CD5C5C', '#556B2F', '#FFD700', '#9400D3']
+
+    dark_text = ['#D8BFD8', '#ADFF2F', '#FFD700']
+
+    route_colors = random.sample(ROUTE_COLORS, k=len(route_array))
 
     bounds_dict = {'north': float(stop_data['latitude'].max()),
                    'south': float(stop_data['latitude'].min()),
@@ -131,7 +136,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
             gmap.marker(float(stop_data_dict['latitude'][wp]), float(stop_data_dict['longitude'][wp]),
                         color=route_colors[n],
                         label=list(string.ascii_uppercase)[m],
-                        label_color='white',
+                        label_color='black' if route_colors[n] in dark_text else 'white',
                         title=stop_data_dict['stop_short_name'][wp],
                         info_window=write_infowindow_text(stop_data_dict, wp, m, n)
                         )
