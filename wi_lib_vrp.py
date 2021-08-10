@@ -16,8 +16,8 @@ def parse_args():
     """
     Sets up parser and help menu for command-line arguments.
 
-    Returns:
-        a dict with argument: value entries
+    :return: A dict with argument, value entries.
+    :rtype: dict
     """
 
     # instantiate parser object with description & help menu
@@ -92,11 +92,12 @@ def parse_args():
 
     output_options_group.add_argument('-h', '--help', action='help', help='Show this message and exit.')
 
-    # return argument values as a dict
+    # return argument values as dict
     return vars(parser_obj.parse_args())
 
 
 def main():
+    """Functionality to run program from command line."""
 
     # parse command-line arguments using 'argparse' module
     args_dict = parse_args()

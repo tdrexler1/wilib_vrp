@@ -11,6 +11,13 @@ import openrouteservice
 
 
 def parse_args():
+    """
+    Sets up parser and help menu for command-line arguments.
+
+    :return: A dict with argument, value entries.
+    :rtype: dict
+    """
+
     # noinspection PyTypeChecker
     parser_obj = argparse.ArgumentParser(
         prog='tool',
@@ -21,6 +28,7 @@ def parse_args():
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27, width=200)
     )
 
+    # argument group for setup parameters
     setup_group = parser_obj.add_argument_group(title='Problem setup arguments')
     setup_group.add_argument('input_file', action='store', type=str,
                              help="Name of file containing input library data ('csv' or 'xlsx' format).")
@@ -29,12 +37,27 @@ def parse_args():
     setup_group.add_argument('region_number', type=int, choices=range(1, 8) if 'ideal' in sys.argv else range(1, 9),
                              help='Model region number (1-7 for ideal model, 1-8 for starter model).')
 
+    # add help menu
     parser_obj.add_argument('-h', '--help', action='help', help='Show this message and exit.')
 
+    # return argument values as dict
     return vars(parser_obj.parse_args())
 
 
 def prep_input_data(in_dataframe, config_dict):
+    """Prepares imported library stop data to build distance & duration matrices.
+
+    Filters imported library data to stops in region of interest. Sorts data to
+    place regional hub as first stop. Concatenates address string from address
+    components.
+
+    :param in_dataframe: Pandas DataFrame of input data from external file.
+    :type in_dataframe: DataFrame
+    :param config_dict: Dict of VRP configuration settings.
+    :type config_dict: dict
+    :return: Pandas DataFrame of regional stop data.
+    :rtype: DataFrame
+    """
 
     model_region = config_dict['model'] + '_region_' + \
         ('0' + str(config_dict['region_number'])
@@ -60,14 +83,25 @@ def prep_input_data(in_dataframe, config_dict):
 
 
 def create_api_geoloc_lists(stop_df):
+    """
+    Creates array of library stop geolocations.
 
-    # limit 25 origins or 25 destinations per API request - https://stackoverflow.com/a/52062952
-    # divide data into groups w/ max 25 addresses
+    :param stop_df: Pandas DataFrame of filtered, formatted library stop data.
+    :type stop_df: DataFrame
+    :return: Nested lists of library geolocations.
+    :rtype: list
+    """
 
+    # list of longitude, latitude pairs formatted as lists
     stop_coords = [[eval(x)[1], eval(x)[0]] for x in stop_df['geo_coords']]
+
+    # divide data into groups w/ max 25 addresses to meet API request limits
     max_stops = 25
+
+    # total number of stops
     num_addresses = len(stop_df['geo_coords'])
 
+    # calculate number of 'groups' required
     num_groups = math.ceil(num_addresses / max_stops)
 
     # store each address group as nested list
@@ -124,69 +158,6 @@ def create_matrices(address_array, config_dict):
     full_duration_matrix = assemble_full_matrix(duration_matrix_array)
 
     return full_distance_matrix, full_duration_matrix
-
-
-def send_request(orig_addresses, dest_addresses, api_key):
-    """ Builds Google Maps API request string, sends API request, and stores results as JSON object.
-
-     Params:
-         orig_addresses: List of address strings.
-         dest_addresses: List of address strings.
-         api_key: String of Google Maps API key.
-
-    Returns:
-        A JSON object with API request results.
-     """
-
-    def build_address_str(addresses):
-
-        # pipe-separated string of addresses
-        address_str = ''
-        for i in range(len(addresses) - 1):
-            address_str += addresses[i] + '|'
-        address_str += addresses[-1]
-
-        return address_str
-
-    request = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial'
-
-    origin_address_str = build_address_str(orig_addresses)
-    dest_address_str = build_address_str(dest_addresses)
-
-    # assemble request string
-    request = request + '&origins=' + origin_address_str + '&destinations=' + \
-        dest_address_str + '&key=' + api_key + '&units=imperial'
-
-    # send API request
-    json_result = urllib.request.urlopen(request).read()
-
-    # results as JSON object
-    response = json.loads(json_result)
-
-    return response
-
-
-def build_matrices(response):
-    """ Creates partial matrices from each set of API request results.
-
-     Params:
-         response: JSON object.
-
-    Returns:
-        Nested lists representing each 'row' in the partial matrix.
-     """
-
-    dist_matrix = []
-    dura_matrix = []
-
-    # pull distance & duration values from API request response
-    for row in response['rows']:
-        dist_row_list = [row['elements'][j]['distance']['value'] for j in range(len(row['elements']))]
-        dist_matrix.append(dist_row_list)
-        dura_row_list = [row['elements'][j]['duration']['value'] for j in range(len(row['elements']))]
-        dura_matrix.append(dura_row_list)
-
-    return dist_matrix, dura_matrix
 
 
 def assemble_full_matrix(input_matrix):
@@ -258,8 +229,12 @@ def save_matrices(distance_matrix, duration_matrix, conf_dict):
 
 
 def main():
+    """Functionality to build distance & duration matrices from command line."""
+
+    # parse command-line arguments using 'argparse' module
     args_dict = parse_args()
 
+    # parse whether data input file is 'csv' or 'xlsx' format, used by pandas read function
     infile_format = os.path.splitext(args_dict['input_file'])[1].replace('.', '')
 
     if infile_format == 'csv':
@@ -269,6 +244,7 @@ def main():
             index_col='LIBID',
             dtype=str
         )
+
     elif infile_format == 'xlsx':
         stop_data = pd.read_excel(
             args_dict['input_file'],
@@ -278,30 +254,33 @@ def main():
             engine='openpyxl'
         )
 
+    # retrieve API keys for openrouteservice from YAML file
     try:
-        with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as api_keys:
+        with open(os.path.expanduser('~/wi_lib_vrp_api_keys.yml'), 'r') as api_keys:
             key_data = yaml.full_load(api_keys)
     except OSError as e:
         print(e)
 
+    # add openrouteservice API key to dict of command line args
     args_dict['ors_key'] = key_data['open_route_service']['ors_key']
 
+    # initialize pandas dataframe w/ data for all library locations in region
     region_data = prep_input_data(stop_data, args_dict)
 
-    api_address_array = create_api_geoloc_lists(region_data)
+    # retrieve library geolocations formatted as nested arrays
+    api_geolocs_array = create_api_geoloc_lists(region_data)
 
-    # create distance & duration matrices
     print('Building distance and duration matrices...')
-    distance_matrix, duration_matrix = create_matrices(api_address_array, args_dict)
 
-    # check results
+    # save distance & duration matrices
+    distance_matrix, duration_matrix = create_matrices(api_geolocs_array, args_dict)
+
+    # check formatting of distance & duration matrices
     check_matrix_results(distance_matrix)
     check_matrix_results(duration_matrix)
     print('Distance and duration matrices complete.')
 
-    #print(distance_matrix)
-    #print(duration_matrix)
-
+    # pickle distance & duration matrices
     save_matrices(distance_matrix, duration_matrix, args_dict)
 
 
