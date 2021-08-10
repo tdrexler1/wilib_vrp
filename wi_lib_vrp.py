@@ -11,12 +11,16 @@ import os
 import yaml
 import pickle
 
-# following two lines for testing only
-pd.options.display.width = 0
-pd.options.display.max_rows = 1000
-
 
 def parse_args():
+    """
+    Sets up parser and help menu for command-line arguments.
+
+    Returns:
+        a dict with argument: value entries
+    """
+
+    # instantiate parser object with description & help menu
     # noinspection PyTypeChecker
     parser_obj = argparse.ArgumentParser(
         prog='tool',
@@ -33,6 +37,7 @@ def parse_args():
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27, width=200)
     )
 
+    # argument group for VRP setup options
     setup_group = parser_obj.add_argument_group(title='Problem setup arguments')
     setup_group.add_argument('input_file', action='store', type=str,
                              help="Name of file containing input library data ('csv' or 'xlsx' format).")
@@ -43,6 +48,7 @@ def parse_args():
     setup_group.add_argument('-b', '--build_matrices', action='store_true',
                              help='Build distance and duration matrices using external API.')
 
+    # argument group for VRP parameters
     param_group = parser_obj.add_argument_group(title='VRP parameter arguments')
     param_group.add_argument('constraint', action='store', default='duration', type=str,
                              choices=['distance', 'duration'],
@@ -58,6 +64,7 @@ def parse_args():
     param_group.add_argument('break_time_minutes', action='store', default=0, type=float,
                              help='Total break time per route in minutes.')
 
+    # argument group for VRP solution search strategies
     strategy_group = parser_obj.add_argument_group(title='Search strategy arguments.')
     strategy_group.add_argument('first_solution_strategy',
                                 choices=['automatic', 'path_cheapest_arc', 'savings', 'sweep', 'christofides',
@@ -74,6 +81,7 @@ def parse_args():
                                                                                        'resolve VRP until '
                                                                                        'feasible solution is found.')
 
+    # argument group for VRP output options
     output_options_group = parser_obj.add_argument_group(title='Optional output arguments.')
     output_options_group.add_argument('-d', '--display', action='store_true', help='Display solution on screen.')
     output_options_group.add_argument('-m', '--map', action='store_true', help='Map optimal route plan '
@@ -84,13 +92,16 @@ def parse_args():
 
     output_options_group.add_argument('-h', '--help', action='help', help='Show this message and exit.')
 
+    # return argument values as a dict
     return vars(parser_obj.parse_args())
 
 
 def main():
 
+    # parse command-line arguments using 'argparse' module
     args_dict = parse_args()
 
+    # parse whether data input file is 'csv' or 'xlsx' format, used by pandas read function
     infile_format = os.path.splitext(args_dict['input_file'])[1].replace('.', '')
 
     if infile_format == 'csv':
@@ -110,32 +121,37 @@ def main():
             engine='openpyxl'
         )
 
-
-    # Google Maps API keys
+    # retrieve API keys for Google Maps & openrouteservice from YAML file
     try:
-        with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as api_keys:
+        with open(os.path.expanduser('~/wi_lib_vrp_api_keys.yml'), 'r') as api_keys:
             key_data = yaml.full_load(api_keys)
     except OSError as e:
         print(e)
 
-    api_dict = key_data['google_maps']
+    # merge dict of command-line args, values with dicts of api keys
+    conf_dict = {**args_dict, **key_data['google_maps'], **key_data['open_route_service']}
 
-    conf_dict = {**args_dict, **api_dict}
-
+    # set path for output directory
     vrp_output_path = '.\\vrp_output\\'
 
+    # initialize pandas dataframe w/ data for all library locations in region
     region_data = dist.prep_input_data(stop_data, conf_dict)
 
+    # optional command to build distance & duration matrices from scratch using openrouteservice
     if conf_dict['build_matrices']:
 
-        api_address_array = dist.create_api_address_lists(region_data)
+        # retrieve library geolocations formatted as nested arrays
+        api_geolocs_array = dist.create_api_geoloc_lists(region_data)
 
-        # create distance & duration matrices w/ Google Maps API
         print('Building distance and duration matrices...', end='')
-        distance_matrix, duration_matrix = dist.create_matrices(api_address_array, conf_dict)
 
+        # save distance & duration matrices
+        distance_matrix, duration_matrix = dist.create_matrices(api_geolocs_array, conf_dict)
+
+    # retrieve previously-created distance & duration matrices from pickle files
     else:
         print('Retrieving distance and duration matrices...', end='')
+
         matrix_pickle_name = \
             '.\\vrp_matrix_data\\' + \
             conf_dict['model'] + \
@@ -145,10 +161,11 @@ def main():
         with open(matrix_pickle_name, 'rb') as pick_file:
             pickled_matrices = pickle.load(pick_file)
 
+        # save distance & duration matrices
         distance_matrix = pickled_matrices['distance_matrix']
         duration_matrix = pickled_matrices['duration_matrix']
 
-    # check results
+    # check formatting of distance & duration matrices
     dist.check_matrix_results(distance_matrix)
     dist.check_matrix_results(duration_matrix)
     print('matrices ready.')

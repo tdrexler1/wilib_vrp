@@ -59,7 +59,7 @@ def prep_input_data(in_dataframe, config_dict):
     return region_stop_data
 
 
-def create_api_address_lists(stop_df):
+def create_api_geoloc_lists(stop_df):
 
     # limit 25 origins or 25 destinations per API request - https://stackoverflow.com/a/52062952
     # divide data into groups w/ max 25 addresses
@@ -288,7 +288,7 @@ def main():
 
     region_data = prep_input_data(stop_data, args_dict)
 
-    api_address_array = create_api_address_lists(region_data)
+    api_address_array = create_api_geoloc_lists(region_data)
 
     # create distance & duration matrices
     print('Building distance and duration matrices...')
