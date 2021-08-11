@@ -1,15 +1,15 @@
 #! python3
 
-import wi_lib_vrp_matrix_build as dist
-import wi_lib_vrp_route_viz as mapper
-from wi_lib_vrp_VrpModelObj import VrpModelObj
-
 import argparse
 import sys
 import pandas as pd
 import os
 import yaml
 import pickle
+
+import wi_lib_vrp_matrix_build as dist
+import wi_lib_vrp_route_viz as mapper
+from wi_lib_vrp_VrpModelObj import VrpModelObj
 
 
 def parse_args():
@@ -182,14 +182,22 @@ def main():
     # call to solve_vrp method of VrpModelObj
     vrp_solution = vrp_model.solve_vrp()
 
+    # [START VRP solution output]
+
+    # output to console or text file
     if conf_dict['display'] or conf_dict['text_file']:
 
+        # retrieve route plan from VrpModelObj
         route_plan = vrp_model.get_vrp_route_plan()
 
+        # output to console
         if conf_dict['display']:
             print(route_plan)
 
+        # output to text file
         if conf_dict['text_file']:
+
+            # construct output file path & create directory if necessary
             text_file_path = vrp_output_path + 'solution_files\\'
 
             if not os.path.isdir(text_file_path):
@@ -201,31 +209,45 @@ def main():
                 '_' + str(conf_dict['veh_cap']) + \
                 '_results.txt'
 
+            # write output text file
             with open(results_text_file, 'a') as outfile:
                 outfile.write(route_plan)
 
+    # output to map w/ or w/o screenshot iff feasible VRP solution
     if (conf_dict['map'] or conf_dict['screenshot']) and vrp_solution:
 
+        # construct output file path & create directory if necessary
         map_file_path = vrp_output_path + 'map_files\\'
+
         if not os.path.isdir(map_file_path):
             os.makedirs(map_file_path)
 
+        # retrieve route stop sequences of optimal routes from VrpModelObject
         optimal_routes = vrp_model.get_vrp_route_array()
 
+        # generate HTML file of Google Map
         route_map = \
             mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'], vrp_model_id,
                                   map_file_path)
         route_map_filepath = os.path.abspath(route_map)
 
+        # display map file in browser or new tab
         if conf_dict['map']:
             mapper.display_map(route_map_filepath)
 
+        # output screenshot of Google Map to PNG file
         if conf_dict['screenshot']:
+
+            # construct output file path & create directory if necessary
             screenshot_file_path = vrp_output_path + 'screenshots\\'
+
             if not os.path.isdir(screenshot_file_path):
                 os.makedirs(screenshot_file_path)
 
+            # generate PNG file
             mapper.screenshot_map(route_map_filepath, screenshot_file_path)
+
+    # [END VRP solution output]
 
 
 if __name__ == '__main__':
