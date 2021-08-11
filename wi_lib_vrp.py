@@ -97,7 +97,9 @@ def parse_args():
 
 
 def main():
-    """Functionality to run program from command line."""
+    """
+    Organizes code to run VRP modeling program from command line.
+    """
 
     # parse command-line arguments using 'argparse' module
     args_dict = parse_args()
@@ -171,10 +173,13 @@ def main():
     dist.check_matrix_results(duration_matrix)
     print('matrices ready.')
 
+    # create new VrpModelObj
     vrp_model = VrpModelObj(distance_matrix, duration_matrix, region_data, conf_dict)
 
+    # get model id string for use in output file names
     vrp_model_id = vrp_model.get_model_id()
 
+    # call to solve_vrp method of VrpModelObj
     vrp_solution = vrp_model.solve_vrp()
 
     if conf_dict['display'] or conf_dict['text_file']:

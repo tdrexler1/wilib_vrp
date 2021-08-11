@@ -267,7 +267,11 @@ def save_matrices(distance_matrix, duration_matrix, conf_dict):
 
 
 def main():
-    """Functionality to build distance & duration matrices from command line."""
+    """
+    Functionality to build distance & duration matrices from command line.
+    Stores matrices in dict object written to pickle file.
+
+    """
 
     # parse command-line arguments using 'argparse' module
     args_dict = parse_args()
