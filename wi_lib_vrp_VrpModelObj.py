@@ -473,7 +473,7 @@ class VrpModelObj(object):
         Adapted from https://developers.google.com/optimization/routing/tsp
         """
 
-        # retrieve vehicle routesstore them in a two dimensional array whose
+        # retrieve vehicle routes, store them in a two dimensional array whose
         # i,j entry is the jth location visited by vehicle i along its route.
 
         # initialize storage array

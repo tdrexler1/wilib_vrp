@@ -7,6 +7,7 @@ import yaml
 import json
 import urllib.request
 
+
 def parse_args():
     """
     Sets up parser and help menu for command-line arguments.

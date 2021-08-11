@@ -10,6 +10,7 @@ import math
 
 import openrouteservice
 
+
 def parse_args():
     """
     Sets up parser and help menu for command-line arguments.
@@ -140,7 +141,7 @@ def create_matrices(address_array, config_dict):
             destination_group = address_array[n]
 
             # list of 'destination' indices in group array
-            destination_indices = list(range(len(origin_group), (len(origin_group) + len( destination_group))))
+            destination_indices = list(range(len(origin_group), (len(origin_group) + len(destination_group))))
 
             # format openrouteservice matrix service API request, return distances in meters, durations in seconds
             request = {'locations': origin_group+destination_group,

@@ -8,7 +8,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
 
-# import method overrides for 'gmplot' GoogleMapPlotter object
+# import method overrides for gmplot GoogleMapPlotter object
 from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points
 from gmplot.gmplot import GoogleMapPlotter
 
@@ -104,7 +104,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
     """
 
     # selected colors for routes & markers
-    # chosen from list of 'gmplot' supported colors (marker image files in 'markers' dir)
+    # chosen from list of gmplot supported colors (marker image files in 'markers' dir)
     route_colors = ['#1E90FF', '#3CB371', '#B22222', '#9370DB', '#D2691E', '#DAA520', '#708090', '#008080', '#A0522D',
                     '#DB7093', '#6B8E23', '#00BFFF', '#483D8B', '#FF0000', '#D8BFD8', '#800000', '#ADFF2F', '#FF1493',
                     '#FF4500', '#4682B4', '#32CD32', '#CD5C5C', '#556B2F', '#FFD700', '#9400D3']
@@ -170,7 +170,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
     # iterate over regional routes/vehicles
     for n, route in enumerate(route_array):
 
-        # retrieve route sequence data for 'gmplot' request to Google Maps Directions API
+        # retrieve route sequence data for gmplot request to Google Maps Directions API
         origin = (float(stop_data_dict['latitude'][hub_id]), float(stop_data_dict['longitude'][hub_id]))
         destination = origin
         waypoints_list = \
