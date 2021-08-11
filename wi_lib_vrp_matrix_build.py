@@ -95,7 +95,7 @@ def create_api_geoloc_lists(stop_df):
     # list of longitude, latitude pairs formatted as lists
     stop_coords = [[eval(x)[1], eval(x)[0]] for x in stop_df['geo_coords']]
 
-    # divide data into groups w/ max 25 addresses to meet API request limits
+    # divide data into groups w/ max 25 addresses to meet openrouteservice API request limits
     max_stops = 25
 
     # total number of stops
@@ -113,43 +113,49 @@ def create_api_geoloc_lists(stop_df):
 
 
 def create_matrices(address_array, config_dict):
-    """ Sends Google Maps API requests to create distance & duration matrices for each group of addresses;
-    assembles group matrices into full matrices.
+    """
+    Retrieves partial distance & duration matrices from openrouteservice
 
-    Params:
-
-
-    Returns:
-        Distance and duration matrices w/ rows as nested lists.
+    :param address_array: Nested list of library geolocations.
+    :type address_array: list
+    :param config_dict: Dict of VRP configuration settings.
+    :type config_dict: dict
+    :return: Fully assembled distance & duration matrices as nested lists.
+    :rtype: list
     """
 
+    # initialize openrouteservice client
     ors_client = openrouteservice.Client(key=config_dict['ors_key'])
 
+    # initialize storage for partial matrices
     distance_matrix_array = []
     duration_matrix_array = []
 
-    # destination addresses for each group in address array
+    # origin geolocations for each group in address array
     for m in range(len(address_array)):
-        #destination_group = address_array[m]
         origin_group = address_array[m]
 
-        # origin addresses for each group in address array
+        # destination geolocations for each group in address array
         for n in range(len(address_array)):
-            #origin_group = address_array[n]
             destination_group = address_array[n]
 
-            numbers = list( range( len( origin_group ), ( len(origin_group) + len( destination_group) ) ) )
+            # list of 'destination' indices in group array
+            destination_indices = list(range(len(origin_group), (len(origin_group) + len( destination_group))))
 
+            # format openrouteservice matrix service API request, return distances in meters, durations in seconds
             request = {'locations': origin_group+destination_group,
-                       'destinations': numbers,
+                       'destinations': destination_indices,
                        'metrics': ['distance', 'duration'],
                        'units': 'm'}
 
+            # send matrix service request, store result as dict
             response_dict = ors_client.distance_matrix(**request)
 
+            # store distance & duration matrices for current group
             group_distance_matrix = response_dict['distances'][:len(origin_group)]
             group_duration_matrix = response_dict['durations'][:len(origin_group)]
 
+            # append group matrices to matrix storage array
             distance_matrix_array.append(group_distance_matrix)
             duration_matrix_array.append(group_duration_matrix)
 
@@ -161,7 +167,14 @@ def create_matrices(address_array, config_dict):
 
 
 def assemble_full_matrix(input_matrix):
-    """ Builds full matrix from address group matrices. """
+    """
+    Builds full distance/duration matrices from location group matrices.
+
+    :param input_matrix: Array of distance/duration data.
+    :type input_matrix: list
+    :return: Full distance/duration matrices.
+    :rtype: list
+    """
 
     # number of groups along each axis of full matrix
     groups_per = int(math.sqrt(len(input_matrix)))
@@ -189,21 +202,30 @@ def assemble_full_matrix(input_matrix):
 
 
 def check_matrix_results(d_matrix):
-    """ Checks that matrix contains zeroes on diagonal as expected. """
+    """
+    Checks that matrix contains zeroes on diagonal as expected.
 
-    # row indices of zeroes
+    :param d_matrix: Distance/duration matrix to check.
+    :type d_matrix: list
+    :raises ValueError: At least one row has no '0' value.
+    :raises RunTimeError: '0' values are not at sequential indices as expected.
+    """
+
     zero_indices = []
+
+    # locate '0' in each row & store index
     for row in d_matrix:
         try:
             0 in row
         except ValueError:
             print('0 not found in row')
+
         zero_indices.append(row.index(0))
 
     # list of sequential integers
     check_list = [x for x in range(len(d_matrix))]
 
-    # compare zero indices with integers
+    # compare '0' indices with integers, should be identical
     try:
         zero_indices == check_list
     except RuntimeError:
@@ -211,19 +233,35 @@ def check_matrix_results(d_matrix):
 
 
 def save_matrices(distance_matrix, duration_matrix, conf_dict):
+    """
+    Saves distance & duration matrices as pickled objects in external
+    files. Eliminates the need to recreate large matrices every time
+    program is run.
 
+    :param distance_matrix: Distance matrix object.
+    :type distance_matrix: list
+    :param duration_matrix: Duration matrix object.
+    :type duration_matrix: list
+    :param conf_dict: Dict of VRP configuration settings.
+    :type conf_dict: dict
+    """
+
+    # store matrices in dict object
     matrice_dict = {'distance_matrix': distance_matrix, 'duration_matrix': duration_matrix}
 
+    # construct output file path, create directory if necessary
     output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\solution_output\\')
     if not os.path.isdir(output_dir_path):
         os.mkdir(output_dir_path)
 
+    # construct pickle file name
     pickle_name = \
         output_dir_path + \
         conf_dict['model'] + \
         str(conf_dict['region_number']) + \
         '_matrices.pickle'
 
+    # write dict object to pickle file
     with open(pickle_name, 'wb') as pick_file:
         pickle.dump(matrice_dict, pick_file)
 
