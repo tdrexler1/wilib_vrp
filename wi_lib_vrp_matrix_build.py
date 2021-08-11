@@ -1,14 +1,14 @@
-import math
-import urllib.request
-import json
-import argparse
-import os
-import pandas as pd
-import yaml
-import sys
-import pickle
-import openrouteservice
+#! python3
 
+import argparse
+import sys
+import pandas as pd
+import os
+import yaml
+import pickle
+import math
+
+import openrouteservice
 
 def parse_args():
     """
@@ -52,11 +52,11 @@ def prep_input_data(in_dataframe, config_dict):
     components.
 
     :param in_dataframe: Pandas DataFrame of input data from external file.
-    :type in_dataframe: DataFrame
+    :type in_dataframe: pandas.DataFrame
     :param config_dict: Dict of VRP configuration settings.
     :type config_dict: dict
     :return: Pandas DataFrame of regional stop data.
-    :rtype: DataFrame
+    :rtype: pandas.DataFrame
     """
 
     model_region = config_dict['model'] + '_region_' + \
@@ -87,7 +87,7 @@ def create_api_geoloc_lists(stop_df):
     Creates array of library stop geolocations.
 
     :param stop_df: Pandas DataFrame of filtered, formatted library stop data.
-    :type stop_df: DataFrame
+    :type stop_df: pandas.DataFrame
     :return: Nested lists of library geolocations.
     :rtype: list
     """

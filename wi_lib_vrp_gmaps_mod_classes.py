@@ -4,6 +4,12 @@ from gmplot.gmplot import _MarkerIcon
 
 import json
 
+"""
+Overwrite gmplot '_Route' class to accept keyword argument for route color (hex value or supported color name).
+
+Adds DirectionsRenderer to Google Map to draw route polyline between stops. Allows options for color, line weight,
+and opacity. Also suppresses default markers, which are replaced with gmplot markers in same locations. 
+"""
 class _Route_mod(object):
     '''For more info, see Google Maps' `Directions Service https://developers.google.com/maps/documentation/javascript/directions`_.'''
 
@@ -64,6 +70,11 @@ class _Route_mod(object):
         w.write()
 
 
+"""
+Overwrite gmplot '_MarkerInfoWindow' class to add event listeners for marker clicks.
+
+InfoWindow opens when marker is clicked and closes if another marker is clicked (only one InfoWindow open at a time). 
+"""
 class _MarkerInfoWindow_mod(object):
     def __init__(self, marker_name, content):
         '''
@@ -109,6 +120,12 @@ class _MarkerInfoWindow_mod(object):
         w.write()
 
 
+"""
+Overwrite gmplot '_Marker' class to accept keyword arguments specifying marker label text color, font family,
+font size, and font weight.
+
+Allows adjustments to text color based on color of marker for readability.
+"""
 class _Marker_mod(object):
     def __init__(self, position, **kwargs):
         '''
@@ -171,7 +188,9 @@ class _Marker_mod(object):
         w.write()
 
 
-# GoogleMapPlotter
+"""
+Overrides gmplot GoogleMapPlotter method to use '_Marker_mod' class and accept additional keyword arguments.
+"""
 def write_point(self, w, lat, lng, color, title, precision, color_cache, label, info_window=None, draggable=None,
                 label_color=None, label_font_family=None, label_font_size=None, label_font_weight=None ): # TODO: Bundle args into some Point or Marker class (counts as an API change).
 
@@ -198,73 +217,9 @@ def write_point(self, w, lat, lng, color, title, precision, color_cache, label, 
     # TODO: When Point-writing is pulled into its own class, move _MarkerIcon, _Marker, and _MarkerInfoWindow initialization into _Point's constructor.
 
 
-# GoogleMapPlotter
-def write_map(self, w):
-    w.write('var map = new google.maps.Map(document.getElementById("map_canvas"), {')
-    w.indent()
-    if self._map_styles:
-        w.write('styles: %s,' % json.dumps(self._map_styles, indent=_INDENT_LEVEL))
-    if self.map_type:
-        w.write('mapTypeId: "%s",' % self.map_type.lower())
-    if self._tilt is not None:
-        w.write('tilt: %d,' % self._tilt)
-    if self._scale_control:
-        w.write('scaleControl: true,')
-    w.write('zoom: %d,' % self.zoom)
-    w.write('center: %s' % _format_LatLng(self.center[0], self.center[1]))
-    w.dedent()
-    w.write('});')
-    w.write()
-    #***
-    w.write('var prev_infowindow = false;')
-    w.write()
-    #***
-    if self._fit_bounds:
-        w.write('map.fitBounds(%s);' % json.dumps(self._fit_bounds))
-        w.write()
-
-# GoogleMapPlotter
-def directions(self, origin, destination, **kwargs):
-    '''
-    Display directions from an origin to a destination.
-
-    Requires `Directions API`_.
-
-    Args:
-        origin ((float, float)): Origin, in latitude/longitude.
-        destination ((float, float)): Destination, in latitude/longitude.
-
-    Optional:
-
-    Args:
-        travel_mode (str): `Travel mode`_. Defaults to 'DRIVING'.
-        waypoints ([(float, float)]): Waypoints to pass through.
-
-    .. _Directions API: https://console.cloud.google.com/marketplace/details/google/directions-backend.googleapis.com
-    .. _Travel mode: https://developers.google.com/maps/documentation/javascript/directions#TravelModes
-
-    Usage::
-
-        import gmplot
-        apikey = '' # (your API key here)
-        gmap = gmplot.GoogleMapPlotter(37.766956, -122.438481, 13, apikey=apikey)
-
-        gmap.directions(
-            (37.799001, -122.442692),
-            (37.832183, -122.477914),
-            waypoints=[
-                (37.801036, -122.434586),
-                (37.805461, -122.437262)
-            ]
-        )
-
-        gmap.draw('map.html')
-
-    .. image:: GoogleMapPlotter.directions.png
-    '''
-    self._routes.append(_Route_mod(origin, destination, **kwargs))
-
-# GoogleMapPlotter
+"""
+Overrides gmplot GoogleMapPlotter method to accept additional keyword arguments for '_Marker_mod' class.
+"""
 def marker(self, lat, lng, color='#FF0000', c=None, title=None, precision=6, label=None, **kwargs):
     '''
     Display a marker.
@@ -305,7 +260,9 @@ def marker(self, lat, lng, color='#FF0000', c=None, title=None, precision=6, lab
          kwargs.get('label_color'), kwargs.get('label_font_family'), kwargs.get('label_font_size'), kwargs.get('label_font_weight')))
 
 
-# GoogleMapPlotter
+"""
+Overrides gmplot GoogleMapPlotter method to accept additional keyword arguments for '_Marker_mod' class.
+"""
 def write_points(self, w, color_cache=set()):
     # TODO: Having a mutable set as a default parameter is done on purpose for backward compatibility.
     #       Should get rid of this in next major version (counts as an API change of course).
@@ -313,3 +270,76 @@ def write_points(self, w, color_cache=set()):
     for point in self.points:
         self.write_point(w, point[0], point[1], point[2], point[3], point[4], color_cache, point[5], point[6],
                          point[7], point[8], point[9], point[10], point[11])  # TODO: Not maintainable.
+
+
+"""
+Overrides gmplot GoogleMapPlotter method to add JavaScript line initializing the 'prev_infowindow' variable, used
+to track whether a marker InfoWindow is currently open (see '_MarkerInfoWindow_mod' class above)
+"""
+def write_map(self, w):
+    w.write('var map = new google.maps.Map(document.getElementById("map_canvas"), {')
+    w.indent()
+    if self._map_styles:
+        w.write('styles: %s,' % json.dumps(self._map_styles, indent=_INDENT_LEVEL))
+    if self.map_type:
+        w.write('mapTypeId: "%s",' % self.map_type.lower())
+    if self._tilt is not None:
+        w.write('tilt: %d,' % self._tilt)
+    if self._scale_control:
+        w.write('scaleControl: true,')
+    w.write('zoom: %d,' % self.zoom)
+    w.write('center: %s' % _format_LatLng(self.center[0], self.center[1]))
+    w.dedent()
+    w.write('});')
+    w.write()
+    #***
+    w.write('var prev_infowindow = false;')
+    w.write()
+    #***
+    if self._fit_bounds:
+        w.write('map.fitBounds(%s);' % json.dumps(self._fit_bounds))
+        w.write()
+
+
+"""
+Overrides gmplot GoogleMapPlotter method to use '_Route_mod' class.
+"""
+def directions(self, origin, destination, **kwargs):
+    '''
+    Display directions from an origin to a destination.
+
+    Requires `Directions API`_.
+
+    Args:
+        origin ((float, float)): Origin, in latitude/longitude.
+        destination ((float, float)): Destination, in latitude/longitude.
+
+    Optional:
+
+    Args:
+        travel_mode (str): `Travel mode`_. Defaults to 'DRIVING'.
+        waypoints ([(float, float)]): Waypoints to pass through.
+
+    .. _Directions API: https://console.cloud.google.com/marketplace/details/google/directions-backend.googleapis.com
+    .. _Travel mode: https://developers.google.com/maps/documentation/javascript/directions#TravelModes
+
+    Usage::
+
+        import gmplot
+        apikey = '' # (your API key here)
+        gmap = gmplot.GoogleMapPlotter(37.766956, -122.438481, 13, apikey=apikey)
+
+        gmap.directions(
+            (37.799001, -122.442692),
+            (37.832183, -122.477914),
+            waypoints=[
+                (37.801036, -122.434586),
+                (37.805461, -122.437262)
+            ]
+        )
+
+        gmap.draw('map.html')
+
+    .. image:: GoogleMapPlotter.directions.png
+    '''
+    self._routes.append(_Route_mod(origin, destination, **kwargs))

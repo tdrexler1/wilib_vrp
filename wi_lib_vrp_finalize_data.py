@@ -2,11 +2,10 @@
 
 import argparse
 import pandas as pd
-import json
-import urllib.request
 import os
 import yaml
-
+import json
+import urllib.request
 
 def parse_args():
     """
@@ -38,9 +37,9 @@ def add_region_data(stop_df):
     number for each library based on the 'County' column value.
 
     :param stop_df: Input DataFrame of library data.
-    :type stop_df: DataFrame
+    :type stop_df: pandas.DataFrame
     :return: Updated DataFrame with added columns.
-    :rtype: DataFrame
+    :rtype: pandas.DataFrame
     """
 
     # lists of counties in each region of PLSR proposals
@@ -137,9 +136,9 @@ def add_geocode_data(stop_df):
     as (latitude, longitude) tuple.
 
     :param stop_df: Input DataFrame of library data.
-    :type stop_df: DataFrame
+    :type stop_df: pandas.DataFrame
     :return: Updated DataFrame with added geolocation data column.
-    :rtype: DataFrame
+    :rtype: pandas.DataFrame
     """
 
     # retrieve Google Maps Geocoding Service API key

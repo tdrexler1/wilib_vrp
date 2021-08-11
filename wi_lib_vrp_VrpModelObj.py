@@ -82,7 +82,7 @@ class VrpModelObj(object):
         :param vrp_duration_matrix: Duration matrix input for VRP.
         :type vrp_duration_matrix: list
         :param region_df: Pandas dataframe of library data.
-        :type region_df: DataFrame
+        :type region_df: pandas.DataFrame
         :param config_dict: Dict of VRP configuration settings.
         :type config_dict: dict
         """
