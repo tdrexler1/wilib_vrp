@@ -91,6 +91,8 @@ class VrpModelObj(object):
         self._vrp_num_vehicles = config_dict['num_vehicles']
         self._region_df = region_df
         self._config_dict = config_dict
+        self._format_vrp_model_id()
+
 
     def _format_vrp_model_id(self):
         """ Concatenate VRP parameter code strings to model id string. """
@@ -172,9 +174,8 @@ class VrpModelObj(object):
             self._vrp_input_data_dict['depot']
         )
 
-        # initialize routing model & set model id
+        # initialize routing model
         vrp_routing_model = pywrapcp.RoutingModel(vrp_index_manager)
-        self._format_vrp_model_id()
 
         # [START distance dimension]
         def distance_callback(from_index, to_index):
