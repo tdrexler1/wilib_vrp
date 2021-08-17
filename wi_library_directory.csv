@@ -572,7 +572,7 @@ WI0217,Neshkoro PL,Neshkoro Public Library,public_library,132,S,Main,St,,,Neshko
 WI0224,North Fond du Lac PL,Spillman Public Library,public_library,719,,Wisconsin,Ave,,,North Fond du Lac,WI,54937,US,Fond du Lac,,,,Winnefox Library System,WLS,7,2,3,2,3,2,3,,,3,3,,,3,3,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0228,Oakfield PL,Oakfield Public Library,public_library,130,N,Main,St,,,Oakfield,WI,53065,US,Fond du Lac,,,,Winnefox Library System,WLS,7,3,1,,,2,3,,,3,3,,,3,3,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0233,Omro PL,Carter Memorial Library,public_library,405,E,Huron,St,,,Omro,WI,54963,US,Winnebago,,,,Winnefox Library System,WLS,7,3,5,4,6,2,1,,,3,4,,,4,3,FALSE,FALSE,TRUE,TRUE,TRUE,,
-WI0239,Oshkosh PL,Oshkosh Public Library,public_library,106,,Washington,Ave,,,Oshkosh,WI,54901,US,Winnebago,,,,Winnefox Library System,WLS,7,115,96,70,68,85,91,66,53,104,87,,,79,88,FALSE,FALSE,TRUE,TRUE,TRUE,,
+WI0239,Oshkosh PL,Oshkosh Public Library,public_library,106,,Washington,Ave,,,Oshkosh,WI,54901,US,Winnebago,,,,Winnefox Library System,WLS,7,115,96,70,68,85,91,66,53,104,87,,,79,88,FALSE,FALSE,TRUE,TRUE,TRUE,,TRUE
 WI0242,Oxford PL,Oxford Public Library,public_library,129,S,Franklin,Ave,,,Oxford,WI,53952,US,Marquette,,,,Winnefox Library System,WLS,7,2,2,,,3,2,,,2,2,,,2,3,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0243,Packwaukee PL,Packwaukee Public Library,public_library,N3511,,State,St,,,Packwaukee,WI,53953,US,Marquette,,,,Winnefox Library System,WLS,7,1,3,,,4,1,,,2,1,,,2,3,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0251,Pine River PL,Leon-Saxeville Township Library,public_library,N4715,,HWY E,,,,Pine River,WI,54965,US,Waushara,,,,Winnefox Library System,WLS,7,2,2,,,2,4,,,2,3,,,3,2,FALSE,FALSE,TRUE,TRUE,TRUE,,
@@ -607,7 +607,7 @@ WI0341-005,MaraCo - Mosinee Branch,Joseph Dessert Branch,public_library,123,,Mai
 WI0341-007,MaraCo - Rothschild Branch,Rothschild Area Branch,public_library,211,,Grand,Ave,,,Rothschild,WI,54474,US,Marathon,,,,Wisconsin Valley Library Service,WVLS,7,5,10,12,7,10,13,8,6,7,9,,,9,9,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0341-009,MaraCo - Spencer Branch,Spencer Branch,public_library,105,,Park,St,,,Spencer,WI,54479,US,Marathon,,,,Wisconsin Valley Library Service,WVLS,7,2,1,2,3,3,3,2,2,2,4,,,3,3,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0341-010,MaraCo - Stratford Branch,Stratford Branch,public_library,400,N,4th,Ave,,,Stratford,WI,54484,US,Marathon,,,,Wisconsin Valley Library Service,WVLS,7,1,2,,,3,2,,,,,,,2,2,FALSE,FALSE,TRUE,TRUE,TRUE,,
-WI0341,MaraCo - Wausau PL,Marathon County Public Library,public_library,300,,First,St,,,Wausau,WI,54403,US,Marathon,,,,Wisconsin Valley Library Service,WVLS,7,23,21,24,22,19,16,20,21,17,15,,,19,21,FALSE,FALSE,TRUE,TRUE,TRUE,,
+WI0341,MaraCo - Wausau PL,Marathon County Public Library,public_library,300,,First,St,,,Wausau,WI,54403,US,Marathon,,,,Wisconsin Valley Library Service,WVLS,7,23,21,24,22,19,16,20,21,17,15,,,19,21,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
 WI0188,Medford PL,Frances L. Simek Memorial Library Medford,public_library,400,N,Main,St,,,Medford,WI,54451,US,Taylor,,,,Wisconsin Valley Library Service,WVLS,7,3,2,,,4,2,,,3,4,,,3,4,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0395,Merrill PL,T.B. Scott Free Library,public_library,106,,1st,St,,,Merrill,WI,54452,US,Lincoln,,,,Wisconsin Valley Library Service,WVLS,7,9,11,7,7,,,11,6,,,,,8,9,FALSE,FALSE,TRUE,TRUE,TRUE,,
 WI0201,Minocqua PL,Minocqua Public Library,public_library,415,,Menominee,St,,Ste 100,Minocqua,WI,54548,US,Oneida,,,,Wisconsin Valley Library Service,WVLS,7,4,4,7,5,4,3,4,4,3,3,,,4,5,FALSE,FALSE,TRUE,TRUE,TRUE,,

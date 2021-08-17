@@ -251,7 +251,7 @@ def save_matrices(distance_matrix, duration_matrix, conf_dict):
     matrice_dict = {'distance_matrix': distance_matrix, 'duration_matrix': duration_matrix}
 
     # construct output file path, create directory if necessary
-    output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\solution_output\\')
+    output_dir_path = os.path.expanduser('~\\PycharmProjects\\wilib_vrp\\vrp_matrix_data\\')
     if not os.path.isdir(output_dir_path):
         os.mkdir(output_dir_path)
 

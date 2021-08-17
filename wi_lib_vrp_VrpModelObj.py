@@ -93,7 +93,6 @@ class VrpModelObj(object):
         self._config_dict = config_dict
         self._format_vrp_model_id()
 
-
     def _format_vrp_model_id(self):
         """ Concatenate VRP parameter code strings to model id string. """
 
@@ -125,11 +124,6 @@ class VrpModelObj(object):
         :return: Model id as string.
         :rtype: str
         """
-
-        # create id if necessary
-        if not self._vrp_model_id:
-            self._format_vrp_model_id()
-
         return self._vrp_model_id
 
     def __vrp_format_input_data(self):

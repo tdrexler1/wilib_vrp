@@ -144,7 +144,7 @@ def add_geocode_data(stop_df):
 
     # retrieve Google Maps Geocoding Service API key
     try:
-        with open(os.path.expanduser('~/google_maps_api_key.yml'), 'r') as conf:
+        with open(os.path.expanduser('~/wi_lib_vrp_api_keys.yml'), 'r') as conf:
             conf_data = yaml.full_load(conf)
     except OSError as e:
         print(e)
