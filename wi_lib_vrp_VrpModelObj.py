@@ -111,8 +111,11 @@ class VrpModelObj(object):
             self._search_param_dict['local_search_metaheuristic']\
             [self._config_dict['local_search_metaheuristic']]['model_id_code']
         id_string += '_'
-        id_string += ('0' + str(int(self._config_dict['veh_cap']))) if self._config_dict['veh_cap'] < 100 else \
-            str(int(self._config_dict['veh_cap']))
+        if self._config_dict['veh_cap'] == 0:
+            id_string += '000'
+        else:
+            id_string += ('0' + str(int(self._config_dict['veh_cap']))) if self._config_dict['veh_cap'] < 100 else \
+                str(int(self._config_dict['veh_cap']))
 
         # set instance model id attribute
         self._vrp_model_id = id_string
@@ -144,7 +147,9 @@ class VrpModelObj(object):
             'service_time': self._region_df['service_time_mins']
                                 .astype(float).multiply(self._SECONDS_PER_MINUTE).astype(int).tolist(),
             'demands': self._region_df['avg_pickup'].astype(int).tolist(),
-            'vehicle_capacities': [self._config_dict['veh_cap']] * self._vrp_num_vehicles
+            'vehicle_capacities':
+                [self._config_dict['veh_cap']] * self._vrp_num_vehicles
+                if self._config_dict['veh_cap'] != 0 else [1000000] * self._vrp_num_vehicles
         }
 
         # set exchange time at depot to '0'
@@ -450,6 +455,8 @@ class VrpModelObj(object):
             vrp_route_plan += f'Total distance, all routes: {total_distance / self._METERS_PER_MILE:.2f} miles\n'
 
             total_mins, total_secs = divmod(total_time, 60)
+            vrp_route_plan += f'Total time, all routes: {total_mins} minutes\n'
+
             total_hours, total_mins = divmod(total_mins, 60)
             vrp_route_plan += f'Total time, all routes: {total_hours} {"hours" if total_hours > 1 else "hour"}, ' \
                               f'{total_mins} {"minutes" if total_mins > 1 else "minute"}'

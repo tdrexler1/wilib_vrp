@@ -1,0 +1,144 @@
+Model ID: idl1_08_02_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_10_02_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_08_04_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_10_04_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_08_05_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_10_05_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_08_10_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl1_10_10_05_040
+Ideal proposal, region 1
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
