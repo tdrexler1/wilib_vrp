@@ -493,11 +493,11 @@ class VrpModelObj(object):
             # iterate over all stops on the route
             while not self._vrp_routing_model.IsEnd(index):
 
-                # add current stop to route
-                route.append(self._vrp_input_data_dict['library_ids'][self._vrp_index_manager.IndexToNode(index)])
-
                 # set current stop to next stop
                 index = self._vrp_solution.Value(self._vrp_routing_model.NextVar(index))
+
+                # add current stop to route
+                route.append(self._vrp_input_data_dict['library_ids'][self._vrp_index_manager.IndexToNode(index)])
 
             # add route to storage array
             vrp_route_array.append(route)
