@@ -224,8 +224,7 @@ def main():
 
         # retrieve route stop sequences of optimal routes from VrpModelObject
         optimal_routes = vrp_model.get_vrp_route_array()
-        for x in optimal_routes:
-            print(x)
+
         # generate HTML file of Google Map
         route_map = \
             mapper.map_vrp_routes(optimal_routes, region_data, conf_dict['general_maps_api_key'], vrp_model_id,
