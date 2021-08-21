@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
 
 # import method overrides for gmplot GoogleMapPlotter object
-from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points
+from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points, _write_html
 from gmplot.gmplot import GoogleMapPlotter
 
 # patch GoogleMapPlotter object methods with modified methods
@@ -19,6 +19,7 @@ GoogleMapPlotter.write_map = write_map
 GoogleMapPlotter.write_point = write_point
 GoogleMapPlotter.marker = marker
 GoogleMapPlotter.write_points = write_points
+GoogleMapPlotter._write_html = _write_html
 
 
 def write_infowindow_text(library_data, lib_id, stop_number, route_number):
@@ -174,13 +175,13 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
         origin = (float(stop_data_dict['latitude'][hub_id]), float(stop_data_dict['longitude'][hub_id]))
         destination = origin
         waypoints_list = \
-            [(float(stop_data_dict['latitude'][x]), float(stop_data_dict['longitude'][x])) for x in route[1:-2]]
+            [(float(stop_data_dict['latitude'][x]), float(stop_data_dict['longitude'][x])) for x in route[1:-1]]
 
         # get route directions for current route/vehicle
         gmap.directions(origin, destination, waypoints=waypoints_list, route_color=route_colors[n])
 
         # iterate over stops on current route
-        for m, wp in enumerate(route[1:-2]):
+        for m, wp in enumerate(route[1:-1]):
 
             # add Google Maps marker for current stop
             gmap.marker(float(stop_data_dict['latitude'][wp]), float(stop_data_dict['longitude'][wp]),

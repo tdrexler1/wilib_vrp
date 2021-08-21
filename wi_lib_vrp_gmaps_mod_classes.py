@@ -66,6 +66,8 @@ class _Route_mod(object):
         					}).setDirections(response);
                         }
                     });
+                    
+                    await new Promise(r => setTimeout(r, 500));
                 ''' % self._route_color)
         w.write()
 
@@ -343,3 +345,52 @@ def directions(self, origin, destination, **kwargs):
     .. image:: GoogleMapPlotter.directions.png
     '''
     self._routes.append(_Route_mod(origin, destination, **kwargs))
+
+
+"""
+Overrides gmplot GoogleMapPlotter method to allow timeouts between directions requests.
+"""
+def _write_html(self, w):
+    '''
+    Write the HTML map.
+
+    Args:
+        w (_Writer): Writer used to write the HTML map.
+    '''
+    color_cache = set()
+
+    w.write('''
+        <html>
+        <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>{title}</title>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization{key}"></script>
+        <script type="text/javascript">
+    '''.format(title=self.title, key=('&key=%s' % self.apikey if self.apikey else '')))
+    w.indent()
+    ###w.write('function initialize() {')
+    w.write('async function initialize() {')
+    w.indent()
+    self.write_map(w)
+    self.write_grids(w)
+    self.write_points(w, color_cache)
+    self.write_paths(w)
+    self.write_symbols(w)
+    self.write_shapes(w)
+    self.write_heatmap(w)
+    self.write_ground_overlay(w)
+    [route.write(w) for route in self._routes]
+    [text.write(w) for text in self._text_labels]
+    if self._marker_dropper: self._marker_dropper.write(w, color_cache)
+    w.dedent()
+    w.write('}')
+    w.dedent()
+    w.write('''
+        </script>
+        </head>
+        <body style="margin:0px; padding:0px;" onload="initialize()">
+            <div id="map_canvas" style="width: 100%; height: 100%;" />
+        </body>
+        </html>
+    ''')
