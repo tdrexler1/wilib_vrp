@@ -1,4 +1,4 @@
-import gmplot
+## import gmplot
 import webbrowser
 import string
 import random
@@ -9,17 +9,19 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
 
 # import method overrides for gmplot GoogleMapPlotter object
-from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points, _write_html
-from gmplot.gmplot import GoogleMapPlotter
+## from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points, _write_html
+## from gmplot.gmplot import GoogleMapPlotter
 
-# patch GoogleMapPlotter object methods with modified methods
-# https://stackoverflow.com/q/50599045
-GoogleMapPlotter.directions = directions
-GoogleMapPlotter.write_map = write_map
-GoogleMapPlotter.write_point = write_point
-GoogleMapPlotter.marker = marker
-GoogleMapPlotter.write_points = write_points
-GoogleMapPlotter._write_html = _write_html
+## # patch GoogleMapPlotter object methods with modified methods
+## # https://stackoverflow.com/q/50599045
+## GoogleMapPlotter.directions = directions
+## GoogleMapPlotter.write_map = write_map
+## GoogleMapPlotter.write_point = write_point
+## GoogleMapPlotter.marker = marker
+## GoogleMapPlotter.write_points = write_points
+## GoogleMapPlotter._write_html = _write_html
+
+from wi_lib_vrp_gmaps_sub_classes import GoogleMapPlotter_mod
 
 
 def write_infowindow_text(library_data, lib_id, stop_number, route_number):
@@ -129,12 +131,15 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
     hub_id = route_array[0][0]
 
     # initialize map object
-    gmap = gmplot.GoogleMapPlotter(
+
+    # https://stackoverflow.com/a/19164261
+    ## gmap = gmplot.GoogleMapPlotter(
+    gmap = GoogleMapPlotter_mod(
         float(stop_data_dict['latitude'][hub_id]),
         float(stop_data_dict['longitude'][hub_id]),
         0,
         apikey=gmaps_api_key,
-        fit_bounds=bounds_dict,
+        # fit_bounds=bounds_dict,
         title=f'{model_id} Route Map'
     )
 
