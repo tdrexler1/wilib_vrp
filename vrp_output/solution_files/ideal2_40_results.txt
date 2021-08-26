@@ -1,0 +1,806 @@
+Model ID: idl2_08_02_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> Minocqua PL -> Presque Isle PL -> Hurley PL -> Mercer PL ->  MaraCo - Wausau PL
+
+	Route distance: 261.17 miles
+	Route time: 7 hours, 11 minutes
+	Route load: 28 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 24 minutes; end time = 4 hours, 54 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> Boulder Junction PL -> Sayner PL -> Land O' Lakes PL -> Phelps PL -> Eagle River PL -> Three Lakes PL -> Rhinelander PL ->  MaraCo - Wausau PL
+
+	Route distance: 245.95 miles
+	Route time: 7 hours, 4 minutes
+	Route load: 38 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 22 minutes; end time = 5 hours, 52 minutes
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> AntPL - Antigo PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> AntPL - Elcho PL -> Tomahawk PL -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 222.75 miles
+	Route time: 7 hours, 11 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 20 minutes; end time = 4 hours, 50 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> Lac du Flambeau PL -> Park Falls PL -> Phillips PL -> Ogema PL -> Westboro PL -> Rib Lake PL -> Medford PL -> Stetsonville PL ->  MaraCo - Wausau PL
+
+	Route distance: 236.01 miles
+	Route time: 7 hours, 11 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 12 minutes; end time = 4 hours, 42 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> Abbotsford PL -> Greenwood PL -> Neillsville PL -> Granton PL -> Loyal PL -> MaraCo - Spencer Branch -> UW-Marshfield -> Marshfield PL -> Pittsville PL -> Vesper PL -> Arpin PL ->  MaraCo - Wausau PL
+
+	Route distance: 208.82 miles
+	Route time: 6 hours, 41 minutes
+	Route load: 40 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 24 minutes; end time = 4 hours, 54 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> Owen PL -> Withee PL -> Thorp PL -> Gilman PL -> Dorchester PL -> Colby PL ->  MaraCo - Wausau PL
+
+	Route distance: 156.57 miles
+	Route time: 4 hours, 16 minutes
+	Route load: 38 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 16 minutes; end time = 4 hours, 46 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> Mid-State TC -> Wisconsin Rapids PL -> Nekoosa PL -> PortCo - Almond Branch ->  MaraCo - Wausau PL
+
+	Route distance: 156.37 miles
+	Route time: 3 hours, 50 minutes
+	Route load: 40 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> Nicolet Area TC -> MaraCo - Mosinee Branch -> PortCo - Plover Branch -> Amherst PL -> Rosholt SD -> PortCo - Rosholt Branch -> MaraCo - Hatley Branch ->  MaraCo - Wausau PL
+
+	Route distance: 238.57 miles
+	Route time: 6 hours, 30 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 53 minutes; end time = 5 hours, 23 minutes
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> Northcentral TC -> Manitowish Waters PL -> Winchester PL -> PortCo - Stevens Point PL -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 268.00 miles
+	Route time: 7 hours, 11 minutes
+	Route load: 39 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> MaraCo - Rothschild Branch -> MaraCo - Athens Branch -> MaraCo - Stratford Branch -> MaraCo - Edgar Branch -> MaraCo - Marathon City Branch -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 89.94 miles
+	Route time: 2 hours, 55 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 2084.15 miles
+Total time, all routes: 3604 minutes
+Total time, all routes: 60 hours, 4 minutes
+
+------------------------
+
+Model ID: idl2_08_04_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> Abbotsford PL -> Colby PL -> MaraCo - Spencer Branch -> UW-Marshfield -> Marshfield PL -> MaraCo - Stratford Branch -> MaraCo - Edgar Branch -> MaraCo - Marathon City Branch ->  MaraCo - Wausau PL
+
+	Route distance: 107.60 miles
+	Route time: 3 hours, 35 minutes
+	Route load: 39 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> MaraCo - Mosinee Branch -> PortCo - Stevens Point PL -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 72.28 miles
+	Route time: 1 hour, 54 minutes
+	Route load: 39 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> Arpin PL -> Vesper PL -> Nekoosa PL -> Pittsville PL -> Neillsville PL -> Granton PL -> Loyal PL -> Greenwood PL -> Withee PL -> Owen PL ->  MaraCo - Wausau PL
+
+	Route distance: 218.47 miles
+	Route time: 6 hours, 49 minutes
+	Route load: 39 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 12 minutes; end time = 5 hours, 42 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> Northcentral TC -> Sayner PL -> Land O' Lakes PL -> Phelps PL -> Eagle River PL -> Three Lakes PL -> AntPL - Elcho PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch ->  MaraCo - Wausau PL
+
+	Route distance: 244.48 miles
+	Route time: 7 hours, 36 minutes
+	Route load: 39 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 21 minutes; end time = 4 hours, 51 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> MaraCo - Rothschild Branch -> PortCo - Plover Branch -> PortCo - Almond Branch ->  MaraCo - Wausau PL
+
+	Route distance: 122.38 miles
+	Route time: 2 hours, 48 minutes
+	Route load: 37 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> MaraCo - Athens Branch -> Dorchester PL -> Stetsonville PL -> Westboro PL -> Rib Lake PL -> Medford PL -> Gilman PL -> Thorp PL ->  MaraCo - Wausau PL
+
+	Route distance: 196.22 miles
+	Route time: 5 hours, 41 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 41 minutes; end time = 6 hours, 11 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> Manitowish Waters PL -> Hurley PL -> Park Falls PL -> Phillips PL ->  MaraCo - Wausau PL
+
+	Route distance: 288.09 miles
+	Route time: 7 hours, 36 minutes
+	Route load: 35 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 41 minutes; end time = 5 hours, 11 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> Nicolet Area TC -> Rhinelander PL -> Boulder Junction PL -> Presque Isle PL -> Winchester PL -> Mercer PL -> Lac du Flambeau PL -> Minocqua PL ->  MaraCo - Wausau PL
+
+	Route distance: 244.81 miles
+	Route time: 7 hours, 31 minutes
+	Route load: 36 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 34 minutes; end time = 6 hours, 4 minutes
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> AntPL - White Lake PL -> PortCo - Rosholt Branch -> Rosholt SD -> Amherst PL -> Mid-State TC -> Wisconsin Rapids PL -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 215.42 miles
+	Route time: 7 hours, 23 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 38 minutes; end time = 6 hours, 8 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> Wabeno PL -> Laona PL -> Crandon PL -> Tomahawk PL -> Ogema PL -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 245.34 miles
+	Route time: 7 hours, 15 minutes
+	Route load: 39 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Total distance, all routes: 1955.08 miles
+Total time, all routes: 3493 minutes
+Total time, all routes: 58 hours, 13 minutes
+
+------------------------
+
+Model ID: idl2_08_05_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 11
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> Phillips PL -> Westboro PL -> Rib Lake PL -> Medford PL -> Stetsonville PL -> Dorchester PL -> Abbotsford PL -> Owen PL ->  MaraCo - Wausau PL
+
+	Route distance: 212.05 miles
+	Route time: 5 hours, 50 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 50 minutes; end time = 6 hours, 20 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> MaraCo - Rothschild Branch -> Rosholt SD -> PortCo - Rosholt Branch -> MaraCo - Hatley Branch -> MaraCo - Edgar Branch -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 115.63 miles
+	Route time: 3 hours, 26 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> Minocqua PL -> Lac du Flambeau PL -> Park Falls PL -> Ogema PL -> Colby PL -> MaraCo - Marathon City Branch ->  MaraCo - Wausau PL
+
+	Route distance: 232.98 miles
+	Route time: 6 hours, 44 minutes
+	Route load: 37 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 55 minutes; end time = 6 hours, 25 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> MaraCo - Mosinee Branch -> PortCo - Stevens Point PL -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 72.28 miles
+	Route time: 1 hour, 54 minutes
+	Route load: 39 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> MaraCo - Stratford Branch -> UW-Marshfield -> Marshfield PL -> Arpin PL -> Vesper PL -> Nekoosa PL -> PortCo - Almond Branch -> Amherst PL -> PortCo - Plover Branch ->  MaraCo - Wausau PL
+
+	Route distance: 192.33 miles
+	Route time: 5 hours, 50 minutes
+	Route load: 40 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 50 minutes; end time = 6 hours, 20 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Withee PL -> Gilman PL -> Thorp PL ->  MaraCo - Wausau PL
+
+	Route distance: 209.61 miles
+	Route time: 5 hours, 33 minutes
+	Route load: 39 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> MaraCo - Athens Branch -> MaraCo - Spencer Branch -> Pittsville PL -> Wisconsin Rapids PL -> Mid-State TC ->  MaraCo - Wausau PL
+
+	Route distance: 162.54 miles
+	Route time: 4 hours, 15 minutes
+	Route load: 40 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 15 minutes; end time = 4 hours, 45 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> Boulder Junction PL -> Presque Isle PL -> Winchester PL -> Mercer PL -> Manitowish Waters PL -> Tomahawk PL ->  MaraCo - Wausau PL
+
+	Route distance: 230.28 miles
+	Route time: 6 hours, 48 minutes
+	Route load: 32 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 30 minutes; end time = 6 hours, 0 minute
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> AntPL - Antigo PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> AntPL - Elcho PL -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 190.25 miles
+	Route time: 5 hours, 50 minutes
+	Route load: 34 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 50 minutes; end time = 6 hours, 20 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> Sayner PL -> Hurley PL ->  MaraCo - Wausau PL
+
+	Route distance: 263.35 miles
+	Route time: 6 hours, 53 minutes
+	Route load: 23 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 11:
+	MaraCo - Wausau PL -> Northcentral TC -> Nicolet Area TC -> Rhinelander PL -> Eagle River PL -> Land O' Lakes PL -> Phelps PL -> Three Lakes PL ->  MaraCo - Wausau PL
+
+	Route distance: 224.83 miles
+	Route time: 6 hours, 33 minutes
+	Route load: 38 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 2106.13 miles
+Total time, all routes: 3581 minutes
+Total time, all routes: 59 hours, 41 minutes
+
+------------------------
+
+Model ID: idl2_08_10_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 11
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> Northcentral TC -> Owen PL -> Withee PL -> Greenwood PL -> Neillsville PL -> Granton PL -> Loyal PL -> MaraCo - Spencer Branch -> Colby PL -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 162.21 miles
+	Route time: 4 hours, 58 minutes
+	Route load: 40 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 58 minutes; end time = 5 hours, 28 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> Phillips PL -> Park Falls PL -> Ogema PL -> Westboro PL -> Stetsonville PL -> Dorchester PL -> MaraCo - Marathon City Branch ->  MaraCo - Wausau PL
+
+	Route distance: 215.66 miles
+	Route time: 5 hours, 54 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 54 minutes; end time = 6 hours, 24 minutes
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> Sayner PL -> Boulder Junction PL -> Presque Isle PL -> Winchester PL -> Manitowish Waters PL ->  MaraCo - Wausau PL
+
+	Route distance: 224.42 miles
+	Route time: 5 hours, 58 minutes
+	Route load: 26 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 58 minutes; end time = 6 hours, 28 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> MaraCo - Edgar Branch -> MaraCo - Stratford Branch -> UW-Marshfield -> Marshfield PL -> Pittsville PL -> Wisconsin Rapids PL -> Mid-State TC ->  MaraCo - Wausau PL
+
+	Route distance: 142.75 miles
+	Route time: 4 hours, 10 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 10 minutes; end time = 4 hours, 40 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> MaraCo - Rothschild Branch -> MaraCo - Mosinee Branch -> Lac du Flambeau PL -> Mercer PL -> Tomahawk PL ->  MaraCo - Wausau PL
+
+	Route distance: 233.20 miles
+	Route time: 5 hours, 58 minutes
+	Route load: 40 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 58 minutes; end time = 6 hours, 28 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> AntPL - Antigo PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> AntPL - Elcho PL -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 190.25 miles
+	Route time: 5 hours, 50 minutes
+	Route load: 34 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 50 minutes; end time = 6 hours, 20 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> PortCo - Plover Branch -> PortCo - Stevens Point PL -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 83.21 miles
+	Route time: 2 hours, 4 minutes
+	Route load: 40 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> Abbotsford PL -> Thorp PL -> Gilman PL -> Medford PL -> Rib Lake PL -> MaraCo - Athens Branch ->  MaraCo - Wausau PL
+
+	Route distance: 174.39 miles
+	Route time: 4 hours, 54 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 54 minutes; end time = 5 hours, 24 minutes
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> Arpin PL -> Vesper PL -> Nekoosa PL -> PortCo - Almond Branch -> Amherst PL -> Rosholt SD -> PortCo - Rosholt Branch -> MaraCo - Hatley Branch ->  MaraCo - Wausau PL
+
+	Route distance: 185.63 miles
+	Route time: 5 hours, 29 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 29 minutes; end time = 5 hours, 59 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> Nicolet Area TC -> Rhinelander PL -> Eagle River PL -> Land O' Lakes PL -> Phelps PL -> Three Lakes PL ->  MaraCo - Wausau PL
+
+	Route distance: 225.20 miles
+	Route time: 5 hours, 52 minutes
+	Route load: 37 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 52 minutes; end time = 6 hours, 22 minutes
+
+Route for vehicle 11:
+	MaraCo - Wausau PL -> Minocqua PL -> Hurley PL ->  MaraCo - Wausau PL
+
+	Route distance: 247.05 miles
+	Route time: 5 hours, 57 minutes
+	Route load: 25 containers
+	Number of stops: 2
+	Break: start time = 5 hours, 57 minutes; end time = 6 hours, 27 minutes
+
+Total distance, all routes: 2083.97 miles
+Total time, all routes: 3429 minutes
+Total time, all routes: 57 hours, 9 minutes
+
+------------------------
+
+Model ID: idl2_10_02_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: idl2_10_04_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> MaraCo - Rothschild Branch -> PortCo - Plover Branch -> Mid-State TC -> Nekoosa PL -> PortCo - Almond Branch ->  MaraCo - Wausau PL
+
+	Route distance: 156.82 miles
+	Route time: 4 hours, 3 minutes
+	Route load: 40 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 3 minutes; end time = 4 hours, 33 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> PortCo - Rosholt Branch -> Rosholt SD -> PortCo - Stevens Point PL ->  MaraCo - Wausau PL
+
+	Route distance: 240.43 miles
+	Route time: 7 hours, 19 minutes
+	Route load: 39 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 21 minutes; end time = 5 hours, 51 minutes
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> UW-Marshfield -> Marshfield PL -> Pittsville PL -> Wisconsin Rapids PL -> Amherst PL -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 162.81 miles
+	Route time: 4 hours, 40 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 40 minutes; end time = 5 hours, 10 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> MaraCo - Mosinee Branch -> Vesper PL -> Arpin PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Loyal PL -> MaraCo - Spencer Branch -> MaraCo - Stratford Branch ->  MaraCo - Wausau PL
+
+	Route distance: 177.81 miles
+	Route time: 5 hours, 25 minutes
+	Route load: 40 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 25 minutes; end time = 5 hours, 55 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> MaraCo - Athens Branch -> Rib Lake PL -> Westboro PL -> Ogema PL -> Medford PL -> Stetsonville PL -> Dorchester PL -> Colby PL -> MaraCo - Edgar Branch -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 150.40 miles
+	Route time: 5 hours, 0 minute
+	Route load: 39 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 0 minute; end time = 5 hours, 30 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> Abbotsford PL -> Owen PL -> Withee PL -> Gilman PL -> Thorp PL -> MaraCo - Marathon City Branch ->  MaraCo - Wausau PL
+
+	Route distance: 152.40 miles
+	Route time: 4 hours, 2 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 2 minutes; end time = 4 hours, 32 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> Manitowish Waters PL -> Winchester PL -> Park Falls PL -> Phillips PL -> Tomahawk PL ->  MaraCo - Wausau PL
+
+	Route distance: 253.27 miles
+	Route time: 7 hours, 10 minutes
+	Route load: 40 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 51 minutes; end time = 6 hours, 21 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> Northcentral TC -> Rhinelander PL -> Land O' Lakes PL -> Phelps PL -> Three Lakes PL -> AntPL - Elcho PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch ->  MaraCo - Wausau PL
+
+	Route distance: 235.62 miles
+	Route time: 7 hours, 4 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 40 minutes; end time = 5 hours, 10 minutes
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> Minocqua PL -> Sayner PL -> Eagle River PL -> Crandon PL -> Nicolet Area TC -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 232.14 miles
+	Route time: 7 hours, 19 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> Boulder Junction PL -> Presque Isle PL -> Hurley PL -> Mercer PL -> Lac du Flambeau PL ->  MaraCo - Wausau PL
+
+	Route distance: 261.82 miles
+	Route time: 7 hours, 19 minutes
+	Route load: 25 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 2023.52 miles
+Total time, all routes: 3564 minutes
+Total time, all routes: 59 hours, 24 minutes
+
+------------------------
+
+Model ID: idl2_10_05_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> Northcentral TC -> MaraCo - Mosinee Branch -> MaraCo - Rothschild Branch -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 37.42 miles
+	Route time: 1 hour, 29 minutes
+	Route load: 34 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> Tomahawk PL -> Rhinelander PL -> Nicolet Area TC -> AntPL - Elcho PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch ->  MaraCo - Wausau PL
+
+	Route distance: 157.29 miles
+	Route time: 4 hours, 31 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 31 minutes; end time = 5 hours, 1 minute
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> Ogema PL -> Westboro PL -> Rib Lake PL -> Medford PL -> Stetsonville PL -> Dorchester PL -> Abbotsford PL -> Owen PL -> Colby PL -> MaraCo - Edgar Branch ->  MaraCo - Wausau PL
+
+	Route distance: 183.21 miles
+	Route time: 5 hours, 29 minutes
+	Route load: 40 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 29 minutes; end time = 5 hours, 59 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> PortCo - Plover Branch -> PortCo - Stevens Point PL -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 83.21 miles
+	Route time: 2 hours, 4 minutes
+	Route load: 40 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> MaraCo - Spencer Branch -> UW-Marshfield -> Marshfield PL -> Arpin PL -> Vesper PL -> Nekoosa PL -> PortCo - Almond Branch -> Amherst PL -> PortCo - Rosholt Branch -> Rosholt SD ->  MaraCo - Wausau PL
+
+	Route distance: 201.49 miles
+	Route time: 6 hours, 51 minutes
+	Route load: 40 containers
+	Number of stops: 10
+	Break: start time = 5 hours, 15 minutes; end time = 5 hours, 45 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> Loyal PL -> Granton PL -> Neillsville PL -> Greenwood PL -> Withee PL -> Gilman PL -> Thorp PL ->  MaraCo - Wausau PL
+
+	Route distance: 209.61 miles
+	Route time: 5 hours, 33 minutes
+	Route load: 39 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> Mid-State TC -> Wisconsin Rapids PL -> Pittsville PL -> MaraCo - Stratford Branch -> MaraCo - Marathon City Branch ->  MaraCo - Wausau PL
+
+	Route distance: 137.88 miles
+	Route time: 3 hours, 49 minutes
+	Route load: 40 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> Minocqua PL -> Lac du Flambeau PL -> Mercer PL -> Winchester PL -> Presque Isle PL -> Boulder Junction PL -> Sayner PL -> Eagle River PL -> Three Lakes PL ->  MaraCo - Wausau PL
+
+	Route distance: 263.56 miles
+	Route time: 8 hours, 3 minutes
+	Route load: 36 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> AntPL - White Lake PL -> Wabeno PL -> Laona PL -> Crandon PL -> Phelps PL -> Land O' Lakes PL -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 278.73 miles
+	Route time: 8 hours, 7 minutes
+	Route load: 36 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 8 minutes; end time = 5 hours, 38 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> Manitowish Waters PL -> Hurley PL -> Park Falls PL -> Phillips PL -> MaraCo - Athens Branch ->  MaraCo - Wausau PL
+
+	Route distance: 289.97 miles
+	Route time: 8 hours, 6 minutes
+	Route load: 38 containers
+	Number of stops: 5
+	Break: start time = 4 hours, 41 minutes; end time = 5 hours, 11 minutes
+
+Total distance, all routes: 1842.37 miles
+Total time, all routes: 3247 minutes
+Total time, all routes: 54 hours, 7 minutes
+
+------------------------
+
+Model ID: idl2_10_10_05_040
+Ideal proposal, region 2
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 10
+
+Route for vehicle 1:
+	MaraCo - Wausau PL -> Abbotsford PL -> Dorchester PL -> Stetsonville PL -> Rib Lake PL -> Medford PL -> Gilman PL -> Colby PL ->  MaraCo - Wausau PL
+
+	Route distance: 190.39 miles
+	Route time: 5 hours, 15 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 15 minutes; end time = 5 hours, 45 minutes
+
+Route for vehicle 2:
+	MaraCo - Wausau PL -> Minocqua PL -> Boulder Junction PL -> Presque Isle PL -> Winchester PL -> MaraCo - Mosinee Branch -> MaraCo - Rothschild Branch ->  MaraCo - Wausau PL
+
+	Route distance: 241.36 miles
+	Route time: 6 hours, 55 minutes
+	Route load: 39 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 49 minutes; end time = 6 hours, 19 minutes
+
+Route for vehicle 3:
+	MaraCo - Wausau PL -> Northcentral TC -> Phillips PL -> Park Falls PL -> Ogema PL -> Westboro PL -> MaraCo - Athens Branch -> MaraCo - Edgar Branch ->  MaraCo - Wausau PL
+
+	Route distance: 214.50 miles
+	Route time: 5 hours, 59 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 59 minutes; end time = 6 hours, 29 minutes
+
+Route for vehicle 4:
+	MaraCo - Wausau PL -> Wabeno PL -> Laona PL -> Crandon PL -> Three Lakes PL -> AntPL - Elcho PL -> Merrill PL ->  MaraCo - Wausau PL
+
+	Route distance: 209.02 miles
+	Route time: 7 hours, 2 minutes
+	Route load: 35 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 5:
+	MaraCo - Wausau PL -> Owen PL -> Withee PL -> Thorp PL -> Greenwood PL -> Neillsville PL -> Granton PL -> Loyal PL -> MaraCo - Spencer Branch -> MaraCo - Stratford Branch ->  MaraCo - Wausau PL
+
+	Route distance: 178.56 miles
+	Route time: 5 hours, 14 minutes
+	Route load: 39 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 6:
+	MaraCo - Wausau PL -> UW-Marshfield -> Marshfield PL -> Pittsville PL -> Arpin PL -> Vesper PL -> PortCo - Stevens Point PL -> UW-Wausau ->  MaraCo - Wausau PL
+
+	Route distance: 145.11 miles
+	Route time: 4 hours, 16 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 16 minutes; end time = 4 hours, 46 minutes
+
+Route for vehicle 7:
+	MaraCo - Wausau PL -> Mid-State TC -> Wisconsin Rapids PL -> Nekoosa PL -> PortCo - Almond Branch ->  MaraCo - Wausau PL
+
+	Route distance: 156.37 miles
+	Route time: 3 hours, 50 minutes
+	Route load: 40 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 8:
+	MaraCo - Wausau PL -> AntPL - White Lake PL -> AntPL - Antigo PL -> MaraCo - Hatley Branch -> PortCo - Rosholt Branch -> Rosholt SD -> Amherst PL -> PortCo - Plover Branch -> UW-Stevens Point ->  MaraCo - Wausau PL
+
+	Route distance: 197.60 miles
+	Route time: 6 hours, 30 minutes
+	Route load: 39 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Route for vehicle 9:
+	MaraCo - Wausau PL -> Manitowish Waters PL -> Hurley PL -> Mercer PL -> Lac du Flambeau PL -> Tomahawk PL ->  MaraCo - Wausau PL
+
+	Route distance: 253.30 miles
+	Route time: 7 hours, 2 minutes
+	Route load: 31 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 43 minutes; end time = 6 hours, 13 minutes
+
+Route for vehicle 10:
+	MaraCo - Wausau PL -> Nicolet Area TC -> Rhinelander PL -> Eagle River PL -> Phelps PL -> Land O' Lakes PL -> Sayner PL -> MaraCo - Marathon City Branch ->  MaraCo - Wausau PL
+
+	Route distance: 245.94 miles
+	Route time: 7 hours, 2 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 5 minutes; end time = 4 hours, 35 minutes
+
+Total distance, all routes: 2032.15 miles
+Total time, all routes: 3549 minutes
+Total time, all routes: 59 hours, 9 minutes
+
+------------------------
+
