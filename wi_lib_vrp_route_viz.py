@@ -9,18 +9,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
 
 # import method overrides for gmplot GoogleMapPlotter object
-## from wi_lib_vrp_gmaps_mod_classes import write_point, write_map, directions, marker, write_points, _write_html
-## from gmplot.gmplot import GoogleMapPlotter
-
-## # patch GoogleMapPlotter object methods with modified methods
-## # https://stackoverflow.com/q/50599045
-## GoogleMapPlotter.directions = directions
-## GoogleMapPlotter.write_map = write_map
-## GoogleMapPlotter.write_point = write_point
-## GoogleMapPlotter.marker = marker
-## GoogleMapPlotter.write_points = write_points
-## GoogleMapPlotter._write_html = _write_html
-
 from wi_lib_vrp_gmaps_sub_classes import GoogleMapPlotter_mod
 
 
@@ -118,12 +106,6 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
     # randomly choose route colors for all routes
     route_colors = random.sample(route_colors, k=len(route_array))
 
-    # set the bounds for the Google map (*could not get this to work with Chrome)
-    bounds_dict = {'north': float(stop_data['latitude'].max()),
-                   'south': float(stop_data['latitude'].min()),
-                   'east': float(stop_data['longitude'].min()),
-                   'west': float(stop_data['longitude'].max())}
-
     # convert library input DataFrame to dict
     stop_data_dict = stop_data.to_dict()
 
@@ -133,13 +115,11 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
     # initialize map object
 
     # https://stackoverflow.com/a/19164261
-    ## gmap = gmplot.GoogleMapPlotter(
     gmap = GoogleMapPlotter_mod(
         float(stop_data_dict['latitude'][hub_id]),
         float(stop_data_dict['longitude'][hub_id]),
         0,
         apikey=gmaps_api_key,
-        # fit_bounds=bounds_dict,
         title=f'{model_id} Route Map'
     )
 

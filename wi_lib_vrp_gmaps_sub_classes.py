@@ -308,11 +308,6 @@ class GoogleMapPlotter_mod(GoogleMapPlotter):
         w.write('var map_bounds = new google.maps.LatLngBounds();')
         w.write()
 
-        # ***
-        # if self._fit_bounds:
-        #     w.write('map.fitBounds(%s);' % json.dumps(self._fit_bounds))
-        #     w.write()
-
 
     """
     Overrides gmplot GoogleMapPlotter method to use '_Route_mod' class.
