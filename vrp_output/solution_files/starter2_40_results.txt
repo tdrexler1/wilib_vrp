@@ -1,0 +1,642 @@
+Model ID: str2_08_02_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: str2_08_04_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	IFLS -> Boyceville PL -> Glenwood City PL -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Durand PL ->  IFLS
+
+	Route distance: 167.48 miles
+	Route time: 4 hours, 58 minutes
+	Route load: 38 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 58 minutes; end time = 5 hours, 28 minutes
+
+Route for vehicle 2:
+	IFLS -> Clear Lake PL -> Balsam Lake PL -> Amery PL -> Deer Park PL -> Woodville PL -> UW-Stout -> MenPL - Menomonie PL ->  IFLS
+
+	Route distance: 174.09 miles
+	Route time: 4 hours, 52 minutes
+	Route load: 39 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 52 minutes; end time = 5 hours, 22 minutes
+
+Route for vehicle 3:
+	IFLS -> Eau Claire PL ->  IFLS
+
+	Route distance: 5.65 miles
+	Route time: 0 hour, 22 minutes
+	Route load: 38 containers
+	Number of stops: 1
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	IFLS -> UW-Eau Claire -> Chippewa Valley TC -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Stanley CI -> Stanley PL -> Cadott PL -> Chippewa Valley CI -> Chippewa Falls PL ->  IFLS
+
+	Route distance: 105.82 miles
+	Route time: 4 hours, 13 minutes
+	Route load: 39 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 13 minutes; end time = 4 hours, 43 minutes
+
+Route for vehicle 5:
+	IFLS -> Chetek PL -> Cameron PL -> UW-Barron -> Rice Lake PL -> Cumberland PL -> Turtle Lake PL -> Barron PL -> Sand Creek PL -> Colfax PL ->  IFLS
+
+	Route distance: 163.35 miles
+	Route time: 4 hours, 56 minutes
+	Route load: 39 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 6:
+	IFLS -> Altoona PL -> Cornell PL -> Ladysmith PL -> Hawkins PL -> Bruce PL -> Bloomer PL ->  IFLS
+
+	Route distance: 171.36 miles
+	Route time: 5 hours, 3 minutes
+	Route load: 26 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 3 minutes; end time = 5 hours, 33 minutes
+
+Route for vehicle 7:
+	IFLS -> MenPL - Elk Mound Branch -> Hudson PL -> Somerset PL -> Osceola PL -> St. Croix Falls PL -> Dresser PL ->  IFLS
+
+	Route distance: 189.53 miles
+	Route time: 4 hours, 50 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 50 minutes; end time = 5 hours, 20 minutes
+
+Route for vehicle 8:
+	IFLS -> New Richmond PL -> Centuria PL -> Milltown PL -> Luck PL -> Frederic PL ->  IFLS
+
+	Route distance: 208.94 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 29 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 9:
+	IFLS -> Roberts PL -> Hammond PL -> Baldwin PL -> Spring Valley PL -> Elmwood PL -> Plum City PL -> Pepin PL ->  IFLS
+
+	Route distance: 174.75 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 38 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Total distance, all routes: 1360.97 miles
+Total time, all routes: 2371 minutes
+Total time, all routes: 39 hours, 31 minutes
+
+------------------------
+
+Model ID: str2_08_05_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	IFLS -> Eau Claire PL -> Hawkins PL ->  IFLS
+
+	Route distance: 177.51 miles
+	Route time: 4 hours, 18 minutes
+	Route load: 39 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 18 minutes; end time = 4 hours, 48 minutes
+
+Route for vehicle 2:
+	IFLS -> Bloomer PL -> Bruce PL -> Ladysmith PL -> Cornell PL -> Cadott PL -> Chippewa Valley CI -> Chippewa Falls PL ->  IFLS
+
+	Route distance: 125.95 miles
+	Route time: 4 hours, 12 minutes
+	Route load: 36 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 12 minutes; end time = 4 hours, 42 minutes
+
+Route for vehicle 3:
+	IFLS -> UW-Eau Claire -> Chippewa Valley TC -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Stanley CI -> Stanley PL -> UW-Stout -> MenPL - Menomonie PL ->  IFLS
+
+	Route distance: 143.08 miles
+	Route time: 4 hours, 37 minutes
+	Route load: 38 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 37 minutes; end time = 5 hours, 7 minutes
+
+Route for vehicle 4:
+	IFLS -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL ->  IFLS
+
+	Route distance: 181.35 miles
+	Route time: 4 hours, 57 minutes
+	Route load: 36 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 57 minutes; end time = 5 hours, 27 minutes
+
+Route for vehicle 5:
+	IFLS -> Chetek PL -> UW-Barron -> Rice Lake PL -> Cameron PL -> Barron PL -> Turtle Lake PL -> Sand Creek PL -> Colfax PL -> MenPL - Elk Mound Branch ->  IFLS
+
+	Route distance: 159.58 miles
+	Route time: 4 hours, 56 minutes
+	Route load: 38 containers
+	Number of stops: 9
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 6:
+	IFLS -> Altoona PL -> Durand PL -> Elmwood PL -> Spring Valley PL -> Roberts PL -> Hammond PL -> Baldwin PL ->  IFLS
+
+	Route distance: 147.40 miles
+	Route time: 4 hours, 32 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 32 minutes; end time = 5 hours, 2 minutes
+
+Route for vehicle 7:
+	IFLS -> New Richmond PL -> Osceola PL -> Dresser PL -> St. Croix Falls PL -> Centuria PL -> Woodville PL ->  IFLS
+
+	Route distance: 192.38 miles
+	Route time: 4 hours, 56 minutes
+	Route load: 38 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 8:
+	IFLS -> Hudson PL -> Somerset PL -> Deer Park PL -> Amery PL -> Clear Lake PL -> Glenwood City PL -> Boyceville PL ->  IFLS
+
+	Route distance: 172.64 miles
+	Route time: 4 hours, 40 minutes
+	Route load: 40 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 40 minutes; end time = 5 hours, 10 minutes
+
+Route for vehicle 9:
+	IFLS -> Balsam Lake PL -> Milltown PL -> Luck PL -> Frederic PL -> Cumberland PL ->  IFLS
+
+	Route distance: 202.92 miles
+	Route time: 5 hours, 0 minute
+	Route load: 21 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 0 minute; end time = 5 hours, 30 minutes
+
+Total distance, all routes: 1502.82 miles
+Total time, all routes: 2532 minutes
+Total time, all routes: 42 hours, 12 minutes
+
+------------------------
+
+Model ID: str2_08_10_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	IFLS -> Boyceville PL -> Glenwood City PL -> Clear Lake PL -> Turtle Lake PL -> Cumberland PL -> Rice Lake PL -> UW-Barron -> Cameron PL -> Barron PL ->  IFLS
+
+	Route distance: 170.24 miles
+	Route time: 5 hours, 4 minutes
+	Route load: 40 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 4 minutes; end time = 5 hours, 34 minutes
+
+Route for vehicle 2:
+	IFLS -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL ->  IFLS
+
+	Route distance: 178.67 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 37 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 3:
+	IFLS -> MenPL - Elk Mound Branch -> Roberts PL -> Hudson PL -> Colfax PL -> Sand Creek PL -> Chippewa Valley TC -> UW-Eau Claire ->  IFLS
+
+	Route distance: 184.93 miles
+	Route time: 4 hours, 44 minutes
+	Route load: 34 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 44 minutes; end time = 5 hours, 14 minutes
+
+Route for vehicle 4:
+	IFLS -> Altoona PL -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Stanley CI -> Stanley PL -> Chippewa Valley CI -> Chippewa Falls PL ->  IFLS
+
+	Route distance: 103.61 miles
+	Route time: 3 hours, 42 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 5:
+	IFLS -> New Richmond PL -> St. Croix Falls PL -> Milltown PL -> Luck PL -> Frederic PL ->  IFLS
+
+	Route distance: 214.09 miles
+	Route time: 5 hours, 19 minutes
+	Route load: 33 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 6:
+	IFLS -> Hammond PL -> Amery PL -> Deer Park PL -> Baldwin PL -> Woodville PL -> Spring Valley PL -> Elmwood PL -> UW-Stout ->  IFLS
+
+	Route distance: 165.97 miles
+	Route time: 4 hours, 51 minutes
+	Route load: 39 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 51 minutes; end time = 5 hours, 21 minutes
+
+Route for vehicle 7:
+	IFLS -> Somerset PL -> Osceola PL -> Dresser PL -> Centuria PL -> Balsam Lake PL -> MenPL - Menomonie PL ->  IFLS
+
+	Route distance: 195.86 miles
+	Route time: 5 hours, 3 minutes
+	Route load: 39 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 3 minutes; end time = 5 hours, 33 minutes
+
+Route for vehicle 8:
+	IFLS -> Bloomer PL -> Chetek PL -> Bruce PL -> Hawkins PL -> Ladysmith PL -> Cornell PL -> Cadott PL ->  IFLS
+
+	Route distance: 176.68 miles
+	Route time: 5 hours, 14 minutes
+	Route load: 26 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 9:
+	IFLS -> Eau Claire PL ->  IFLS
+
+	Route distance: 5.65 miles
+	Route time: 0 hour, 22 minutes
+	Route load: 38 containers
+	Number of stops: 1
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1395.71 miles
+Total time, all routes: 2369 minutes
+Total time, all routes: 39 hours, 29 minutes
+
+------------------------
+
+Model ID: str2_10_02_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 15+
+
+No solution found.
+
+------------------------
+
+Model ID: str2_10_04_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	IFLS -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL -> Chippewa Valley TC ->  IFLS
+
+	Route distance: 180.15 miles
+	Route time: 5 hours, 18 minutes
+	Route load: 38 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 18 minutes; end time = 5 hours, 48 minutes
+
+Route for vehicle 2:
+	IFLS -> Roberts PL -> New Richmond PL -> Osceola PL -> Clear Lake PL -> Glenwood City PL -> Boyceville PL ->  IFLS
+
+	Route distance: 175.93 miles
+	Route time: 4 hours, 47 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 47 minutes; end time = 5 hours, 17 minutes
+
+Route for vehicle 3:
+	IFLS -> Hammond PL -> Somerset PL -> Dresser PL -> St. Croix Falls PL -> Centuria PL -> Balsam Lake PL -> Amery PL -> Deer Park PL ->  IFLS
+
+	Route distance: 195.09 miles
+	Route time: 5 hours, 16 minutes
+	Route load: 39 containers
+	Number of stops: 8
+	Break: start time = 5 hours, 16 minutes; end time = 5 hours, 46 minutes
+
+Route for vehicle 4:
+	IFLS -> Bloomer PL -> Bruce PL -> Ladysmith PL -> Hawkins PL -> Stanley PL -> Stanley CI -> Chippewa Falls PL ->  IFLS
+
+	Route distance: 167.71 miles
+	Route time: 5 hours, 9 minutes
+	Route load: 36 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 9 minutes; end time = 5 hours, 39 minutes
+
+Route for vehicle 5:
+	IFLS -> Colfax PL -> Sand Creek PL -> UW-Barron -> Cameron PL -> Barron PL -> Turtle Lake PL -> UW-Stout -> MenPL - Menomonie PL ->  IFLS
+
+	Route distance: 160.61 miles
+	Route time: 4 hours, 59 minutes
+	Route load: 40 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 59 minutes; end time = 5 hours, 29 minutes
+
+Route for vehicle 6:
+	IFLS -> Woodville PL -> Baldwin PL -> Hudson PL -> Spring Valley PL -> Elmwood PL -> MenPL - Elk Mound Branch ->  IFLS
+
+	Route distance: 147.43 miles
+	Route time: 4 hours, 0 minute
+	Route load: 37 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 7:
+	IFLS -> Milltown PL -> Luck PL -> Frederic PL -> Cumberland PL -> Rice Lake PL -> Chetek PL ->  IFLS
+
+	Route distance: 208.53 miles
+	Route time: 5 hours, 19 minutes
+	Route load: 30 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 8:
+	IFLS -> Chippewa Valley CI -> Cornell PL -> Cadott PL -> Fairchild PL -> Augusta PL -> Fall Creek PL -> Altoona PL -> UW-Eau Claire ->  IFLS
+
+	Route distance: 122.72 miles
+	Route time: 4 hours, 22 minutes
+	Route load: 28 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 22 minutes; end time = 4 hours, 52 minutes
+
+Route for vehicle 9:
+	IFLS -> Eau Claire PL ->  IFLS
+
+	Route distance: 5.65 miles
+	Route time: 0 hour, 22 minutes
+	Route load: 38 containers
+	Number of stops: 1
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Total distance, all routes: 1363.84 miles
+Total time, all routes: 2376 minutes
+Total time, all routes: 39 hours, 36 minutes
+
+------------------------
+
+Model ID: str2_10_05_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	IFLS -> Eau Claire PL -> Hawkins PL ->  IFLS
+
+	Route distance: 177.51 miles
+	Route time: 4 hours, 18 minutes
+	Route load: 39 containers
+	Number of stops: 2
+	Break: start time = 4 hours, 18 minutes; end time = 4 hours, 48 minutes
+
+Route for vehicle 2:
+	IFLS -> MenPL - Elk Mound Branch -> Colfax PL -> Sand Creek PL -> Bruce PL -> Ladysmith PL -> Cornell PL -> Cadott PL -> Chippewa Falls PL ->  IFLS
+
+	Route distance: 142.99 miles
+	Route time: 4 hours, 43 minutes
+	Route load: 36 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 43 minutes; end time = 5 hours, 13 minutes
+
+Route for vehicle 3:
+	IFLS -> Hudson PL -> Elmwood PL -> UW-Stout -> MenPL - Menomonie PL ->  IFLS
+
+	Route distance: 147.95 miles
+	Route time: 3 hours, 26 minutes
+	Route load: 38 containers
+	Number of stops: 4
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 4:
+	IFLS -> Spring Valley PL -> Roberts PL -> New Richmond PL -> Osceola PL -> Somerset PL -> Glenwood City PL ->  IFLS
+
+	Route distance: 188.43 miles
+	Route time: 4 hours, 55 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 55 minutes; end time = 5 hours, 25 minutes
+
+Route for vehicle 5:
+	IFLS -> Boyceville PL -> Clear Lake PL -> Turtle Lake PL -> Barron PL -> Cameron PL -> Rice Lake PL -> UW-Barron -> Chetek PL ->  IFLS
+
+	Route distance: 163.00 miles
+	Route time: 4 hours, 43 minutes
+	Route load: 38 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 43 minutes; end time = 5 hours, 13 minutes
+
+Route for vehicle 6:
+	IFLS -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL ->  IFLS
+
+	Route distance: 178.67 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 37 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 7:
+	IFLS -> Woodville PL -> Baldwin PL -> Amery PL -> Centuria PL -> St. Croix Falls PL -> Dresser PL -> Hammond PL ->  IFLS
+
+	Route distance: 188.30 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 39 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 8:
+	IFLS -> Deer Park PL -> Balsam Lake PL -> Milltown PL -> Luck PL -> Frederic PL -> Cumberland PL ->  IFLS
+
+	Route distance: 203.04 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 23 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 9:
+	IFLS -> Chippewa Valley TC -> UW-Eau Claire -> Altoona PL -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Stanley CI -> Stanley PL -> Chippewa Valley CI -> Bloomer PL ->  IFLS
+
+	Route distance: 129.14 miles
+	Route time: 4 hours, 36 minutes
+	Route load: 36 containers
+	Number of stops: 10
+	Break: start time = 4 hours, 36 minutes; end time = 5 hours, 6 minutes
+
+Total distance, all routes: 1519.03 miles
+Total time, all routes: 2524 minutes
+Total time, all routes: 42 hours, 4 minutes
+
+------------------------
+
+Model ID: str2_10_10_05_040
+Starter proposal, region 2
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 40
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 9
+
+Route for vehicle 1:
+	IFLS -> New Richmond PL -> Balsam Lake PL -> Milltown PL -> Luck PL -> Frederic PL ->  IFLS
+
+	Route distance: 208.84 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 31 containers
+	Number of stops: 5
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 2:
+	IFLS -> Hudson PL -> Osceola PL -> Dresser PL -> St. Croix Falls PL -> Centuria PL -> Woodville PL ->  IFLS
+
+	Route distance: 197.21 miles
+	Route time: 5 hours, 2 minutes
+	Route load: 40 containers
+	Number of stops: 6
+	Break: start time = 5 hours, 2 minutes; end time = 5 hours, 32 minutes
+
+Route for vehicle 3:
+	IFLS -> River Falls PL -> UW-River Falls -> Prescott PL -> Ellsworth PL -> Plum City PL -> Pepin PL -> Durand PL ->  IFLS
+
+	Route distance: 178.67 miles
+	Route time: 5 hours, 7 minutes
+	Route load: 37 containers
+	Number of stops: 7
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 4:
+	IFLS -> Bloomer PL -> Sand Creek PL -> Colfax PL -> MenPL - Menomonie PL -> UW-Stout -> Elmwood PL -> Spring Valley PL ->  IFLS
+
+	Route distance: 135.35 miles
+	Route time: 4 hours, 2 minutes
+	Route load: 39 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 2 minutes; end time = 4 hours, 32 minutes
+
+Route for vehicle 5:
+	IFLS -> Boyceville PL -> Glenwood City PL -> Clear Lake PL -> Turtle Lake PL -> Cumberland PL -> Rice Lake PL -> UW-Barron -> Cameron PL -> Barron PL ->  IFLS
+
+	Route distance: 170.24 miles
+	Route time: 5 hours, 4 minutes
+	Route load: 40 containers
+	Number of stops: 9
+	Break: start time = 5 hours, 4 minutes; end time = 5 hours, 34 minutes
+
+Route for vehicle 6:
+	IFLS -> MenPL - Elk Mound Branch -> Baldwin PL -> Deer Park PL -> Amery PL -> Somerset PL -> Roberts PL -> Hammond PL ->  IFLS
+
+	Route distance: 172.81 miles
+	Route time: 4 hours, 39 minutes
+	Route load: 38 containers
+	Number of stops: 7
+	Break: start time = 4 hours, 39 minutes; end time = 5 hours, 9 minutes
+
+Route for vehicle 7:
+	IFLS -> Chetek PL -> Bruce PL -> Ladysmith PL -> Stanley PL -> Stanley CI -> Cadott PL -> Chippewa Valley CI -> Chippewa Falls PL ->  IFLS
+
+	Route distance: 162.65 miles
+	Route time: 4 hours, 58 minutes
+	Route load: 38 containers
+	Number of stops: 8
+	Break: start time = 4 hours, 58 minutes; end time = 5 hours, 28 minutes
+
+Route for vehicle 8:
+	IFLS -> Altoona PL -> Fall Creek PL -> Augusta PL -> Fairchild PL -> Chippewa Valley TC -> UW-Eau Claire ->  IFLS
+
+	Route distance: 78.50 miles
+	Route time: 2 hours, 47 minutes
+	Route load: 23 containers
+	Number of stops: 6
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 9:
+	IFLS -> Eau Claire PL -> Cornell PL -> Hawkins PL ->  IFLS
+
+	Route distance: 170.11 miles
+	Route time: 4 hours, 29 minutes
+	Route load: 40 containers
+	Number of stops: 3
+	Break: start time = 4 hours, 29 minutes; end time = 4 hours, 59 minutes
+
+Total distance, all routes: 1474.38 miles
+Total time, all routes: 2478 minutes
+Total time, all routes: 41 hours, 18 minutes
+
+------------------------
+
