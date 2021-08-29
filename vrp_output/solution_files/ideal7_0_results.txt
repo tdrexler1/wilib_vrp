@@ -1,0 +1,475 @@
+Model ID: idl7_08_02_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Bridges LS -> Elkhorn PL -> Delavan PL -> WI School for the Deaf -> Darien PL -> Sharon PL -> Walworth PL -> Fontana PL -> Williams Bay PL -> Genoa City PL -> Twin Lakes Branch -> Salem PL -> KenoPL - Southwest Branch -> KenoPL - Uptown Branch -> KenoPL - Simmons Branch -> Kenosha County LS -> Gateway TC -> UW-Parkside -> KenoPL - Northside Branch -> Carthage College -> Racine PL -> Union Grove PL ->  Bridges LS
+
+	Route distance: 179.62 miles
+	Route time: 7 hours, 52 minutes
+	Route load: 135 containers
+	Number of stops: 21
+	Break: start time = 5 hours, 8 minutes; end time = 5 hours, 38 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Greenfield PL -> Oak Creek PL -> Lakeshores LS -> Waterford PL -> Rochester PL -> Burlington PL -> Lake Geneva PL -> East Troy PL -> Eagle PL -> Palmyra PL -> Whitewater PL -> UW-Whitewater -> Fort Atkinson PL -> Jefferson PL -> Lake Mills PL -> Waterloo PL -> Watertown PL -> Johnson Creek PL ->  Bridges LS
+
+	Route distance: 198.61 miles
+	Route time: 7 hours, 51 minutes
+	Route load: 102 containers
+	Number of stops: 18
+	Break: start time = 5 hours, 30 minutes; end time = 6 hours, 0 minute
+
+Route for vehicle 3:
+	Bridges LS -> Carroll University -> Muskego PL -> Hales Corners PL -> Greendale PL -> Alverno College -> MilwPL - Zablocki Branch -> MilwPL - Mitchell Street Branch -> MilwPL - Bay View Branch -> MilwPL - Tippecanoe Branch -> St. Francis PL -> Cudahy PL -> South Milwaukee PL -> St. Francis Seminary -> MSOE -> MIAD -> MilwPL - Milwaukee PL -> MCLL -> Marquette University -> MilwPL - Center Street Branch -> MilwPL - Atkinson Branch -> MilwPL - Martin Luther King Branch -> MilwPL - East Branch -> UW-Milwaukee -> Shorewood PL -> Whitefish Bay PL -> Cardinal Stritch University -> Glendale PL -> MilwPL - Villard Square Branch -> Brown Deer PL -> MilwPL - Good Hope Branch -> MilwPL - Capitol Branch -> Wauwatosa PL ->  Bridges LS
+
+	Route distance: 102.53 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 202 containers
+	Number of stops: 32
+	Break: start time = 5 hours, 49 minutes; end time = 6 hours, 19 minutes
+
+Route for vehicle 4:
+	Bridges LS -> UW-Waukesha -> Waukesha County TC -> Pewaukee PL -> Delafield PL -> Oconomowoc PL -> Hartland PL -> North Lake PL -> Sussex PL -> Menomonee Falls PL -> Butler PL -> Mount Mary University -> MilwPL - Washington Park Branch -> MCW -> Wisconsin Lutheran College -> Milwaukee Area TC -> West Allis PL -> Franklin PL -> Sacred Heart -> Big Bend PL -> Mukwonago PL -> New Berlin PL -> Elm Grove PL -> Brookfield PL -> Waukesha PL ->  Bridges LS
+
+	Route distance: 145.94 miles
+	Route time: 7 hours, 46 minutes
+	Route load: 199 containers
+	Number of stops: 24
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Total distance, all routes: 626.70 miles
+Total time, all routes: 1884 minutes
+Total time, all routes: 31 hours, 24 minutes
+
+------------------------
+
+Model ID: idl7_08_04_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Bridges LS -> New Berlin PL -> West Allis PL -> Milwaukee Area TC -> Wisconsin Lutheran College -> MCW -> Wauwatosa PL -> MilwPL - Capitol Branch -> Butler PL -> Menomonee Falls PL -> MilwPL - Good Hope Branch -> Brown Deer PL -> MilwPL - Villard Square Branch -> Glendale PL -> Cardinal Stritch University -> Whitefish Bay PL -> Shorewood PL -> UW-Milwaukee -> MilwPL - East Branch -> MSOE -> MIAD -> MilwPL - Milwaukee PL -> MCLL -> MilwPL - Martin Luther King Branch -> MilwPL - Atkinson Branch -> MilwPL - Center Street Branch -> MilwPL - Washington Park Branch -> Mount Mary University -> Elm Grove PL -> Brookfield PL ->  Bridges LS
+
+	Route distance: 92.95 miles
+	Route time: 7 hours, 21 minutes
+	Route load: 201 containers
+	Number of stops: 29
+	Break: start time = 5 hours, 14 minutes; end time = 5 hours, 44 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Marquette University -> MilwPL - Mitchell Street Branch -> MilwPL - Tippecanoe Branch -> Oak Creek PL -> South Milwaukee PL -> Cudahy PL -> St. Francis PL -> St. Francis Seminary -> MilwPL - Bay View Branch -> MilwPL - Zablocki Branch -> Alverno College -> Greenfield PL -> Greendale PL -> Franklin PL -> Sacred Heart -> Hales Corners PL -> Muskego PL -> Lakeshores LS -> Waterford PL -> Rochester PL -> Burlington PL -> Big Bend PL -> Waukesha PL ->  Bridges LS
+
+	Route distance: 111.92 miles
+	Route time: 6 hours, 36 minutes
+	Route load: 160 containers
+	Number of stops: 23
+	Break: start time = 4 hours, 42 minutes; end time = 5 hours, 12 minutes
+
+Route for vehicle 3:
+	Bridges LS -> Darien PL -> Sharon PL -> Walworth PL -> Salem PL -> UW-Parkside -> Racine PL -> Carthage College -> KenoPL - Northside Branch -> Gateway TC -> Kenosha County LS -> KenoPL - Simmons Branch -> KenoPL - Uptown Branch -> KenoPL - Southwest Branch -> Union Grove PL -> Carroll University ->  Bridges LS
+
+	Route distance: 188.34 miles
+	Route time: 7 hours, 21 minutes
+	Route load: 104 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 11 minutes; end time = 4 hours, 41 minutes
+
+Route for vehicle 4:
+	Bridges LS -> East Troy PL -> Elkhorn PL -> WI School for the Deaf -> Delavan PL -> Fontana PL -> Williams Bay PL -> Lake Geneva PL -> Genoa City PL -> Twin Lakes Branch -> Mukwonago PL -> Eagle PL -> Palmyra PL -> Whitewater PL -> UW-Whitewater -> Fort Atkinson PL -> Jefferson PL -> Johnson Creek PL ->  Bridges LS
+
+	Route distance: 184.85 miles
+	Route time: 7 hours, 21 minutes
+	Route load: 84 containers
+	Number of stops: 17
+	Break: start time = 4 hours, 46 minutes; end time = 5 hours, 16 minutes
+
+Route for vehicle 5:
+	Bridges LS -> UW-Waukesha -> Delafield PL -> Lake Mills PL -> Waterloo PL -> Watertown PL -> Oconomowoc PL -> North Lake PL -> Hartland PL -> Waukesha County TC -> Pewaukee PL -> Sussex PL ->  Bridges LS
+
+	Route distance: 119.06 miles
+	Route time: 4 hours, 18 minutes
+	Route load: 93 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 18 minutes; end time = 4 hours, 48 minutes
+
+Total distance, all routes: 697.12 miles
+Total time, all routes: 1980 minutes
+Total time, all routes: 33 hours, 0 minute
+
+------------------------
+
+Model ID: idl7_08_05_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Bridges LS -> Delafield PL -> North Lake PL -> Hartland PL -> Pewaukee PL -> Waukesha County TC -> Milwaukee Area TC -> West Allis PL -> Wisconsin Lutheran College -> MCW -> Wauwatosa PL -> MilwPL - Capitol Branch -> MilwPL - Atkinson Branch -> Whitefish Bay PL -> Shorewood PL -> UW-Milwaukee -> MilwPL - East Branch -> MSOE -> MIAD -> MilwPL - Milwaukee PL -> Marquette University -> MCLL -> MilwPL - Martin Luther King Branch -> MilwPL - Center Street Branch -> MilwPL - Washington Park Branch -> Mount Mary University -> Elm Grove PL -> Brookfield PL ->  Bridges LS
+
+	Route distance: 104.09 miles
+	Route time: 7 hours, 1 minute
+	Route load: 193 containers
+	Number of stops: 27
+	Break: start time = 5 hours, 16 minutes; end time = 5 hours, 46 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Whitewater PL -> UW-Whitewater -> Palmyra PL -> Eagle PL -> Mukwonago PL -> Waterford PL -> Rochester PL -> Lakeshores LS -> Big Bend PL -> Muskego PL -> Hales Corners PL -> Sacred Heart -> Franklin PL -> Greendale PL -> MilwPL - Tippecanoe Branch -> St. Francis PL -> St. Francis Seminary -> MilwPL - Bay View Branch -> MilwPL - Mitchell Street Branch -> MilwPL - Zablocki Branch -> Alverno College -> New Berlin PL ->  Bridges LS
+
+	Route distance: 132.49 miles
+	Route time: 7 hours, 7 minutes
+	Route load: 131 containers
+	Number of stops: 22
+	Break: start time = 5 hours, 48 minutes; end time = 6 hours, 18 minutes
+
+Route for vehicle 3:
+	Bridges LS -> Carroll University -> Waukesha PL -> UW-Waukesha -> Johnson Creek PL -> Jefferson PL -> Fort Atkinson PL -> Lake Mills PL -> Waterloo PL -> Watertown PL -> Oconomowoc PL -> Sussex PL -> Menomonee Falls PL -> MilwPL - Good Hope Branch -> Brown Deer PL -> Cardinal Stritch University -> Glendale PL -> MilwPL - Villard Square Branch -> Butler PL ->  Bridges LS
+
+	Route distance: 159.49 miles
+	Route time: 7 hours, 2 minutes
+	Route load: 124 containers
+	Number of stops: 18
+	Break: start time = 5 hours, 34 minutes; end time = 6 hours, 4 minutes
+
+Route for vehicle 4:
+	Bridges LS -> Sharon PL -> Walworth PL -> Fontana PL -> Williams Bay PL -> Lake Geneva PL -> Genoa City PL -> Twin Lakes Branch -> Salem PL -> KenoPL - Southwest Branch -> KenoPL - Uptown Branch -> KenoPL - Simmons Branch -> Kenosha County LS -> Gateway TC -> UW-Parkside -> KenoPL - Northside Branch -> Carthage College -> Racine PL ->  Bridges LS
+
+	Route distance: 176.61 miles
+	Route time: 7 hours, 3 minutes
+	Route load: 116 containers
+	Number of stops: 17
+	Break: start time = 4 hours, 52 minutes; end time = 5 hours, 22 minutes
+
+Route for vehicle 5:
+	Bridges LS -> East Troy PL -> Darien PL -> WI School for the Deaf -> Delavan PL -> Elkhorn PL -> Burlington PL -> Union Grove PL -> Oak Creek PL -> South Milwaukee PL -> Cudahy PL -> Greenfield PL ->  Bridges LS
+
+	Route distance: 135.60 miles
+	Route time: 4 hours, 40 minutes
+	Route load: 78 containers
+	Number of stops: 11
+	Break: start time = 4 hours, 40 minutes; end time = 5 hours, 10 minutes
+
+Total distance, all routes: 708.27 miles
+Total time, all routes: 1975 minutes
+Total time, all routes: 32 hours, 55 minutes
+
+------------------------
+
+Model ID: idl7_08_10_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Bridges LS -> Brookfield PL -> Elm Grove PL -> West Allis PL -> Williams Bay PL -> Fontana PL -> Walworth PL -> Sharon PL -> Fort Atkinson PL -> Lake Mills PL -> Waterloo PL -> Watertown PL -> Oconomowoc PL -> UW-Waukesha ->  Bridges LS
+
+	Route distance: 180.48 miles
+	Route time: 6 hours, 39 minutes
+	Route load: 97 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Lake Geneva PL -> Genoa City PL -> Twin Lakes Branch -> Salem PL -> KenoPL - Southwest Branch -> UW-Parkside -> KenoPL - Northside Branch -> Gateway TC -> KenoPL - Uptown Branch -> KenoPL - Simmons Branch -> Kenosha County LS -> Carthage College -> Racine PL -> Union Grove PL -> Burlington PL -> Carroll University ->  Bridges LS
+
+	Route distance: 154.45 miles
+	Route time: 6 hours, 40 minutes
+	Route load: 114 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 55 minutes; end time = 5 hours, 25 minutes
+
+Route for vehicle 3:
+	Bridges LS -> Marquette University -> MilwPL - Milwaukee PL -> MCLL -> MilwPL - Atkinson Branch -> MilwPL - Villard Square Branch -> Whitefish Bay PL -> Cardinal Stritch University -> Glendale PL -> Brown Deer PL -> MilwPL - Good Hope Branch -> MilwPL - Capitol Branch -> Mount Mary University -> Butler PL -> Menomonee Falls PL -> Sussex PL -> New Berlin PL -> Muskego PL -> Lakeshores LS -> Waterford PL -> Rochester PL -> Big Bend PL ->  Bridges LS
+
+	Route distance: 120.04 miles
+	Route time: 6 hours, 39 minutes
+	Route load: 146 containers
+	Number of stops: 21
+	Break: start time = 5 hours, 30 minutes; end time = 6 hours, 0 minute
+
+Route for vehicle 4:
+	Bridges LS -> Milwaukee Area TC -> Wisconsin Lutheran College -> MCW -> Wauwatosa PL -> MilwPL - Washington Park Branch -> MilwPL - Center Street Branch -> MilwPL - Martin Luther King Branch -> UW-Milwaukee -> Shorewood PL -> MilwPL - East Branch -> MSOE -> MIAD -> MilwPL - Mitchell Street Branch -> MilwPL - Bay View Branch -> St. Francis Seminary -> St. Francis PL -> Cudahy PL -> South Milwaukee PL -> Oak Creek PL -> MilwPL - Tippecanoe Branch -> MilwPL - Zablocki Branch -> Alverno College -> Greenfield PL -> Greendale PL -> Franklin PL -> Sacred Heart -> Hales Corners PL ->  Bridges LS
+
+	Route distance: 88.11 miles
+	Route time: 6 hours, 44 minutes
+	Route load: 157 containers
+	Number of stops: 27
+	Break: start time = 5 hours, 39 minutes; end time = 6 hours, 9 minutes
+
+Route for vehicle 5:
+	Bridges LS -> Waukesha County TC -> Pewaukee PL -> Hartland PL -> North Lake PL -> Delafield PL -> Johnson Creek PL -> Jefferson PL -> UW-Whitewater -> Whitewater PL -> Palmyra PL -> Eagle PL -> Mukwonago PL -> East Troy PL -> Elkhorn PL -> Delavan PL -> WI School for the Deaf -> Darien PL -> Waukesha PL ->  Bridges LS
+
+	Route distance: 165.38 miles
+	Route time: 6 hours, 40 minutes
+	Route load: 128 containers
+	Number of stops: 18
+	Break: start time = 4 hours, 50 minutes; end time = 5 hours, 20 minutes
+
+Total distance, all routes: 708.46 miles
+Total time, all routes: 2003 minutes
+Total time, all routes: 33 hours, 23 minutes
+
+------------------------
+
+Model ID: idl7_10_02_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Bridges LS -> Waterford PL -> UW-Parkside -> KenoPL - Northside Branch -> Carthage College -> Gateway TC -> Kenosha County LS -> KenoPL - Simmons Branch -> KenoPL - Uptown Branch -> KenoPL - Southwest Branch -> Salem PL -> Twin Lakes Branch -> Genoa City PL -> Lake Geneva PL -> Williams Bay PL -> Fontana PL -> Walworth PL -> Sharon PL -> Darien PL -> WI School for the Deaf -> Delavan PL -> Elkhorn PL -> Whitewater PL -> UW-Whitewater -> Fort Atkinson PL -> Jefferson PL -> Johnson Creek PL -> UW-Waukesha ->  Bridges LS
+
+	Route distance: 210.03 miles
+	Route time: 9 hours, 21 minutes
+	Route load: 140 containers
+	Number of stops: 27
+	Break: start time = 5 hours, 44 minutes; end time = 6 hours, 14 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Delafield PL -> Oconomowoc PL -> Watertown PL -> Waterloo PL -> Lake Mills PL -> Palmyra PL -> Eagle PL -> East Troy PL -> Greendale PL -> Franklin PL -> Oak Creek PL -> South Milwaukee PL -> Cudahy PL -> St. Francis Seminary -> St. Francis PL -> MilwPL - Tippecanoe Branch -> MilwPL - Bay View Branch -> MIAD -> MSOE -> MilwPL - East Branch -> UW-Milwaukee -> Shorewood PL -> Whitefish Bay PL -> Cardinal Stritch University -> Glendale PL -> MilwPL - Villard Square Branch -> MilwPL - Washington Park Branch ->  Bridges LS
+
+	Route distance: 200.20 miles
+	Route time: 9 hours, 21 minutes
+	Route load: 174 containers
+	Number of stops: 27
+	Break: start time = 4 hours, 23 minutes; end time = 4 hours, 53 minutes
+
+Route for vehicle 3:
+	Bridges LS -> Waukesha County TC -> Pewaukee PL -> Hartland PL -> North Lake PL -> Sussex PL -> Menomonee Falls PL -> Butler PL -> Mount Mary University -> Wauwatosa PL -> MilwPL - Capitol Branch -> MilwPL - Good Hope Branch -> Brown Deer PL -> MilwPL - Atkinson Branch -> MilwPL - Martin Luther King Branch -> MilwPL - Center Street Branch -> Marquette University -> MilwPL - Milwaukee PL -> MCLL -> MilwPL - Mitchell Street Branch -> MilwPL - Zablocki Branch -> Alverno College -> Greenfield PL -> West Allis PL -> Milwaukee Area TC -> Wisconsin Lutheran College -> MCW -> Elm Grove PL -> Brookfield PL ->  Bridges LS
+
+	Route distance: 103.49 miles
+	Route time: 7 hours, 26 minutes
+	Route load: 203 containers
+	Number of stops: 28
+	Break: start time = 4 hours, 28 minutes; end time = 4 hours, 58 minutes
+
+Route for vehicle 4:
+	Bridges LS -> Carroll University -> New Berlin PL -> Muskego PL -> Hales Corners PL -> Sacred Heart -> Racine PL -> Union Grove PL -> Burlington PL -> Rochester PL -> Lakeshores LS -> Mukwonago PL -> Big Bend PL -> Waukesha PL ->  Bridges LS
+
+	Route distance: 112.53 miles
+	Route time: 4 hours, 51 minutes
+	Route load: 121 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 51 minutes; end time = 5 hours, 21 minutes
+
+Total distance, all routes: 626.24 miles
+Total time, all routes: 1861 minutes
+Total time, all routes: 31 hours, 1 minute
+
+------------------------
+
+Model ID: idl7_10_04_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: christofides
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Bridges LS -> Brookfield PL -> Elm Grove PL -> Wisconsin Lutheran College -> MCW -> Wauwatosa PL -> MilwPL - Capitol Branch -> Mount Mary University -> Butler PL -> Menomonee Falls PL -> MilwPL - Good Hope Branch -> Brown Deer PL -> MilwPL - Villard Square Branch -> MilwPL - Washington Park Branch -> MilwPL - Zablocki Branch -> MilwPL - Center Street Branch -> MilwPL - Martin Luther King Branch -> MilwPL - Atkinson Branch -> Glendale PL -> Cardinal Stritch University -> Whitefish Bay PL -> Shorewood PL -> UW-Milwaukee -> MilwPL - East Branch -> MSOE -> MIAD -> MilwPL - Milwaukee PL -> MCLL -> Marquette University -> MilwPL - Mitchell Street Branch -> MilwPL - Bay View Branch -> St. Francis Seminary -> Cudahy PL -> MilwPL - Tippecanoe Branch -> Oak Creek PL -> Greenfield PL -> New Berlin PL ->  Bridges LS
+
+	Route distance: 129.30 miles
+	Route time: 9 hours, 20 minutes
+	Route load: 244 containers
+	Number of stops: 36
+	Break: start time = 5 hours, 48 minutes; end time = 6 hours, 18 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Franklin PL -> Sacred Heart -> Hales Corners PL -> Muskego PL -> Lakeshores LS -> Waterford PL -> Rochester PL -> Burlington PL -> Elkhorn PL -> Delavan PL -> WI School for the Deaf -> Darien PL -> Sharon PL -> Walworth PL -> Fontana PL -> Williams Bay PL -> Lake Geneva PL -> Gateway TC -> UW-Parkside -> KenoPL - Northside Branch -> Carthage College -> Racine PL -> South Milwaukee PL -> St. Francis PL -> Alverno College -> Greendale PL ->  Bridges LS
+
+	Route distance: 193.97 miles
+	Route time: 9 hours, 20 minutes
+	Route load: 169 containers
+	Number of stops: 26
+	Break: start time = 4 hours, 0 minute; end time = 4 hours, 30 minutes
+
+Route for vehicle 3:
+	Bridges LS -> Waukesha PL -> Carroll University -> Big Bend PL -> Union Grove PL -> KenoPL - Southwest Branch -> Kenosha County LS -> KenoPL - Simmons Branch -> KenoPL - Uptown Branch -> Salem PL -> Twin Lakes Branch -> Genoa City PL -> East Troy PL -> Mukwonago PL -> Eagle PL -> Palmyra PL -> Whitewater PL -> UW-Whitewater -> Fort Atkinson PL -> Jefferson PL -> Johnson Creek PL ->  Bridges LS
+
+	Route distance: 194.34 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 117 containers
+	Number of stops: 20
+	Break: start time = 5 hours, 15 minutes; end time = 5 hours, 45 minutes
+
+Route for vehicle 4:
+	Bridges LS -> UW-Waukesha -> Delafield PL -> Lake Mills PL -> Waterloo PL -> Watertown PL -> Oconomowoc PL -> North Lake PL -> Hartland PL -> Waukesha County TC -> Pewaukee PL -> Sussex PL -> Milwaukee Area TC -> West Allis PL ->  Bridges LS
+
+	Route distance: 142.70 miles
+	Route time: 5 hours, 6 minutes
+	Route load: 108 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 6 minutes; end time = 5 hours, 36 minutes
+
+Total distance, all routes: 660.32 miles
+Total time, all routes: 1898 minutes
+Total time, all routes: 31 hours, 38 minutes
+
+------------------------
+
+Model ID: idl7_10_05_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: parallel_cheapest_insertion
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Bridges LS -> UW-Waukesha -> Delafield PL -> Pewaukee PL -> Waukesha County TC -> Wisconsin Lutheran College -> MCW -> Wauwatosa PL -> MilwPL - Capitol Branch -> MilwPL - Villard Square Branch -> Whitefish Bay PL -> Shorewood PL -> UW-Milwaukee -> MilwPL - East Branch -> MSOE -> MIAD -> MilwPL - Bay View Branch -> St. Francis Seminary -> St. Francis PL -> MilwPL - Tippecanoe Branch -> Greendale PL -> Hales Corners PL -> Alverno College -> MilwPL - Zablocki Branch -> Marquette University -> MilwPL - Milwaukee PL -> MCLL -> MilwPL - Martin Luther King Branch -> MilwPL - Center Street Branch -> MilwPL - Washington Park Branch -> Mount Mary University -> Elm Grove PL -> Brookfield PL ->  Bridges LS
+
+	Route distance: 118.28 miles
+	Route time: 8 hours, 7 minutes
+	Route load: 208 containers
+	Number of stops: 32
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Waukesha PL -> East Troy PL -> Elkhorn PL -> Delavan PL -> WI School for the Deaf -> Darien PL -> Sharon PL -> Walworth PL -> Fontana PL -> Williams Bay PL -> Lake Geneva PL -> Genoa City PL -> Twin Lakes Branch -> Burlington PL -> Rochester PL -> Waterford PL -> Lakeshores LS -> Sacred Heart -> Franklin PL -> Oak Creek PL -> South Milwaukee PL -> Cudahy PL -> Greenfield PL -> New Berlin PL ->  Bridges LS
+
+	Route distance: 161.74 miles
+	Route time: 7 hours, 46 minutes
+	Route load: 166 containers
+	Number of stops: 24
+	Break: start time = 5 hours, 17 minutes; end time = 5 hours, 47 minutes
+
+Route for vehicle 3:
+	Bridges LS -> Mukwonago PL -> Eagle PL -> Palmyra PL -> Whitewater PL -> UW-Whitewater -> Fort Atkinson PL -> Jefferson PL -> Johnson Creek PL -> Lake Mills PL -> Waterloo PL -> Watertown PL -> Oconomowoc PL -> Hartland PL -> North Lake PL -> Sussex PL -> Menomonee Falls PL -> MilwPL - Good Hope Branch -> Brown Deer PL -> Cardinal Stritch University -> Glendale PL -> MilwPL - Atkinson Branch -> Butler PL ->  Bridges LS
+
+	Route distance: 176.90 miles
+	Route time: 8 hours, 15 minutes
+	Route load: 140 containers
+	Number of stops: 22
+	Break: start time = 4 hours, 56 minutes; end time = 5 hours, 26 minutes
+
+Route for vehicle 4:
+	Bridges LS -> Carroll University -> Big Bend PL -> Muskego PL -> Union Grove PL -> Salem PL -> KenoPL - Southwest Branch -> KenoPL - Uptown Branch -> KenoPL - Simmons Branch -> Kenosha County LS -> Gateway TC -> UW-Parkside -> KenoPL - Northside Branch -> Carthage College -> Racine PL -> MilwPL - Mitchell Street Branch -> West Allis PL -> Milwaukee Area TC ->  Bridges LS
+
+	Route distance: 132.14 miles
+	Route time: 5 hours, 54 minutes
+	Route load: 124 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 54 minutes; end time = 6 hours, 24 minutes
+
+Total distance, all routes: 589.07 miles
+Total time, all routes: 1803 minutes
+Total time, all routes: 30 hours, 3 minutes
+
+------------------------
+
+Model ID: idl7_10_10_05_000
+Ideal proposal, region 7
+
+Solution strategies:
+	First solution strategy: automatic
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 10.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 4
+
+Route for vehicle 1:
+	Bridges LS -> Elm Grove PL -> Mount Mary University -> MilwPL - Capitol Branch -> Brown Deer PL -> MilwPL - Good Hope Branch -> Menomonee Falls PL -> Sussex PL -> Pewaukee PL -> Waukesha County TC -> Oconomowoc PL -> Watertown PL -> Waterloo PL -> Lake Mills PL -> Fort Atkinson PL -> Darien PL -> Waukesha PL ->  Bridges LS
+
+	Route distance: 183.76 miles
+	Route time: 7 hours, 11 minutes
+	Route load: 134 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 55 minutes; end time = 5 hours, 25 minutes
+
+Route for vehicle 2:
+	Bridges LS -> Whitefish Bay PL -> Cardinal Stritch University -> Glendale PL -> MilwPL - Villard Square Branch -> Butler PL -> Brookfield PL -> Big Bend PL -> Lakeshores LS -> Waterford PL -> Rochester PL -> Burlington PL -> Union Grove PL -> UW-Parkside -> KenoPL - Northside Branch -> Gateway TC -> KenoPL - Southwest Branch -> KenoPL - Uptown Branch -> KenoPL - Simmons Branch -> Kenosha County LS -> Carthage College -> Racine PL -> South Milwaukee PL -> Oak Creek PL -> Greenfield PL ->  Bridges LS
+
+	Route distance: 171.92 miles
+	Route time: 8 hours, 30 minutes
+	Route load: 175 containers
+	Number of stops: 24
+	Break: start time = 5 hours, 24 minutes; end time = 5 hours, 54 minutes
+
+Route for vehicle 3:
+	Bridges LS -> UW-Waukesha -> Wisconsin Lutheran College -> MCW -> Wauwatosa PL -> MilwPL - Washington Park Branch -> MilwPL - Atkinson Branch -> MilwPL - Center Street Branch -> MilwPL - Martin Luther King Branch -> UW-Milwaukee -> Shorewood PL -> MilwPL - East Branch -> MSOE -> MIAD -> MilwPL - Milwaukee PL -> MCLL -> Marquette University -> MilwPL - Mitchell Street Branch -> MilwPL - Bay View Branch -> St. Francis Seminary -> Cudahy PL -> St. Francis PL -> MilwPL - Tippecanoe Branch -> Greendale PL -> Hales Corners PL -> Muskego PL -> Sacred Heart -> Franklin PL -> Alverno College -> MilwPL - Zablocki Branch -> Milwaukee Area TC -> West Allis PL -> New Berlin PL -> Carroll University ->  Bridges LS
+
+	Route distance: 103.86 miles
+	Route time: 8 hours, 2 minutes
+	Route load: 205 containers
+	Number of stops: 33
+	Break: start time = 5 hours, 7 minutes; end time = 5 hours, 37 minutes
+
+Route for vehicle 4:
+	Bridges LS -> Hartland PL -> North Lake PL -> Delafield PL -> Johnson Creek PL -> Jefferson PL -> UW-Whitewater -> Whitewater PL -> Palmyra PL -> Eagle PL -> Mukwonago PL -> East Troy PL -> Elkhorn PL -> Delavan PL -> WI School for the Deaf -> Sharon PL -> Walworth PL -> Fontana PL -> Williams Bay PL -> Lake Geneva PL -> Genoa City PL -> Twin Lakes Branch -> Salem PL ->  Bridges LS
+
+	Route distance: 215.15 miles
+	Route time: 8 hours, 33 minutes
+	Route load: 124 containers
+	Number of stops: 22
+	Break: start time = 5 hours, 51 minutes; end time = 6 hours, 21 minutes
+
+Total distance, all routes: 674.69 miles
+Total time, all routes: 1938 minutes
+Total time, all routes: 32 hours, 18 minutes
+
+------------------------
+
