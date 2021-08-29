@@ -171,7 +171,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
             # add Google Maps marker for current stop
             gmap.marker(float(stop_data_dict['latitude'][wp]), float(stop_data_dict['longitude'][wp]),
                         color=route_colors[n],
-                        label=list(string.ascii_uppercase)[m],
+                        label=list(string.ascii_uppercase + string.ascii_lowercase)[m],
                         label_color='black' if route_colors[n] in dark_text else 'white',
                         title=stop_data_dict['stop_short_name'][wp],
                         info_window=write_infowindow_text(stop_data_dict, wp, m, n)
