@@ -1,0 +1,1885 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>str5_08_05_05_060 Route Map</title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyARPwnKPJU-N4NvcnSEWYfPXJqBfbq2EdQ"></script>
+<script type="text/javascript">
+    async function initialize() {
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 0,
+            center: new google.maps.LatLng(43.899726, -91.099112)
+        });
+
+        var prev_infowindow = false;
+
+        var map_bounds = new google.maps.LatLngBounds();
+
+        var marker_icon_FFFFFF = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAAClklEQVRIia3VsUsbYRjH8e9FLkmhJ06lTbno4CCUaglUOpS4dHCpo4YO+QsE6dpRoSiiKF0KrnYoXUKkg6bYBG4LHiRQpIVAFZq2EErE2iZXek8H78TY5HLm/C0v3N3zufd97733VfDOHeAhcBsIATbwBTCAD52KlA7XHwHPgfvxeJzR0VEGBgao1+uUy2UODw8BisAz4F2XjqEAi4qi2KlUSkzTFNu25WJM05RUKiWKotjAokfnUIA1TdNka2vrP6hdstmsaJomwFoneC4ajYphGL5AN4ZhSDQaFWDuIhgDTlZWVi4FulldXRXgxHHOsjA4OCiWZfWEWpYlQ0NDAizA6TIBmEqn06iq2u1Dto2qqqTTaYApF+0DRiYmJnoC3SSTSYARoC8EqEA4Ho8HQp36MKC6w0dEAqHn60OABVgHBweBUKfeAiz3f94vFAqBUKd+3/EAmNd1XZrNZs9LStd1AebPv+gWcLy0tNQTury8LMCx47RkNhwOSz6fvxRYKBQkEokIMNtpatY1TZNisegL3Nvbk/7+fgHWveZbAV7FYjGpVqueYK1Wc+fxNR5bn5trQHlycrLtXupmZmZGgI/A9W6gm3vAn83NzbZgLpcTQICkX9DNC13XpdFotIC2bcv4+LgAby4LAtwAfm1sbLSgu7u7wukCv9sLCvBybGysBZ2enhZ8HHZeSQBSKpVERKRer7tHxxOvopDXTcAEPmUyGQC2t7dpNBq/gWwQFOBtLpcDYGdnB+A98NNHnWceRyIRaTabMjw8LMDToCDATUDy+bwoiiLAg24Ffob/DahlMhlE5C9QCtjJsxQTiYQAFT8P++kpQK1SqQD4OnP8oj+Ojo7gdCO+MvS701avEv3qtJ/9PPwP0ZvxC1UctAkAAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_0 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.899726, -91.099112),
+            title: "Region 5 Hub",
+            label: {
+                text: "*",
+                color: "black",
+                fontSize: "20px",
+                fontWeight: "bold"
+            },
+            icon: marker_icon_FFFFFF,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.899726, -91.099112));
+
+        var info_window_0 = new google.maps.InfoWindow({
+            content: '<strong>Starter proposal, region 5 hub</strong><br><br>Location:<br>Winding Rivers Library System<br>980WHWY 16nannan<br>West Salem, WI 54669'
+        });
+        
+        info_marker_0.addListener('click', function() {
+            info_window_0.open(map, info_marker_0);
+        });
+        
+        google.maps.event.addListener(info_marker_0, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_0.open(map, info_marker_0);
+            prev_infowindow = info_window_0
+        
+        });
+
+        var marker_icon_556B2F = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAADBElEQVRIia2WTU8TURSGn05plZYxxViUIkKiCMaoMS40xLhyowt+ghtxwcoFiYk7owsTNyZuMC6McWlc+BEXJgrxIzFCghI0IAjS1raUlkKdaQvTdq6LzoRSBhgK7+Zm7rnvM/fec85kHGys48B5oAmQAB2IAJ+Bn5t41+giMAgIj+wWja17REt7vWhs3SM8slsAwohftDI7LJ7vAjea23yOjtMN+Py1a0yLiRzj3+YITy4K4B5w03gRAM4K4P0al9TbeanVcezMfnZ7XZbH2O11cfCwj/oGjyM28++8rgsf8NYKet3pdNy60HWY/c3yOreyWrJvF/5AHeGJhXNCsAB8LYcGgJcnOwOu5jafLaApj+zG6ZKIh5QLwBNAkYxYj0d2e46c3LcloKkjJ/bhld0eoAdKZQLQ1dpejyRV5s2eJMlBS0c9QJcJdQId/qa6qoCm/IE6gA7AKQEuwO2ps860XRl+N+Ayj79SZFWq3C8BGqBlFW1bUMOvAZrZz2OJaGZbUMM/Bujm8V8Fx1PoxeouQdcFwfEUwCtYKam+rJpXJ0cSVUEnR5Jk1bwK9MFKR6mAkohlLvsDXryy2zYwEc0w1B9CCHqB/nIowKAQ7P07lT57oFmmdp2PSbkWEjk+vZ6mWNAfALfNeWfFure6LtpiQeXEoaM+alyV4RVpSwU+vJhiOVd4BnSXx6SKtQLozmXyo0PvwxvucvhjhKyanwCuUlHmlVCAHHBlNqQUQhMLlsB4WCE8uQhwjVI+VskKCvAdeDj6JWZZZj++zgI8Bz5amdeDAtzJqvlc8Nfq3c5FVFLxrKAsMVuBzgFPf48mV01O/5iHUumMVgMFeLSYzJGeXwIgrxWJ/kkDPN7ItBl0GJiITKcBmA0pFIsih9GO1UIB3sTDClDKOjCARca3Ch1IzWXRi4JEJAPwbjODHeiQXhTMxzOo6WWALzY8tpRoO+UXQAFY+8tSITs7BZhJRlWAIKWO2xFoUk1rJnRT2YWm8loRQNlJaNwYozsJjRnjjJ3F/wFWmB7N+YcapgAAAABJRU5ErkJggg==",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_1 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.876625, -91.229333),
+            title: "LaxCo - Onalaska PL",
+            label: {
+                text: "A",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.876625, -91.229333));
+
+        var info_window_1 = new google.maps.InfoWindow({
+            content: '<strong>Onalaska Branch</strong><br>741 Oak Ave S<br>Onalaska, WI 54650<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #1<br><br>Average drop-off: 8<br>Average pick-up: 10'
+        });
+        
+        info_marker_1.addListener('click', function() {
+            info_window_1.open(map, info_marker_1);
+        });
+        
+        google.maps.event.addListener(info_marker_1, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_1.open(map, info_marker_1);
+            prev_infowindow = info_window_1
+        
+        });
+
+        var info_marker_2 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.865035, -91.269359),
+            title: "LaxCo - Campbell Branch",
+            label: {
+                text: "B",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.865035, -91.269359));
+
+        var info_window_2 = new google.maps.InfoWindow({
+            content: '<strong>Campbell Branch</strong><br>2548 Lakeshore Dr<br>La Crosse, WI 54603<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #2<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_2.addListener('click', function() {
+            info_window_2.open(map, info_marker_2);
+        });
+        
+        google.maps.event.addListener(info_marker_2, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_2.open(map, info_marker_2);
+            prev_infowindow = info_window_2
+        
+        });
+
+        var info_marker_3 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.846243, -91.240717),
+            title: "LaxPL - North Community Branch",
+            label: {
+                text: "C",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.846243, -91.240717));
+
+        var info_window_3 = new google.maps.InfoWindow({
+            content: '<strong>North Community Branch</strong><br>1552 Kane St<br>La Crosse, WI 54603<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #3<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_3.addListener('click', function() {
+            info_window_3.open(map, info_marker_3);
+        });
+        
+        google.maps.event.addListener(info_marker_3, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_3.open(map, info_marker_3);
+            prev_infowindow = info_window_3
+        
+        });
+
+        var info_marker_4 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.815657, -91.231826),
+            title: "UW-La Crosse",
+            label: {
+                text: "D",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.815657, -91.231826));
+
+        var info_window_4 = new google.maps.InfoWindow({
+            content: '<strong>UW-La Crosse</strong><br>1631 Pine St<br>La Crosse, WI 54601<br><br>Stop type: UW-System campus library<br><br>Route: #1<br>Route order: stop #4<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_4.addListener('click', function() {
+            info_window_4.open(map, info_marker_4);
+        });
+        
+        google.maps.event.addListener(info_marker_4, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_4.open(map, info_marker_4);
+            prev_infowindow = info_window_4
+        
+        });
+
+        var info_marker_5 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.815363, -91.246031),
+            title: "Western TC",
+            label: {
+                text: "E",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.815363, -91.246031));
+
+        var info_window_5 = new google.maps.InfoWindow({
+            content: '<strong>Western Technical College</strong><br>400 7th St N<br>La Crosse, WI 54601<br><br>Stop type: WI Technical College library<br><br>Route: #1<br>Route order: stop #5<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_5.addListener('click', function() {
+            info_window_5.open(map, info_marker_5);
+        });
+        
+        google.maps.event.addListener(info_marker_5, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_5.open(map, info_marker_5);
+            prev_infowindow = info_window_5
+        
+        });
+
+        var info_marker_6 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.811215, -91.244662),
+            title: "LaxPL - La Crosse PL",
+            label: {
+                text: "F",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.811215, -91.244662));
+
+        var info_window_6 = new google.maps.InfoWindow({
+            content: '<strong>La Crosse Public Library</strong><br>800 Main St<br>La Crosse, WI 54601<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #6<br><br>Average drop-off: 17<br>Average pick-up: 16'
+        });
+        
+        info_marker_6.addListener('click', function() {
+            info_window_6.open(map, info_marker_6);
+        });
+        
+        google.maps.event.addListener(info_marker_6, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_6.open(map, info_marker_6);
+            prev_infowindow = info_window_6
+        
+        });
+
+        var info_marker_7 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.802812, -91.244062),
+            title: "Viterbo University",
+            label: {
+                text: "G",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.802812, -91.244062));
+
+        var info_window_7 = new google.maps.InfoWindow({
+            content: '<strong>Viterbo University</strong><br>900 Viterbo Dr<br>La Crosse, WI 54601<br><br>Stop type: Academic library (private)<br><br>Route: #1<br>Route order: stop #7<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_7.addListener('click', function() {
+            info_window_7.open(map, info_marker_7);
+        });
+        
+        google.maps.event.addListener(info_marker_7, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_7.open(map, info_marker_7);
+            prev_infowindow = info_window_7
+        
+        });
+
+        var info_marker_8 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.797455, -91.232038),
+            title: "LaxPL - South Community Branch",
+            label: {
+                text: "H",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.797455, -91.232038));
+
+        var info_window_8 = new google.maps.InfoWindow({
+            content: '<strong>South Community Branch</strong><br>1307 16th St S<br>La Crosse, WI 54601<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #8<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_8.addListener('click', function() {
+            info_window_8.open(map, info_marker_8);
+        });
+        
+        google.maps.event.addListener(info_marker_8, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_8.open(map, info_marker_8);
+            prev_infowindow = info_window_8
+        
+        });
+
+        var info_marker_9 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.081906, -91.349354),
+            title: "Galesville PL",
+            label: {
+                text: "I",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.081906, -91.349354));
+
+        var info_window_9 = new google.maps.InfoWindow({
+            content: '<strong>Galesville Public Library</strong><br>16787 S Main St<br>Galesville, WI 54630<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #9<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_9.addListener('click', function() {
+            info_window_9.open(map, info_marker_9);
+        });
+        
+        google.maps.event.addListener(info_marker_9, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_9.open(map, info_marker_9);
+            prev_infowindow = info_window_9
+        
+        });
+
+        var info_marker_10 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.191563, -91.778312),
+            title: "Cochrane-Fountain City SD",
+            label: {
+                text: "J",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.191563, -91.778312));
+
+        var info_window_10 = new google.maps.InfoWindow({
+            content: '<strong>Cochrane - Fountain City School District</strong><br>S2770 State Road 35<br>Fountain City, WI 54629<br><br>Stop type: School library<br><br>Route: #1<br>Route order: stop #10<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_10.addListener('click', function() {
+            info_window_10.open(map, info_marker_10);
+        });
+        
+        google.maps.event.addListener(info_marker_10, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_10.open(map, info_marker_10);
+            prev_infowindow = info_window_10
+        
+        });
+
+        var info_marker_11 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.324842, -91.917716),
+            title: "Alma PL",
+            label: {
+                text: "K",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.324842, -91.917716));
+
+        var info_window_11 = new google.maps.InfoWindow({
+            content: '<strong>Alma Public Library</strong><br>312 N Main St<br>Alma, WI 54610<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #11<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_11.addListener('click', function() {
+            info_window_11.open(map, info_marker_11);
+        });
+        
+        google.maps.event.addListener(info_marker_11, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_11.open(map, info_marker_11);
+            prev_infowindow = info_window_11
+        
+        });
+
+        var info_marker_12 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.004689, -91.431729),
+            title: "Trempealeau PL",
+            label: {
+                text: "L",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.004689, -91.431729));
+
+        var info_window_12 = new google.maps.InfoWindow({
+            content: '<strong>Shirley M. Wright Memorial Library</strong><br>11455 Fremont St<br>Trempealeau, WI 54661<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #12<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_12.addListener('click', function() {
+            info_window_12.open(map, info_marker_12);
+        });
+        
+        google.maps.event.addListener(info_marker_12, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_12.open(map, info_marker_12);
+            prev_infowindow = info_window_12
+        
+        });
+
+        var info_marker_13 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.972260, -91.277862),
+            title: "Holmen MS/HS",
+            label: {
+                text: "M",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.972260, -91.277862));
+
+        var info_window_13 = new google.maps.InfoWindow({
+            content: '<strong>Holmen Middle / High School</strong><br>1001 McHugh Rd<br>Holmen, WI 54636<br><br>Stop type: School library<br><br>Route: #1<br>Route order: stop #13<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_13.addListener('click', function() {
+            info_window_13.open(map, info_marker_13);
+        });
+        
+        google.maps.event.addListener(info_marker_13, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_13.open(map, info_marker_13);
+            prev_infowindow = info_window_13
+        
+        });
+
+        var info_marker_14 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.960728, -91.257854),
+            title: "LaxCo - Holmen PL",
+            label: {
+                text: "N",
+                color: "white",
+            },
+            icon: marker_icon_556B2F,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.960728, -91.257854));
+
+        var info_window_14 = new google.maps.InfoWindow({
+            content: '<strong>Holmen Area Branch</strong><br>121 W Legion St<br>Holmen, WI 54636<br><br>Stop type: Public library<br><br>Route: #1<br>Route order: stop #14<br><br>Average drop-off: 5<br>Average pick-up: 7'
+        });
+        
+        info_marker_14.addListener('click', function() {
+            info_window_14.open(map, info_marker_14);
+        });
+        
+        google.maps.event.addListener(info_marker_14, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_14.open(map, info_marker_14);
+            prev_infowindow = info_window_14
+        
+        });
+
+        var marker_icon_FF4500 = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAACtElEQVRIia3VTWhcVRjG8d9MnGba4iKWShJh7EYsahetQiNIREgpSHFrqBLwa1G01OJK3IirurIVoQU3EiSgKGhLwdbSanChVaJSQ6VUaDva1NRJYhOS6XQyp4t7r52MmY98PHA55557nj/vy3nfc1Ma62E8gfuQRgV/4TuMNvH+T304i5DLCrs2Cs93RWMuKyDE3/tagaVwIEWlv1MY6REqO4RQ84z0CP2dQiqK/EDsWwCpnr939132DT3Cro3NIzh2ned+Y7rsEPbHGWir2rMvm/b2yW30bWglKR5cT28HQ9f0lINJ/FAN7caX7z4g82xna8BEuSzr2zhR0IuPMJ2Ov+25P2vd3tzSgIley7FprXXYQ1Qm8MxAN5lUfWMjZVIMdEWcBNqGzU92LA+YqDfyb0ZbGhmsyWVXBo39a5BJ0o9qYQWq9qdRQuny3Mqgsb+EUtLP57+dXBk09p9HJUn/6OAYpcrygLcCg2MRhzsldThfNHPwyvKgh66QL5rBYe501Aymh6c83dvBprWtA4cneWGU+eANnK6Gwtn54J7Px23fsYHu9ubAkRvs/JnZee/jnWS9todS+Li73e6fttPVAFy4xdbvyRd9in5VVZWu2Rvw8tWbzr042rh2X/2dfNEFvKRmay0U5jDwVUF5aGxx4KkJPrkGXhGdxwItBoVfcOTNi9ysKbOAty6CzzBcx19X92L2w4cW/kpOPyqIGmZLPWO9SGEcgx/kFy4e+RNR6ZxbapSJtiH8+ngU5dRTQjYtYHcjU6NIYQQXvhiPXk4UKFbMidtxuVA4/nUhmpyMxjMWOfGlQs/8eCO6bOKb6FQLnqbqRPjmMSEVVVTPakDh+us5AWU0vW5aSR8uDU+By6KOWxXoP3/M/gdtqlahE/+WwfRqQv+Ox6urCU3uq0utbL4N71HnluCin8UAAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_15 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.702199, -91.013192),
+            title: "Coon Valley PL",
+            label: {
+                text: "A",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.702199, -91.013192));
+
+        var info_window_15 = new google.maps.InfoWindow({
+            content: '<strong>Knutson Memorial Library</strong><br>500 Central Ave<br>Coon Valley, WI 54623<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #1<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_15.addListener('click', function() {
+            info_window_15.open(map, info_marker_15);
+        });
+        
+        google.maps.event.addListener(info_marker_15, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_15.open(map, info_marker_15);
+            prev_infowindow = info_window_15
+        
+        });
+
+        var info_marker_16 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.556919, -90.902606),
+            title: "Viroqua SD",
+            label: {
+                text: "B",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.556919, -90.902606));
+
+        var info_window_16 = new google.maps.InfoWindow({
+            content: '<strong>Viroqua School District</strong><br>115 N Education Ave<br>Viroqua, WI 54665<br><br>Stop type: School library<br><br>Route: #2<br>Route order: stop #2<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_16.addListener('click', function() {
+            info_window_16.open(map, info_marker_16);
+        });
+        
+        google.maps.event.addListener(info_marker_16, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_16.open(map, info_marker_16);
+            prev_infowindow = info_window_16
+        
+        });
+
+        var info_marker_17 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.555063, -90.890234),
+            title: "Viroqua PL",
+            label: {
+                text: "C",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.555063, -90.890234));
+
+        var info_window_17 = new google.maps.InfoWindow({
+            content: '<strong>McIntosh Memorial Library</strong><br>205 S Rock Ave<br>Viroqua, WI 54665<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #3<br><br>Average drop-off: 7<br>Average pick-up: 7'
+        });
+        
+        info_marker_17.addListener('click', function() {
+            info_window_17.open(map, info_marker_17);
+        });
+        
+        google.maps.event.addListener(info_marker_17, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_17.open(map, info_marker_17);
+            prev_infowindow = info_window_17
+        
+        });
+
+        var info_marker_18 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.654909, -90.856753),
+            title: "Westby PL",
+            label: {
+                text: "D",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.654909, -90.856753));
+
+        var info_window_18 = new google.maps.InfoWindow({
+            content: '<strong>Bekkum Memorial Public Library</strong><br>206 N Main St<br>Westby, WI 54667<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #4<br><br>Average drop-off: 3<br>Average pick-up: 4'
+        });
+        
+        info_marker_18.addListener('click', function() {
+            info_window_18.open(map, info_marker_18);
+        });
+        
+        google.maps.event.addListener(info_marker_18, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_18.open(map, info_marker_18);
+            prev_infowindow = info_window_18
+        
+        });
+
+        var info_marker_19 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.744509, -90.779375),
+            title: "Cashton PL",
+            label: {
+                text: "E",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.744509, -90.779375));
+
+        var info_window_19 = new google.maps.InfoWindow({
+            content: '<strong>Cashton Memorial Library</strong><br>720 Broadway St<br>Cashton, WI 54619<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #5<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_19.addListener('click', function() {
+            info_window_19.open(map, info_marker_19);
+        });
+        
+        google.maps.event.addListener(info_marker_19, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_19.open(map, info_marker_19);
+            prev_infowindow = info_window_19
+        
+        });
+
+        var info_marker_20 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.833200, -90.622008),
+            title: "Norwalk PL",
+            label: {
+                text: "F",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.833200, -90.622008));
+
+        var info_window_20 = new google.maps.InfoWindow({
+            content: '<strong>Norwalk Public Library</strong><br>101 Railroad St<br>Norwalk, WI 54648<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #6<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_20.addListener('click', function() {
+            info_window_20.open(map, info_marker_20);
+        });
+        
+        google.maps.event.addListener(info_marker_20, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_20.open(map, info_marker_20);
+            prev_infowindow = info_window_20
+        
+        });
+
+        var info_marker_21 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.813694, -90.525009),
+            title: "Wilton PL",
+            label: {
+                text: "G",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.813694, -90.525009));
+
+        var info_window_21 = new google.maps.InfoWindow({
+            content: '<strong>Wilton Public Library</strong><br>400 East St<br>Wilton, WI 54670<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #7<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_21.addListener('click', function() {
+            info_window_21.open(map, info_marker_21);
+        });
+        
+        google.maps.event.addListener(info_marker_21, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_21.open(map, info_marker_21);
+            prev_infowindow = info_window_21
+        
+        });
+
+        var info_marker_22 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.792587, -90.369116),
+            title: "Kendall PL",
+            label: {
+                text: "H",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.792587, -90.369116));
+
+        var info_window_22 = new google.maps.InfoWindow({
+            content: '<strong>Kendall Public Library</strong><br>110 E South Railroad St<br>Kendall, WI 54638<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #8<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_22.addListener('click', function() {
+            info_window_22.open(map, info_marker_22);
+        });
+        
+        google.maps.event.addListener(info_marker_22, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_22.open(map, info_marker_22);
+            prev_infowindow = info_window_22
+        
+        });
+
+        var info_marker_23 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.741054, -90.272385),
+            title: "Elroy PL",
+            label: {
+                text: "I",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.741054, -90.272385));
+
+        var info_window_23 = new google.maps.InfoWindow({
+            content: '<strong>Elroy Public Library</strong><br>501 Second Main St<br>Elroy, WI 53929<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #9<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_23.addListener('click', function() {
+            info_window_23.open(map, info_marker_23);
+        });
+        
+        google.maps.event.addListener(info_marker_23, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_23.open(map, info_marker_23);
+            prev_infowindow = info_window_23
+        
+        });
+
+        var info_marker_24 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.797919, -90.077086),
+            title: "Mauston PL",
+            label: {
+                text: "J",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.797919, -90.077086));
+
+        var info_window_24 = new google.maps.InfoWindow({
+            content: '<strong>Hatch Public Library</strong><br>111 W State St<br>Mauston, WI 53948<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #10<br><br>Average drop-off: 4<br>Average pick-up: 5'
+        });
+        
+        info_marker_24.addListener('click', function() {
+            info_window_24.open(map, info_marker_24);
+        });
+        
+        google.maps.event.addListener(info_marker_24, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_24.open(map, info_marker_24);
+            prev_infowindow = info_window_24
+        
+        });
+
+        var info_marker_25 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.021784, -90.079750),
+            title: "Necedah PL",
+            label: {
+                text: "K",
+                color: "white",
+            },
+            icon: marker_icon_FF4500,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.021784, -90.079750));
+
+        var info_window_25 = new google.maps.InfoWindow({
+            content: '<strong>Necedah Community-Siegler Memorial Library</strong><br>217 Oak Grove Dr<br>Necedah, WI 54646<br><br>Stop type: Public library<br><br>Route: #2<br>Route order: stop #11<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_25.addListener('click', function() {
+            info_window_25.open(map, info_marker_25);
+        });
+        
+        google.maps.event.addListener(info_marker_25, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_25.open(map, info_marker_25);
+            prev_infowindow = info_window_25
+        
+        });
+
+        var marker_icon_FF0000 = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAACBklEQVRIia3VzUtUURgH4GdG/AiyZZShtWgXUbSIFtGqRYtqWRLhXyBYf0K6MaJQ2gRtayHtijYpleHKSCgIcRHoIiOSKEzLKea0OOeqTfPlzPzg5Qwz9zz3nXPvPTeneo7gNA4gjyI+Ygbva8z9L2cxi9BHOE+4msY+gliz6biayWE0R7GfMEcoEkJJzRH6CbnY+WiaVxEc6yY8KQOVq8eE7tj1WCV4qIswUyeY1QyhK8JDpWAP1m7vEMzqTkTXkrOZkYOEQoNogXAowiPE2wQuDqC9nktZJu0YSE72XRs2phrsMqup2OkG2vLpRB19DXaZJc3vQHv294Um0e3z8yigsNQkmuYXUMie5/npJtE0fz55YLiXsNHELdUbV2B4+4n2Y/Vmg+itCK4m558MdhBe7hCcJnRGdLDS0ox3E17XCb4h7IngeLX1zuFhD2G5BriytY4Tqmx9WXbh3Tnl99KsLkdwAbtrgVmO4/eDCuCkzd3/TL1glru9hF8lYJFwMoKPdgrCXqzfL0GfR7CIo42gcO9YCXopolONgnAC4W0Cv9l8dVxpBoWFGwmdiOC6Glc8X+3HlKeT6cOzOLzAjyaaBBc602ZzOHZ6vVkQ9kl7Qi6ip1qBwpdrEfwjPnFVU8+awuKrOC7hZ6vQlQ9baM3Ui379HsfVVqKf07jcSvRTGhfrOfgvIP3ECS77BDoAAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_26 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.074437, -91.020313),
+            title: "Melrose-Mindoro SD",
+            label: {
+                text: "A",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.074437, -91.020313));
+
+        var info_window_26 = new google.maps.InfoWindow({
+            content: '<strong>Melrose-Mindoro School District</strong><br>N181 State Road 108<br>Melrose, WI 54642<br><br>Stop type: School library<br><br>Route: #3<br>Route order: stop #1<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_26.addListener('click', function() {
+            info_window_26.open(map, info_marker_26);
+        });
+        
+        google.maps.event.addListener(info_marker_26, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_26.open(map, info_marker_26);
+            prev_infowindow = info_window_26
+        
+        });
+
+        var info_marker_27 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.167687, -91.267062),
+            title: "Ettrick PL",
+            label: {
+                text: "B",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.167687, -91.267062));
+
+        var info_window_27 = new google.maps.InfoWindow({
+            content: '<strong>Ettrick Public Library</strong><br>15570 School St<br>Ettrick, WI 54627<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #2<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_27.addListener('click', function() {
+            info_window_27.open(map, info_marker_27);
+        });
+        
+        google.maps.event.addListener(info_marker_27, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_27.open(map, info_marker_27);
+            prev_infowindow = info_window_27
+        
+        });
+
+        var info_marker_28 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.293987, -91.233503),
+            title: "Blair PL",
+            label: {
+                text: "C",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.293987, -91.233503));
+
+        var info_window_28 = new google.maps.InfoWindow({
+            content: '<strong>Blair-Preston Public Library</strong><br>122 S Urberg Ave<br>Blair, WI 54616<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #3<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_28.addListener('click', function() {
+            info_window_28.open(map, info_marker_28);
+        });
+        
+        google.maps.event.addListener(info_marker_28, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_28.open(map, info_marker_28);
+            prev_infowindow = info_window_28
+        
+        });
+
+        var info_marker_29 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.321358, -91.120388),
+            title: "Taylor PL",
+            label: {
+                text: "D",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.321358, -91.120388));
+
+        var info_window_29 = new google.maps.InfoWindow({
+            content: '<strong>Taylor Memorial Library</strong><br>420 2nd St<br>Taylor, WI 54659<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #4<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_29.addListener('click', function() {
+            info_window_29.open(map, info_marker_29);
+        });
+        
+        google.maps.event.addListener(info_marker_29, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_29.open(map, info_marker_29);
+            prev_infowindow = info_window_29
+        
+        });
+
+        var info_marker_30 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.293660, -90.850462),
+            title: "Black River Falls PL",
+            label: {
+                text: "E",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.293660, -90.850462));
+
+        var info_window_30 = new google.maps.InfoWindow({
+            content: '<strong>Black River Falls Public Library</strong><br>222 Fillmore St<br>Black River Falls, WI 54615<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #5<br><br>Average drop-off: 4<br>Average pick-up: 4'
+        });
+        
+        info_marker_30.addListener('click', function() {
+            info_window_30.open(map, info_marker_30);
+        });
+        
+        google.maps.event.addListener(info_marker_30, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_30.open(map, info_marker_30);
+            prev_infowindow = info_window_30
+        
+        });
+
+        var info_marker_31 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.877087, -90.167093),
+            title: "New Lisbon PL",
+            label: {
+                text: "F",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.877087, -90.167093));
+
+        var info_window_31 = new google.maps.InfoWindow({
+            content: '<strong>New Lisbon Memorial Library</strong><br>115 W Park St<br>New Lisbon, WI 53950<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #6<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_31.addListener('click', function() {
+            info_window_31.open(map, info_marker_31);
+        });
+        
+        google.maps.event.addListener(info_marker_31, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_31.open(map, info_marker_31);
+            prev_infowindow = info_window_31
+        
+        });
+
+        var info_marker_32 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.881051, -90.131584),
+            title: "New Lisbon CI",
+            label: {
+                text: "G",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.881051, -90.131584));
+
+        var info_window_32 = new google.maps.InfoWindow({
+            content: '<strong>New Lisbon Correctional Institute</strong><br>2000 Progress Rd<br>New Lisbon, WI 53950<br><br>Stop type: WI Government<br><br>Route: #3<br>Route order: stop #7<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_32.addListener('click', function() {
+            info_window_32.open(map, info_marker_32);
+        });
+        
+        google.maps.event.addListener(info_marker_32, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_32.open(map, info_marker_32);
+            prev_infowindow = info_window_32
+        
+        });
+
+        var info_marker_33 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.979842, -90.504226),
+            title: "Tomah PL",
+            label: {
+                text: "H",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.979842, -90.504226));
+
+        var info_window_33 = new google.maps.InfoWindow({
+            content: '<strong>Tomah Public Library</strong><br>718 Superior Ave<br>Tomah, WI 54660<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #8<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_33.addListener('click', function() {
+            info_window_33.open(map, info_marker_33);
+        });
+        
+        google.maps.event.addListener(info_marker_33, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_33.open(map, info_marker_33);
+            prev_infowindow = info_window_33
+        
+        });
+
+        var info_marker_34 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.944715, -90.812030),
+            title: "Sparta PL",
+            label: {
+                text: "I",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.944715, -90.812030));
+
+        var info_window_34 = new google.maps.InfoWindow({
+            content: '<strong>Sparta Free Library</strong><br>124 W Main St<br>Sparta, WI 54656<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #9<br><br>Average drop-off: 4<br>Average pick-up: 5'
+        });
+        
+        info_marker_34.addListener('click', function() {
+            info_window_34.open(map, info_marker_34);
+        });
+        
+        google.maps.event.addListener(info_marker_34, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_34.open(map, info_marker_34);
+            prev_infowindow = info_window_34
+        
+        });
+
+        var info_marker_35 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.893488, -90.994269),
+            title: "LaxCo - Bangor Branch",
+            label: {
+                text: "J",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.893488, -90.994269));
+
+        var info_window_35 = new google.maps.InfoWindow({
+            content: '<strong>Bangor Branch</strong><br>1720 Henry Johns Blvd<br>Bangor, WI 54614<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #10<br><br>Average drop-off: 3<br>Average pick-up: 3'
+        });
+        
+        info_marker_35.addListener('click', function() {
+            info_window_35.open(map, info_marker_35);
+        });
+        
+        google.maps.event.addListener(info_marker_35, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_35.open(map, info_marker_35);
+            prev_infowindow = info_window_35
+        
+        });
+
+        var info_marker_36 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.898336, -91.072608),
+            title: "LaxCo - West Salem PL",
+            label: {
+                text: "K",
+                color: "white",
+            },
+            icon: marker_icon_FF0000,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.898336, -91.072608));
+
+        var info_window_36 = new google.maps.InfoWindow({
+            content: '<strong>West Salem Branch</strong><br>201 Neshonoc Rd<br>West Salem, WI 54669<br><br>Stop type: Public library<br><br>Route: #3<br>Route order: stop #11<br><br>Average drop-off: 6<br>Average pick-up: 6'
+        });
+        
+        info_marker_36.addListener('click', function() {
+            info_window_36.open(map, info_marker_36);
+        });
+        
+        google.maps.event.addListener(info_marker_36, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_36.open(map, info_marker_36);
+            prev_infowindow = info_window_36
+        
+        });
+
+        var marker_icon_32CD32 = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAAC/klEQVRIia2US0hUURzGf3PHuegwOjgyarrIhYUQLUooF9lKJBTcFi1q0QMiKCIIok0WVLSJijJaRLUoCjeJvaSnRD4iicQe6sLBmppRZ5yZOzN553FazL05jpNzHf02h3v+3/e759zzP9fE0toAbAOqAQlIAj+Bd8BIjuwiNQGDgJArZWFvtAtHi0PYG+1CrpQFILR6U7awKcvzeUycKG0uNVXsrcC63rrIFfkewXPHg7/HLxBcBE5qL1oENQGXzFbz0ZpzNdgb7Tm3E+gNMHFqgkQkcRk4poPNaZ6jkiydrr1eS8mWkpxAgMK1hdjqbfif+htEQviBgXRoFfCo+ki1pbS51BBQl1wpIxVJBPuC24HbQEjSaofkNbLVucu5LKAu504ncpVsBQ5Bqk0A2spayzAVZJ6bMZkKTJS1lgG06VAzUGert+UF1GXbbAOoA8wSYAFkuVJeEVTLy4BF+jcr/mc3qLS8BKiAOvd7bkVMLa8Cqn6fvyoflRVBtfxXIKlvv8vX7UPE8vsGIi7wdfsAumC+pTpUj6p473nzgnrve1E9qgJ0wPyNUoCQMqS0FG8qRq4y3gnKkIKr3QUJjgOv0qEAgyRxzL6c3VrSUILFackJjHyLMH54nOSf5BXgjD5vzvA9FzGxLvAusNGxw4HZmlmeVzwQZ+zgGHF//CGwP70mZXgFsD82FRt2tbuW7N3JC5OoHnUU2EeGMxMKEAX2BN8H475nvqzA0EAIf48f4ACp81igbFCAT8AN91U3Qs1YrgD3NTdAJ9CbLfw/KMBZ1aNGZ57MLFzlxxDhkbAg7WCWA/UCd6ceTC2YnO6chlTrDOcDBbgZHY0SHYsCkFASBN4GAG4tFcoFHQJGZ9/MAhDsC5JUk1G065gvFOBxqD+UgvYHAV6T5cSXC30d/hJGxIT+J3qRK2AE+kGogvDnMHM/5gD6DGQMaap8d7kA4kBRLrORlQJMKEMKgIvUjVsV6LS2dZcRs1GoL6EkAEKrCfVoo3s1ob+0ccKI+S85SCEzE7GGUAAAAABJRU5ErkJggg==",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_37 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.740560, -90.779802),
+            title: "Cashton HS",
+            label: {
+                text: "A",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.740560, -90.779802));
+
+        var info_window_37 = new google.maps.InfoWindow({
+            content: '<strong>Cashton High School</strong><br>540 Coe St<br>Cashton, WI 54619<br><br>Stop type: School library<br><br>Route: #4<br>Route order: stop #1<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_37.addListener('click', function() {
+            info_window_37.open(map, info_marker_37);
+        });
+        
+        google.maps.event.addListener(info_marker_37, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_37.open(map, info_marker_37);
+            prev_infowindow = info_window_37
+        
+        });
+
+        var info_marker_38 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.723923, -90.591479),
+            title: "Ontario PL",
+            label: {
+                text: "B",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.723923, -90.591479));
+
+        var info_window_38 = new google.maps.InfoWindow({
+            content: '<strong>Ontario Public Library</strong><br>313 Main St<br>Ontario, WI 54651<br><br>Stop type: Public library<br><br>Route: #4<br>Route order: stop #2<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_38.addListener('click', function() {
+            info_window_38.open(map, info_marker_38);
+        });
+        
+        google.maps.event.addListener(info_marker_38, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_38.open(map, info_marker_38);
+            prev_infowindow = info_window_38
+        
+        });
+
+        var info_marker_39 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.661906, -90.223684),
+            title: "Wonewoc-Union Center HS",
+            label: {
+                text: "C",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.661906, -90.223684));
+
+        var info_window_39 = new google.maps.InfoWindow({
+            content: '<strong>Wonewoc - Union Center High School</strong><br>101 School Rd<br>Wonewoc, WI 53968<br><br>Stop type: School library<br><br>Route: #4<br>Route order: stop #3<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_39.addListener('click', function() {
+            info_window_39.open(map, info_marker_39);
+        });
+        
+        google.maps.event.addListener(info_marker_39, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_39.open(map, info_marker_39);
+            prev_infowindow = info_window_39
+        
+        });
+
+        var info_marker_40 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.654660, -90.223693),
+            title: "Wonewoc PL",
+            label: {
+                text: "D",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.654660, -90.223693));
+
+        var info_window_40 = new google.maps.InfoWindow({
+            content: '<strong>Wonewoc Public Library</strong><br>305 Center St<br>Wonewoc, WI 53968<br><br>Stop type: Public library<br><br>Route: #4<br>Route order: stop #4<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_40.addListener('click', function() {
+            info_window_40.open(map, info_marker_40);
+        });
+        
+        google.maps.event.addListener(info_marker_40, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_40.open(map, info_marker_40);
+            prev_infowindow = info_window_40
+        
+        });
+
+        var info_marker_41 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.652578, -90.341488),
+            title: "Hillsboro PL",
+            label: {
+                text: "E",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.652578, -90.341488));
+
+        var info_window_41 = new google.maps.InfoWindow({
+            content: '<strong>Hillsboro Public Library</strong><br>819 High Ave<br>Hillsboro, WI 54634<br><br>Stop type: Public library<br><br>Route: #4<br>Route order: stop #5<br><br>Average drop-off: 3<br>Average pick-up: 3'
+        });
+        
+        info_marker_41.addListener('click', function() {
+            info_window_41.open(map, info_marker_41);
+        });
+        
+        google.maps.event.addListener(info_marker_41, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_41.open(map, info_marker_41);
+            prev_infowindow = info_window_41
+        
+        });
+
+        var info_marker_42 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.579185, -90.639222),
+            title: "La Farge HS",
+            label: {
+                text: "F",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.579185, -90.639222));
+
+        var info_window_42 = new google.maps.InfoWindow({
+            content: '<strong>La Farge High School</strong><br>301 W Adams St<br>La Farge, WI 54639<br><br>Stop type: School library<br><br>Route: #4<br>Route order: stop #6<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_42.addListener('click', function() {
+            info_window_42.open(map, info_marker_42);
+        });
+        
+        google.maps.event.addListener(info_marker_42, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_42.open(map, info_marker_42);
+            prev_infowindow = info_window_42
+        
+        });
+
+        var info_marker_43 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.575011, -90.637315),
+            title: "La Farge PL",
+            label: {
+                text: "G",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.575011, -90.637315));
+
+        var info_window_43 = new google.maps.InfoWindow({
+            content: '<strong>Lawton Memorial Library</strong><br>118 N Bird St<br>La Farge, WI 54639<br><br>Stop type: Public library<br><br>Route: #4<br>Route order: stop #7<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_43.addListener('click', function() {
+            info_window_43.open(map, info_marker_43);
+        });
+        
+        google.maps.event.addListener(info_marker_43, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_43.open(map, info_marker_43);
+            prev_infowindow = info_window_43
+        
+        });
+
+        var info_marker_44 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.450861, -90.760522),
+            title: "Readstown PL",
+            label: {
+                text: "H",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.450861, -90.760522));
+
+        var info_window_44 = new google.maps.InfoWindow({
+            content: '<strong>Readstown Public Library</strong><br>129 W Wisconsin Ave<br>Readstown, WI 54652<br><br>Stop type: Public library<br><br>Route: #4<br>Route order: stop #8<br><br>Average drop-off: 1<br>Average pick-up: 0'
+        });
+        
+        info_marker_44.addListener('click', function() {
+            info_window_44.open(map, info_marker_44);
+        });
+        
+        google.maps.event.addListener(info_marker_44, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_44.open(map, info_marker_44);
+            prev_infowindow = info_window_44
+        
+        });
+
+        var info_marker_45 = new google.maps.Marker({
+            position: new google.maps.LatLng(43.423051, -91.198108),
+            title: "De Soto PL",
+            label: {
+                text: "I",
+                color: "white",
+            },
+            icon: marker_icon_32CD32,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(43.423051, -91.198108));
+
+        var info_window_45 = new google.maps.InfoWindow({
+            content: '<strong>De Soto Public Library</strong><br>111 S Houghton St<br>De Soto, WI 54624<br><br>Stop type: Public library<br><br>Route: #4<br>Route order: stop #9<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_45.addListener('click', function() {
+            info_window_45.open(map, info_marker_45);
+        });
+        
+        google.maps.event.addListener(info_marker_45, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_45.open(map, info_marker_45);
+            prev_infowindow = info_window_45
+        
+        });
+
+        var marker_icon_4682B4 = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAADEUlEQVRIia2TXUhTYRjHf2ebHyvKr1aaYJaUQrOMQAusKKKLiLqo6yKyC68koqibiLoI6qKPi4ouKryMAhUjojQqw9QyazNNHU4rp3O61rTNeXbeLjzDubZ2nP5vXs7z/v+/w8P7PBL/10agHMgFdIAC/ASagM442X+0F2gFRGqaSZgKS0XO5t3CVFgqUtNMAhDq/d5oYSnK9xUk6Wy2eYe0tvwwy7LXgTTX5nXY6G96wrD1rUCIq8B59Uf/QCXguiHFWFV85AymwtK47Yx+a8Xy+BrylO8mcCoE1od5qnSG5Itbj10mq6AkLhBg6YpcMvLNOL683iaUoBtoCYeuBmo37DuelG3eoQkYUmqaCX1SCmN97TuBh4BXp95VGtNXLskrOzAvYEh5ZQcwpq9aAlTCzJgAHMwp2YOkNyQElfQGVpfsATgYguqBosz84oSAIWXkmwGKAL0OSAKSU9NMC4Kq+WQgSTdbFjHsWjWb1wEBIOD75VwQUs0HgEBon7vcduuCoGq+C1BC7dcNdTSgBOWEgCIoM9TRAFAHsyN1x+9xTQw21yYEHXhfh9/jmgDuwOxGTQBet926PyPfjDF9pWag226ls+YGQlFOA43hUIBWIZRM59d3ZVkFW0hZnhUX+Ntho736AsHpqVvApVBdH+F7rgTl9aM9bcU5m3ZhSDHGBE7/8fLhwTkCk55HQEX4nS7CK4CKKe+4pbPmJojYs9tVfxu/x9UDnCBiyCOhAD7gqKv3o+ywvI4KHLN1MGx9C3CSmfeYo2hQgA7gbu+LhyjydEQvgr6GaoDHwJto4VhQgMt+j8vn+Nw4pzhut+D50SMIe5j5QJ1A9WBL/Zzij7ZnMDM6lkSgAPe8w/14R+wAyP5JnN0tAPf/F4oHbQd6nF3NALj62lHkgA91HROFAjwds30CYKzvE8Arorz4fKGvfv/sRQnKuO0WgJfxAlqgbYo8jed7N3/cwwDNGjKaNLpm+yEByEDs3Z2n2pbnFAjApsWspX0Al9r6wGJCx2X/JIB3MaEj6jm0mFCHetq1mP8CF90jfNKbpfEAAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        var info_marker_46 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.241956, -91.487137),
+            title: "Arcadia HS",
+            label: {
+                text: "A",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.241956, -91.487137));
+
+        var info_window_46 = new google.maps.InfoWindow({
+            content: '<strong>Arcadia High School</strong><br>756 Raider Dr<br>Arcadia, WI 54612<br><br>Stop type: School library<br><br>Route: #5<br>Route order: stop #1<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_46.addListener('click', function() {
+            info_window_46.open(map, info_marker_46);
+        });
+        
+        google.maps.event.addListener(info_marker_46, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_46.open(map, info_marker_46);
+            prev_infowindow = info_window_46
+        
+        });
+
+        var info_marker_47 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.243063, -91.488687),
+            title: "Arcadia PL",
+            label: {
+                text: "B",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.243063, -91.488687));
+
+        var info_window_47 = new google.maps.InfoWindow({
+            content: '<strong>Arcadia Free Public Library</strong><br>730 Raider Dr<br>Arcadia, WI 54612<br><br>Stop type: Public library<br><br>Route: #5<br>Route order: stop #2<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_47.addListener('click', function() {
+            info_window_47.open(map, info_marker_47);
+        });
+        
+        google.maps.event.addListener(info_marker_47, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_47.open(map, info_marker_47);
+            prev_infowindow = info_window_47
+        
+        });
+
+        var info_marker_48 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.357581, -91.421690),
+            title: "Independence PL",
+            label: {
+                text: "C",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.357581, -91.421690));
+
+        var info_window_48 = new google.maps.InfoWindow({
+            content: '<strong>Independence Public Library</strong><br>23688 Adams St<br>Independence, WI 54747<br><br>Stop type: Public library<br><br>Route: #5<br>Route order: stop #3<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_48.addListener('click', function() {
+            info_window_48.open(map, info_marker_48);
+        });
+        
+        google.maps.event.addListener(info_marker_48, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_48.open(map, info_marker_48);
+            prev_infowindow = info_window_48
+        
+        });
+
+        var info_marker_49 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.368800, -91.317063),
+            title: "Whitehall PL",
+            label: {
+                text: "D",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.368800, -91.317063));
+
+        var info_window_49 = new google.maps.InfoWindow({
+            content: '<strong>Whitehall Public Library</strong><br>36351 Main St<br>Whitehall, WI 54773<br><br>Stop type: Public library<br><br>Route: #5<br>Route order: stop #4<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_49.addListener('click', function() {
+            info_window_49.open(map, info_marker_49);
+        });
+        
+        google.maps.event.addListener(info_marker_49, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_49.open(map, info_marker_49);
+            prev_infowindow = info_window_49
+        
+        });
+
+        var info_marker_50 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.566887, -91.671786),
+            title: "Mondovi PL",
+            label: {
+                text: "E",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.566887, -91.671786));
+
+        var info_window_50 = new google.maps.InfoWindow({
+            content: '<strong>Mondovi Public Library</strong><br>146 W Hudson St<br>Mondovi, WI 54755<br><br>Stop type: Public library<br><br>Route: #5<br>Route order: stop #5<br><br>Average drop-off: 2<br>Average pick-up: 3'
+        });
+        
+        info_marker_50.addListener('click', function() {
+            info_window_50.open(map, info_marker_50);
+        });
+        
+        google.maps.event.addListener(info_marker_50, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_50.open(map, info_marker_50);
+            prev_infowindow = info_window_50
+        
+        });
+
+        var info_marker_51 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.550379, -91.392266),
+            title: "Strum PL",
+            label: {
+                text: "F",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.550379, -91.392266));
+
+        var info_window_51 = new google.maps.InfoWindow({
+            content: '<strong>Strum Public Library</strong><br>114 5th Ave S<br>Strum, WI 54770<br><br>Stop type: Public library<br><br>Route: #5<br>Route order: stop #6<br><br>Average drop-off: 2<br>Average pick-up: 2'
+        });
+        
+        info_marker_51.addListener('click', function() {
+            info_window_51.open(map, info_marker_51);
+        });
+        
+        google.maps.event.addListener(info_marker_51, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_51.open(map, info_marker_51);
+            prev_infowindow = info_window_51
+        
+        });
+
+        var info_marker_52 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.578119, -91.223135),
+            title: "Osseo PL",
+            label: {
+                text: "G",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.578119, -91.223135));
+
+        var info_window_52 = new google.maps.InfoWindow({
+            content: '<strong>Hauge Memorial Library</strong><br>50655 Charles St<br>Osseo, WI 54758<br><br>Stop type: Public library<br><br>Route: #5<br>Route order: stop #7<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_52.addListener('click', function() {
+            info_window_52.open(map, info_marker_52);
+        });
+        
+        google.maps.event.addListener(info_marker_52, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_52.open(map, info_marker_52);
+            prev_infowindow = info_window_52
+        
+        });
+
+        var info_marker_53 = new google.maps.Marker({
+            position: new google.maps.LatLng(44.305485, -90.790112),
+            title: "Jackson CI",
+            label: {
+                text: "H",
+                color: "white",
+            },
+            icon: marker_icon_4682B4,
+            map: map
+        });
+
+        map_bounds.extend(new google.maps.LatLng(44.305485, -90.790112));
+
+        var info_window_53 = new google.maps.InfoWindow({
+            content: '<strong>Jackson Correctional Institution</strong><br>N6500 Haipek Rd<br>Black River Falls, WI 54615<br><br>Stop type: WI Government<br><br>Route: #5<br>Route order: stop #8<br><br>Average drop-off: 1<br>Average pick-up: 1'
+        });
+        
+        info_marker_53.addListener('click', function() {
+            info_window_53.open(map, info_marker_53);
+        });
+        
+        google.maps.event.addListener(info_marker_53, 'click', function(){
+            if( prev_infowindow ){
+                prev_infowindow.close();
+            }
+        
+            info_window_53.open(map, info_marker_53);
+            prev_infowindow = info_window_53
+        
+        });
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.899726, -91.099112),
+            destination: new google.maps.LatLng(43.899726, -91.099112),
+            waypoints: [
+                {location: new google.maps.LatLng(43.876625, -91.229333), stopover: true},
+                {location: new google.maps.LatLng(43.865035, -91.269359), stopover: true},
+                {location: new google.maps.LatLng(43.846243, -91.240717), stopover: true},
+                {location: new google.maps.LatLng(43.815657, -91.231826), stopover: true},
+                {location: new google.maps.LatLng(43.815363, -91.246031), stopover: true},
+                {location: new google.maps.LatLng(43.811215, -91.244662), stopover: true},
+                {location: new google.maps.LatLng(43.802812, -91.244062), stopover: true},
+                {location: new google.maps.LatLng(43.797455, -91.232038), stopover: true},
+                {location: new google.maps.LatLng(44.081906, -91.349354), stopover: true},
+                {location: new google.maps.LatLng(44.191563, -91.778312), stopover: true},
+                {location: new google.maps.LatLng(44.324842, -91.917716), stopover: true},
+                {location: new google.maps.LatLng(44.004689, -91.431729), stopover: true},
+                {location: new google.maps.LatLng(43.972260, -91.277862), stopover: true},
+                {location: new google.maps.LatLng(43.960728, -91.257854), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "#556b2f",
+                                                    strokeOpacity: 1.0,
+                                                    strokeWeight: 3,
+                                            }, suppressMarkers: true 
+                                    }).setDirections(response);
+            }
+        });
+        
+        await new Promise(r => setTimeout(r, 500));
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.899726, -91.099112),
+            destination: new google.maps.LatLng(43.899726, -91.099112),
+            waypoints: [
+                {location: new google.maps.LatLng(43.702199, -91.013192), stopover: true},
+                {location: new google.maps.LatLng(43.556919, -90.902606), stopover: true},
+                {location: new google.maps.LatLng(43.555063, -90.890234), stopover: true},
+                {location: new google.maps.LatLng(43.654909, -90.856753), stopover: true},
+                {location: new google.maps.LatLng(43.744509, -90.779375), stopover: true},
+                {location: new google.maps.LatLng(43.833200, -90.622008), stopover: true},
+                {location: new google.maps.LatLng(43.813694, -90.525009), stopover: true},
+                {location: new google.maps.LatLng(43.792587, -90.369116), stopover: true},
+                {location: new google.maps.LatLng(43.741054, -90.272385), stopover: true},
+                {location: new google.maps.LatLng(43.797919, -90.077086), stopover: true},
+                {location: new google.maps.LatLng(44.021784, -90.079750), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "#ff4500",
+                                                    strokeOpacity: 1.0,
+                                                    strokeWeight: 3,
+                                            }, suppressMarkers: true 
+                                    }).setDirections(response);
+            }
+        });
+        
+        await new Promise(r => setTimeout(r, 500));
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.899726, -91.099112),
+            destination: new google.maps.LatLng(43.899726, -91.099112),
+            waypoints: [
+                {location: new google.maps.LatLng(44.074437, -91.020313), stopover: true},
+                {location: new google.maps.LatLng(44.167687, -91.267062), stopover: true},
+                {location: new google.maps.LatLng(44.293987, -91.233503), stopover: true},
+                {location: new google.maps.LatLng(44.321358, -91.120388), stopover: true},
+                {location: new google.maps.LatLng(44.293660, -90.850462), stopover: true},
+                {location: new google.maps.LatLng(43.877087, -90.167093), stopover: true},
+                {location: new google.maps.LatLng(43.881051, -90.131584), stopover: true},
+                {location: new google.maps.LatLng(43.979842, -90.504226), stopover: true},
+                {location: new google.maps.LatLng(43.944715, -90.812030), stopover: true},
+                {location: new google.maps.LatLng(43.893488, -90.994269), stopover: true},
+                {location: new google.maps.LatLng(43.898336, -91.072608), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "#ff0000",
+                                                    strokeOpacity: 1.0,
+                                                    strokeWeight: 3,
+                                            }, suppressMarkers: true 
+                                    }).setDirections(response);
+            }
+        });
+        
+        await new Promise(r => setTimeout(r, 500));
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.899726, -91.099112),
+            destination: new google.maps.LatLng(43.899726, -91.099112),
+            waypoints: [
+                {location: new google.maps.LatLng(43.740560, -90.779802), stopover: true},
+                {location: new google.maps.LatLng(43.723923, -90.591479), stopover: true},
+                {location: new google.maps.LatLng(43.661906, -90.223684), stopover: true},
+                {location: new google.maps.LatLng(43.654660, -90.223693), stopover: true},
+                {location: new google.maps.LatLng(43.652578, -90.341488), stopover: true},
+                {location: new google.maps.LatLng(43.579185, -90.639222), stopover: true},
+                {location: new google.maps.LatLng(43.575011, -90.637315), stopover: true},
+                {location: new google.maps.LatLng(43.450861, -90.760522), stopover: true},
+                {location: new google.maps.LatLng(43.423051, -91.198108), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "#32cd32",
+                                                    strokeOpacity: 1.0,
+                                                    strokeWeight: 3,
+                                            }, suppressMarkers: true 
+                                    }).setDirections(response);
+            }
+        });
+        
+        await new Promise(r => setTimeout(r, 500));
+
+        new google.maps.DirectionsService().route({
+            origin: new google.maps.LatLng(43.899726, -91.099112),
+            destination: new google.maps.LatLng(43.899726, -91.099112),
+            waypoints: [
+                {location: new google.maps.LatLng(44.241956, -91.487137), stopover: true},
+                {location: new google.maps.LatLng(44.243063, -91.488687), stopover: true},
+                {location: new google.maps.LatLng(44.357581, -91.421690), stopover: true},
+                {location: new google.maps.LatLng(44.368800, -91.317063), stopover: true},
+                {location: new google.maps.LatLng(44.566887, -91.671786), stopover: true},
+                {location: new google.maps.LatLng(44.550379, -91.392266), stopover: true},
+                {location: new google.maps.LatLng(44.578119, -91.223135), stopover: true},
+                {location: new google.maps.LatLng(44.305485, -90.790112), stopover: true},
+            ],
+            travelMode: "DRIVING"
+        }, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                                            map: map, polylineOptions: {
+                                                    strokeColor: "#4682b4",
+                                                    strokeOpacity: 1.0,
+                                                    strokeWeight: 3,
+                                            }, suppressMarkers: true 
+                                    }).setDirections(response);
+            }
+        });
+        
+        await new Promise(r => setTimeout(r, 500));
+
+        map.fitBounds(map_bounds);
+
+    }
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+    <div id="map_canvas" style="width: 100%; height: 100%;" />
+</body>
+</html>
