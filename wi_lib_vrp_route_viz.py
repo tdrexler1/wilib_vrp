@@ -225,7 +225,11 @@ def screenshot_map(route_map, output_dir):
 
     # use selenium webdriver to open map file & save screenshot
     driver = webdriver.Chrome(options=chrome_options)
-    driver.set_window_size(1920, 1080)
+
     driver.get(route_map)
-    time.sleep(2)
-    driver.save_screenshot(png_filepath)
+    driver.set_window_size(1024, 768)
+    #driver.set_window_size(800, 600)
+    time.sleep(15)
+    element = driver.find_element_by_id('map_canvas')
+    element.screenshot(png_filepath)
+    #driver.save_screenshot(png_filepath)
