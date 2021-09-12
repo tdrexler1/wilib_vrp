@@ -57,7 +57,9 @@ class _Route_mod(_Route):
         w.write('travelMode: "%s"' % self._travel_mode)
         w.dedent()
         # ***
-        # add color option for route lines, suppress directions markers: https://stackoverflow.com/a/24653283
+        # add color option for route lines https://stackoverflow.com/a/19023573
+        # suppress directions markers: https://stackoverflow.com/a/24653283
+        # delay directions requests to stay under query frequency limits: https://stackoverflow.com/a/39914235
         w.write('''  
                     }, function(response, status) {
                         if (status == google.maps.DirectionsStatus.OK) {
@@ -99,6 +101,9 @@ class _MarkerInfoWindow_mod(_MarkerInfoWindow):
             w (_Writer): Writer used to write the info window.
             info_marker_index (int): Index of this info window.
         '''
+        # https://groups.google.com/g/google-maps-js-api-v3/c/cA2VRg4TO1k/m/lx02WdDWWogJ
+        # https://stackoverflow.com/a/9481441
+        # https://stackoverflow.com/a/4540249
         w.write('''
         var {info_window_name} = new google.maps.InfoWindow({{
             content: '{content}'
@@ -193,6 +198,8 @@ class _Marker_mod(_Marker):
         w.write('});')
         w.write()
         # ***
+        # extend bounds object for each marker: https://stackoverflow.com/a/2205577
+        # more info: https://stackoverflow.com/q/26452941
         w.write('map_bounds.extend(%s);' % self._position)
         w.write()
 
@@ -390,6 +397,7 @@ class GoogleMapPlotter_mod(GoogleMapPlotter):
         [text.write(w) for text in self._text_labels]
         if self._marker_dropper: self._marker_dropper.write(w, color_cache)
         # ***
+        # declare map bounds object: https://stackoverflow.com/a/2205577
         w.write('map.fitBounds(map_bounds);')
         w.write()
         # ***

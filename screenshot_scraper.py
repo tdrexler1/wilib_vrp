@@ -10,9 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # TODO: experiment with image size for each region; automate
 # TODO: copy relevant code to wi_lib_vrp_route_viz.py
-# TODO: create screenshots for each map; are these files a reasonable size?
-# TODO: is the gmaps API key in html a concern?
-# TODO: add map file directory to gitignore?
+# TODO: create screenshots for each map; are these files a reasonable size? Not really - limit Github post to sampling
 
 def screenshot_map(route_map, output_dir):
     """

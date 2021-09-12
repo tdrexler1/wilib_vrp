@@ -9,6 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
 
 # import method overrides for gmplot GoogleMapPlotter object
+# https://stackoverflow.com/a/50600307
 from wi_lib_vrp_gmaps_sub_classes import GoogleMapPlotter_mod
 
 

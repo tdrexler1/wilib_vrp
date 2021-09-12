@@ -1,3 +1,5 @@
+:: https://ss64.com/nt/for.html
+
 SETLOCAL EnableDelayedExpansion
 FOR %%G IN (40, 60, 200, 0) DO (
     FOR %%H IN (8, 10) DO (

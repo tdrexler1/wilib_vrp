@@ -22,6 +22,8 @@ def parse_args():
 
     # instantiate parser object with description & help menu
     # noinspection PyTypeChecker
+    # help menu formatting: https://stackoverflow.com/a/5464440
+    # help menu formatting, width: https://stackoverflow.com/a/32891625
     parser_obj = argparse.ArgumentParser(
         prog='tool',
         description='Set up and solve a Vehicle Routing Problem for a proposed WI library delivery region.',
