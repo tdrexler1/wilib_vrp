@@ -545,3 +545,133 @@ Total time, all routes: 42 hours, 10 minutes
 
 ------------------------
 
+Model ID: idl5_08_02_05_000
+Ideal proposal, region 5
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Fond du Lac PL -> Montello PL -> Packwaukee PL -> Endeavor PL -> Oxford PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL -> Wautoma PL -> Neshkoro PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL ->  Fond du Lac PL
+
+	Route distance: 218.80 miles
+	Route time: 7 hours, 47 minutes
+	Route load: 35 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 29 minutes; end time = 5 hours, 59 minutes
+
+Route for vehicle 2:
+	Fond du Lac PL -> Slinger PL -> Germantown PL -> Mequon PL -> Concordia University -> Cedarburg PL -> Grafton PL -> Saukville PL -> Port Washington PL -> Oostburg PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL -> Brillion PL -> Chilton PL -> New Holstein PL ->  Fond du Lac PL
+
+	Route distance: 216.14 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 130 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 59 minutes; end time = 5 hours, 29 minutes
+
+Route for vehicle 3:
+	Fond du Lac PL -> Brandon PL -> Ripon PL -> Ripon College -> Berlin PL -> Green Lake PL -> Princeton PL -> Kingston PL -> Markesan PL -> Fox Lake CI -> Fox Lake PL -> Beaver Dam PL -> Reeseville PL -> Hustisford PL -> Iron Ridge PL -> Mayville PL -> Theresa PL -> Lomira PL ->  Fond du Lac PL
+
+	Route distance: 180.80 miles
+	Route time: 7 hours, 37 minutes
+	Route load: 51 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 3 minutes; end time = 5 hours, 33 minutes
+
+Route for vehicle 4:
+	Fond du Lac PL -> Fond du Lac PL - XP -> Kettle Moraine CI -> Plymouth PL -> Elkhart Lake PL -> Kiel PL -> Lakeland University -> Sheboygan Falls PL -> Kohler PL -> Sheboygan PL -> UW-Sheboygan -> Monarch LS -> Cedar Grove PL -> Random Lake PL -> West Bend PL -> UW-Washington Co -> Hartford PL -> Kewaskum PL -> Campbellsport PL ->  Fond du Lac PL
+
+	Route distance: 182.78 miles
+	Route time: 7 hours, 53 minutes
+	Route load: 121 containers
+	Number of stops: 18
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 5:
+	Fond du Lac PL -> Marian University -> Moraine Park TC -> UW-Fond du Lac -> North Fond du Lac PL -> Oshkosh PL -> UW-Oshkosh -> WMHI -> WRC -> Neenah PL -> Menasha PL -> UW-Fox Cities -> Winneconne PL -> Omro PL -> Brownsville PL -> Horicon PL -> Juneau PL -> Dodge CI -> Waupun CI -> Waupun PL -> Oakfield PL ->  Fond du Lac PL
+
+	Route distance: 185.70 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 150 containers
+	Number of stops: 20
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Total distance, all routes: 984.22 miles
+Total time, all routes: 2343 minutes
+Total time, all routes: 39 hours, 3 minutes
+
+------------------------
+
+Model ID: idl5_08_02_05_000
+Ideal proposal, region 5
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 5
+
+Route for vehicle 1:
+	Fond du Lac PL -> Montello PL -> Packwaukee PL -> Endeavor PL -> Oxford PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL -> Wautoma PL -> Neshkoro PL -> Redgranite PL -> Redgranite CI -> Pine River PL -> Poy Sippi PL ->  Fond du Lac PL
+
+	Route distance: 218.80 miles
+	Route time: 7 hours, 47 minutes
+	Route load: 35 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 29 minutes; end time = 5 hours, 59 minutes
+
+Route for vehicle 2:
+	Fond du Lac PL -> Slinger PL -> Germantown PL -> Mequon PL -> Concordia University -> Cedarburg PL -> Grafton PL -> Saukville PL -> Port Washington PL -> Oostburg PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL -> Brillion PL -> Chilton PL -> New Holstein PL ->  Fond du Lac PL
+
+	Route distance: 216.14 miles
+	Route time: 7 hours, 54 minutes
+	Route load: 130 containers
+	Number of stops: 16
+	Break: start time = 4 hours, 59 minutes; end time = 5 hours, 29 minutes
+
+Route for vehicle 3:
+	Fond du Lac PL -> Brandon PL -> Ripon PL -> Ripon College -> Berlin PL -> Green Lake PL -> Princeton PL -> Kingston PL -> Markesan PL -> Fox Lake CI -> Fox Lake PL -> Beaver Dam PL -> Reeseville PL -> Hustisford PL -> Iron Ridge PL -> Mayville PL -> Theresa PL -> Lomira PL ->  Fond du Lac PL
+
+	Route distance: 180.80 miles
+	Route time: 7 hours, 37 minutes
+	Route load: 51 containers
+	Number of stops: 17
+	Break: start time = 5 hours, 3 minutes; end time = 5 hours, 33 minutes
+
+Route for vehicle 4:
+	Fond du Lac PL -> Fond du Lac PL - XP -> Kettle Moraine CI -> Plymouth PL -> Elkhart Lake PL -> Kiel PL -> Lakeland University -> Sheboygan Falls PL -> Kohler PL -> Sheboygan PL -> UW-Sheboygan -> Monarch LS -> Cedar Grove PL -> Random Lake PL -> West Bend PL -> UW-Washington Co -> Hartford PL -> Kewaskum PL -> Campbellsport PL ->  Fond du Lac PL
+
+	Route distance: 182.78 miles
+	Route time: 7 hours, 53 minutes
+	Route load: 121 containers
+	Number of stops: 18
+	Break: start time = 5 hours, 19 minutes; end time = 5 hours, 49 minutes
+
+Route for vehicle 5:
+	Fond du Lac PL -> Marian University -> Moraine Park TC -> UW-Fond du Lac -> North Fond du Lac PL -> Oshkosh PL -> UW-Oshkosh -> WMHI -> WRC -> Neenah PL -> Menasha PL -> UW-Fox Cities -> Winneconne PL -> Omro PL -> Brownsville PL -> Horicon PL -> Juneau PL -> Dodge CI -> Waupun CI -> Waupun PL -> Oakfield PL ->  Fond du Lac PL
+
+	Route distance: 185.70 miles
+	Route time: 7 hours, 50 minutes
+	Route load: 150 containers
+	Number of stops: 20
+	Break: start time = 5 hours, 27 minutes; end time = 5 hours, 57 minutes
+
+Total distance, all routes: 984.22 miles
+Total time, all routes: 2343 minutes
+Total time, all routes: 39 hours, 3 minutes
+
+------------------------
+

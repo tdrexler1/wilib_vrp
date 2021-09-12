@@ -581,3 +581,77 @@ Total time, all routes: 41 hours, 20 minutes
 
 ------------------------
 
+Model ID: str6_08_02_05_000
+Starter proposal, region 6
+
+Solution strategies:
+	First solution strategy: savings
+	Local search metaheuristic: automatic
+
+Model parameters:
+	Maximum hours per route: 8.0
+	Maximum distance per route: 500.0 miles
+	Vehicle capacity: 0
+	Driver break time: 30.0 minutes
+	Number of vehicles/routes: 6
+
+Route for vehicle 1:
+	Oshkosh PL -> UW-Washington Co -> West Bend PL -> Cedarburg PL -> Grafton PL -> Saukville PL -> Random Lake PL -> Cedar Grove PL -> Lakeshore TC -> UW-Manitowoc -> Manitowoc PL -> Two Rivers PL -> Brillion PL ->  Oshkosh PL
+
+	Route distance: 217.41 miles
+	Route time: 7 hours, 10 minutes
+	Route load: 167 containers
+	Number of stops: 12
+	Break: start time = 4 hours, 1 minute; end time = 4 hours, 31 minutes
+
+Route for vehicle 2:
+	Oshkosh PL -> Fox Lake PL -> Markesan PL -> Kingston PL -> Montello PL -> Packwaukee PL -> Endeavor PL -> Oxford PL -> Westfield PL -> Coloma PL -> Hancock PL -> Plainfield PL -> Wild Rose PL -> Winneconne PL ->  Oshkosh PL
+
+	Route distance: 203.94 miles
+	Route time: 7 hours, 10 minutes
+	Route load: 116 containers
+	Number of stops: 13
+	Break: start time = 4 hours, 45 minutes; end time = 5 hours, 15 minutes
+
+Route for vehicle 3:
+	Oshkosh PL -> Brownsville PL -> Lomira PL -> Theresa PL -> Mayville PL -> Horicon PL -> Juneau PL -> Beaver Dam PL -> Reeseville PL -> Hustisford PL -> Iron Ridge PL -> Hartford PL -> Slinger PL -> Kewaskum PL -> Campbellsport PL -> North Fond du Lac PL ->  Oshkosh PL
+
+	Route distance: 192.98 miles
+	Route time: 7 hours, 8 minutes
+	Route load: 129 containers
+	Number of stops: 15
+	Break: start time = 5 hours, 33 minutes; end time = 6 hours, 3 minutes
+
+Route for vehicle 4:
+	Oshkosh PL -> Germantown PL -> Mequon PL -> Concordia University -> Port Washington PL -> Oostburg PL -> Monarch LS -> Sheboygan Falls PL -> Kohler PL -> UW-Sheboygan -> Sheboygan PL -> Lakeland University -> Plymouth PL -> Kettle Moraine CI ->  Oshkosh PL
+
+	Route distance: 206.73 miles
+	Route time: 7 hours, 2 minutes
+	Route load: 198 containers
+	Number of stops: 13
+	Break: start time = 5 hours, 10 minutes; end time = 5 hours, 40 minutes
+
+Route for vehicle 5:
+	Oshkosh PL -> WMHI -> WRC -> Neenah PL -> Menasha PL -> UW-Fox Cities -> Chilton PL -> New Holstein PL -> Kiel PL -> Elkhart Lake PL -> Fond du Lac PL - XP -> UW-Fond du Lac -> Moraine Park TC -> Marian University -> Fond du Lac PL -> Fox Lake CI ->  Oshkosh PL
+
+	Route distance: 162.01 miles
+	Route time: 6 hours, 57 minutes
+	Route load: 131 containers
+	Number of stops: 15
+	Break: start time = 4 hours, 27 minutes; end time = 4 hours, 57 minutes
+
+Route for vehicle 6:
+	Oshkosh PL -> UW-Oshkosh -> Omro PL -> Berlin PL -> Poy Sippi PL -> Pine River PL -> Redgranite CI -> Redgranite PL -> Wautoma PL -> Neshkoro PL -> Princeton PL -> Green Lake PL -> Ripon College -> Ripon PL -> Brandon PL -> Dodge CI -> Waupun CI -> Waupun PL -> Oakfield PL ->  Oshkosh PL
+
+	Route distance: 161.17 miles
+	Route time: 7 hours, 4 minutes
+	Route load: 133 containers
+	Number of stops: 18
+	Break: start time = 5 hours, 23 minutes; end time = 5 hours, 53 minutes
+
+Total distance, all routes: 1144.25 miles
+Total time, all routes: 2553 minutes
+Total time, all routes: 42 hours, 33 minutes
+
+------------------------
+
