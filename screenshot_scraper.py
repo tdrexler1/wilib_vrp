@@ -40,7 +40,7 @@ def screenshot_map(route_map, output_dir):
     # use selenium webdriver to open map file & save screenshot
     driver = webdriver.Chrome(options=chrome_options)
 
-    driver.set_window_size(800, 800)
+    driver.set_window_size(700, 500)
     #driver.set_window_size(1024, 768)
     #driver.set_window_size(800, 600)
 
@@ -71,7 +71,7 @@ def screenshot_map(route_map, output_dir):
     map_element.screenshot(png_filepath)
 
 
-map_file = 'idl1_08_02_05_000.html'
+map_file = 'str8_08_02_05_000.html'
 
 vrp_output_path = '.\\vrp_output\\'
 route_map_filepath = os.path.abspath(vrp_output_path + 'map_files\\' + map_file)
