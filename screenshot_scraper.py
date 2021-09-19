@@ -8,9 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# TODO: experiment with image size for each region; automate
+# DONE: experiment with image size for each region; automate
 # TODO: copy relevant code to wi_lib_vrp_route_viz.py
-# TODO: create screenshots for each map; are these files a reasonable size? Not really - limit Github post to sampling
+# DONE: create screenshots for each map; are these files a reasonable size? Not really - limit Github post to sampling
 
 def screenshot_map(route_map, output_dir):
     """
@@ -40,7 +40,27 @@ def screenshot_map(route_map, output_dir):
     # use selenium webdriver to open map file & save screenshot
     driver = webdriver.Chrome(options=chrome_options)
 
-    driver.set_window_size(850, 650)
+    win_size_dict = {
+        'idl1': (600, 750),
+        'idl2': (500, 650),
+        'idl3': (1000, 1000),
+        'idl4': (900, 900),
+        'idl5': (850, 650),
+        'idl6': (950, 700),
+        'idl7': (1000, 850),
+        'str1': (750, 500),
+        'str2': (900, 800),
+        'str3': (900, 900),
+        'str4': (1000, 1000),
+        'str5': (800, 800),
+        'str6': (850, 650),
+        'str7': (500, 650),
+        'str8': (700, 500)
+    }
+    map_region = os.path.basename(route_map)[0:4]
+    #print(f'{map_region}, {win_size_dict[map_region][0]}, {win_size_dict[map_region][1]}, {type(win_size_dict[map_region][0])}')
+
+    driver.set_window_size(win_size_dict[map_region][0], win_size_dict[map_region][1])
     #driver.set_window_size(1024, 768)
     #driver.set_window_size(800, 600)
 
@@ -70,11 +90,7 @@ def screenshot_map(route_map, output_dir):
     map_element = driver.find_element_by_id('map_canvas')
     map_element.screenshot(png_filepath)
 
-
-map_file = 'str6_08_02_05_000.html'
-
 vrp_output_path = '.\\vrp_output\\'
-route_map_filepath = os.path.abspath(vrp_output_path + 'map_files\\' + map_file)
 
 # construct output file path & create directory if necessary
 screenshot_file_path = vrp_output_path + 'screenshots\\'
@@ -83,4 +99,13 @@ if not os.path.isdir(screenshot_file_path):
     os.makedirs(screenshot_file_path)
 
 # generate PNG file
-screenshot_map(route_map_filepath, screenshot_file_path)
+for map_file in os.listdir(vrp_output_path + 'map_files\\'):
+    print(f'{map_file[:-5]}...', end='')
+    route_map_filepath = os.path.abspath(vrp_output_path + 'map_files\\' + map_file)
+    screenshot_map(route_map_filepath, screenshot_file_path)
+    print(f'screenshot complete')
+
+
+# map_file = 'idl5_10_05_05_200.html'
+# route_map_filepath = os.path.abspath(vrp_output_path + 'map_files\\' + map_file)
+# screenshot_map(route_map_filepath, screenshot_file_path)

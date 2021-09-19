@@ -1,4 +1,3 @@
-## import gmplot
 import webbrowser
 import string
 import random
