@@ -6,6 +6,9 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # chromedriver must be in PATH
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # import method overrides for gmplot GoogleMapPlotter object
 # https://stackoverflow.com/a/50600307
@@ -216,6 +219,11 @@ def screenshot_map(route_map, output_dir):
     :type output_dir: str
     """
 
+    # Selenium documentation:
+    # https://selenium-python.readthedocs.io/index.html
+    # https://www.selenium.dev/selenium/docs/api/py/index.html
+    # https://www.selenium.dev/documentation/
+
     # configure headless Chrome browser
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -226,10 +234,56 @@ def screenshot_map(route_map, output_dir):
     # use selenium webdriver to open map file & save screenshot
     driver = webdriver.Chrome(options=chrome_options)
 
+    # set browser window size based on region - these sizes show every library
+    win_size_dict = {
+        'idl1': (600, 750),
+        'idl2': (500, 650),
+        'idl3': (1000, 1000),
+        'idl4': (900, 900),
+        'idl5': (850, 650),
+        'idl6': (950, 700),
+        'idl7': (1000, 850),
+        'str1': (750, 500),
+        'str2': (900, 800),
+        'str3': (900, 900),
+        'str4': (1000, 1000),
+        'str5': (800, 800),
+        'str6': (850, 650),
+        'str7': (500, 650),
+        'str8': (700, 500)
+    }
+    map_region = os.path.basename(route_map)[0:4]
+    driver.set_window_size(win_size_dict[map_region][0], win_size_dict[map_region][1])
+
+    # open the html map file
     driver.get(route_map)
-    driver.set_window_size(1024, 768)
-    #driver.set_window_size(800, 600)
+
+    # force browser to wait until Google Maps script finishes rendering
+    # https://stackoverflow.com/a/27112797
+    element_list = WebDriverWait(driver, 10).until(
+        EC.presence_of_all_elements_located((By.CLASS_NAME, 'gmnoprint'))
+    )
+    element_list.append(driver.find_element_by_class_name('gm-fullscreen-control'))
+
+    # delete Google Maps controls & other elements
+    for delete_element in element_list:
+
+        try:
+            # https://stackoverflow.com/q/22515012
+            driver.execute_script("""
+            var element = arguments[0];
+            element.parentNode.removeChild(element);
+            """, delete_element)
+
+        # remove any already-deleted items from list
+        except:
+            # https://stackoverflow.com/a/36013523, https://www.selenium.dev/exceptions/#stale_element_reference
+            element_list.remove(delete_element)
+
+    # ensure adequate time for routes to render
+    # https://stackoverflow.com/a/58264507, https://stackoverflow.com/a/58981854
     time.sleep(15)
-    element = driver.find_element_by_id('map_canvas')
-    element.screenshot(png_filepath)
-    #driver.save_screenshot(png_filepath)
+
+    # output screenshot
+    map_element = driver.find_element_by_id('map_canvas')
+    map_element.screenshot(png_filepath)

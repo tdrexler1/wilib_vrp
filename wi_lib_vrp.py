@@ -235,8 +235,7 @@ def main():
 
         # display map file in browser or new tab
         if conf_dict['map']:
-            pass
-            #mapper.display_map(route_map_filepath)
+            mapper.display_map(route_map_filepath)
 
         # output screenshot of Google Map to PNG file
         if conf_dict['screenshot']:
