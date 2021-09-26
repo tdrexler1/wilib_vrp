@@ -58,6 +58,7 @@ class _Route_mod(_Route):
         w.dedent()
         # ***
         # add color option for route lines https://stackoverflow.com/a/19023573
+        # polyline options: https://developers.google.com/maps/documentation/javascript/reference/polygon#PolylineOptions
         # suppress directions markers: https://stackoverflow.com/a/24653283
         # delay directions requests to stay under query frequency limits: https://stackoverflow.com/a/39914235
         w.write('''  

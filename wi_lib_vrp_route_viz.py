@@ -166,6 +166,7 @@ def map_vrp_routes(route_array, stop_data, gmaps_api_key, model_id, output_dir):
             [(float(stop_data_dict['latitude'][x]), float(stop_data_dict['longitude'][x])) for x in route[1:-1]]
 
         # get route directions for current route/vehicle
+        # Directions Service: https://developers.google.com/maps/documentation/javascript/directions
         gmap.directions(origin, destination, waypoints=waypoints_list, route_color=route_colors[n])
 
         # iterate over stops on current route
