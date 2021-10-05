@@ -32,3 +32,8 @@ I included four options for VRP solution output:
 4. create a [screenshot](vrp_output/screenshots) of the map plot saved as a PNG file.
 
 Examples of the latter three options are included in the [vrp_output](vrp_output) subdirectories. To save space, the map files and screenshots are limited to model variants with no vehicle capacity constraints; the text files contain complete solutions for all the models I ran for this project. I've written a [brief guide](model_id_codes.md) to explain the codes used in the output file names.
+
+<!-- TODO: edit/revise main readme -->
+<!-- TODO: upload final report PDF with reasonable file name -->
+<!-- TODO: upload any other project files? -->
+<!-- TODO: update file_descriptions.md -->
