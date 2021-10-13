@@ -1,32 +1,34 @@
 # Wisconsin Library Delivery Services & the Vehicle Routing Problem: A Case Study
 
-In this project, I configured and solved Vehicle Routing Problems (VRPs) to investigate the feasibility of regional library delivery routes. The VRP models were based on proposed regional delivery service reconfigurations from the [Delivery Workgroup](https://dpi.wi.gov/sites/default/files/imce/coland/pdf/PLSR_-_Delivery_Workgroup_Report.pdf) of the Wisconsin [Public Library System Redesign](https://dpi.wi.gov/coland/plsr-update) (PLSR) Project.
+In this project, I set up Vehicle Routing Problems (VRPs) to investigate the feasibility of regional library delivery routes. The VRP models were based on regional delivery service reconfigurations proposed by the Delivery Workgroup of the Wisconsin [Public Library System Redesign](https://dpi.wi.gov/coland/plsr-update) (PLSR) Project.
 
 This was my Capstone Project for the [University of Wisconsin Data Science Master&#39;s Degree](https://datasciencedegree.wisconsin.edu/), which I completed in summer 2021.
 
 ## Overview
 
-I used the [vehicle routing solver](https://developers.google.com/optimization/routing) from the Google OR-Tools package to optimize delivery routes within each of the library delivery service regions in the PLSR [Delivery Workgroup Report](https://dpi.wi.gov/sites/default/files/imce/coland/pdf/PLSR_-_Delivery_Workgroup_Report.pdf). I modeled a total of 15 regions from both the "ideal" and "starter" proposals.
+In their report, the PLSR [Delivery Workgroup](https://dpi.wi.gov/sites/default/files/imce/coland/pdf/PLSR_-_Delivery_Workgroup_Report.pdf) included "ideal" and "starter" proposals for redesigning statewide delivery library services. I modeled each of 15 regions in these models using the [vehicle routing solver](https://developers.google.com/optimization/routing) from the Google OR-Tools package.
 
-Delivery routes in each regional VRP started and ended at a single depot, with one service stop at every public, academic, school, and special library in the region. The cost of each route was evaluated by measuring its duration, and the VRPs included additional constraints on vehicle capacity and maximum route distance.
+In each regional VRP, all the routes started from and ended at the same depot while stopping once at every public, academic, school, and special library in the region. I configured the solver to evaluate the cost of each route by its duration and attempt to minimize the total route time for all vehicles.
+
+For detailed descriptions
 
 ## Research Questions
 
-1. Is there a feasible route structure for each region where every library receives one stop, and each route takes less than the maximum suggested route time (8-9 hours)?
+1. Is there a feasible route structure for each region where every library receives one stop, and each route takes less than the maximum suggested route time (8-10 hours)?
 2. For instances in which a feasible model exists, what is a route configuration that minimizes the cumulative route time of all vehicles?
 3. What are the parameter values of an optimal regional route structure, particularly the number of vehicles required and the maximum allowed route time? Is it possible to find other optimal or near-optimal route configurations by changing the value of those parameters?
 
-## Code & Functionality
+## Project Code
 
-I based the project code on the Python versions of the sample code in [Google's online guide](https://developers.google.com/optimization/routing) to vehicle routing problems. The [main script](wi_lib_vrp.py) was designed to run from the command line with arguments to select a regional model, set the VRP parameters, pick the solver metaheuristic and local search strategies, and choose from among multiple options for outputting the solution.
+I wrote the project code using Python 3.9. I based my scripts on the examples in the [Google's online guide](https://developers.google.com/optimization/routing) to vehicle routing problems. I set up the [main program](wi_lib_vrp.py) to run from the command line with arguments to select the model region, set the VRP parameters, pick the solver metaheuristic and local search strategies, and choose from among multiple options for solution output.
 
-I also added a feature that allows the program to automatically increment the number of vehicles/routes until it finds a feasible solution to the VRP or reaches a maximum of 15 vehicles.
+I included an additional feature that allows the program to automatically increment the number of vehicles/routes if it is unable to find a feasible solution to the VRP using the initial parameters. The solver continues until it either finds a solution or reaches the maximum fleet size of 15 vehicles.
 
-The ["file_descriptions.md"](file_descriptions.md) document describes the project code and other files in greater detail.
+Further details regarding the project code and other files can be found in the  [file_descriptions.md](file_descriptions.md) document.
 
 ## Data Sources
 
-I downloaded address data for public libraries from the Wisconsin Department of Public Instruction [Public Library Directory](https://dpi.wi.gov/pld/directories/directory) as an Excel file. I added the data for academic, school, and special libraries manually based on information from library websites. I verified each location on Google Maps and, when necessary, substituted Google PlusCodes for libraries with mismatched addresses.
+I downloaded address data for public libraries from the Wisconsin Department of Public Instruction [Public Library Directory](https://dpi.wi.gov/pld/directories/directory) as an Excel file. I added data for academic, school, and special libraries based on information from their websites and Google Maps. I also used Google Maps to verify each location or, if necessary, obtain a Google PlusCode to substitute for libraries with mismatched addresses.
 
 To create the distance and duration matrices for the OR-Tools solver, I used the Matrix API from [openrouteservice](https://openrouteservice.org/), which provides real-world, along-the-road data. I wrote a [utility program](wi_lib_vrp_matrix_build.py) to collect and store the matrix data as [pickle files](vrp_matrix_data) to minimize the number of API calls I had to make. If necessary, the functions in this program can also be called from the main script to generate the matrices at run time.
 
