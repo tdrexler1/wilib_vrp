@@ -41,5 +41,5 @@ I developed four options for VRP solution output:
 
 Examples of the latter three options are included in the [vrp_output](vrp_output) subdirectories. To save space, the map files and screenshots are limited to model variants with no vehicle capacity constraints; the text files contain complete solutions for all the models I ran for this project. I've written a [brief guide](model_id_codes.md) to explain the codes in the output file names.
 
-To create the route map visualizations, I used the [gmplot](https://pypi.org/project/gmplot/) package. To get the results I wanted, I found I needed to modify some of the JavaScript 
+To create the route map visualizations, I used the [gmplot](https://pypi.org/project/gmplot/) package. To get the results I wanted, I found I needed to modify some of the JavaScript
 
