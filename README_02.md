@@ -1,14 +1,14 @@
 # Wisconsin Library Delivery Services & the Vehicle Routing Problem: A Case Study
 
-In this project, I set up Vehicle Routing Problems (VRPs) to investigate the feasibility of regional library delivery routes. The VRP models were based on regional delivery service reconfigurations proposed by the Delivery Workgroup of the Wisconsin [Public Library System Redesign](https://dpi.wi.gov/coland/plsr-update) (PLSR) Project.
+In this project, I used [Vehicle Routing Problems](https://www.wikiwand.com/en/Vehicle_routing_problem) (VRPs) to model library delivery service route structures and investigate their feasibility. I based the VRPs on proposals developed by the [Delivery Workgroup](https://dpi.wi.gov/sites/default/files/imce/coland/pdf/PLSR_-_Delivery_Workgroup_Report.pdf) of the Wisconsin [Public Library System Redesign](https://dpi.wi.gov/coland/plsr-update) (PLSR) Project. The Workgroup designed their proposals to shift the statewide library delivery service from its current, centralized configuration toward a region-based model.
 
-This was my Capstone Project for the [University of Wisconsin Data Science Master&#39;s Degree](https://datasciencedegree.wisconsin.edu/), which I completed in summer 2021.
+This was my Capstone Project for the [University of Wisconsin Data Science Master&#39;s Degree](https://datasciencedegree.wisconsin.edu/), which I completed in August 2021.
 
 ## Overview
 
-In their report, the PLSR [Delivery Workgroup](https://dpi.wi.gov/sites/default/files/imce/coland/pdf/PLSR_-_Delivery_Workgroup_Report.pdf) included "ideal" and "starter" proposals for redesigning statewide delivery library services. I modeled each of 15 regions in these models using the [vehicle routing solver](https://developers.google.com/optimization/routing) from the Google OR-Tools package.
+The PLSR Delivery Workgroup included two proposals in [their report](https://dpi.wi.gov/sites/default/files/imce/coland/pdf/PLSR_-_Delivery_Workgroup_Report.pdf): an "ideal" model and a "starter" model. For my project, I modeled all 15 regions from both of these proposals using the [vehicle routing solver](https://developers.google.com/optimization/routing) in the Google OR-Tools package for Python.
 
-In each regional VRP, all the routes started from and ended at the same depot while stopping once at every public, academic, school, and special library in the region. I configured the solver to evaluate the cost of each route by its duration and attempt to minimize the total route time for all vehicles.
+I set up each regional VRP so that every public, academic, school, and special library in the local service area received exactly one stop from only one vehicle in the delivery fleet. All the vehicles started and ended their routes at a single depot located in the region. I configured the solver to evaluate the cost of each route by its total duration and minimize the sum of route times for all vehicles.
 
 For detailed descriptions
 
